@@ -1,0 +1,25 @@
+---
+// src/pages/[lang]/index.astro
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  // Genera las rutas /es y /en basadas en el ui.ts
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Inicio" lang={lang}>
+  <main class="min-h-screen pt-20">
+    <h1 class="font-serif text-5xl md:text-7xl text-center text-titacosi-accent">
+      {t('home.hero.title')}
+    </h1>
+    
+    <!-- Aquí irán las secciones de la Home (quienes somos, carta, contacto) -->
+    
+  </main>
+</Layout>
