@@ -1,5 +1,4 @@
 ---
-// src/pages/[lang]/carta.astro
 import Layout from '../../layouts/Layout.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
@@ -12,8 +11,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Nuestra Carta" lang={lang}>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h1 class="font-serif text-4xl text-titacosi-primary">Carta</h1>
-    </div>
+<Layout title="Página en construcción" lang={lang}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[60vh] flex items-center justify-center">
+    <h1 class="font-serif text-4xl text-titacosi-primary">Sección en construcción</h1>
+  </div>
 </Layout>
