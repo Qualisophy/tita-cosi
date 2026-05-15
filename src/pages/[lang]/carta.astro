@@ -1,5 +1,7 @@
 ---
+// src/pages/[lang]/carta.astro
 import Layout from '../../layouts/Layout.astro';
+import Menu from '../../components/react/carta/Menu';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
 
@@ -11,8 +13,21 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Página en construcción" lang={lang}>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[60vh] flex items-center justify-center">
-    <h1 class="font-serif text-4xl text-titacosi-primary">Sección en construcción</h1>
-  </div>
+<Layout title="Nuestra Carta" lang={lang}>
+  
+  {/* Hero Sencillo para la Carta */}
+  <section class="w-full bg-titacosi-surface py-20 md:py-32 flex items-center justify-center border-b border-titacosi-primary/10">
+    <div class="text-center px-4">
+      <p class="text-sm font-bold uppercase tracking-widest text-titacosi-accent mb-4">Descubre nuestros sabores</p>
+      <h1 class="font-serif font-black italic text-5xl md:text-7xl text-titacosi-primary drop-shadow-sm">
+        Nuestra Carta
+      </h1>
+    </div>
+  </section>
+
+  {/* Componente React Interactivo */}
+  <section class="min-h-screen bg-titacosi-base">
+    <Menu currentLang={lang} client:load />
+  </section>
+
 </Layout>
