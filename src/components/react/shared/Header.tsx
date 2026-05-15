@@ -1,12 +1,15 @@
 // src/components/react/shared/Header.tsx
 import { useState, useEffect } from "react";
 import { ui, languages, defaultLang } from "../../../i18n/ui";
+import Button from "../ui/Button";
+import type { ImageMetadata } from "astro";
 
 interface HeaderProps {
   currentLang: keyof typeof ui;
+  logo: ImageMetadata;
 }
 
-export default function Header({ currentLang }: HeaderProps) {
+export default function Header({ currentLang, logo }: HeaderProps) {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -34,21 +37,25 @@ export default function Header({ currentLang }: HeaderProps) {
             <div className="flex-1 flex items-center">
               <a
                 href={`/${currentLang}`}
-                className="font-serif text-2xl font-bold text-titacosi-primary"
+                className="block transition-opacity hover:opacity-80"
               >
-                Tita Cosi
+                <img
+                  src={logo.src}
+                  alt="Tita Cosi Logo"
+                  className="h-30 w-auto object-contain"
+                  loading="eager"
+                />
               </a>
             </div>
 
             {/* NAVEGACIÓN DESKTOP - Centro */}
             <nav className="hidden md:flex flex-none justify-center space-x-8">
               <a
-                href={`/${currentLang}#inicio`}
+                href={`/${currentLang}`}
                 className="text-sm font-medium hover:text-titacosi-accent transition-colors"
               >
                 {t("nav.inicio")}
               </a>
-              {/* Eliminado "Quiénes Somos" como pediste */}
               <a
                 href={`/${currentLang}/carta`}
                 className="text-sm font-medium hover:text-titacosi-accent transition-colors"
@@ -65,15 +72,17 @@ export default function Header({ currentLang }: HeaderProps) {
 
             {/* ACCIONES DESKTOP - Derecha */}
             <div className="flex-1 hidden md:flex justify-end items-center gap-6">
-              {/* Botón Reserva (Ahora va primero) */}
-              <a
-                href={`/${currentLang}/reservas`}
-                className="bg-titacosi-accent text-white px-6 py-2.5 text-sm font-medium tracking-wide hover:bg-[#6b2c2c] transition-colors rounded-sm shadow-sm"
+              <Button
+                variant="accent"
+                onClick={() =>
+                  (window.location.href = `/${currentLang}/reservas`)
+                }
+                className="text-sm !px-6 !py-2.5 shadow-sm"
               >
                 {t("nav.reservar")}
-              </a>
+              </Button>
 
-              {/* Selector de Idioma (Totalmente a la derecha) */}
+              {/* Selector de Idioma */}
               <div className="relative">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
@@ -142,7 +151,6 @@ export default function Header({ currentLang }: HeaderProps) {
       </header>
 
       {/* SIDEBAR MÓVIL */}
-      {/* Overlay oscuro de fondo */}
       <div
         className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 md:hidden ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -150,13 +158,18 @@ export default function Header({ currentLang }: HeaderProps) {
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-      {/* Panel lateral derecho */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-titacosi-base z-50 shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden flex flex-col ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-end p-6 border-b border-titacosi-surface">
+        <div className="flex justify-between items-center p-6 border-b border-titacosi-surface">
+          {/* Logo también en el menú móvil */}
+          <img
+            src={logo.src}
+            alt="Tita Cosi Logo"
+            className="h-8 w-auto object-contain"
+          />
           <button
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-titacosi-primary hover:text-titacosi-accent p-2"
@@ -180,7 +193,7 @@ export default function Header({ currentLang }: HeaderProps) {
 
         <div className="flex flex-col p-6 space-y-6 overflow-y-auto">
           <a
-            href={`/${currentLang}#inicio`}
+            href={`/${currentLang}`}
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-lg font-medium text-titacosi-primary hover:text-titacosi-accent"
           >
@@ -203,7 +216,6 @@ export default function Header({ currentLang }: HeaderProps) {
 
           <hr className="border-titacosi-surface" />
 
-          {/* Selector de idioma en móvil */}
           <div className="flex gap-4">
             {Object.entries(languages).map(
               ([code, label]) =>
@@ -219,13 +231,16 @@ export default function Header({ currentLang }: HeaderProps) {
             )}
           </div>
 
-          <a
-            href={`/${currentLang}/reservas`}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="bg-titacosi-accent text-white text-center px-6 py-3 text-sm font-medium tracking-wide rounded-sm shadow-sm mt-4"
+          <Button
+            variant="accent"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              window.location.href = `/${currentLang}/reservas`;
+            }}
+            className="w-full mt-4 text-sm shadow-sm"
           >
             {t("nav.reservar")}
-          </a>
+          </Button>
         </div>
       </div>
     </>
