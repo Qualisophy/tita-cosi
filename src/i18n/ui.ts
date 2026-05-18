@@ -24,6 +24,9 @@ export const ui = {
     "footer.cookies": "Política de Cookies",
     "footer.terminos": "Términos y Condiciones",
     "footer.derechos": "Todos los derechos reservados.",
+    "404.title": "¡Ups! Parece que este plato no está en el menú.",
+    "404.mensaje": 
+      "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
   },
   en: {
     "nav.inicio": "Home",
@@ -41,5 +44,8 @@ export const ui = {
     "footer.cookies": "Cookies Policy",
     "footer.terminos": "Terms & Conditions",
     "footer.derechos": "All rights reserved.",
+    "404.title": "Oops! It looks like this dish isn't on the menu.",
+    "404.mensaje":
+      "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
   },
 } as const;
