@@ -1,11 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// src/pages/[lang]/404.astro
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+import '../styles/global.css';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Página no encontrada" lang="es">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[60vh] flex flex-col items-center justify-center">
-    <h1 class="font-serif text-6xl text-titacosi-accent mb-4">404</h1>
-    <p class="text-titacosi-primary">Lo sentimos, esta página no existe.</p>
-    <a href="/es" class="mt-8 bg-titacosi-primary text-titacosi-base px-6 py-2 rounded-sm hover:bg-titacosi-accent transition-colors">Volver al inicio</a>
-  </div>
-</Layout>
+<meta charset="UTF-8" />
+
+<div class="max-w-7xl mx-auto pb-60 px-4 sm:px-6 lg:px-8 min-h-[100vh] flex flex-col items-center justify-center text-center">
+  <h1 class="font-serif text-xl md:text-[30rem] mb-20 text-titacosi-accent font-bold tracking-tighter leading-none mb-6">404</h1>
+  <p class="text-titacosi-primary text-xl md:text-2xl max-w-2xl font-medium balance">{t('404.mensaje')}</p>
+  <a href={`/${lang}`} class="mt-8 bg-titacosi-primary text-titacosi-base px-6 py-2 md:text-[2rem] rounded-sm hover:bg-titacosi-accent transition-colors">{t('404.button')}</a>
+</div>

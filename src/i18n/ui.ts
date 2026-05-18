@@ -24,6 +24,9 @@ export const ui = {
     "footer.cookies": "Política de Cookies",
     "footer.terminos": "Términos y Condiciones",
     "footer.derechos": "Todos los derechos reservados.",
+    "404.mensaje": 
+      "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
+    "404.button": "Volver al inicio",
   },
   en: {
     "nav.inicio": "Home",
@@ -41,5 +44,8 @@ export const ui = {
     "footer.cookies": "Cookies Policy",
     "footer.terminos": "Terms & Conditions",
     "footer.derechos": "All rights reserved.",
+    "404.mensaje":
+      "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
+    "404.button": "Back to home",
   },
 } as const;
