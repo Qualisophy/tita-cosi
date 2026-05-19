@@ -1018,6 +1018,7 @@ export const menuItems: Record<string, any[]> = {
       image: "/src/assets/carta/bebidas/bebidas/fernet.jpg",
     }
   ],
+  
   en: [
     /// FOOD ///
     
