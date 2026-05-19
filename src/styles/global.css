@@ -30,3 +30,13 @@
       "WONK" 1;
   }
 }
+
+/* Sobrescribir colores de react-day-picker al granate de Tita Cosi */
+.custom-calendar-wrapper {
+  --rdp-accent-color: #8c3b3b;
+  --rdp-background-color: rgba(140, 59, 59, 0.1);
+  --rdp-outline: 2px solid #8c3b3b;
+}
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: var(--rdp-background-color);
+}

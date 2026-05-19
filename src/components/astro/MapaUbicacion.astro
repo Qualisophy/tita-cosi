@@ -1,17 +1,25 @@
 ---
 // src/components/astro/MapaUbicacion.astro
+
+export interface Props {
+  titulo: string;
+  direccion: string;
+  mapaUrl: string;
+}
+
+const { titulo, direccion, mapaUrl } = Astro.props;
 ---
 
 <section class="w-full max-w-6xl mx-auto px-4 py-12">
   <div class="mb-8 text-center">
-    <h2 class="text-3xl font-bold text-neutral-900">Nuestra Ubicación</h2>
-    <p class="text-neutral-600 mt-2">Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga.</p>
+    <h2 class="text-3xl font-bold text-neutral-900">{titulo}</h2>
+    <p class="text-neutral-600 mt-2">{direccion}</p>
   </div>
 
   <div class="relative w-full overflow-hidden rounded-2xl shadow-md bg-neutral-200 aspect-video md:aspect-[21/9] flex items-center justify-center border border-neutral-300">
     
     <iframe 
-      src="https://maps.google.com/maps?q=Tita+Cosi+Taberna,+Av.+del+Editor+%C3%81ngel+Caffarena,+13,+M%C3%A1laga&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+      src={mapaUrl} 
       width="100%" 
       height="100%" 
       style="border:0;" 
@@ -19,7 +27,7 @@
       loading="lazy" 
       referrerpolicy="no-referrer-when-downgrade"
       class="absolute inset-0 w-full h-full"
-      title="Mapa de ubicación de Taberna Tita Cosi"
+      title={`Mapa de ubicación de ${titulo}`}
     ></iframe>
     
   </div>
