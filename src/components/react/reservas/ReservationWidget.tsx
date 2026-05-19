@@ -259,7 +259,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 <input
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                   id="name"
-                  placeholder="Ej. Juan Pedro"
+                  placeholder="Ej. Alba"
                   type="text"
                 />
               </div>
@@ -273,7 +273,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 <input
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                   id="surname"
-                  placeholder="Ej. Gómez"
+                  placeholder="Ej. Martín"
                   type="text"
                 />
               </div>
