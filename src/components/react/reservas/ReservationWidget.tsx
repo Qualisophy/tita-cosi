@@ -1,11 +1,13 @@
 // src/components/react/reservas/ReservationWidget.tsx
 import React, { useState } from "react";
+import { DayPicker } from "react-day-picker";
+import { es } from "date-fns/locale";
+import "react-day-picker/dist/style.css";
 
 interface ReservationWidgetProps {
   lang: string;
 }
 
-// Tipos para las mesas
 type Zone = "Sala" | "Terraza";
 interface Table {
   id: string;
@@ -15,7 +17,6 @@ interface Table {
 }
 
 const TABLES: Table[] = [
-  // SALA
   { id: "S1", name: "Mesa 1", capacity: 2, zone: "Sala" },
   { id: "S2", name: "Mesa 2", capacity: 2, zone: "Sala" },
   { id: "S3", name: "Mesa 3", capacity: 2, zone: "Sala" },
@@ -23,7 +24,6 @@ const TABLES: Table[] = [
   { id: "S5", name: "Mesa 5", capacity: 4, zone: "Sala" },
   { id: "S6", name: "Mesa 6", capacity: 4, zone: "Sala" },
   { id: "S7", name: "Mesa 7 (Imperial)", capacity: 8, zone: "Sala" },
-  // TERRAZA
   { id: "T1", name: "Mesa T1", capacity: 2, zone: "Terraza" },
   { id: "T2", name: "Mesa T2", capacity: 2, zone: "Terraza" },
   { id: "T3", name: "Mesa T3", capacity: 4, zone: "Terraza" },
@@ -33,16 +33,11 @@ const TABLES: Table[] = [
 ];
 
 export default function ReservationWidget({ lang }: ReservationWidgetProps) {
-  const [selectedDay, setSelectedDay] = useState<number>(19); // Día actual
+  const [selectedDay, setSelectedDay] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("14:30");
   const [guests, setGuests] = useState<number>(2);
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
 
-  // Calendario Básico (Mayo 2026)
-  const daysInMonth = 31;
-  const startingBlankDays = 4;
-  const blanks = Array.from({ length: startingBlankDays }, (_, i) => i);
-  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
   const availableTimes = [
     "13:30",
     "14:00",
@@ -54,14 +49,16 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     "22:00",
   ];
 
-  // Filtrar mesas según comensales (mostrar solo las que tienen capacidad suficiente)
   const validTables = TABLES.filter((table) => table.capacity >= guests);
   const salaTables = validTables.filter((t) => t.zone === "Sala");
   const terrazaTables = validTables.filter((t) => t.zone === "Terraza");
 
+  // Calculamos la fecha de ayer para bloquear los días pasados
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
   return (
     <div className="mb-16">
-      {/* Hero Section */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h1 className="font-serif text-4xl md:text-5xl text-titacosi-primary mb-6">
           Reserva tu mesa en Tita Cosi
@@ -74,72 +71,57 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* COLUMNA IZQUIERDA: Fecha, Hora y Mesa (Ahora toma más protagonismo) */}
         <div className="lg:col-span-7 space-y-8">
-          {/* Bloque 1: Calendario y Hora en grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Calendario */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="font-serif text-xl text-titacosi-primary">
-                  Mayo 2026
-                </h2>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    className="p-1 hover:bg-gray-100 rounded-full transition"
-                  >
-                    <span className="material-symbols-outlined text-gray-600">
-                      chevron_left
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="p-1 hover:bg-gray-100 rounded-full transition"
-                  >
-                    <span className="material-symbols-outlined text-gray-600">
-                      chevron_right
-                    </span>
-                  </button>
-                </div>
-              </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex justify-center custom-calendar-wrapper relative">
+              {/* MAGIA CSS: Destruimos el azul por defecto y metemos tu granate (#8C3B3B) */}
+              <style>{`
+                .custom-calendar-wrapper {
+                  --rdp-accent-color: #8C3B3B;
+                  --rdp-background-color: #f5eae9; /* Un granate muy clarito para el hover */
+                  --rdp-outline: 2px solid #8C3B3B;
+                }
+                
+                /* Forzar el color de las flechas de navegación a granate */
+                .custom-calendar-wrapper .rdp-chevron {
+                  fill: #8C3B3B !important;
+                }
 
-              <div className="grid grid-cols-7 gap-1 text-center mb-2 font-sans text-xs font-bold text-gray-400">
-                <div>L</div>
-                <div>M</div>
-                <div>X</div>
-                <div>J</div>
-                <div>V</div>
-                <div>S</div>
-                <div>D</div>
-              </div>
+                /* Forzar el color del día de hoy (que por defecto es azul) */
+                .custom-calendar-wrapper .rdp-today:not(.rdp-outside) {
+                  color: #8C3B3B !important;
+                  font-weight: 700;
+                }
 
-              <div className="grid grid-cols-7 gap-1 text-center font-sans text-sm">
-                {blanks.map((blank) => (
-                  <div key={`blank-${blank}`} className="p-2"></div>
-                ))}
-                {days.map((day) => (
-                  <div
-                    key={`day-${day}`}
-                    onClick={() => setSelectedDay(day)}
-                    className={`p-2 rounded-xl cursor-pointer transition-all duration-200 ${
-                      selectedDay === day
-                        ? "bg-titacosi-accent text-white font-bold shadow-md scale-105"
-                        : "hover:bg-gray-100 text-titacosi-primary"
-                    }`}
-                  >
-                    {day}
-                  </div>
-                ))}
-              </div>
+                /* Forzar que el día seleccionado sea totalmente granate */
+                .custom-calendar-wrapper .rdp-selected .rdp-day_button,
+                .custom-calendar-wrapper .rdp-selected {
+                  background-color: #8C3B3B !important;
+                  border-color: #8C3B3B !important;
+                  color: white !important;
+                }
+
+                /* Estado hover del día seleccionado para que sea un pelín más oscuro */
+                .custom-calendar-wrapper .rdp-selected:hover .rdp-day_button {
+                  background-color: #702f2f !important;
+                }
+              `}</style>
+
+              {/* Al quitar showOutsideDays y fixedWeeks, nos aseguramos de que no salgan los días del mes siguiente */}
+              <DayPicker
+                mode="single"
+                selected={selectedDay}
+                onSelect={setSelectedDay}
+                locale={es}
+                disabled={[{ before: new Date() }]}
+              />
             </div>
 
-            {/* Horarios */}
             <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col">
               <h3 className="font-serif text-xl text-titacosi-primary mb-6">
                 Horarios
               </h3>
-              <div className="grid grid-cols-2 gap-3 flex-grow content-start">
+              <div className="grid grid-cols-2 gap-3 grow content-start">
                 {availableTimes.map((time) => (
                   <button
                     key={time}
@@ -158,7 +140,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
             </div>
           </div>
 
-          {/* Bloque 2: Selección de Mesa */}
           <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
             <div className="flex justify-between items-end mb-6">
               <h3 className="font-serif text-xl text-titacosi-primary">
@@ -170,9 +151,9 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                   value={guests}
                   onChange={(e) => {
                     setGuests(Number(e.target.value));
-                    setSelectedTable(null); // Reset mesa si cambian comensales
+                    setSelectedTable(null);
                   }}
-                  className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 font-sans text-sm text-titacosi-primary focus:ring-titacosi-accent focus:border-titacosi-accent"
+                  className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 font-sans text-sm text-titacosi-primary focus:ring-titacosi-accent focus:border-titacosi-accent cursor-pointer"
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                     <option key={num} value={num}>
@@ -183,7 +164,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               </div>
             </div>
 
-            {/* ZONA SALA */}
             <div className="mb-6">
               <h4 className="font-sans text-xs uppercase font-bold text-gray-400 mb-3 flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px]">
@@ -222,7 +202,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               </div>
             </div>
 
-            {/* ZONA TERRAZA */}
             <div>
               <h4 className="font-sans text-xs uppercase font-bold text-gray-400 mb-3 flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px]">
@@ -263,7 +242,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: Formulario de Datos */}
         <div className="lg:col-span-5">
           <form className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col gap-5 sticky top-28">
             <h3 className="font-serif text-xl text-titacosi-primary mb-2">
@@ -281,7 +259,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 <input
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                   id="name"
-                  placeholder="Ej. Alba"
+                  placeholder="Ej. Juan Pedro"
                   type="text"
                 />
               </div>
@@ -295,7 +273,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 <input
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                   id="surname"
-                  placeholder="Ej. García"
+                  placeholder="Ej. Gómez"
                   type="text"
                 />
               </div>
@@ -374,7 +352,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               <button
                 className="w-full bg-titacosi-accent text-white rounded-xl py-4 px-6 font-sans text-sm uppercase font-bold text-center hover:bg-opacity-90 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
-                disabled={!selectedTable}
+                disabled={!selectedTable || !selectedDay}
               >
                 {selectedTable ? "Confirmar Reserva" : "Selecciona una Mesa"}
                 <span className="material-symbols-outlined text-[18px]">
