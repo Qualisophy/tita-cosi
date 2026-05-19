@@ -1,4 +1,3 @@
-// src/components/react/carta/Menu.tsx
 import { useState, useMemo } from "react";
 import Input from "../ui/Input";
 import { categories, menuItems } from "../../../data/menu";
@@ -9,7 +8,9 @@ interface MenuProps {
 }
 
 export default function Menu({ currentLang }: MenuProps) {
-  const [activeCategory, setActiveCategory] = useState("Todo");
+  const availableCategories = categories[currentLang] || categories.es;
+  const availableItems = menuItems[currentLang] || menuItems.es;
+  const [activeCategory, setActiveCategory] = useState(availableCategories[0]);
   const [searchQuery, setSearchQuery] = useState("");
 
   const t = (key: keyof (typeof ui)["es"]) =>
@@ -17,19 +18,19 @@ export default function Menu({ currentLang }: MenuProps) {
 
   // Filtramos los platos basándonos en la categoría activa y el buscador
   const filteredItems = useMemo(() => {
-    return menuItems.filter((item) => {
+    return availableItems.filter((item) => {
       const matchesCategory =
-        activeCategory === "Todo" || item.category === activeCategory;
+        activeCategory === availableCategories[0] || item.category === activeCategory;
       const matchesSearch =
         item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery, availableItems, availableCategories]);
 
   // Agrupamos los platos filtrados por categoría para pintarlos ordenados
   const groupedItems = useMemo(() => {
-    const groups: Record<string, typeof menuItems> = {};
+    const groups: Record<string, typeof availableItems> = {};
     filteredItems.forEach((item) => {
       if (!groups[item.category]) {
         groups[item.category] = [];
@@ -74,7 +75,7 @@ export default function Menu({ currentLang }: MenuProps) {
           {/* Categorías: Tipo "Pills" horizontales con scroll invisible */}
           <div className="w-full md:grow overflow-x-auto no-scrollbar pb-2">
             <div className="flex gap-2 md:gap-3">
-              {categories.map((category) => (
+              {availableCategories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
@@ -99,7 +100,7 @@ export default function Menu({ currentLang }: MenuProps) {
             No hemos encontrado platos que coincidan con tu búsqueda.
           </div>
         ) : (
-          categories.map((category) => {
+          availableCategories.map((category) => {
             const itemsInCategory = groupedItems[category];
             if (!itemsInCategory || itemsInCategory.length === 0) return null;
 
