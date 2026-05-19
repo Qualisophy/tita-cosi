@@ -52,19 +52,19 @@ export default function Header({ currentLang, logo }: HeaderProps) {
             <nav className="hidden md:flex flex-none justify-center space-x-8">
               <a
                 href={`/${currentLang}`}
-                className="text-sm font-medium hover:text-titacosi-accent transition-colors"
+                className="text-lg font-medium hover:text-titacosi-accent transition-colors"
               >
                 {t("nav.inicio")}
               </a>
               <a
                 href={`/${currentLang}/carta`}
-                className="text-sm font-medium hover:text-titacosi-accent transition-colors"
+                className="text-lg font-medium hover:text-titacosi-accent transition-colors"
               >
                 {t("nav.carta")}
               </a>
               <a
                 href={`/${currentLang}/contacto`}
-                className="text-sm font-medium hover:text-titacosi-accent transition-colors"
+                className="text-lg font-medium hover:text-titacosi-accent transition-colors"
               >
                 {t("nav.contacto")}
               </a>
@@ -77,7 +77,7 @@ export default function Header({ currentLang, logo }: HeaderProps) {
                 onClick={() =>
                   (window.location.href = `/${currentLang}/reservas`)
                 }
-                className="text-sm !px-6 !py-2.5 shadow-sm"
+                className="text-base !px-6 !py-2.5 shadow-sm"
               >
                 {t("nav.reservar")}
               </Button>
@@ -86,7 +86,7 @@ export default function Header({ currentLang, logo }: HeaderProps) {
               <div className="relative">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
-                  className="flex items-center text-sm font-medium hover:text-titacosi-accent transition-colors"
+                  className="flex items-center text-base font-medium hover:text-titacosi-accent transition-colors"
                 >
                   {languages[currentLang]}
                   <svg
