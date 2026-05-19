@@ -26,8 +26,30 @@ const { title, lang } = Astro.props;
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Fraunces:opsz,wght@9..144,400;500;600&family=Newsreader:opsz,wght@6..72,400;500;600&display=swap" rel="stylesheet" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     
     <title>{title} | Tita Cosi</title>
+
+    <style is:global>
+      /* Aseguramos la renderización correcta de los iconos en toda la app */
+      .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
   </head>
   <body class="bg-titacosi-base text-titacosi-primary font-sans antialiased selection:bg-titacosi-accent selection:text-titacosi-surface flex flex-col min-h-screen">
     
