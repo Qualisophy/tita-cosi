@@ -27,7 +27,16 @@ export const ui = {
     "404.mensaje": 
       "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
     "404.button": "Volver al inicio",
-    "contacto.titulo":"Nuestra Ubicación",
+    "contacto.mapa.titulo":"Nuestra Ubicación",
+    "contacto.titulo":"Contacto",
+    "contacto.direccion.titulo":"DIRECCIÓN",
+    "contacto.direccion":"Bulevar Louis Pasteur, 12\n29010 Teatinos, Málaga",
+    "contacto.telefono.titulo":"TELÉFONO / WHATSAPP",
+    "contacto.telefono":"+34 952 00 00 00",
+    "contacto.email.titulo":"EMAIL",
+    "contacto.email":"hola@tabernatitacosi.es",    
+    "contacto.horario.titulo":"HORARIO",
+    "contacto.horario":"Mar - Jue: 13:00 - 16:30 | 20:00 - 23:30\nVie - Sáb: 13:00 - 00:00\nDom: 13:00 - 17:00\nLun: Cerrado",
   },
   en: {
     "nav.inicio": "Home",
@@ -48,6 +57,15 @@ export const ui = {
     "404.mensaje":
       "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
     "404.button": "Back to home",
-    "contacto.titulo":"Our Location",
+    "contacto.mapa.titulo":"Our Location",
+    "contacto.titulo": "Contact",
+    "contacto.direccion.titulo": "ADDRESS",
+    "contacto.direccion": "Bulevar Louis Pasteur, 12\n29010 Teatinos, Málaga",
+    "contacto.telefono.titulo": "PHONE / WHATSAPP",
+    "contacto.telefono": "+34 952 00 00 00",
+    "contacto.email.titulo": "EMAIL",
+    "contacto.email": "hola@tabernatitacosi.es",    
+    "contacto.horario.titulo": "OPENING HOURS",
+    "contacto.horario": "Tue - Thu: 13:00 - 16:30 | 20:00 - 23:30\nFri - Sat: 13:00 - 00:00\nSun: 13:00 - 17:00\nMon: Closed"
   },
 } as const;

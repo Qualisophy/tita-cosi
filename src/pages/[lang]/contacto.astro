@@ -13,16 +13,55 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Página en construcción" lang={lang}>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[60vh] flex items-center justify-center">
-    <h1 class="font-serif text-4xl text-titacosi-primary">Sección en construcción</h1>
+<Layout title={t('contacto.titulo')} lang={lang}>
+  <div class="w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8 flex flex-col items-center justify-center">
+      <h1 class="font-serif text-4xl text-titacosi-primary">{t('contacto.titulo')}</h1>
+    </div>
   </div>
-
-  <MapaUbicacion 
-    titulo={t('contacto.titulo')}
-    direccion="Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga."
-    mapaUrl="https://maps.google.com/maps?q=Tita+Cosi+Taberna,+Av.+del+Editor+%C3%81ngel+Caffarena,+13,+M%C3%A1laga&t=&z=16&ie=UTF8&iwloc=&output=embed"
-  />
-  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32 flex flex-row">
+    <!-- Contact Info & Map (Left Column) -->
+    <div class="lg:col-span-5 space-y-12">
+      <!-- Info Cards -->
+      <div class="space-y-15">
+        <div class="flex items-start space-x-4">
+          <span class="material-symbols-outlined text-brand-red mt-1">location_on</span>
+          <div>
+            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.direccion.titulo')}</h3>
+            <p class="font-body-md text-body-md text-primary whitespace-pre-line">
+              {t('contacto.direccion')}
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <span class="material-symbols-outlined text-brand-red mt-1">call</span>
+          <div>
+            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.telefono.titulo')}</h3>
+            <p class="font-body-md text-body-md text-primary">{t('contacto.telefono')}</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <span class="material-symbols-outlined text-brand-red mt-1">mail</span>
+          <div>
+            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.email.titulo')}</h3>
+            <p class="font-body-md text-body-md text-primary">{t('contacto.email')}</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <span class="material-symbols-outlined text-brand-red mt-1">schedule</span>
+          <div>
+            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.horario.titulo')}</h3>
+            <p class="font-body-md text-body-md text-primary whitespace-pre-line">
+              {t('contacto.horario')}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <MapaUbicacion 
+      titulo={t('contacto.mapa.titulo')}
+      direccion="Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga."
+      mapaUrl="https://maps.google.com/maps?q=Tita+Cosi+Taberna,+Av.+del+Editor+%C3%81ngel+Caffarena,+13,+M%C3%A1laga&t=&z=16&ie=UTF8&iwloc=&output=embed"
+    />
+  </div>
 </Layout>
-
