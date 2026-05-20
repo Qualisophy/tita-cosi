@@ -27,7 +27,13 @@ export const ui = {
     "404.mensaje": 
       "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
     "404.button": "Volver al inicio",
+    "carta.title": "Nuestra Carta",
+    "carta.header1" : "Descubre nuestros sabores",
+    "carta.header2" : "Nuestra carta",
+    "menu.buscador1": "¿Qué te apetece hoy?",
+    "menu.buscador2": "Ej. Croquetas, Atún, Sin Gluten...",
   },
+
   en: {
     "nav.inicio": "Home",
     "nav.quienes_somos": "About Us",
@@ -47,5 +53,63 @@ export const ui = {
     "404.mensaje":
       "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
     "404.button": "Back to home",
+    "carta.title": "Our Menu",
+    "carta.header1" : "Discover our flavours",
+    "carta.header2" : "Our Menu",
+    "menu.buscador1": "What do you feel like today?",
+    "menu.buscador2": "Eg. Croquettes, Gluten Free...",
   },
+
+  fr: {
+    "nav.inicio": "Accueil",
+    "nav.quienes_somos": "Qui Sommes-Nous",
+    "nav.carta": "Carte",
+    "nav.contacto": "Contact",
+    "nav.reservar": "Réservez votre table",
+    "home.hero.title": "Bienvenue chez Tita Cosi",
+    "footer.desc":
+      "Votre coin gastronomique à Teatinos. Tradition et avant-garde à chaque bouchée.",
+    "footer.horarios": "Horaires",
+    "footer.enlaces": "Liens Rapides",
+    "footer.legal": "Mentions Légales",
+    "footer.privacidad": "Politique de Confidentialité",
+    "footer.cookies": "Politique relative aux Cookies",
+    "footer.terminos": "Conditions Générales",
+    "footer.derechos": "Tous droits réservés.",
+    "404.mensaje": 
+      "La page que vous recherchez n'existe pas ou a été déplacée. Mais ne vous inquiétez pas, notre cuisine reste ouverte.",
+    "404.button": "Retour à l'accueil",
+    "carta.title": "Notre Carte",
+    "carta.header1" : "Découvrez nos saveurs",
+    "carta.header2" : "Notre carte",
+    "menu.buscador1": "Qu'est-ce qui vous ferait plaisir aujourd'hui ?",
+    "menu.buscador2": "Ex. Croquettes, Sans Gluten...",
+  },
+
+  de: {
+    "nav.inicio": "Startseite",
+    "nav.quienes_somos": "Über Uns",
+    "nav.carta": "Speisekarte",
+    "nav.contacto": "Kontakt",
+    "nav.reservar": "Tisch reservieren",
+    "home.hero.title": "Willkommen bei Tita Cosi",
+    "footer.desc":
+      "Ihre gastronomische Ecke in Teatinos. Tradition und Avantgarde in jedem Bissen.",
+    "footer.horarios": "Öffnungszeiten",
+    "footer.enlaces": "Schnelllinks",
+    "footer.legal": "Impressum",
+    "footer.privacidad": "Datenschutzerklärung",
+    "footer.cookies": "Cookie-Richtlinie",
+    "footer.terminos": "Allgemeine Geschäftsbedingungen",
+    "footer.derechos": "Alle Rechte vorbehalten.",
+    "404.mensaje": 
+      "Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben. Aber keine Sorge, unsere Küche ist weiterhin geöffnet.",
+    "404.button": "Zurück zur Startseite",
+    "carta.title": "Unsere Speisekarte",
+    "carta.header1" : "Entdecken Sie unsere Aromen",
+    "carta.header2" : "Unsere Speisekarte",
+    "menu.buscador1": "Worauf haben Sie heute Lust?",
+    "menu.buscador2": "Z.B. Kroketten, Glutenfrei...",
+  },
+
 } as const;

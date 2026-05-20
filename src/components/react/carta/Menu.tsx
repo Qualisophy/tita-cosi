@@ -48,9 +48,9 @@ export default function Menu({ currentLang }: MenuProps) {
           {/* Buscador: Compacto en escritorio */}
           <div className="w-full md:w-80 flex-shrink-0">
             <Input
-              label="¿Qué te apetece hoy?"
+              label={t('menu.buscador1')}
               type="search"
-              placeholder="Ej. Croquetas, Atún, Sin Gluten..."
+              placeholder={t('menu.buscador2')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="!gap-1.5"
@@ -127,7 +127,11 @@ export default function Menu({ currentLang }: MenuProps) {
                         {/* Puntos líderes entre nombre y precio */}
                         <div className="grow border-b border-dotted border-titacosi-primary/20 -translate-y-1 invisible md:visible"></div>
                         <span className="text-xl font-sans font-black text-titacosi-accent whitespace-nowrap drop-shadow-sm">
-                          {item.price.toFixed(2)} €
+                          {item.doublePrice === "Por encargo" || item.doublePrice != null ? (
+                            `${item.doublePrice}`
+                          ) : (
+                            `${item.price.toFixed(2)} €`
+                          )}
                         </span>
                       </div>
 
@@ -139,7 +143,7 @@ export default function Menu({ currentLang }: MenuProps) {
                       {/* Tags (ej. Sin Gluten) - Estilo minimalista */}
                       {item.tags && item.tags.length > 0 && (
                         <div className="flex gap-2.5 mt-auto pt-2">
-                          {item.tags.map((tag) => (
+                          {item.tags.map((tag: string) => (
                             <span
                               key={tag}
                               className="text-xs uppercase tracking-widest font-black text-titacosi-accent/60 bg-titacosi-accent/5 px-2.5 py-1.5 rounded-sm"
