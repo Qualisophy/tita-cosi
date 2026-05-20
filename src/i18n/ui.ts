@@ -27,7 +27,7 @@ export const ui = {
     "404.mensaje": 
       "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
     "404.button": "Volver al inicio",
-    "contacto.titulo":"Nuestra Ubicación",
+    "contacto.mapa.titulo":"Nuestra Ubicación",
   },
   en: {
     "nav.inicio": "Home",
@@ -48,6 +48,6 @@ export const ui = {
     "404.mensaje":
       "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
     "404.button": "Back to home",
-    "contacto.titulo":"Our Location",
+    "contacto.mapa.titulo":"Our Location",
   },
 } as const;
