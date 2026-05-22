@@ -24,6 +24,11 @@ export const ui = {
     "footer.cookies": "Política de Cookies",
     "footer.terminos": "Términos y Condiciones",
     "footer.derechos": "Todos los derechos reservados.",
+    "footer.horario.1":"Mar - Jue:",
+    "footer.horario.2":"Vie - Sáb:",
+    "footer.horario.3":"Dom:",
+    "footer.horario.4":"Lun:",
+    "footer.horario.4.1":"Cerrado",
     "404.mensaje": 
       "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
     "404.button": "Volver al inicio",
@@ -45,6 +50,11 @@ export const ui = {
     "footer.cookies": "Cookies Policy",
     "footer.terminos": "Terms & Conditions",
     "footer.derechos": "All rights reserved.",
+    "footer.horario.1": "Tue - Thu:",
+    "footer.horario.2": "Fri - Sat:",
+    "footer.horario.3": "Sun:",
+    "footer.horario.4": "Mon:",
+    "footer.horario.4.1": "Closed",    
     "404.mensaje":
       "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
     "404.button": "Back to home",
