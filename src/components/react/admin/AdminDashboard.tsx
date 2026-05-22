@@ -47,6 +47,7 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
   const [reservas, setReservas] = useState<Reserva[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [modalError, setModalError] = useState<string | null>(null);
+  const [reservaEditando, setReservaEditando] = useState<Reserva | null>(null);
 
   const API_URL = import.meta.env.PUBLIC_API_URL || "http://localhost:3000/api";
 
@@ -162,6 +163,32 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     );
   }
 
+  // Función para eliminar
+  const eliminarReserva = async (identificador: string) => {
+    if (!confirm("¿Estás seguro de que deseas eliminar esta reserva?")) return;
+
+    try {
+      const respuesta = await fetch(`${API_URL}/reservas/${identificador}`, {
+        method: "DELETE",
+        credentials: "include",
+      });
+
+      if (respuesta.ok) {
+        await checkSession(); // Recargamos la lista tras eliminar
+      } else {
+        alert("Error al intentar eliminar la reserva.");
+      }
+    } catch (error) {
+      console.error("Error al eliminar la reserva:", error);
+    }
+  };
+
+  // Función para preparar la edición (abre el modal y guarda los datos)
+  const prepararEdicion = (reserva: Reserva) => {
+    setReservaEditando(reserva);
+    setIsModalOpen(true);
+  };
+
   const reservasPendientes = reservas.filter(
     (r) => r.estado.toLowerCase() === "pendiente",
   ).length;
@@ -266,7 +293,7 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
 
           <div className="bg-[#f4f3f1] p-5 md:p-6 rounded-2xl border border-gray-200/50 shadow-sm hover:shadow-md transition-shadow">
             <p className="font-bold text-[11px] md:text-xs text-gray-500 uppercase tracking-widest mb-1 md:mb-2">
-              Cubiertos Totales
+              Total de comensales
             </p>
             <h3 className="font-serif text-3xl md:text-4xl text-titacosi-primary font-bold">
               {cubiertosTotales}
@@ -419,12 +446,21 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                           </td>
                           <td className="px-4 md:px-6 py-4 md:py-5 text-right">
                             <div className="flex justify-end gap-1 md:gap-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
-                              <button className="p-1.5 text-gray-400 hover:text-titacosi-accent transition-colors">
+                              {/* Botón Editar */}
+                              <button
+                                onClick={() => prepararEdicion(reserva)}
+                                className="p-1.5 text-gray-400 hover:text-titacosi-accent transition-colors"
+                              >
                                 <span className="material-symbols-outlined text-[18px] md:text-[20px]">
                                   edit
                                 </span>
                               </button>
-                              <button className="p-1.5 text-gray-400 hover:text-red-500 transition-colors">
+
+                              {/* Botón Eliminar */}
+                              <button
+                                onClick={() => eliminarReserva(reserva.id)}
+                                className="p-1.5 text-gray-400 hover:text-red-500 transition-colors"
+                              >
                                 <span className="material-symbols-outlined text-[18px] md:text-[20px]">
                                   delete
                                 </span>
