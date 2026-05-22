@@ -33,6 +33,9 @@ export const ui = {
       "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
     "404.button": "Volver al inicio",
     "home.hero.text":"Tradición en Teatinos, vanguardia en el paladar.\nVen a vivir la experiencia Tita Cosi.",
+    "home.servicios.titulo": "Un festín para los sentidos",
+    "home.servicios.desc": "Una carta amplia pensada para todos los gustos. Disfruta de una selección espectacular de entrantes para abrir boca, carnes jugosas, pescados frescos y nuestras irresistibles tapas.",
+    "home.servicios.boton": "Descubre todos nuestros platos",
   },
   en: {
     "nav.inicio": "Home",
@@ -59,5 +62,8 @@ export const ui = {
       "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
     "404.button": "Back to home",
     "home.hero.text": "Tradition in Teatinos, innovation on the palate.\nCome live the Tita Cosi experience.",
+    "home.servicios.titulo": "A feast for the senses",
+    "home.servicios.desc": "An extensive menu designed for all tastes. Enjoy a spectacular selection of starters to whet your appetite, juicy meats, fresh fish, and our irresistible tapas.",
+    "home.servicios.boton": "Discover all our dishes",
   },
 } as const;
