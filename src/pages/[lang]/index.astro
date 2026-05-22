@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/react/home/Hero';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
-
+import QueHacemos from '../../components/astro/QueHacemos.astro';
 // 1. Importamos Astro assets para optimización automática
 import { Image } from 'astro:assets';
 import bannerImg from '../../assets/banner.jpg'; // Astro sabrá que esta es para procesar
@@ -26,6 +26,8 @@ const t = useTranslations(lang);
     <section class="h-screen bg-titacosi-surface flex items-center justify-center border-t border-titacosi-primary/10">
         <h2 class="font-serif text-3xl">Sección: Quiénes Somos</h2>
     </section>
+
+    <QueHacemos />
 
   </div>
 </Layout>
