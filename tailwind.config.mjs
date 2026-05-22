@@ -49,6 +49,8 @@ export default {
         "on-background": "#1a1c1b",
         "on-surface": "#1a1c1b",
         "on-surface-variant": "#444748",
+        // Color para las clases de la maqueta del CRM (bg-accent, text-accent)
+        accent: "#8C3B3B",
       },
       borderRadius: {
         DEFAULT: "0.25rem",
