@@ -62,9 +62,8 @@ export default function Hero({ currentLang, backgroundImage }: HeroProps) {
           {t("home.hero.title")}
         </h1>
 
-        <p className="gsap-reveal text-xl md:text-2xl text-titacosi-base/90 mb-12 max-w-3xl font-sans leading-relaxed">
-          Tradición en Teatinos, vanguardia en el paladar.
-          <br /> Ven a vivir la experiencia Tita Cosi.
+        <p className="gsap-reveal text-xl md:text-2xl text-titacosi-base/90 mb-12 max-w-3xl font-sans leading-relaxed whitespace-pre-line">
+          {t("home.hero.text")}
         </p>
 
         <div className="gsap-reveal flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
