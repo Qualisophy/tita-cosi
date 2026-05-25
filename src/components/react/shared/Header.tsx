@@ -108,7 +108,7 @@ export default function Header({ currentLang, logo }: HeaderProps) {
                   <div className="absolute right-0 mt-2 w-24 bg-white border border-titacosi-surface rounded shadow-lg py-1">
                     {Object.entries(languages).map(
                       ([code, label]) =>
-                        (code === "es" || code === "en") && (
+                        (code === "es" || code === "en" || code === "fr" || code === "de") && (
                           <a
                             key={code}
                             href={`/${code}`}
