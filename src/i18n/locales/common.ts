@@ -1,0 +1,58 @@
+export const commonTranslations = {
+  es: {
+    "navegacion.inicio": "Inicio",
+    "navegacion.quienes_somos": "Quiénes Somos",
+    "navegacion.carta": "Carta",
+    "navegacion.contacto": "Contacto",
+    "navegacion.reservar": "Reserva tu mesa",
+    "home.hero.titulo": "Bienvenido a Tita Cosi",
+    "home.hero.texto":
+      "Tradición en Teatinos, vanguardia en el paladar.\nVen a vivir la experiencia Tita Cosi.",
+    "footer.descripcion":
+      "Tu rincón gastronómico en Teatinos. Tradición y vanguardia en cada bocado.",
+    "footer.horarios": "Horarios",
+    "footer.enlaces": "Enlaces Rápidos",
+    "footer.legal": "Legal",
+    "footer.privacidad": "Política de Privacidad",
+    "footer.cookies": "Política de Cookies",
+    "footer.terminos": "Términos y Condiciones",
+    "footer.derechos": "Todos los derechos reservados.",
+    "footer.horario.martes_jueves": "Mar - Jue:",
+    "footer.horario.viernes_sabado": "Vie - Sáb:",
+    "footer.horario.domingo": "Dom:",
+    "footer.horario.lunes": "Lun:",
+    "footer.horario.lunes_cerrado": "Cerrado",
+    "error404.mensaje":
+      "La página que buscas no existe o ha cambiado de lugar. Pero no te preocupes, nuestra cocina sigue abierta.",
+    "error404.boton": "Volver al inicio",
+  },
+  en: {
+    "navegacion.inicio": "Home",
+    "navegacion.quienes_somos": "About Us",
+    "navegacion.carta": "Menu",
+    "navegacion.contacto": "Contact",
+    "navegacion.reservar": "Book a table",
+    "home.hero.titulo": "Welcome to Tita Cosi",
+    "home.hero.texto":
+      "Tradition in Teatinos, innovation on the palate.\nCome live the Tita Cosi experience.",
+    "footer.descripcion":
+      "Your gastronomic corner in Teatinos. Tradition and avant-garde in every bite.",
+    "footer.horarios": "Opening Hours",
+    "footer.enlaces": "Quick Links",
+    "footer.legal": "Legal",
+    "footer.privacidad": "Privacy Policy",
+    "footer.cookies": "Cookies Policy",
+    "footer.terminos": "Terms & Conditions",
+    "footer.derechos": "All rights reserved.",
+    "footer.horario.martes_jueves": "Tue - Thu:",
+    "footer.horario.viernes_sabado": "Fri - Sat:",
+    "footer.horario.domingo": "Sun:",
+    "footer.horario.lunes": "Mon:",
+    "footer.horario.lunes_cerrado": "Closed",
+    "error404.mensaje":
+      "The page you are looking for doesn't exist or has moved. But don't worry, our kitchen is still open.",
+    "error404.boton": "Back to home",
+  },
+  fr: {},
+  de: {},
+};
