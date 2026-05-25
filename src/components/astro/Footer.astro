@@ -16,15 +16,15 @@ const currentYear = new Date().getFullYear();
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Grid de Columnas -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16 py-16">
       
       <!-- Columna 1: Info Brand -->
       <div class="space-y-4">
-        <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-sm">Taberna Tita Cosi</h4>
+        <h4 class="text-white text-[12px] font-bold uppercase tracking-[0.2em]">Taberna Tita Cosi</h4>
         <p class="text-sm leading-relaxed text-gray-400">
           {t('footer.desc')}
         </p>
-        <div class="pt-4 space-y-2 text-sm">
+        <div class="pt-4 space-y-3 text-sm">
           <p class="flex items-center gap-2">
             <span>📍</span> Av. del Editor Ángel Caffarena, 13, Málaga
           </p>
@@ -38,8 +38,8 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Columna 2: Horarios -->
-      <div>
-        <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-sm">{t('footer.horarios')}</h4>
+      <div class="space-y-4">
+        <h4 class="text-white text-[12px] font-bold uppercase tracking-[0.2em]">{t('footer.horarios')}</h4>
         <ul class="space-y-3 text-sm text-gray-400">
           <li class="flex justify-between"><span>Mar - Jue:</span> <span>13:00 - 16:30 | 20:00 - 23:30</span></li>
           <li class="flex justify-between"><span>Vie - Sáb:</span> <span>13:00 - 00:00</span></li>
@@ -49,8 +49,8 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Columna 3: Enlaces -->
-      <div>
-        <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-sm">{t('footer.enlaces')}</h4>
+      <div class="space-y-4">
+        <h4 class="text-white text-[12px] font-bold uppercase tracking-[0.2em]">{t('footer.enlaces')}</h4>
         <ul class="space-y-3 text-sm">
           <li><a href={`/${lang}`} class="hover:text-white transition-colors">{t('nav.inicio')}</a></li>
           <li><a href={`/${lang}/carta`} class="hover:text-white transition-colors">{t('nav.carta')}</a></li>
@@ -60,8 +60,8 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Columna 4: Legal -->
-      <div>
-        <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-sm">{t('footer.legal')}</h4>
+      <div class="space-y-4">
+        <h4 class="text-white text-[12px] font-bold uppercase tracking-[0.2em]">{t('footer.legal')}</h4>
         <ul class="space-y-3 text-sm">
           <li><a href={`/${lang}/privacidad`} class="hover:text-white transition-colors">{t('footer.privacidad')}</a></li>
           <li><a href={`/${lang}/cookies`} class="hover:text-white transition-colors">{t('footer.cookies')}</a></li>
