@@ -4,10 +4,13 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/react/home/Hero';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
-
+import ServiciosCarta from '../../components/react/home/ServiciosCarta';
 // 1. Importamos Astro assets para optimización automática
 import { Image } from 'astro:assets';
 import bannerImg from '../../assets/banner.jpg'; // Astro sabrá que esta es para procesar
+import imgCroquetas from '../../assets/croquetas.png';
+import imgTostas from '../../assets/tosta.png';
+import imgCarnes from '../../assets/carne.png';
 import QuienesSomos from '../../components/react/home/QuienesSomos';
 import QueHacemos from '../../components/react/home/QueHacemos';
 export function getStaticPaths() {
@@ -29,6 +32,13 @@ const t = useTranslations(lang);
 
     {/* Sección 3: Qué Hacemos (React) */}
     <QueHacemos currentLang={lang} />
+
+   <ServiciosCarta 
+      currentLang={lang} 
+      image1={imgCroquetas.src}
+      image2={imgTostas.src}
+      image3={imgCarnes.src}
+    />
 
   </div>
 </Layout>

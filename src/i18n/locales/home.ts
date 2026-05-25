@@ -13,6 +13,11 @@ export const homeEs = {
   "home.que_hacemos.item2.desc": "Desde nuestras famosas croquetas hasta nuestras tostas y bocados; todo está hecho con cariño.",
   "home.que_hacemos.item3.title": "Ambiente Cercano",
   "home.que_hacemos.item3.desc": "Un trato familiar en un local diseñado para que te relajes y disfrutes del momento.",
+
+  // TCW-34: SERVICIOS / CARTA
+  "home.servicios.titulo": "Un festín para los sentidos",
+  "home.servicios.desc": "Una carta amplia pensada para todos los gustos. Disfruta de una selección espectacular de entrantes para ir abriendo boca.",
+  "home.servicios.boton": "Descubre todos nuestros platos",
 };
 
 export const homeEn = {
@@ -30,6 +35,11 @@ export const homeEn = {
   "home.que_hacemos.item2.desc": "From our famous croquettes to our toasts and bites; everything is made with care.",
   "home.que_hacemos.item3.title": "Welcoming Atmosphere",
   "home.que_hacemos.item3.desc": "A familiar treatment in a place designed for you to relax and enjoy the moment.",
+
+  // TCW-34: SERVICIOS / CARTA (INGLÉS)
+  "home.servicios.titulo": "A feast for the senses",
+  "home.servicios.desc": "An extensive menu designed for all tastes. Enjoy a spectacular selection of starters to whet your appetite.",
+  "home.servicios.boton": "Discover all our dishes",
 };
 
 export const homeFr = {
@@ -47,6 +57,11 @@ export const homeFr = {
   "home.que_hacemos.item2.desc": "De nos célèbres croquettes à nos toasts et bouchées ; tout est fait avec amour.",
   "home.que_hacemos.item3.title": "Ambiance chaleureuse",
   "home.que_hacemos.item3.desc": "Un accueil familial dans un lieu conçu pour que vous vous détendiez et profitiez du moment.",
+
+  // TCW-34: SERVICIOS / CARTA (FRANCÉS)
+  "home.servicios.titulo": "Un festin pour les sens",
+  "home.servicios.desc": "Un menu complet conçu pour tous les goûts. Profitez d'une sélection spectaculaire d'entrées pour vous mettre en appétit.",
+  "home.servicios.boton": "Découvrez tous nos plats",
 };
 
 export const homeDe = {
@@ -64,4 +79,9 @@ export const homeDe = {
   "home.que_hacemos.item2.desc": "Von unseren berühmten Kroketten bis hin zu unseren Toasts und Häppchen; alles wird mit Liebe gemacht.",
   "home.que_hacemos.item3.title": "Familiäre Atmosphäre",
   "home.que_hacemos.item3.desc": "Ein familiärer Umgang an einem Ort, der dafür entworfen wurde, dass Sie sich entspannen und den Moment genießen können.",
+
+  // TCW-34: SERVICIOS / CARTA (ALEMÁN)
+  "home.servicios.titulo": "Ein Fest für die Sinne",
+  "home.servicios.desc": "Eine umfangreiche Speisekarte für jeden Geschmack. Genießen Sie eine spektakuläre Auswahl an Vorspeisen, um Ihren Appetit anzuregen.",
+  "home.servicios.boton": "Entdecken Sie alle unsere Gerichte",
 };
