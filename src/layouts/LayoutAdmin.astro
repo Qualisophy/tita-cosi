@@ -1,0 +1,30 @@
+---
+// src/layouts/LayoutAdmin.astro
+import "../styles/global.css"; // <-- ESTO TRAE TODA LA MAGIA DE TAILWIND
+
+interface Props {
+  title: string;
+  lang: string;
+}
+
+const { title, lang } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Tita Cosi CRM" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-background text-on-surface font-body-md overflow-x-hidden min-h-screen">
+    <slot />
+  </body>
+</html>
