@@ -1,3 +1,5 @@
+import { homeEs, homeEn, homeFr, homeDe } from './locales/home';
+
 export const languages = {
   es: "ES",
   en: "EN",
@@ -52,6 +54,7 @@ export const ui = {
     "contacto.form.mensaje.titulo": "Mensaje",
     "contacto.form.mensaje.help-text": "Cuéntanos cómo podemos ayudarte...",
     "contacto.form.button.titulo": "Enviar Mensaje",
+    ...homeEs,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Nuestra Carta",
     "carta.header1": "Descubre nuestros sabores",
@@ -103,6 +106,7 @@ export const ui = {
     "contacto.form.mensaje.titulo": "Message",
     "contacto.form.mensaje.help-text": "Tell us how we can help you...",
     "contacto.form.button.titulo": "Send Message",
+    ...homeEn,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Our Menu",
     "carta.header1": "Discover our flavours",
@@ -155,6 +159,7 @@ export const ui = {
     "contacto.form.mensaje.help-text":
       "Dites-nous comment nous pouvons vous aider...",
     "contacto.form.button.titulo": "Envoyer le message",
+    ...homeFr,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Notre Carte",
     "carta.header1": "Découvrez nos saveurs",
@@ -207,6 +212,7 @@ export const ui = {
     "contacto.form.mensaje.help-text":
       "Teilen Sie uns mit, wie wir Ihnen helfen können...",
     "contacto.form.button.titulo": "Nachricht senden",
+    ...homeDe,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Unsere Speisekarte",
     "carta.header1": "Entdecken Sie unsere Aromen",

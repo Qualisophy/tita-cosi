@@ -8,7 +8,8 @@ import { languages } from '../../i18n/ui';
 // 1. Importamos Astro assets para optimización automática
 import { Image } from 'astro:assets';
 import bannerImg from '../../assets/banner.jpg'; // Astro sabrá que esta es para procesar
-
+import QuienesSomos from '../../components/react/home/QuienesSomos';
+import QueHacemos from '../../components/react/home/QueHacemos';
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }
@@ -23,9 +24,11 @@ const t = useTranslations(lang);
     
     <Hero currentLang={lang} backgroundImage={bannerImg} client:load />
 
-    <section class="h-screen bg-titacosi-surface flex items-center justify-center border-t border-titacosi-primary/10">
-        <h2 class="font-serif text-3xl">Sección: Quiénes Somos</h2>
-    </section>
+    {/* Sección 2: Quiénes Somos (React) */}
+    <QuienesSomos currentLang={lang} />
+
+    {/* Sección 3: Qué Hacemos (React) */}
+    <QueHacemos currentLang={lang} />
 
   </div>
 </Layout>
