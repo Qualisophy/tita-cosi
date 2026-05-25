@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Taberna Tita Cosi</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Newsreader:opsz,wght@6..72,400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e3e2e0",
+                    "secondary-container": "#e7e2d8",
+                    "surface-tint": "#5f5e5e",
+                    "surface": "#faf9f7",
+                    "inverse-surface": "#2f3130",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary-container": "#67645c",
+                    "on-tertiary-fixed": "#3f0207",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdad8",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e9e8e6",
+                    "on-secondary-fixed": "#1d1c16",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#faf9f7",
+                    "secondary-fixed": "#e7e2d8",
+                    "on-tertiary-fixed-variant": "#7a2d2e",
+                    "secondary-fixed-dim": "#cbc6bc",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#360004",
+                    "on-tertiary-container": "#d77574",
+                    "on-surface-variant": "#444748",
+                    "on-background": "#1a1c1b",
+                    "outline": "#747878",
+                    "primary-fixed": "#e4e2e1",
+                    "inverse-primary": "#c8c6c5",
+                    "on-primary-container": "#929191",
+                    "surface-container": "#efeeec",
+                    "on-secondary-fixed-variant": "#49473f",
+                    "on-primary-fixed-variant": "#474746",
+                    "secondary": "#615e56",
+                    "primary": "#151616",
+                    "surface-container-low": "#f4f3f1",
+                    "outline-variant": "#c4c7c7",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#541114",
+                    "on-primary-fixed": "#1b1c1c",
+                    "primary-container": "#2a2a2a",
+                    "surface-dim": "#dadad8",
+                    "inverse-on-surface": "#f1f1ef",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "surface-variant": "#e3e2e0",
+                    "on-surface": "#1a1c1b",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "background": "#faf9f7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Newsreader"],
+                    "body-lg": ["DM Sans"],
+                    "headline-xl": ["Newsreader"],
+                    "body-md": ["DM Sans"],
+                    "label-sm": ["DM Sans"],
+                    "headline-lg-mobile": ["Newsreader"],
+                    "headline-lg": ["Newsreader"],
+                    "label-md": ["DM Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "headline-lg": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-md sticky top-0 w-full z-50 border-b border-outline-variant/30 shadow-md">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Taberna Tita Cosi</a>
+<!-- Navigation Links (Hidden on Mobile) -->
+<ul class="hidden md:flex space-x-gutter items-center">
+<li><a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-200" href="#">Inicio</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Quiénes Somos</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Qué Hacemos</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Carta</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contacto</a></li>
+</ul>
+<!-- Actions -->
+<div class="hidden md:flex items-center space-x-base">
+<span class="font-label-md text-label-md text-on-surface-variant mr-4">ES | EN</span>
+<a class="font-label-sm text-label-sm uppercase bg-on-tertiary-fixed-variant text-on-primary px-6 py-3 rounded hover:bg-tertiary-container transition-colors duration-200" href="#">Reserva tu mesa</a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-32 flex flex-col md:flex-row items-center gap-gutter">
+<div class="w-full md:w-1/2 flex flex-col space-y-8 z-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-primary leading-tight">El sabor auténtico en el corazón de Teatinos.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Descubre una propuesta gastronómica donde la tradición se encuentra con la precisión contemporánea. Platos pensados para compartir y disfrutar en un ambiente acogedor.</p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="inline-flex justify-center items-center font-label-sm text-label-sm uppercase bg-on-tertiary-fixed-variant text-on-primary px-8 py-4 rounded hover:bg-tertiary-container transition-colors duration-200 shadow-lg shadow-tertiary-container/10" href="#">Reserva tu mesa</a>
+<a class="inline-flex justify-center items-center font-label-sm text-label-sm uppercase bg-transparent border border-primary text-primary px-8 py-4 rounded hover:bg-surface-container-low transition-colors duration-200" href="#">Ver la Carta</a>
+</div>
+</div>
+<div class="w-full md:w-1/2 mt-12 md:mt-0 relative">
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden shadow-xl shadow-tertiary-container/10">
+<img class="w-full h-full object-cover" data-alt="A sophisticated, high-end culinary photograph of a beautifully plated Mediterranean dish on a dark, rustic ceramic plate. The setting evokes a modern Spanish tavern with a dark stone countertop. Soft, warm directional lighting highlights the textures of the food and casts subtle, dramatic shadows. The color palette features rich earthy tones, deep reds, and pristine whites, embodying a sophisticated minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM8KhH4sa16_yNjI57F-aQoSyz9ddUx7NdC4jHL3-HjDjXnNiN8BZh2BsxhLNNtYo9FlX5uZ9cT5iZ-3cslonszN89nqSsCqkUFIByWTzxHkOIpftAY0g405yAEqKLMqtt2tPlIJ71pFcph8ZRV4la5mlU98LtXR1wF1chCR-21MXtQdk6ldlwvp_GwMnzLK753H1NUyKXkUXj9kSEwoTiDC77FUPtoy3GdElgzmwKwJkPLyYkh9Jqc58iQsP122DZhzz29v4SNCY"/>
+</div>
+<!-- Decorative minimal element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-surface-container-highest rounded-full -z-10"></div>
+</div>
+</section>
+<!-- Quiénes Somos -->
+<section class="w-full bg-surface-container-low py-24">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 relative">
+<img class="w-full h-[600px] object-cover rounded-lg shadow-md" data-alt="An elegant interior shot of a modern, upscale tavern bathed in warm, diffused natural light. The scene features minimalist stone countertops, sleek wooden furniture, and subtle architectural details that create an atmosphere of established trust and contemporary hospitality. The light mode aesthetic is maintained with high-key contrast, soft shadows, and an inviting, sophisticated color palette of creams, warm greys, and subtle crimson accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTLL7O_oSiu91Kid0C-gV_O2azYZMHwr_OvB6CxxgvXvMCwC6kZvxDvlRm3ehSHRhoXOMG74rHmsIrbtiDzsHFLXEOnn2CR2mCi4_h_JGrLGr6T9v9NoVnmgrhQe1VAA_RGPKx_8HTHNcE6KJpa_KaIa7pktqOZ1T6RZ7cizFOhEFuEbmtA53nyCIlAi9CeEpGeox6yM0BMqBy2dDDChkjsG7eek2ZejXZD4CW5qV0Zmd6bZqc_sCBcHPUxzVkAjVneVN7EwGvX0o"/>
+</div>
+<div class="md:col-span-1"></div>
+<div class="md:col-span-6 flex flex-col space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-primary">Mucho más que una taberna</h2>
+<div class="w-12 h-1 bg-on-tertiary-fixed-variant"></div>
+<p class="font-body-md text-body-md text-on-surface-variant">En Taberna Tita Cosi, no solo servimos comida; creamos momentos. Nuestra historia nace de la pasión por los sabores honestos y la hospitalidad cálida que caracteriza al espíritu malagueño. Cada plato es un tributo a nuestras raíces, elaborado con técnica moderna y un respeto absoluto por el producto.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Creemos en la simplicidad sofisticada. Un buen vino, una tapa perfecta y la compañía adecuada en un espacio diseñado para hacerte sentir como en casa, pero con la excelencia de un restaurante de primera.</p>
+<div class="pt-4">
+<a class="inline-flex items-center font-label-md text-label-md text-primary font-bold hover:text-on-tertiary-fixed-variant transition-colors group" href="#">
+                            Conócenos mejor
+                            <span class="material-symbols-outlined ml-2 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Qué Hacemos (Bento Grid) -->
+<section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary">Nuestra Filosofía</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-highest p-8 rounded-lg border border-surface-dim hover:shadow-md hover:shadow-tertiary-container/5 transition-shadow duration-300 flex flex-col items-start">
+<div class="bg-surface p-4 rounded-full mb-6 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Ingredientes de Primera</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Seleccionamos cuidadosamente cada ingrediente, priorizando proveedores locales para garantizar la máxima frescura y calidad en cada bocado.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-highest p-8 rounded-lg border border-surface-dim hover:shadow-md hover:shadow-tertiary-container/5 transition-shadow duration-300 flex flex-col items-start">
+<div class="bg-surface p-4 rounded-full mb-6 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Cocina con Mimito</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cada receta se elabora con tiempo y dedicación. Respetamos los procesos tradicionales, fusionándolos con técnicas actuales para sorprenderte.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-highest p-8 rounded-lg border border-surface-dim hover:shadow-md hover:shadow-tertiary-container/5 transition-shadow duration-300 flex flex-col items-start">
+<div class="bg-surface p-4 rounded-full mb-6 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">wine_bar</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Ambiente Cercano</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Diseñamos nuestro espacio para que te relajes. Un servicio atento, profesional pero cercano, donde tú eres el protagonista de la velada.</p>
+</div>
+</div>
+</section>
+<!-- Teaser Carta -->
+<section class="w-full bg-surface-container-highest py-24">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary max-w-md">Un festín para los sentidos</h2>
+<a class="hidden md:inline-flex items-center font-label-md text-label-md text-primary font-bold hover:text-on-tertiary-fixed-variant transition-colors group" href="#">
+                    Descubre todos nuestros platos
+                    <span class="material-symbols-outlined ml-2 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A macro, top-down shot of a gourmet tapas selection presented on an elegant, minimalist white plate resting on a textured grey stone surface. The lighting is bright and soft, typical of a high-end restaurant's light-mode design style, enhancing the vibrant colors of the fresh ingredients. Deep crimson wine reduction drizzles add a striking contrast against the pale cream background, communicating culinary precision and sophisticated taste." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLRNgqi7slN4xEvGdas8TUbzhN5EBSkeS0B-yoYSirjr-VZJnq0LC7JTNFiFh5SeS83372vT7PgzabIedFldHyuMnaPSpiXRwme7rgzF7wynQw8siNihT0YdlPSl4CO3kvo8LCcxjQFioHWTqEvJCPWt_kwB6uGXXx53BbiyYeI-GI-lUkCvHixleBsViCPZg214H0tQhNnWQQ55gVr46jbMuORd3ZdmAnJQdj4kAyUjzdIi4939UvgHXup4-py-J3Jn_kWa5AWNU"/>
+</div>
+<div class="md:col-span-1 md:row-span-1 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close-up view of a perfectly roasted piece of meat, sliced to reveal a tender interior, elegantly plated with a delicate garnish and a rich, dark sauce. The dish sits on a neutral-toned ceramic plate. The ambient lighting is warm and directional, casting soft shadows that highlight the textures of the food and the minimalist table setting, aligning with a corporate-modern, refined tavern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk4yvKix7X3hn_PZTsAV7u5RT4NKNh7WEV9t1TtNQw3zgX3a7GszbTyuFkSFXs6fRUWzeP39sOYud79vJwEIzHp0-htxVbVkOui7MX-VJI0hOeOq97Vc_gMlnRmwVRs1QSCeyIsR0KC5b18jkY17i2katmbh_v4yT-PU-Kz86OOzfHIjKt4Ank785ld5a8xk1a5RT6w1y0-N0SFDnqo_XEiVvaKi7PuXTjBIpgKQjbcmta0PpJiArXwAlV7vxS1nxqV1rn_2jWr_c"/>
+</div>
+<div class="md:col-span-1 md:row-span-1 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A beautifully composed photograph of a fresh, modern Mediterranean salad featuring vibrant greens, bright red tomatoes, and artisanal cheese on a thick, off-white stoneware dish. The bright, high-key lighting creates a clean, sophisticated atmosphere, emphasizing the freshness of the ingredients. The background is slightly blurred, focusing attention entirely on the culinary details within a minimalist, high-end environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaWXip7U42DK82q5OJML7Wp39hhg42-_BZsKGXn9_FhTJJRj_9RcdaeHGq8sEBk1Wpu1IaVBEJ9Hj-7wOhuW-jwSWlAgud7EEF3ufzWLFCmZsdIMMlAa3ITRkcusd56gMEhvcHieBqSc-dy7VyxaKvJhV-g_sLMmRg8PLt9XIVvizpy8UHeXIFOzVhwkYsmoIwssRMVp-_GceCUXk35aKcNtuzLhAG4-v78qydXRvxT5Pr96k6Hztv9sTUBoA3yLedtrr0gNg_-ng"/>
+</div>
+<div class="md:col-span-2 md:row-span-1 rounded-lg overflow-hidden group relative flex items-center justify-center bg-surface-container-low">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:scale-105 transition-transform duration-700" data-alt="A stylish lifestyle shot of a glass of deep red wine resting next to a blurred plate of artisanal bread on a light wooden table. The lighting is airy and natural, casting soft, diffused shadows that evoke a relaxed yet refined dining experience. The composition is clean and minimalist, utilizing negative space to convey a sense of modern elegance and premium quality inherent to the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9tNLBoLEm7PsjTfe31RlLy-oxOFz8ngVqXEVOlgdbn6NdocrEvoAhYXPAQoOsQS39vzL35obKru6um72I6AcugZJNUzmVR3pmvY8G3dAFZB8du0_eUe7cGaBRg0IaLOviQsMd47_zRZiqO9mQJLxko3nN1_cusE-dtjKelaLlfVHawiqnX5lPsehuwcysl0YpAPXFwcEb1tnuRzpcy4GOVHda2yaO_J-knExNM9zdni9Swt_t2Q0qpQOWmoVpm6F32OB921ppWek"/>
+<div class="z-10 text-center p-6">
+<p class="font-headline-md text-headline-md text-primary mb-2">Carta de Vinos</p>
+<p class="font-body-md text-body-md text-primary">Selección exclusiva</p>
+</div>
+</div>
+</div>
+<div class="mt-8 md:hidden text-center">
+<a class="inline-flex items-center font-label-md text-label-md text-primary font-bold" href="#">
+                    Descubre todos nuestros platos
+                    <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Contacto Rápido -->
+<section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-32 text-center">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6">¿Nos vemos hoy?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Asegura tu sitio para disfrutar de una experiencia gastronómica inolvidable. Estamos listos para recibirte.</p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+<a class="w-full sm:w-auto inline-flex justify-center items-center font-label-sm text-label-sm uppercase bg-on-tertiary-fixed-variant text-on-primary px-8 py-4 rounded hover:bg-tertiary-container transition-colors duration-200" href="#">
+                Reserva ahora
+            </a>
+<a class="w-full sm:w-auto inline-flex justify-center items-center font-label-sm text-label-sm uppercase bg-transparent border border-primary text-primary px-8 py-4 rounded hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-2" style="font-size: 20px;">chat</span>
+                Háblanos por WhatsApp
+            </a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant w-full py-16">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col space-y-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">Taberna Tita Cosi</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Taberna Tita Cosi. Tu rincón gastronómico en Teatinos.</p>
+</div>
+<!-- Links Group 1 -->
+<div class="flex flex-col space-y-3">
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 w-fit" href="#">Inicio</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 w-fit" href="#">Carta</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 w-fit" href="#">Reservas</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 w-fit" href="#">Contacto</a>
+</div>
+<!-- Links Group 2 -->
+<div class="flex flex-col space-y-3">
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 w-fit" href="#">Aviso Legal</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 w-fit" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 w-fit" href="#">Cookies</a>
+</div>
+</div>
+</footer>
+</body></html>
