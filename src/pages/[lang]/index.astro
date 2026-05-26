@@ -28,7 +28,7 @@ const t = useTranslations(lang);
     <Hero currentLang={lang} backgroundImage={bannerImg} client:load />
 
     {/* Sección 2: Quiénes Somos (React) */}
-    <QuienesSomos currentLang={lang} />
+    <QuienesSomos currentLang={lang} client:visible />
 
     {/* Sección 3: Qué Hacemos (React) */}
     <QueHacemos currentLang={lang} />
