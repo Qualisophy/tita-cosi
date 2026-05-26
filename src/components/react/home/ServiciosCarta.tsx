@@ -46,7 +46,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
               loading="lazy"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <span className="text-white text-lg font-bold">Croquetas Caseras</span>
+              <span className="text-white text-lg font-bold">{t("home.servicios.foto.1")}</span>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
               loading="lazy"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <span className="text-white text-lg font-bold">Tostas y Bocados</span>
+              <span className="text-white text-lg font-bold">{t("home.servicios.foto.2")}</span>
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
               loading="lazy"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <span className="text-white text-lg font-bold">Carnes Jugosas</span>
+              <span className="text-white text-lg font-bold">{t("home.servicios.foto.3")}</span>
             </div>
           </div>
 

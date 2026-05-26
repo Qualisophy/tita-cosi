@@ -18,6 +18,9 @@ export const homeEs = {
   "home.servicios.titulo": "Un festín para los sentidos",
   "home.servicios.desc": "Una carta amplia pensada para todos los gustos. Disfruta de una selección espectacular de entrantes para ir abriendo boca.",
   "home.servicios.boton": "Descubre todos nuestros platos",
+  "home.servicios.foto.1": "Croquetas Caseras",
+  "home.servicios.foto.2": "Tostas y Bocados",
+  "home.servicios.foto.3": "Carnes Jugosas",
 };
 
 export const homeEn = {
@@ -40,6 +43,9 @@ export const homeEn = {
   "home.servicios.titulo": "A feast for the senses",
   "home.servicios.desc": "An extensive menu designed for all tastes. Enjoy a spectacular selection of starters to whet your appetite.",
   "home.servicios.boton": "Discover all our dishes",
+  "home.servicios.foto.1": "Homemade Croquettes",
+  "home.servicios.foto.2": "Toasts & Bites",
+  "home.servicios.foto.3": "Juicy Meats",
 };
 
 export const homeFr = {
@@ -62,6 +68,9 @@ export const homeFr = {
   "home.servicios.titulo": "Un festin pour les sens",
   "home.servicios.desc": "Un menu complet conçu pour tous les goûts. Profitez d'une sélection spectaculaire d'entrées pour vous mettre en appétit.",
   "home.servicios.boton": "Découvrez tous nos plats",
+  "home.servicios.foto.1": "Croquettes Maison",
+  "home.servicios.foto.2": "Toasts et Bouchées",
+  "home.servicios.foto.3": "Viandes Juteuses",  
 };
 
 export const homeDe = {
@@ -84,4 +93,7 @@ export const homeDe = {
   "home.servicios.titulo": "Ein Fest für die Sinne",
   "home.servicios.desc": "Eine umfangreiche Speisekarte für jeden Geschmack. Genießen Sie eine spektakuläre Auswahl an Vorspeisen, um Ihren Appetit anzuregen.",
   "home.servicios.boton": "Entdecken Sie alle unsere Gerichte",
+  "home.servicios.foto.1": "Hausgemachte Kroketten",
+  "home.servicios.foto.2": "Toasts & Häppchen",
+  "home.servicios.foto.3": "Saftiges Fleisch",
 };
