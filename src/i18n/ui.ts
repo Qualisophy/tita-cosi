@@ -221,4 +221,3 @@ export const ui = {
     "menu.buscador2": "Z.B. Kroketten, Glutenfrei...",
   },
 } as const;
-
