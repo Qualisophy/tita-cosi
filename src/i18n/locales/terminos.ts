@@ -1,0 +1,75 @@
+export const languages = {
+  es: "ES",
+  en: "EN",
+  fr: "FR",
+  de: "DE",
+};
+
+export const defaultLang = "es";
+
+export const ui = {
+  es: {
+    "terms.titulo": "Términos y Condiciones",
+    "terms.1.titulo": "1. Reservas y Confirmaciones",
+    "terms.1.1.texto": "Disponibilidad: Todas las reservas están sujetas a disponibilidad.",
+    "terms.1.2.texto": "Reservas vía IA y WhatsApp: Para las reservas procesadas a través de nuestro asistente de Inteligencia Artificial en WhatsApp, la reserva solo se considerará confirmada oficialmente una vez que reciba el mensaje final de validación.",
+    "terms.1.3.texto": "Tiempo de cortesía: Mantendremos su mesa durante 15 minutos pasada la hora de su reserva. Si se retrasa y no nos avisa con antelación, la taberna se reserva el derecho de liberar la mesa para otros clientes.",
+    "terms.2.titulo": "2. Política de Privacidad y Tratamiento de Datos (Aviso Legal)",
+    "terms.2.texto": "Nos comprometemos a proteger su privacidad y a tratar su información personal de forma transparente.",
+    "terms.2.1.texto": "Responsable del tratamiento: RESTAURANTE COSI SL.",
+    "terms.2.2.texto": "Finalidad: Sus datos se recopilan exclusivamente para la gestión de reservas, atención al cliente y envío de comunicaciones de cortesía (incluidas las notificaciones automatizadas procesadas a través de Make y WhatsApp).",
+    "terms.2.3.texto": "Legitimación: Al rellenar nuestro formulario de reserva o interactuar con nuestro sistema de reservas por WhatsApp, nos otorga su consentimiento explícito para procesar sus datos con estos fines.",
+    "terms.2.4.texto": "Sus derechos: Tiene derecho a acceder, rectificar y suprimir sus datos personales en cualquier momento. Para ejercer estos derechos, por favor contacte con nosotros.",
+    "terms.3.titulo": "3. Requisitos Dietéticos y Alergias",
+    "terms.3.1.texto": "Por favor, informe a nuestro personal o indíquelo en su reserva si tiene alguna alergia alimentaria o restricción dietética severa.",
+    "terms.3.2.texto": "Aunque nos tomamos las alergias muy en serio, nuestra cocina manipula diversos alérgenos y no podemos garantizar un entorno 100% libre de alérgenos.",
+    "terms.4.titulo": "4. Precios y Pagos",
+    "terms.4.1.texto": "Todos los precios de nuestras cartas están indicados en Euros e incluyen los impuestos aplicables.",
+    "terms.4.2.texto": "Aceptamos efectivo y las principales tarjetas de crédito/débito.",
+    "terms.5.titulo": "5. Derecho de Admisión y Conducta",
+    "terms.5.1.texto": "Nos esforzamos por ofrecer un entorno seguro y agradable para todos los clientes y el personal. Nos reservamos el derecho de denegar el servicio o pedir a los clientes que abandonen el local si su comportamiento se considera inapropiado o molesto.",
+    "terms.6.titulo": "6. Modificaciones",
+    "terms.6.1.texto": "RESTAURANTE COSI SL. se reserva el derecho de actualizar o modificar estos términos en cualquier momento sin previo aviso.",
+  },
+  en: {
+    "terms.titulo":"Terms & Conditions",
+    "terms.1.titulo":"1. Reservations & Confirmations",
+    "terms.1.1.texto":"Availability: All reservations are subject to availability.",
+    "terms.1.2.texto":"AI & WhatsApp Bookings: For reservations processed via our Artificial Intelligence assistant on WhatsApp, the booking is only considered officially confirmed once you receive the final validation message.",
+    "terms.1.3.texto":"Holding Times: We will hold your table for 15 minutes past your reservation time. If you are delayed and fail to give us prior notice, the tavern reserves the right to release the table to other guests.",
+    "terms.2.titulo":"2. Privacy Policy & Data Handling (Legal Notice)",
+    "terms.2.texto":"We are committed to protecting your privacy and handling your personal information transparently.",
+    "terms.2.1.texto":"Data Controller: RESTAURANTE COSI SL.",
+    "terms.2.2.texto":"Purpose: Your data is collected exclusively for managing reservations, providing customer service, and sending courtesy communications (including automated notifications processed via Make and WhatsApp).",
+    "terms.2.3.texto":"Legal Basis: By filling out our booking form or interacting with our WhatsApp reservation system, you grant us explicit consent to process your data for these purposes.",
+    "terms.2.4.texto":"Your Rights: You have the right to access, rectify, and delete your personal data at any time. To exercise these rights, please contact with us.",
+    "terms.3.titulo":"3. Dietary Requirements & Allergies",
+    "terms.3.1.texto":"Please inform our staff or note in your reservation any food allergies or severe dietary restrictions.",
+    "terms.3.2.texto":"While we take allergies very seriously, our kitchen handles various allergens, and we cannot guarantee a 100% allergen-free environment.",
+    "terms.4.titulo":"4. Pricing & Payments",
+    "terms.4.1.texto":"All prices on our menus are listed in Euros and include applicable taxes.",
+    "terms.4.2.texto":"We accept cash and all major credit/debit cards.",
+    "terms.5.titulo":"5. Right of Admission & Conduct",
+    "terms.5.1.texto":"We strive to provide a safe and pleasant environment for all guests and staff. We reserve the right to refuse service or ask guests to leave if their behavior is deemed disruptive or inappropriate.",
+    "terms.6.titulo":"6. Modifications",
+    "terms.6.1.texto":"RESTAURANTE COSI SL. reserves the right to update or modify these terms at any time without prior notice.",
+  },
+  fr: {
+
+  },
+  de: {
+  },
+} as const;
+
+
+export function getLangFromUrl(url: URL) {
+  const [, lang] = url.pathname.split("/");
+  if (lang in ui) return lang as keyof typeof ui;
+  return defaultLang;
+}
+
+export function useTranslations(lang: keyof typeof ui) {
+  return function t(key: keyof (typeof ui)[typeof defaultLang]) {
+    return (ui[lang] as Record<string, string>)[key] || ui[defaultLang][key];
+  };
+}
