@@ -42,7 +42,7 @@ export default function Header({ currentLang, logo }: HeaderProps) {
                 <img
                   src={logo.src}
                   alt="Tita Cosi Logo"
-                  className="h-30 w-auto object-contain"
+                  className="h-10 w-auto object-contain"
                   loading="eager"
                 />
               </a>
@@ -108,7 +108,10 @@ export default function Header({ currentLang, logo }: HeaderProps) {
                   <div className="absolute right-0 mt-2 w-24 bg-white border border-titacosi-surface rounded shadow-lg py-1">
                     {Object.entries(languages).map(
                       ([code, label]) =>
-                        (code === "es" || code === "en" || code === "fr" || code === "de") && (
+                        (code === "es" ||
+                          code === "en" ||
+                          code === "fr" ||
+                          code === "de") && (
                           <a
                             key={code}
                             href={`/${code}`}

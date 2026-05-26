@@ -7,14 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Mantenemos tus colores originales para los componentes compartidos
         titacosi: {
           base: "#F9F8F6",
           surface: "#E8E3D9",
           primary: "#2A2A2A",
           accent: "#8C3B3B",
         },
-        // Nueva paleta del sistema de diseño
         "surface-container-lowest": "#ffffff",
         "surface-container-low": "#f4f3f1",
         "surface-container": "#efeeec",
@@ -66,10 +64,8 @@ export default {
         gutter: "24px",
       },
       fontFamily: {
-        // Mantenemos tus fuentes globales
         sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
         serif: ['"Fraunces"', ...defaultTheme.fontFamily.serif],
-        // Mapeamos las del diseño específico
         "headline-md": ["Newsreader", ...defaultTheme.fontFamily.serif],
         "body-lg": ["DM Sans", ...defaultTheme.fontFamily.sans],
         "headline-xl": ["Newsreader", ...defaultTheme.fontFamily.serif],
