@@ -1,6 +1,8 @@
 // src/components/react/home/ServiciosCarta.tsx
 import { ui, defaultLang } from "../../../i18n/ui";
 
+import Button from "../ui/Button"; 
+
 interface ServiciosCartaProps {
   currentLang: keyof typeof ui;
   image1: string;
@@ -23,11 +25,12 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
           <p className="text-neutral-600 text-lg md:text-xl leading-relaxed mb-8">
             {t("home.servicios.desc")}
           </p>
-          <a
-            href={`/${currentLang}/carta`}
-            className="inline-block px-10 py-4 bg-[#8b3d3d] hover:bg-[#6e2f2f] text-white font-semibold rounded-md transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-          >
-            {t("home.servicios.boton")}
+          
+          {/* Componente Button implementado con su variante accent */}
+          <a href={`/${currentLang}/carta`}>
+            <Button variant="accent">
+              {t("home.servicios.boton")}
+            </Button>
           </a>
         </div>
 
