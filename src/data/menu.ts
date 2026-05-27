@@ -67,7 +67,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
+      image: "/carta/comidas/empezamos/jamon-iberico.jpg",
     },
     {
       id: 2,
@@ -76,7 +76,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6.5,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
+      image: "/carta/comidas/empezamos/torreznos-lima.png",
     },
     {
       id: 3,
@@ -85,7 +85,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.8,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/brocheta-langostinos.jpg",
+      image: "/carta/comidas/empezamos/brocheta-langostinos.jpg",
     },
     {
       id: 4,
@@ -94,7 +94,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/lagrimitas-pollo.jpg",
+      image: "/carta/comidas/empezamos/lagrimitas-pollo.jpg",
     },
     {
       id: 5,
@@ -103,7 +103,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8.5,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/totopos-caseros.jpg",
+      image: "/carta/comidas/empezamos/totopos-caseros.jpg",
     },
     {
       id: 6,
@@ -113,7 +113,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensaladilla-rusa.jpg",
+      image: "/carta/comidas/empezamos/ensaladilla-rusa.jpg",
     },
     {
       id: 7,
@@ -123,7 +123,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tartar-salchichon.jpeg",
+      image: "/carta/comidas/empezamos/tartar-salchichon.jpeg",
     },
     {
       id: 8,
@@ -133,7 +133,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Empezamos",
       tags: ["Picante"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
+      image: "/carta/comidas/empezamos/papas-chipotle.jpg",
     },
     {
       id: 9,
@@ -143,7 +143,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Empezamos",
       tags: ["Muy Picante"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
+      image: "/carta/comidas/empezamos/papas-bravas.jpeg",
     },
     {
       id: 10,
@@ -153,7 +153,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
     },
     {
       id: 11,
@@ -162,7 +162,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
+      image: "/carta/comidas/empezamos/tomate-melva.png",
     },
     {
       id: 12,
@@ -171,7 +171,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
+      image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
     },
     {
       id: 13,
@@ -180,7 +180,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Empezamos",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
     },
 
     // CROQUETAS
@@ -192,7 +192,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquetas",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
+      image: "/carta/comidas/croquetas/choco.jpg",
     },
     {
       id: 15,
@@ -202,7 +202,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquetas",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
+      image: "/carta/comidas/croquetas/puchero.jpeg",
     },
     {
       id: 16,
@@ -212,7 +212,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquetas",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
+      image: "/carta/comidas/croquetas/manzana.jpg",
     },
     {
       id: 17,
@@ -222,7 +222,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquetas",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
+      image: "/carta/comidas/croquetas/texmex.jpg",
     },
     {
       id: 18,
@@ -232,7 +232,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquetas",
       tags: ["Gourmet", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
+      image: "/carta/comidas/croquetas/jamon.jpeg",
     },
     {
       id: 19,
@@ -242,7 +242,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquetas",
       tags: ["Gourmet", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
+      image: "/carta/comidas/croquetas/berenjena.jpg",
     },
     {
       id: 20,
@@ -252,7 +252,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquetas",
       tags: ["Nuevo", "Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
+      image: "/carta/comidas/croquetas/vaca.jpg",
     },
 
     // TOSTAS
@@ -263,7 +263,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Tostas",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
+      image: "/carta/comidas/tostas/salmon.jpeg",
     },
     {
       id: 22,
@@ -272,7 +272,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Tostas",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
+      image: "/carta/comidas/tostas/presa.jpeg",
     },
     {
       id: 23,
@@ -281,7 +281,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Tostas",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
+      image: "/carta/comidas/tostas/carrillada.jpeg",
     },
     {
       id: 24,
@@ -290,7 +290,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Tostas",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
+      image: "/carta/comidas/tostas/serrana.jpg",
     },
     {
       id: 25,
@@ -299,7 +299,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Tostas",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
+      image: "/carta/comidas/tostas/vegetariana.jpeg",
     },
     {
       id: 26,
@@ -308,7 +308,7 @@ export const menuItems: Record<string, any[]> = {
       price: 13,
       category: "Tostas",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
+      image: "/carta/comidas/tostas/atun-rojo.jpg",
     },
 
     // BOCADOS
@@ -319,7 +319,7 @@ export const menuItems: Record<string, any[]> = {
       price: 7.5,
       category: "Bocados",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
+      image: "/carta/comidas/bocados/mini-burger.jpg",
     },
     {
       id: 28,
@@ -328,7 +328,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bocados",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
+      image: "/carta/comidas/bocados/taco-amor.jpg",
     },
     {
       id: 29,
@@ -337,7 +337,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bocados",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/brioche.jpg",
+      image: "/carta/comidas/bocados/brioche.jpg",
     },
     {
       id: 30,
@@ -346,7 +346,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Bocados",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
+      image: "/carta/comidas/bocados/burger-americana.jpeg",
     },
     {
       id: 31,
@@ -355,7 +355,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Bocados",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
+      image: "/carta/comidas/bocados/burger-cabrita.jpg",
     },
     {
       id: 32,
@@ -364,7 +364,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Bocados",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
+      image: "/carta/comidas/bocados/burger-espanolita.jpg",
     },
 
     // ESPECIALIDADES
@@ -375,7 +375,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Especialidades",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
+      image: "/carta/comidas/especialidades/huevos-cecina.jpg",
     },
     {
       id: 34,
@@ -384,7 +384,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Especialidades",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
     },
     {
       id: 35,
@@ -393,7 +393,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Especialidades",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
     },
     {
       id: 36,
@@ -402,7 +402,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Especialidades",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/fideos-langostinos.jpg",
     },
     {
       id: 37,
@@ -411,7 +411,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Especialidades",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/fideos-carabineros.jpeg",
     },
 
     // CARNES
@@ -422,7 +422,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17.5,
       category: "Carnes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
+      image: "/carta/comidas/carnes/carrillada-angus.jpg",
     },
     {
       id: 39,
@@ -431,7 +431,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Carnes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
+      image: "/carta/comidas/carnes/presa-iberica.jpg",
     },
     {
       id: 40,
@@ -440,7 +440,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Carnes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
+      image: "/carta/comidas/carnes/pluma-iberica.png",
     },
     {
       id: 41,
@@ -450,7 +450,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Carnes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
+      image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
     },
 
     // ARROCES
@@ -461,7 +461,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Arroces",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
+      image: "/carta/comidas/arroces/banda.jpeg",
     },
     {
       id: 43,
@@ -470,7 +470,7 @@ export const menuItems: Record<string, any[]> = {
       price: 19,
       category: "Arroces",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
+      image: "/carta/comidas/arroces/negro-bacalao.jpeg",
     },
     {
       id: 44,
@@ -479,7 +479,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Arroces",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
+      image: "/carta/comidas/arroces/negro-carabineros.jpg",
     },
     {
       id: 45,
@@ -488,7 +488,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Arroces",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
+      image: "/carta/comidas/arroces/marisco-pulpo.jpg",
     },
     {
       id: 46,
@@ -497,7 +497,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Arroces",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
+      image: "/carta/comidas/arroces/marisco-carabineros.jpg",
     },
     {
       id: 47,
@@ -506,7 +506,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Arroces",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
+      image: "/carta/comidas/arroces/carne.jpg",
     },
 
     // POSTRES
@@ -517,7 +517,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Postres",
       tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
+      image: "/carta/comidas/postres/tartas.jpg",
     },
     {
       id: 49,
@@ -526,7 +526,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Postres",
       tags: ["Sin Gluten", "Sin Lactosa"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
+      image: "/carta/comidas/postres/tiramisu.jpg",
     },
 
 
@@ -541,7 +541,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-dorada.jpg",
+      image: "/carta/bebidas/cervezas/aguila-dorada.jpg",
     },
     {
       id: 51,
@@ -551,7 +551,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-rubia.jpg",
+      image: "/carta/bebidas/cervezas/la-rubia.jpg",
     },
     {
       id: 52,
@@ -560,7 +560,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
+      image: "/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
     },
     {
       id: 53,
@@ -569,7 +569,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-alcazar.jpg",
+      image: "/carta/bebidas/cervezas/la-alcazar.jpg",
     },
     {
       id: 54,
@@ -578,7 +578,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Bebidas",
       tags: ["Sin Alcohol"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-0.jpg",
     },
     {
       id: 55,
@@ -587,7 +587,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.3,
       category: "Bebidas",
       tags: ["Sin Alcohol"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-tostada-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-tostada-0.jpg",
     },
     {
       id: 56,
@@ -596,7 +596,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Bebidas",
       tags: ["Sin Gluten"],
-      image: "/src/assets/carta/bebidas/cervezas/estrella-sin-gluten.png",
+      image: "/carta/bebidas/cervezas/estrella-sin-gluten.png",
     },
 
     // VERMUTS
@@ -607,7 +607,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
+      image: "/carta/bebidas/vermuts/rojo.jpg",
     },
     {
       id: 58,
@@ -616,7 +616,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpeg",
     },
 
     // ROSADO
@@ -628,7 +628,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
+      image: "/carta/bebidas/rosado/frisse-rose.jpg",
     },
 
     // BLANCOS
@@ -640,7 +640,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
+      image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
     },
     {
       id: 61,
@@ -650,7 +650,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-verdejo.png",
+      image: "/carta/bebidas/blancos/embrumas-verdejo.png",
     },
     {
       id: 62,
@@ -660,7 +660,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
+      image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
     },
     {
       id: 63,
@@ -670,7 +670,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/diez-siglos.png",
+      image: "/carta/bebidas/blancos/diez-siglos.png",
     },
 
     // TINTOS
@@ -683,7 +683,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/finca-engalia.jpg",
+      image: "/carta/bebidas/tintos/ribera/finca-engalia.jpg",
     },
     {
       id: 65,
@@ -693,7 +693,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -703,7 +703,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-roble.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-roble.png",
     },
     {
       id: 67,
@@ -712,7 +712,7 @@ export const menuItems: Record<string, any[]> = {
       price: 25,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
     },
     /* Rioja */
     {
@@ -723,7 +723,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/azabache.jpg",
+      image: "/carta/bebidas/tintos/rioja/azabache.jpg",
     },
     {
       id: 69,
@@ -733,7 +733,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/carlos-serres.png",
+      image: "/carta/bebidas/tintos/rioja/carlos-serres.png",
     },
     {
       id: 70,
@@ -742,7 +742,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.webp",
     },
 
     // REFRESCOS
@@ -753,7 +753,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua.jpg",
+      image: "/carta/bebidas/refrescos/agua.jpg",
     },
     {
       id: 72,
@@ -762,7 +762,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua-gas.png",
+      image: "/carta/bebidas/refrescos/agua-gas.png",
     },
     {
       id: 73,
@@ -771,7 +771,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
     },
     {
       id: 74,
@@ -780,7 +780,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero.jpg",
     },
     {
       id: 75,
@@ -789,7 +789,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
     },
     {
       id: 76,
@@ -798,7 +798,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-naranja.jpg",
+      image: "/carta/bebidas/refrescos/fanta-naranja.jpg",
     },
     {
       id: 77,
@@ -807,7 +807,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
     },
     {
       id: 78,
@@ -816,7 +816,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.webp",
     },
     {
       id: 79,
@@ -825,7 +825,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-verano.jpg",
+      image: "/carta/bebidas/refrescos/tinto-verano.jpg",
     },
     {
       id: 80,
@@ -834,7 +834,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-racing.jpg",
+      image: "/carta/bebidas/refrescos/tinto-racing.jpg",
     },
     {
       id: 81,
@@ -843,7 +843,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/royal-bliss.png",
+      image: "/carta/bebidas/refrescos/royal-bliss.png",
     },
     {
       id: 82,
@@ -852,7 +852,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-limon.png",
+      image: "/carta/bebidas/refrescos/fuze-tea-limon.png",
     },
     {
       id: 83,
@@ -861,7 +861,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
+      image: "/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
     },
     {
       id: 84,
@@ -870,7 +870,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
     },
     {
       id: 85,
@@ -879,7 +879,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-naranja.png",
+      image: "/carta/bebidas/refrescos/aquarius-naranja.png",
     },
 
     // BEBIDAS (ALCOHÓLICAS)
@@ -890,7 +890,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/larios.jpg",
+      image: "/carta/bebidas/bebidas/larios.jpg",
     },
     {
       id: 87,
@@ -899,7 +899,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/tanqueray.jpg",
+      image: "/carta/bebidas/bebidas/tanqueray.jpg",
     },
     {
       id: 88,
@@ -908,7 +908,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/beefeater.jpg",
+      image: "/carta/bebidas/bebidas/beefeater.jpg",
     },
     {
       id: 89,
@@ -917,7 +917,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/seagrams.png",
+      image: "/carta/bebidas/bebidas/seagrams.png",
     },
     {
       id: 90,
@@ -926,7 +926,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/martin-millers.jpg",
+      image: "/carta/bebidas/bebidas/martin-millers.jpg",
     },
     {
       id: 91,
@@ -935,7 +935,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/legendario.jpg",
+      image: "/carta/bebidas/bebidas/legendario.jpg",
     },
     {
       id: 92,
@@ -944,7 +944,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/barcelo.jpg",
+      image: "/carta/bebidas/bebidas/barcelo.jpg",
     },
     {
       id: 93,
@@ -953,7 +953,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/brugal.jpg",
+      image: "/carta/bebidas/bebidas/brugal.jpg",
     },
     {
       id: 94,
@@ -962,7 +962,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/red-label.jpg",
+      image: "/carta/bebidas/bebidas/red-label.jpg",
     },
     {
       id: 95,
@@ -971,7 +971,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/black-label.png",
+      image: "/carta/bebidas/bebidas/black-label.png",
     },
     {
       id: 96,
@@ -980,7 +980,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/ballantines.jpg",
+      image: "/carta/bebidas/bebidas/ballantines.jpg",
     },
     {
       id: 97,
@@ -989,7 +989,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/macallan.jpg",
+      image: "/carta/bebidas/bebidas/macallan.jpg",
     },
     {
       id: 98,
@@ -998,7 +998,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/vodka-absolut.jpg",
+      image: "/carta/bebidas/bebidas/vodka-absolut.jpg",
     },
     {
       id: 99,
@@ -1007,7 +1007,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
+      image: "/carta/bebidas/bebidas/baileys.jpg",
     },
     {
       id: 100,
@@ -1016,7 +1016,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
+      image: "/carta/bebidas/bebidas/disaronno.jpg",
     },
     {
       id: 101,
@@ -1025,7 +1025,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/copa-licor.jpg",
+      image: "/carta/bebidas/bebidas/copa-licor.jpg",
     },
     {
       id: 102,
@@ -1034,7 +1034,7 @@ export const menuItems: Record<string, any[]> = {
       price: 5,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/jagermeister.jpg",
+      image: "/carta/bebidas/bebidas/jagermeister.jpg",
     },
     {
       id: 103,
@@ -1043,7 +1043,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bebidas",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/fernet.jpg",
+      image: "/carta/bebidas/bebidas/fernet.jpg",
     }
   ],
 
@@ -1058,7 +1058,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
+      image: "/carta/comidas/empezamos/jamon-iberico.jpg",
     },
     {
       id: 2,
@@ -1067,7 +1067,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6.5,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
+      image: "/carta/comidas/empezamos/torreznos-lima.png",
     },
     {
       id: 3,
@@ -1076,7 +1076,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.8,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/brocheta-langostinos.jpg",
+      image: "/carta/comidas/empezamos/brocheta-langostinos.jpg",
     },
     {
       id: 4,
@@ -1085,7 +1085,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/lagrimitas-pollo.jpg",
+      image: "/carta/comidas/empezamos/lagrimitas-pollo.jpg",
     },
     {
       id: 5,
@@ -1094,7 +1094,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8.5,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/totopos-caseros.jpg",
+      image: "/carta/comidas/empezamos/totopos-caseros.jpg",
     },
     {
       id: 6,
@@ -1104,7 +1104,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensaladilla-rusa.jpg",
+      image: "/carta/comidas/empezamos/ensaladilla-rusa.jpg",
     },
     {
       id: 7,
@@ -1114,7 +1114,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tartar-salchichon.jpeg",
+      image: "/carta/comidas/empezamos/tartar-salchichon.jpeg",
     },
     {
       id: 8,
@@ -1124,7 +1124,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Starters",
       tags: ["Spicy"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
+      image: "/carta/comidas/empezamos/papas-chipotle.jpg",
     },
     {
       id: 9,
@@ -1134,7 +1134,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Starters",
       tags: ["Very Spicy"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
+      image: "/carta/comidas/empezamos/papas-bravas.jpeg",
     },
     {
       id: 10,
@@ -1144,7 +1144,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
     },
     {
       id: 11,
@@ -1153,7 +1153,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
+      image: "/carta/comidas/empezamos/tomate-melva.png",
     },
     {
       id: 12,
@@ -1162,7 +1162,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
+      image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
     },
     {
       id: 13,
@@ -1171,7 +1171,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Starters",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
     },
 
     // CROQUETTES
@@ -1183,7 +1183,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
+      image: "/carta/comidas/croquetas/choco.jpg",
     },
     {
       id: 15,
@@ -1193,7 +1193,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
+      image: "/carta/comidas/croquetas/puchero.jpeg",
     },
     {
       id: 16,
@@ -1203,7 +1203,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
+      image: "/carta/comidas/croquetas/manzana.jpg",
     },
     {
       id: 17,
@@ -1213,7 +1213,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
+      image: "/carta/comidas/croquetas/texmex.jpg",
     },
     {
       id: 18,
@@ -1223,7 +1223,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet", "Gluten Free"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
+      image: "/carta/comidas/croquetas/jamon.jpeg",
     },
     {
       id: 19,
@@ -1233,7 +1233,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet", "Gluten Free"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
+      image: "/carta/comidas/croquetas/berenjena.jpg",
     },
     {
       id: 20,
@@ -1243,7 +1243,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["New", "Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
+      image: "/carta/comidas/croquetas/vaca.jpg",
     },
 
     // TOASTS
@@ -1254,7 +1254,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
+      image: "/carta/comidas/tostas/salmon.jpeg",
     },
     {
       id: 22,
@@ -1263,7 +1263,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
+      image: "/carta/comidas/tostas/presa.jpeg",
     },
     {
       id: 23,
@@ -1272,7 +1272,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
+      image: "/carta/comidas/tostas/carrillada.jpeg",
     },
     {
       id: 24,
@@ -1281,7 +1281,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
+      image: "/carta/comidas/tostas/serrana.jpg",
     },
     {
       id: 25,
@@ -1290,7 +1290,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
+      image: "/carta/comidas/tostas/vegetariana.jpeg",
     },
     {
       id: 26,
@@ -1299,7 +1299,7 @@ export const menuItems: Record<string, any[]> = {
       price: 13,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
+      image: "/carta/comidas/tostas/atun-rojo.jpg",
     },
 
     // BITES
@@ -1310,7 +1310,7 @@ export const menuItems: Record<string, any[]> = {
       price: 7.5,
       category: "Bites",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
+      image: "/carta/comidas/bocados/mini-burger.jpg",
     },
     {
       id: 28,
@@ -1319,7 +1319,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bites",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
+      image: "/carta/comidas/bocados/taco-amor.jpg",
     },
     {
       id: 29,
@@ -1328,7 +1328,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bites",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/brioche.jpg",
+      image: "/carta/comidas/bocados/brioche.jpg",
     },
     {
       id: 30,
@@ -1337,7 +1337,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Bites",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
+      image: "/carta/comidas/bocados/burger-americana.jpeg",
     },
     {
       id: 31,
@@ -1346,7 +1346,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Bites",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
+      image: "/carta/comidas/bocados/burger-cabrita.jpg",
     },
     {
       id: 32,
@@ -1355,7 +1355,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Bites",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
+      image: "/carta/comidas/bocados/burger-espanolita.jpg",
     },
 
     // SPECIALTIES
@@ -1366,7 +1366,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Specialties",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
+      image: "/carta/comidas/especialidades/huevos-cecina.jpg",
     },
     {
       id: 34,
@@ -1375,7 +1375,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Specialties",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
     },
     {
       id: 35,
@@ -1384,7 +1384,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Specialties",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
     },
     {
       id: 36,
@@ -1393,7 +1393,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Specialties",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/fideos-langostinos.jpg",
     },
     {
       id: 37,
@@ -1402,7 +1402,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Specialties",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/fideos-carabineros.jpeg",
     },
 
     // MEATS
@@ -1413,7 +1413,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17.5,
       category: "Meats",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
+      image: "/carta/comidas/carnes/carrillada-angus.jpg",
     },
     {
       id: 39,
@@ -1422,7 +1422,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Meats",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
+      image: "/carta/comidas/carnes/presa-iberica.jpg",
     },
     {
       id: 40,
@@ -1431,7 +1431,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Meats",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
+      image: "/carta/comidas/carnes/pluma-iberica.png",
     },
     {
       id: 41,
@@ -1440,7 +1440,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Meats",
       tags: ["By order"],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
+      image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
     },
 
     // RICE DISHES
@@ -1451,7 +1451,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Rice Dishes",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
+      image: "/carta/comidas/arroces/banda.jpeg",
     },
     {
       id: 43,
@@ -1460,7 +1460,7 @@ export const menuItems: Record<string, any[]> = {
       price: 19,
       category: "Rice Dishes",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
+      image: "/carta/comidas/arroces/negro-bacalao.jpeg",
     },
     {
       id: 44,
@@ -1469,7 +1469,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Rice Dishes",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
+      image: "/carta/comidas/arroces/negro-carabineros.jpg",
     },
     {
       id: 45,
@@ -1478,7 +1478,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Rice Dishes",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
+      image: "/carta/comidas/arroces/marisco-pulpo.jpg",
     },
     {
       id: 46,
@@ -1487,7 +1487,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Rice Dishes",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
+      image: "/carta/comidas/arroces/marisco-carabineros.jpg",
     },
     {
       id: 47,
@@ -1496,7 +1496,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Rice Dishes",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
+      image: "/carta/comidas/arroces/carne.jpg",
     },
 
     // DESSERTS
@@ -1507,7 +1507,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Desserts",
       tags: ["Gluten Free"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
+      image: "/carta/comidas/postres/tartas.jpg",
     },
     {
       id: 49,
@@ -1516,7 +1516,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Desserts",
       tags: ["Gluten Free", "Lactose Free"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
+      image: "/carta/comidas/postres/tiramisu.jpg",
     },
 
     /// DRINKS ///
@@ -1529,7 +1529,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-dorada.jpg",
+      image: "/carta/bebidas/cervezas/aguila-dorada.jpg",
     },
     {
       id: 51,
@@ -1539,7 +1539,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-rubia.jpg",
+      image: "/carta/bebidas/cervezas/la-rubia.jpg",
     },
     {
       id: 52,
@@ -1548,7 +1548,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
+      image: "/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
     },
     {
       id: 53,
@@ -1557,7 +1557,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-alcazar.jpg",
+      image: "/carta/bebidas/cervezas/la-alcazar.jpg",
     },
     {
       id: 54,
@@ -1566,7 +1566,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Drinks",
       tags: ["Alcohol Free"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-0.jpg",
     },
     {
       id: 55,
@@ -1575,7 +1575,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.3,
       category: "Drinks",
       tags: ["Alcohol Free"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-tostada-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-tostada-0.jpg",
     },
     {
       id: 56,
@@ -1584,7 +1584,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Drinks",
       tags: ["Gluten Free"],
-      image: "/src/assets/carta/bebidas/cervezas/estrella-sin-gluten.png",
+      image: "/carta/bebidas/cervezas/estrella-sin-gluten.png",
     },
 
     // VERMUTS
@@ -1595,7 +1595,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
+      image: "/carta/bebidas/vermuts/rojo.jpg",
     },
     {
       id: 58,
@@ -1604,7 +1604,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpeg",
     },
 
     // ROSÉ WINE
@@ -1616,7 +1616,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
+      image: "/carta/bebidas/rosado/frisse-rose.jpg",
     },
 
     // WHITE WINE
@@ -1628,7 +1628,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
+      image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
     },
     {
       id: 61,
@@ -1638,7 +1638,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-verdejo.png",
+      image: "/carta/bebidas/blancos/embrumas-verdejo.png",
     },
     {
       id: 62,
@@ -1648,7 +1648,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
+      image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
     },
     {
       id: 63,
@@ -1658,7 +1658,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/diez-siglos.png",
+      image: "/carta/bebidas/blancos/diez-siglos.png",
     },
 
     // RED WINE
@@ -1671,7 +1671,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/finca-engalia.jpg",
+      image: "/carta/bebidas/tintos/ribera/finca-engalia.jpg",
     },
     {
       id: 65,
@@ -1681,7 +1681,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -1691,7 +1691,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-roble.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-roble.png",
     },
     {
       id: 67,
@@ -1700,7 +1700,7 @@ export const menuItems: Record<string, any[]> = {
       price: 25,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
     },
     /* Rioja */
     {
@@ -1711,7 +1711,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/azabache.jpg",
+      image: "/carta/bebidas/tintos/rioja/azabache.jpg",
     },
     {
       id: 69,
@@ -1721,7 +1721,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/carlos-serres.png",
+      image: "/carta/bebidas/tintos/rioja/carlos-serres.png",
     },
     {
       id: 70,
@@ -1730,7 +1730,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.webp",
     },
 
     // SOFT DRINKS
@@ -1741,7 +1741,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua.jpg",
+      image: "/carta/bebidas/refrescos/agua.jpg",
     },
     {
       id: 72,
@@ -1750,7 +1750,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua-gas.png",
+      image: "/carta/bebidas/refrescos/agua-gas.png",
     },
     {
       id: 73,
@@ -1759,7 +1759,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
     },
     {
       id: 74,
@@ -1768,7 +1768,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero.jpg",
     },
     {
       id: 75,
@@ -1777,7 +1777,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
     },
     {
       id: 76,
@@ -1786,7 +1786,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-naranja.jpg",
+      image: "/carta/bebidas/refrescos/fanta-naranja.jpg",
     },
     {
       id: 77,
@@ -1795,7 +1795,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
     },
     {
       id: 78,
@@ -1804,7 +1804,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.webp",
     },
     {
       id: 79,
@@ -1813,7 +1813,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-verano.jpg",
+      image: "/carta/bebidas/refrescos/tinto-verano.jpg",
     },
     {
       id: 80,
@@ -1822,7 +1822,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-racing.jpg",
+      image: "/carta/bebidas/refrescos/tinto-racing.jpg",
     },
     {
       id: 81,
@@ -1831,7 +1831,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/royal-bliss.png",
+      image: "/carta/bebidas/refrescos/royal-bliss.png",
     },
     {
       id: 82,
@@ -1840,7 +1840,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-limon.png",
+      image: "/carta/bebidas/refrescos/fuze-tea-limon.png",
     },
     {
       id: 83,
@@ -1849,7 +1849,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
+      image: "/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
     },
     {
       id: 84,
@@ -1858,7 +1858,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
     },
     {
       id: 85,
@@ -1867,7 +1867,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-naranja.png",
+      image: "/carta/bebidas/refrescos/aquarius-naranja.png",
     },
 
     // (ALCOHOLIC) BEVERAGES
@@ -1878,7 +1878,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/larios.jpg",
+      image: "/carta/bebidas/bebidas/larios.jpg",
     },
     {
       id: 87,
@@ -1887,7 +1887,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/tanqueray.jpg",
+      image: "/carta/bebidas/bebidas/tanqueray.jpg",
     },
     {
       id: 88,
@@ -1896,7 +1896,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/beefeater.jpg",
+      image: "/carta/bebidas/bebidas/beefeater.jpg",
     },
     {
       id: 89,
@@ -1905,7 +1905,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/seagrams.png",
+      image: "/carta/bebidas/bebidas/seagrams.png",
     },
     {
       id: 90,
@@ -1914,7 +1914,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/martin-millers.jpg",
+      image: "/carta/bebidas/bebidas/martin-millers.jpg",
     },
     {
       id: 91,
@@ -1923,7 +1923,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/legendario.jpg",
+      image: "/carta/bebidas/bebidas/legendario.jpg",
     },
     {
       id: 92,
@@ -1932,7 +1932,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/barcelo.jpg",
+      image: "/carta/bebidas/bebidas/barcelo.jpg",
     },
     {
       id: 93,
@@ -1941,7 +1941,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/brugal.jpg",
+      image: "/carta/bebidas/bebidas/brugal.jpg",
     },
     {
       id: 94,
@@ -1950,7 +1950,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/red-label.jpg",
+      image: "/carta/bebidas/bebidas/red-label.jpg",
     },
     {
       id: 95,
@@ -1959,7 +1959,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/black-label.png",
+      image: "/carta/bebidas/bebidas/black-label.png",
     },
     {
       id: 96,
@@ -1968,7 +1968,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/ballantines.jpg",
+      image: "/carta/bebidas/bebidas/ballantines.jpg",
     },
     {
       id: 97,
@@ -1977,7 +1977,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/macallan.jpg",
+      image: "/carta/bebidas/bebidas/macallan.jpg",
     },
     {
       id: 98,
@@ -1986,7 +1986,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/vodka-absolut.jpg",
+      image: "/carta/bebidas/bebidas/vodka-absolut.jpg",
     },
     {
       id: 99,
@@ -1995,7 +1995,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
+      image: "/carta/bebidas/bebidas/baileys.jpg",
     },
     {
       id: 100,
@@ -2004,7 +2004,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
+      image: "/carta/bebidas/bebidas/disaronno.jpg",
     },
     {
       id: 101,
@@ -2013,7 +2013,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/copa-licor.jpg",
+      image: "/carta/bebidas/bebidas/copa-licor.jpg",
     },
     {
       id: 102,
@@ -2022,7 +2022,7 @@ export const menuItems: Record<string, any[]> = {
       price: 5,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/jagermeister.jpg",
+      image: "/carta/bebidas/bebidas/jagermeister.jpg",
     },
     {
       id: 103,
@@ -2031,7 +2031,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Drinks",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/fernet.jpg",
+      image: "/carta/bebidas/bebidas/fernet.jpg",
     }
   ],
 
@@ -2046,7 +2046,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
+      image: "/carta/comidas/empezamos/jamon-iberico.jpg",
     },
     {
       id: 2,
@@ -2055,7 +2055,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6.5,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
+      image: "/carta/comidas/empezamos/torreznos-lima.png",
     },
     {
       id: 3,
@@ -2064,7 +2064,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.8,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/brocheta-langostinos.jpg",
+      image: "/carta/comidas/empezamos/brocheta-langostinos.jpg",
     },
     {
       id: 4,
@@ -2073,7 +2073,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/lagrimitas-pollo.jpg",
+      image: "/carta/comidas/empezamos/lagrimitas-pollo.jpg",
     },
     {
       id: 5,
@@ -2082,7 +2082,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8.5,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/totopos-caseros.jpg",
+      image: "/carta/comidas/empezamos/totopos-caseros.jpg",
     },
     {
       id: 6,
@@ -2092,7 +2092,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensaladilla-rusa.jpg",
+      image: "/carta/comidas/empezamos/ensaladilla-rusa.jpg",
     },
     {
       id: 7,
@@ -2102,7 +2102,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tartar-salchichon.jpeg",
+      image: "/carta/comidas/empezamos/tartar-salchichon.jpeg",
     },
     {
       id: 8,
@@ -2112,7 +2112,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Pour commencer",
       tags: ["Épicé"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
+      image: "/carta/comidas/empezamos/papas-chipotle.jpg",
     },
     {
       id: 9,
@@ -2122,7 +2122,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Pour commencer",
       tags: ["Très Épicé"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
+      image: "/carta/comidas/empezamos/papas-bravas.jpeg",
     },
     {
       id: 10,
@@ -2132,7 +2132,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
     },
     {
       id: 11,
@@ -2141,7 +2141,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
+      image: "/carta/comidas/empezamos/tomate-melva.png",
     },
     {
       id: 12,
@@ -2150,7 +2150,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
+      image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
     },
     {
       id: 13,
@@ -2159,7 +2159,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Pour commencer",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
     },
 
     // CROQUETTES
@@ -2171,7 +2171,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
+      image: "/carta/comidas/croquetas/choco.jpg",
     },
     {
       id: 15,
@@ -2181,7 +2181,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
+      image: "/carta/comidas/croquetas/puchero.jpeg",
     },
     {
       id: 16,
@@ -2191,7 +2191,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
+      image: "/carta/comidas/croquetas/manzana.jpg",
     },
     {
       id: 17,
@@ -2201,7 +2201,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
+      image: "/carta/comidas/croquetas/texmex.jpg",
     },
     {
       id: 18,
@@ -2211,7 +2211,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
+      image: "/carta/comidas/croquetas/jamon.jpeg",
     },
     {
       id: 19,
@@ -2221,7 +2221,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Gourmet", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
+      image: "/carta/comidas/croquetas/berenjena.jpg",
     },
     {
       id: 20,
@@ -2231,7 +2231,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Croquettes",
       tags: ["Nouveau", "Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
+      image: "/carta/comidas/croquetas/vaca.jpg",
     },
 
     // TOASTS
@@ -2242,7 +2242,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
+      image: "/carta/comidas/tostas/salmon.jpeg",
     },
     {
       id: 22,
@@ -2251,7 +2251,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
+      image: "/carta/comidas/tostas/presa.jpeg",
     },
     {
       id: 23,
@@ -2260,7 +2260,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
+      image: "/carta/comidas/tostas/carrillada.jpeg",
     },
     {
       id: 24,
@@ -2269,7 +2269,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
+      image: "/carta/comidas/tostas/serrana.jpg",
     },
     {
       id: 25,
@@ -2278,7 +2278,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
+      image: "/carta/comidas/tostas/vegetariana.jpeg",
     },
     {
       id: 26,
@@ -2287,7 +2287,7 @@ export const menuItems: Record<string, any[]> = {
       price: 13,
       category: "Toasts",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
+      image: "/carta/comidas/tostas/atun-rojo.jpg",
     },
 
     // BOUCHÉES
@@ -2298,7 +2298,7 @@ export const menuItems: Record<string, any[]> = {
       price: 7.5,
       category: "Bouchées",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
+      image: "/carta/comidas/bocados/mini-burger.jpg",
     },
     {
       id: 28,
@@ -2307,7 +2307,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bouchées",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
+      image: "/carta/comidas/bocados/taco-amor.jpg",
     },
     {
       id: 29,
@@ -2316,7 +2316,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Bouchées",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/brioche.jpg",
+      image: "/carta/comidas/bocados/brioche.jpg",
     },
     {
       id: 30,
@@ -2325,7 +2325,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Bouchées",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
+      image: "/carta/comidas/bocados/burger-americana.jpeg",
     },
     {
       id: 31,
@@ -2334,7 +2334,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Bouchées",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
+      image: "/carta/comidas/bocados/burger-cabrita.jpg",
     },
     {
       id: 32,
@@ -2343,7 +2343,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Bouchées",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
+      image: "/carta/comidas/bocados/burger-espanolita.jpg",
     },
 
     // SPÉCIALITÉS
@@ -2354,7 +2354,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Spécialités",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
+      image: "/carta/comidas/especialidades/huevos-cecina.jpg",
     },
     {
       id: 34,
@@ -2363,7 +2363,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Spécialités",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
     },
     {
       id: 35,
@@ -2372,7 +2372,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Spécialités",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
     },
     {
       id: 36,
@@ -2381,7 +2381,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Spécialités",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/fideos-langostinos.jpg",
     },
     {
       id: 37,
@@ -2390,7 +2390,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Spécialités",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/fideos-carabineros.jpeg",
     },
 
     // VIANDES
@@ -2401,7 +2401,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17.5,
       category: "Viandes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
+      image: "/carta/comidas/carnes/carrillada-angus.jpg",
     },
     {
       id: 39,
@@ -2410,7 +2410,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Viandes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
+      image: "/carta/comidas/carnes/presa-iberica.jpg",
     },
     {
       id: 40,
@@ -2419,7 +2419,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Viandes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
+      image: "/carta/comidas/carnes/pluma-iberica.png",
     },
     {
       id: 41,
@@ -2429,7 +2429,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Viandes",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
+      image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
     },
 
     // RIZ
@@ -2440,7 +2440,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Riz",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
+      image: "/carta/comidas/arroces/banda.jpeg",
     },
     {
       id: 43,
@@ -2449,7 +2449,7 @@ export const menuItems: Record<string, any[]> = {
       price: 19,
       category: "Riz",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
+      image: "/carta/comidas/arroces/negro-bacalao.jpeg",
     },
     {
       id: 44,
@@ -2458,7 +2458,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Riz",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
+      image: "/carta/comidas/arroces/negro-carabineros.jpg",
     },
     {
       id: 45,
@@ -2467,7 +2467,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Riz",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
+      image: "/carta/comidas/arroces/marisco-pulpo.jpg",
     },
     {
       id: 46,
@@ -2476,7 +2476,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Riz",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
+      image: "/carta/comidas/arroces/marisco-carabineros.jpg",
     },
     {
       id: 47,
@@ -2485,7 +2485,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Riz",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
+      image: "/carta/comidas/arroces/carne.jpg",
     },
 
     // DESSERTS
@@ -2496,7 +2496,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Desserts",
       tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
+      image: "/carta/comidas/postres/tartas.jpg",
     },
     {
       id: 49,
@@ -2505,7 +2505,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Desserts",
       tags: ["Sans Gluten", "Sans Lactose"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
+      image: "/carta/comidas/postres/tiramisu.jpg",
     },
 
 
@@ -2520,7 +2520,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-dorada.jpg",
+      image: "/carta/bebidas/cervezas/aguila-dorada.jpg",
     },
     {
       id: 51,
@@ -2530,7 +2530,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-rubia.jpg",
+      image: "/carta/bebidas/cervezas/la-rubia.jpg",
     },
     {
       id: 52,
@@ -2539,7 +2539,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
+      image: "/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
     },
     {
       id: 53,
@@ -2548,7 +2548,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-alcazar.jpg",
+      image: "/carta/bebidas/cervezas/la-alcazar.jpg",
     },
     {
       id: 54,
@@ -2557,7 +2557,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Boissons",
       tags: ["Sans Alcool"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-0.jpg",
     },
     {
       id: 55,
@@ -2566,7 +2566,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.3,
       category: "Boissons",
       tags: ["Sans Alcool"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-tostada-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-tostada-0.jpg",
     },
     {
       id: 56,
@@ -2575,7 +2575,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Boissons",
       tags: ["Sans Gluten"],
-      image: "/src/assets/carta/bebidas/cervezas/estrella-sin-gluten.png",
+      image: "/carta/bebidas/cervezas/estrella-sin-gluten.png",
     },
 
     // VERMOUTHS
@@ -2586,7 +2586,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
+      image: "/carta/bebidas/vermuts/rojo.jpg",
     },
     {
       id: 58,
@@ -2595,7 +2595,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpeg",
     },
 
     // ROSÉ
@@ -2607,7 +2607,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
+      image: "/carta/bebidas/rosado/frisse-rose.jpg",
     },
 
     // BLANCS
@@ -2619,7 +2619,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
+      image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
     },
     {
       id: 61,
@@ -2629,7 +2629,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-verdejo.png",
+      image: "/carta/bebidas/blancos/embrumas-verdejo.png",
     },
     {
       id: 62,
@@ -2639,7 +2639,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
+      image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
     },
     {
       id: 63,
@@ -2649,7 +2649,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/diez-siglos.png",
+      image: "/carta/bebidas/blancos/diez-siglos.png",
     },
 
     // ROUGES
@@ -2662,7 +2662,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/finca-engalia.jpg",
+      image: "/carta/bebidas/tintos/ribera/finca-engalia.jpg",
     },
     {
       id: 65,
@@ -2672,7 +2672,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -2682,7 +2682,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-roble.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-roble.png",
     },
     {
       id: 67,
@@ -2691,7 +2691,7 @@ export const menuItems: Record<string, any[]> = {
       price: 25,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
     },
     /* Rioja */
     {
@@ -2702,7 +2702,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/azabache.jpg",
+      image: "/carta/bebidas/tintos/rioja/azabache.jpg",
     },
     {
       id: 69,
@@ -2712,7 +2712,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/carlos-serres.png",
+      image: "/carta/bebidas/tintos/rioja/carlos-serres.png",
     },
     {
       id: 70,
@@ -2721,7 +2721,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.webp",
     },
 
     // BOISSONS FRAÎCHES
@@ -2732,7 +2732,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua.jpg",
+      image: "/carta/bebidas/refrescos/agua.jpg",
     },
     {
       id: 72,
@@ -2741,7 +2741,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua-gas.png",
+      image: "/carta/bebidas/refrescos/agua-gas.png",
     },
     {
       id: 73,
@@ -2750,7 +2750,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
     },
     {
       id: 74,
@@ -2759,7 +2759,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero.jpg",
     },
     {
       id: 75,
@@ -2768,7 +2768,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
     },
     {
       id: 76,
@@ -2777,7 +2777,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-naranja.jpg",
+      image: "/carta/bebidas/refrescos/fanta-naranja.jpg",
     },
     {
       id: 77,
@@ -2786,7 +2786,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
     },
     {
       id: 78,
@@ -2795,7 +2795,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.webp",
     },
     {
       id: 79,
@@ -2804,7 +2804,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-verano.jpg",
+      image: "/carta/bebidas/refrescos/tinto-verano.jpg",
     },
     {
       id: 80,
@@ -2813,7 +2813,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-racing.jpg",
+      image: "/carta/bebidas/refrescos/tinto-racing.jpg",
     },
     {
       id: 81,
@@ -2822,7 +2822,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/royal-bliss.png",
+      image: "/carta/bebidas/refrescos/royal-bliss.png",
     },
     {
       id: 82,
@@ -2831,7 +2831,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-limon.png",
+      image: "/carta/bebidas/refrescos/fuze-tea-limon.png",
     },
     {
       id: 83,
@@ -2840,7 +2840,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
+      image: "/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
     },
     {
       id: 84,
@@ -2849,7 +2849,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
     },
     {
       id: 85,
@@ -2858,7 +2858,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-naranja.png",
+      image: "/carta/bebidas/refrescos/aquarius-naranja.png",
     },
 
     // BOISSONS (ALCOOLISÉES)
@@ -2869,7 +2869,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/larios.jpg",
+      image: "/carta/bebidas/bebidas/larios.jpg",
     },
     {
       id: 87,
@@ -2878,7 +2878,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/tanqueray.jpg",
+      image: "/carta/bebidas/bebidas/tanqueray.jpg",
     },
     {
       id: 88,
@@ -2887,7 +2887,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/beefeater.jpg",
+      image: "/carta/bebidas/bebidas/beefeater.jpg",
     },
     {
       id: 89,
@@ -2896,7 +2896,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/seagrams.png",
+      image: "/carta/bebidas/bebidas/seagrams.png",
     },
     {
       id: 90,
@@ -2905,7 +2905,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/martin-millers.jpg",
+      image: "/carta/bebidas/bebidas/martin-millers.jpg",
     },
     {
       id: 91,
@@ -2914,7 +2914,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/legendario.jpg",
+      image: "/carta/bebidas/bebidas/legendario.jpg",
     },
     {
       id: 92,
@@ -2923,7 +2923,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/barcelo.jpg",
+      image: "/carta/bebidas/bebidas/barcelo.jpg",
     },
     {
       id: 93,
@@ -2932,7 +2932,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/brugal.jpg",
+      image: "/carta/bebidas/bebidas/brugal.jpg",
     },
     {
       id: 94,
@@ -2941,7 +2941,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/red-label.jpg",
+      image: "/carta/bebidas/bebidas/red-label.jpg",
     },
     {
       id: 95,
@@ -2950,7 +2950,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/black-label.png",
+      image: "/carta/bebidas/bebidas/black-label.png",
     },
     {
       id: 96,
@@ -2959,7 +2959,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/ballantines.jpg",
+      image: "/carta/bebidas/bebidas/ballantines.jpg",
     },
     {
       id: 97,
@@ -2968,7 +2968,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/macallan.jpg",
+      image: "/carta/bebidas/bebidas/macallan.jpg",
     },
     {
       id: 98,
@@ -2977,7 +2977,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/vodka-absolut.jpg",
+      image: "/carta/bebidas/bebidas/vodka-absolut.jpg",
     },
     {
       id: 99,
@@ -2986,7 +2986,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
+      image: "/carta/bebidas/bebidas/baileys.jpg",
     },
     {
       id: 100,
@@ -2995,7 +2995,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
+      image: "/carta/bebidas/bebidas/disaronno.jpg",
     },
     {
       id: 101,
@@ -3004,7 +3004,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/copa-licor.jpg",
+      image: "/carta/bebidas/bebidas/copa-licor.jpg",
     },
     {
       id: 102,
@@ -3013,7 +3013,7 @@ export const menuItems: Record<string, any[]> = {
       price: 5,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/jagermeister.jpg",
+      image: "/carta/bebidas/bebidas/jagermeister.jpg",
     },
     {
       id: 103,
@@ -3022,7 +3022,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Boissons",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/fernet.jpg",
+      image: "/carta/bebidas/bebidas/fernet.jpg",
     }
   ],
 
@@ -3037,7 +3037,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
+      image: "/carta/comidas/empezamos/jamon-iberico.jpg",
     },
     {
       id: 2,
@@ -3046,7 +3046,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6.5,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
+      image: "/carta/comidas/empezamos/torreznos-lima.png",
     },
     {
       id: 3,
@@ -3055,7 +3055,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.8,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/brocheta-langostinos.jpg",
+      image: "/carta/comidas/empezamos/brocheta-langostinos.jpg",
     },
     {
       id: 4,
@@ -3064,7 +3064,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/lagrimitas-pollo.jpg",
+      image: "/carta/comidas/empezamos/lagrimitas-pollo.jpg",
     },
     {
       id: 5,
@@ -3073,7 +3073,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8.5,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/totopos-caseros.jpg",
+      image: "/carta/comidas/empezamos/totopos-caseros.jpg",
     },
     {
       id: 6,
@@ -3083,7 +3083,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensaladilla-rusa.jpg",
+      image: "/carta/comidas/empezamos/ensaladilla-rusa.jpg",
     },
     {
       id: 7,
@@ -3093,7 +3093,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tartar-salchichon.jpeg",
+      image: "/carta/comidas/empezamos/tartar-salchichon.jpeg",
     },
     {
       id: 8,
@@ -3103,7 +3103,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Zum Starten",
       tags: ["Scharf"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
+      image: "/carta/comidas/empezamos/papas-chipotle.jpg",
     },
     {
       id: 9,
@@ -3113,7 +3113,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Zum Starten",
       tags: ["Sehr scharf"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
+      image: "/carta/comidas/empezamos/papas-bravas.jpeg",
     },
     {
       id: 10,
@@ -3123,7 +3123,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
     },
     {
       id: 11,
@@ -3132,7 +3132,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
+      image: "/carta/comidas/empezamos/tomate-melva.png",
     },
     {
       id: 12,
@@ -3141,7 +3141,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
+      image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
     },
     {
       id: 13,
@@ -3150,7 +3150,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Zum Starten",
       tags: [],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
+      image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
     },
 
     // KROKETTEN
@@ -3162,7 +3162,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Kroketten",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
+      image: "/carta/comidas/croquetas/choco.jpg",
     },
     {
       id: 15,
@@ -3172,7 +3172,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Kroketten",
       tags: [],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
+      image: "/carta/comidas/croquetas/puchero.jpeg",
     },
     {
       id: 16,
@@ -3182,7 +3182,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Kroketten",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
+      image: "/carta/comidas/croquetas/manzana.jpg",
     },
     {
       id: 17,
@@ -3192,7 +3192,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Kroketten",
       tags: ["Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
+      image: "/carta/comidas/croquetas/texmex.jpg",
     },
     {
       id: 18,
@@ -3202,7 +3202,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Kroketten",
       tags: ["Gourmet", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
+      image: "/carta/comidas/croquetas/jamon.jpeg",
     },
     {
       id: 19,
@@ -3212,7 +3212,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Kroketten",
       tags: ["Gourmet", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
+      image: "/carta/comidas/croquetas/berenjena.jpg",
     },
     {
       id: 20,
@@ -3222,7 +3222,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Kroketten",
       tags: ["Neu", "Gourmet"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
+      image: "/carta/comidas/croquetas/vaca.jpg",
     },
 
     // BELEGTE BROTE
@@ -3233,7 +3233,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Belegte Brote",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
+      image: "/carta/comidas/tostas/salmon.jpeg",
     },
     {
       id: 22,
@@ -3242,7 +3242,7 @@ export const menuItems: Record<string, any[]> = {
       price: 9.5,
       category: "Belegte Brote",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
+      image: "/carta/comidas/tostas/presa.jpeg",
     },
     {
       id: 23,
@@ -3251,7 +3251,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Belegte Brote",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
+      image: "/carta/comidas/tostas/carrillada.jpeg",
     },
     {
       id: 24,
@@ -3260,7 +3260,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Belegte Brote",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
+      image: "/carta/comidas/tostas/serrana.jpg",
     },
     {
       id: 25,
@@ -3269,7 +3269,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Belegte Brote",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
+      image: "/carta/comidas/tostas/vegetariana.jpeg",
     },
     {
       id: 26,
@@ -3278,7 +3278,7 @@ export const menuItems: Record<string, any[]> = {
       price: 13,
       category: "Belegte Brote",
       tags: [],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
+      image: "/carta/comidas/tostas/atun-rojo.jpg",
     },
 
     // HÄPPCHEN
@@ -3289,7 +3289,7 @@ export const menuItems: Record<string, any[]> = {
       price: 7.5,
       category: "Häppchen",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
+      image: "/carta/comidas/bocados/mini-burger.jpg",
     },
     {
       id: 28,
@@ -3298,7 +3298,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Häppchen",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
+      image: "/carta/comidas/bocados/taco-amor.jpg",
     },
     {
       id: 29,
@@ -3307,7 +3307,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Häppchen",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/brioche.jpg",
+      image: "/carta/comidas/bocados/brioche.jpg",
     },
     {
       id: 30,
@@ -3316,7 +3316,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Häppchen",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
+      image: "/carta/comidas/bocados/burger-americana.jpeg",
     },
     {
       id: 31,
@@ -3325,7 +3325,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Häppchen",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
+      image: "/carta/comidas/bocados/burger-cabrita.jpg",
     },
     {
       id: 32,
@@ -3334,7 +3334,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Häppchen",
       tags: [],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
+      image: "/carta/comidas/bocados/burger-espanolita.jpg",
     },
 
     // SPEZIALITÄTEN
@@ -3345,7 +3345,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Spezialitäten",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
+      image: "/carta/comidas/especialidades/huevos-cecina.jpg",
     },
     {
       id: 34,
@@ -3354,7 +3354,7 @@ export const menuItems: Record<string, any[]> = {
       price: 14,
       category: "Spezialitäten",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
     },
     {
       id: 35,
@@ -3363,7 +3363,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Spezialitäten",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
     },
     {
       id: 36,
@@ -3372,7 +3372,7 @@ export const menuItems: Record<string, any[]> = {
       price: 12,
       category: "Spezialitäten",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-langostinos.jpg",
+      image: "/carta/comidas/especialidades/fideos-langostinos.jpg",
     },
     {
       id: 37,
@@ -3381,7 +3381,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Spezialitäten",
       tags: [],
-      image: "/src/assets/carta/comidas/especialidades/fideos-carabineros.jpeg",
+      image: "/carta/comidas/especialidades/fideos-carabineros.jpeg",
     },
 
     // FLEISCH
@@ -3392,7 +3392,7 @@ export const menuItems: Record<string, any[]> = {
       price: 17.5,
       category: "Fleisch",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
+      image: "/carta/comidas/carnes/carrillada-angus.jpg",
     },
     {
       id: 39,
@@ -3401,7 +3401,7 @@ export const menuItems: Record<string, any[]> = {
       price: 15,
       category: "Fleisch",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
+      image: "/carta/comidas/carnes/presa-iberica.jpg",
     },
     {
       id: 40,
@@ -3410,7 +3410,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Fleisch",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
+      image: "/carta/comidas/carnes/pluma-iberica.png",
     },
     {
       id: 41,
@@ -3420,7 +3420,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Fleisch",
       tags: [],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
+      image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
     },
 
     // REISGERICHTE
@@ -3431,7 +3431,7 @@ export const menuItems: Record<string, any[]> = {
       price: 16,
       category: "Reisgerichte",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
+      image: "/carta/comidas/arroces/banda.jpeg",
     },
     {
       id: 43,
@@ -3440,7 +3440,7 @@ export const menuItems: Record<string, any[]> = {
       price: 19,
       category: "Reisgerichte",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
+      image: "/carta/comidas/arroces/negro-bacalao.jpeg",
     },
     {
       id: 44,
@@ -3449,7 +3449,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Reisgerichte",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
+      image: "/carta/comidas/arroces/negro-carabineros.jpg",
     },
     {
       id: 45,
@@ -3458,7 +3458,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Reisgerichte",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
+      image: "/carta/comidas/arroces/marisco-pulpo.jpg",
     },
     {
       id: 46,
@@ -3467,7 +3467,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Reisgerichte",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
+      image: "/carta/comidas/arroces/marisco-carabineros.jpg",
     },
     {
       id: 47,
@@ -3476,7 +3476,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Reisgerichte",
       tags: [],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
+      image: "/carta/comidas/arroces/carne.jpg",
     },
 
     // NACHSPEISEN
@@ -3487,7 +3487,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Nachspeisen",
       tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
+      image: "/carta/comidas/postres/tartas.jpg",
     },
     {
       id: 49,
@@ -3496,7 +3496,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Nachspeisen",
       tags: ["Glutenfrei", "Laktosefrei"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
+      image: "/carta/comidas/postres/tiramisu.jpg",
     },
 
 
@@ -3511,7 +3511,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-dorada.jpg",
+      image: "/carta/bebidas/cervezas/aguila-dorada.jpg",
     },
     {
       id: 51,
@@ -3521,7 +3521,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-rubia.jpg",
+      image: "/carta/bebidas/cervezas/la-rubia.jpg",
     },
     {
       id: 52,
@@ -3530,7 +3530,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
+      image: "/carta/bebidas/cervezas/aguila-sin-filtrar.jpg",
     },
     {
       id: 53,
@@ -3539,7 +3539,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/cervezas/la-alcazar.jpg",
+      image: "/carta/bebidas/cervezas/la-alcazar.jpg",
     },
     {
       id: 54,
@@ -3548,7 +3548,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Getränke",
       tags: ["Alkoholfrei"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-0.jpg",
     },
     {
       id: 55,
@@ -3557,7 +3557,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.3,
       category: "Getränke",
       tags: ["Alkoholfrei"],
-      image: "/src/assets/carta/bebidas/cervezas/amstel-tostada-0.jpg",
+      image: "/carta/bebidas/cervezas/amstel-tostada-0.jpg",
     },
     {
       id: 56,
@@ -3566,7 +3566,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Getränke",
       tags: ["Glutenfrei"],
-      image: "/src/assets/carta/bebidas/cervezas/estrella-sin-gluten.png",
+      image: "/carta/bebidas/cervezas/estrella-sin-gluten.png",
     },
 
     // WERMUT
@@ -3577,7 +3577,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
+      image: "/carta/bebidas/vermuts/rojo.jpg",
     },
     {
       id: 58,
@@ -3586,7 +3586,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpeg",
     },
 
     // ROSÉ
@@ -3598,7 +3598,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
+      image: "/carta/bebidas/rosado/frisse-rose.jpg",
     },
 
     // WEISSWEINE
@@ -3610,7 +3610,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
+      image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
     },
     {
       id: 61,
@@ -3620,7 +3620,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-verdejo.png",
+      image: "/carta/bebidas/blancos/embrumas-verdejo.png",
     },
     {
       id: 62,
@@ -3630,7 +3630,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
+      image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
     },
     {
       id: 63,
@@ -3640,7 +3640,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/blancos/diez-siglos.png",
+      image: "/carta/bebidas/blancos/diez-siglos.png",
     },
 
     // ROTWEINE
@@ -3653,7 +3653,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/finca-engalia.jpg",
+      image: "/carta/bebidas/tintos/ribera/finca-engalia.jpg",
     },
     {
       id: 65,
@@ -3663,7 +3663,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -3673,7 +3673,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-roble.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-roble.png",
     },
     {
       id: 67,
@@ -3682,7 +3682,7 @@ export const menuItems: Record<string, any[]> = {
       price: 25,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
+      image: "/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
     },
     /* Rioja */
     {
@@ -3693,7 +3693,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/azabache.jpg",
+      image: "/carta/bebidas/tintos/rioja/azabache.jpg",
     },
     {
       id: 69,
@@ -3703,7 +3703,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/carlos-serres.png",
+      image: "/carta/bebidas/tintos/rioja/carlos-serres.png",
     },
     {
       id: 70,
@@ -3712,7 +3712,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.webp",
     },
 
     // ERFRISCHUNGSGETRÄNKE
@@ -3723,7 +3723,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua.jpg",
+      image: "/carta/bebidas/refrescos/agua.jpg",
     },
     {
       id: 72,
@@ -3732,7 +3732,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/agua-gas.png",
+      image: "/carta/bebidas/refrescos/agua-gas.png",
     },
     {
       id: 73,
@@ -3741,7 +3741,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
     },
     {
       id: 74,
@@ -3750,7 +3750,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero.jpg",
     },
     {
       id: 75,
@@ -3759,7 +3759,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
+      image: "/carta/bebidas/refrescos/coca-cola-zero-zero.jpg",
     },
     {
       id: 76,
@@ -3768,7 +3768,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-naranja.jpg",
+      image: "/carta/bebidas/refrescos/fanta-naranja.jpg",
     },
     {
       id: 77,
@@ -3777,7 +3777,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
     },
     {
       id: 78,
@@ -3786,7 +3786,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.webp",
     },
     {
       id: 79,
@@ -3795,7 +3795,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-verano.jpg",
+      image: "/carta/bebidas/refrescos/tinto-verano.jpg",
     },
     {
       id: 80,
@@ -3804,7 +3804,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/tinto-racing.jpg",
+      image: "/carta/bebidas/refrescos/tinto-racing.jpg",
     },
     {
       id: 81,
@@ -3813,7 +3813,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/royal-bliss.png",
+      image: "/carta/bebidas/refrescos/royal-bliss.png",
     },
     {
       id: 82,
@@ -3822,7 +3822,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-limon.png",
+      image: "/carta/bebidas/refrescos/fuze-tea-limon.png",
     },
     {
       id: 83,
@@ -3831,7 +3831,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
+      image: "/carta/bebidas/refrescos/fuze-tea-maracuya.jpg",
     },
     {
       id: 84,
@@ -3840,7 +3840,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
     },
     {
       id: 85,
@@ -3849,7 +3849,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/refrescos/aquarius-naranja.png",
+      image: "/carta/bebidas/refrescos/aquarius-naranja.png",
     },
 
     // GETRÄNKE (ALKOHOLISCH)
@@ -3860,7 +3860,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/larios.jpg",
+      image: "/carta/bebidas/bebidas/larios.jpg",
     },
     {
       id: 87,
@@ -3869,7 +3869,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/tanqueray.jpg",
+      image: "/carta/bebidas/bebidas/tanqueray.jpg",
     },
     {
       id: 88,
@@ -3878,7 +3878,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/beefeater.jpg",
+      image: "/carta/bebidas/bebidas/beefeater.jpg",
     },
     {
       id: 89,
@@ -3887,7 +3887,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/seagrams.png",
+      image: "/carta/bebidas/bebidas/seagrams.png",
     },
     {
       id: 90,
@@ -3896,7 +3896,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/martin-millers.jpg",
+      image: "/carta/bebidas/bebidas/martin-millers.jpg",
     },
     {
       id: 91,
@@ -3905,7 +3905,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/legendario.jpg",
+      image: "/carta/bebidas/bebidas/legendario.jpg",
     },
     {
       id: 92,
@@ -3914,7 +3914,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/barcelo.jpg",
+      image: "/carta/bebidas/bebidas/barcelo.jpg",
     },
     {
       id: 93,
@@ -3923,7 +3923,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/brugal.jpg",
+      image: "/carta/bebidas/bebidas/brugal.jpg",
     },
     {
       id: 94,
@@ -3932,7 +3932,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/red-label.jpg",
+      image: "/carta/bebidas/bebidas/red-label.jpg",
     },
     {
       id: 95,
@@ -3941,7 +3941,7 @@ export const menuItems: Record<string, any[]> = {
       price: 8,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/black-label.png",
+      image: "/carta/bebidas/bebidas/black-label.png",
     },
     {
       id: 96,
@@ -3950,7 +3950,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/ballantines.jpg",
+      image: "/carta/bebidas/bebidas/ballantines.jpg",
     },
     {
       id: 97,
@@ -3959,7 +3959,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/macallan.jpg",
+      image: "/carta/bebidas/bebidas/macallan.jpg",
     },
     {
       id: 98,
@@ -3968,7 +3968,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/vodka-absolut.jpg",
+      image: "/carta/bebidas/bebidas/vodka-absolut.jpg",
     },
     {
       id: 99,
@@ -3977,7 +3977,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
+      image: "/carta/bebidas/bebidas/baileys.jpg",
     },
     {
       id: 100,
@@ -3986,7 +3986,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
+      image: "/carta/bebidas/bebidas/disaronno.jpg",
     },
     {
       id: 101,
@@ -3995,7 +3995,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/copa-licor.jpg",
+      image: "/carta/bebidas/bebidas/copa-licor.jpg",
     },
     {
       id: 102,
@@ -4004,7 +4004,7 @@ export const menuItems: Record<string, any[]> = {
       price: 5,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/jagermeister.jpg",
+      image: "/carta/bebidas/bebidas/jagermeister.jpg",
     },
     {
       id: 103,
@@ -4013,7 +4013,7 @@ export const menuItems: Record<string, any[]> = {
       price: 6,
       category: "Getränke",
       tags: [],
-      image: "/src/assets/carta/bebidas/bebidas/fernet.jpg",
+      image: "/carta/bebidas/bebidas/fernet.jpg",
     }
   ],
 
