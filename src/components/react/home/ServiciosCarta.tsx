@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ui, defaultLang } from "../../../i18n/ui";
-import Button from "../ui/Button"; // <-- Recuperamos tu botón limpio
+import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +67,9 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
           <p className="anim-header text-neutral-600 text-lg md:text-xl leading-relaxed mb-8">
             {t("home.servicios.desc")}
           </p>
+          
           <div className="anim-header">
+            {/* Componente Button implementado con su variante accent */}
             <a href={`/${currentLang}/carta`}>
               <Button variant="accent">
                 {t("home.servicios.boton")}
@@ -90,7 +92,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <span className="text-white text-lg font-bold">Croquetas Caseras</span>
+                <span className="text-white text-lg font-bold">{t("home.servicios.foto.1")}</span>
               </div>
             </div>
           </div>
@@ -105,7 +107,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <span className="text-white text-lg font-bold">Tostas y Bocados</span>
+                <span className="text-white text-lg font-bold">{t("home.servicios.foto.2")}</span>
               </div>
             </div>
           </div>
@@ -120,7 +122,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <span className="text-white text-lg font-bold">Carnes Jugosas</span>
+                <span className="text-white text-lg font-bold">{t("home.servicios.foto.3")}</span>
               </div>
             </div>
           </div>

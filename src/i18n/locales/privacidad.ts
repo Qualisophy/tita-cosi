@@ -1,0 +1,131 @@
+export const languages = {
+  es: "ES",
+  en: "EN",
+  fr: "FR",
+  de: "DE",
+};
+
+export const defaultLang = "es";
+
+export const ui = {
+  es: {
+    "privacy.titulo":"Política de Privacidad y Aviso Legal",
+    "privacy.texto.1":"En Taberna Tita Cosi nos tomamos muy en serio la protección de tus datos personales. Queremos que tu experiencia con nosotros sea segura y transparente, tanto en nuestro local como en nuestro entorno digital.",
+    "privacy.texto.2":"A continuación, te explicamos detalladamente cómo recopilamos, utilizamos y protegemos tu información cuando interactúas con nuestra web o nuestros sistemas de reserva.",
+    "privacy.1.titulo":"1. Responsable del Tratamiento",
+    "privacy.1.texto":"El responsable del tratamiento de los datos personales recogidos en esta página web y a través de nuestros canales de comunicación es:",
+    "privacy.1.1.texto":"Identidad: Taberna Tita Cosi (RESTAURANTE COSI SL.)",
+    "privacy.1.2.texto":"Dirección: Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga.",
+    "privacy.1.3.texto":"Contacto para privacidad: hola@tabernatitacosi.es",
+    "privacy.2.titulo":"2. Finalidad del Tratamiento de los Datos",
+    "privacy.2.texto":"Los datos personales que nos facilitas serán tratados con las siguientes finalidades exclusivas:",
+    "privacy.2.1.texto":"Gestión de reservas: Para procesar, confirmar y asegurar tu mesa en nuestra taberna.",
+    "privacy.2.2.texto":"Atención al cliente: Para resolver tus dudas, peticiones o incidencias de la forma más rápida y eficaz posible.",
+    "privacy.2.3.texto":"Comunicaciones de cortesía e Inteligencia Artificial: Para enviarte notificaciones relacionadas con tu reserva (confirmaciones, recordatorios o avisos de retraso). Estas gestiones pueden estar automatizadas e integradas mediante herramientas de terceros, como Make y nuestro asistente virtual en WhatsApp.",
+    "privacy.3.titulo":"3. Legitimación (Base Legal)",
+    "privacy.3.texto":" La base legal para el tratamiento de tus datos es tu consentimiento expreso. Al marcar la casilla de aceptación y rellenar nuestro formulario de contacto o al iniciar una reserva a través de nuestro canal de WhatsApp, nos estás dando tu consentimiento explícito, libre e inequívoco para que tratemos tus datos conforme a las finalidades descritas en el punto anterior.",
+    "privacy.4.titulo":"4. Conservación de los Datos",
+    "privacy.4.texto":"Tus datos personales se conservarán durante el tiempo estrictamente necesario para cumplir con las finalidades para las que fueron recabados (por ejemplo, hasta que se haya completado tu reserva y finalizado el servicio), o hasta que tú mismo solicites su eliminación, sin perjuicio de los plazos legales de conservación que nos exija la normativa vigente (temas fiscales, facturación, etc.).",
+    "privacy.5.titulo":"5. Tus Derechos",
+    "privacy.5.texto":"Como usuario, tienes el control absoluto sobre tus datos. En cualquier momento puedes ejercer los siguientes derechos:",
+    "privacy.5.1.texto":"Derecho de Acceso: Conocer qué datos personales tuyos tenemos y cómo los estamos tratando.",
+    "privacy.5.2.texto":"Derecho de Rectificación: Solicitar la corrección de datos inexactos o incompletos.",
+    "privacy.5.3.texto":"Derecho de Supresión (Derecho al olvido): Solicitar la eliminación de tus datos cuando ya no sean necesarios para los fines para los que fueron recogidos.",
+    "privacy.5.4.texto":"Derecho a retirar el consentimiento: En cualquier momento puedes dar marcha atrás y retirar el permiso que nos diste previamente.",
+    "privacy.6.titulo":"6. Cambios en la Política de Privacidad",
+    "privacy.6.texto":"Taberna Tita Cosi se reserva el derecho a modificar la presente política para adaptarla a futuras novedades legislativas o jurisprudenciales, así como a prácticas del sector. En dichos supuestos, anunciaremos en esta misma página los cambios introducidos con razonable antelación a su puesta en práctica.",
+  },
+  en: {
+    "privacy.titulo": "Privacy Policy & Legal Notice",
+    "privacy.texto.1": "At Taberna Tita Cosi, we take the protection of your personal data very seriously. We want your experience with us to be safe and transparent, both in our establishment and in our digital environment.",
+    "privacy.texto.2": "Below, we explain in detail how we collect, use, and protect your information when you interact with our website or our reservation systems.",
+    "privacy.1.titulo": "1. Data Controller",
+    "privacy.1.texto": "The data controller responsible for processing the personal data collected on this website and through our communication channels is:",
+    "privacy.1.1.texto": "Identity: Taberna Tita Cosi (RESTAURANTE COSI SL.)",
+    "privacy.1.2.texto": "Address: Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga.",
+    "privacy.1.3.texto": "Privacy Contact: hola@tabernatitacosi.es",
+    "privacy.2.titulo": "2. Purpose of Data Processing",
+    "privacy.2.texto": "The personal data you provide will be processed exclusively for the following purposes:",
+    "privacy.2.1.texto": "Reservation Management: To process, confirm, and secure your table at our tavern.",
+    "privacy.2.2.texto": "Customer Service: To resolve your questions, requests, or incidents as quickly and efficiently as possible.",
+    "privacy.2.3.texto": "Courtesy Communications & Artificial Intelligence: To send you notifications related to your reservation (confirmations, reminders, or delay alerts). These processes may be automated and integrated through third-party tools such as Make and our virtual assistant on WhatsApp.",
+    "privacy.3.titulo": "3. Legal Basis (Lawful Basis)",
+    "privacy.3.texto": "The legal basis for processing your data is your explicit consent. By checking the acceptance box and filling out our contact form, or by initiating a reservation through our WhatsApp channel, you grant us your explicit, free, and unambiguous consent to process your data in accordance with the purposes described in the previous section.",
+    "privacy.4.titulo": "4. Data Retention",
+    "privacy.4.texto": "Your personal data will be kept for as long as strictly necessary to fulfill the purposes for which it was collected (for example, until your reservation is completed and the service has ended), or until you request its deletion, without prejudice to the legal retention periods required by current regulations (tax matters, invoicing, etc.).",
+    "privacy.5.titulo": "5. Your Rights",
+    "privacy.5.texto": "As a user, you have absolute control over your data. You can exercise the following rights at any time:",
+    "privacy.5.1.texto": "Right of Access: To know what personal data of yours we have and how we are processing it.",
+    "privacy.5.2.texto": "Right to Rectification: To request the correction of inaccurate or incomplete data.",
+    "privacy.5.3.texto": "Right to Erasure (Right to be Forgotten): To request the deletion of your data when it is no longer necessary for the purposes for which it was collected.",
+    "privacy.5.4.texto": "Right to Withdraw Consent: You can change your mind and withdraw the permission you previously gave us at any time.",
+    "privacy.6.titulo": "6. Changes to the Privacy Policy",
+    "privacy.6.texto": "Taberna Tita Cosi reserves the right to modify this policy to adapt it to future legislative or jurisprudential developments, as well as industry practices. In such cases, we will announce the changes introduced on this page with reasonable notice before they are put into practice.",
+  },
+fr: {
+    "privacy.titulo": "Politique de confidentialité et mentions légales",
+    "privacy.texto.1": "Chez Taberna Tita Cosi, nous prenons la protection de vos données personnelles très au sérieux. Nous voulons que votre expérience avec nous soit sûre et transparente, tant dans notre établissement que dans notre environnement numérique.",
+    "privacy.texto.2": "Ci-dessous, nous vous expliquons en détail comment nous collectons, utilisons et protégeons vos informations lorsque vous interagissez avec notre site web ou nos systèmes de réservation.",
+    "privacy.1.titulo": "1. Responsable du traitement",
+    "privacy.1.texto": "Le responsable du traitement des données personnelles collectées sur ce site web et via nos canaux de communication est :",
+    "privacy.1.1.texto": "Identité : Taberna Tita Cosi (RESTAURANTE COSI SL.)",
+    "privacy.1.2.texto": "Adresse : Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga.",
+    "privacy.1.3.texto": "Contact confidentialité : hola@tabernatitacosi.es",
+    "privacy.2.titulo": "2. Finalité du traitement des données",
+    "privacy.2.texto": "Les données personnelles que vous nous fournissez seront traitées exclusivement aux fins suivantes :",
+    "privacy.2.1.texto": "Gestion des réservations : Pour traiter, confirmer et garantir votre table dans notre taverne.",
+    "privacy.2.2.texto": "Service client : Pour résoudre vos questions, demandes ou incidents le plus rapidement et le plus efficacement possible.",
+    "privacy.2.3.texto": "Communications de courtoisie et intelligence artificielle : Pour vous envoyer des notifications liées à votre réservation (confirmations, rappels ou alertes de retard). Ces processus peuvent être automatisés et intégrés via des outils tiers tels que Make et notre assistant virtuel sur WhatsApp.",
+    "privacy.3.titulo": "3. Base juridique (Fondement légal)",
+    "privacy.3.texto": "La base juridique du traitement de vos données est votre consentement explicite. En cochant la case d'acceptation et en remplissant notre formulaire de contact, ou en initiant une réservation via notre canal WhatsApp, vous nous accordez votre consentement explicite, libre et univoque pour traiter vos données conformément aux finalités décrites dans la section précédente.",
+    "privacy.4.titulo": "4. Conservation des données",
+    "privacy.4.texto": "Vos données personnelles seront conservées pendant la durée strictement nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées (par exemple, jusqu'à ce que votre réservation soit complétée et que le service soit terminé), ou jusqu'à ce que vous demandiez leur suppression, sans préjudice des délais légaux de conservation requis par la réglementation en vigueur (questions fiscales, facturation, etc.).",
+    "privacy.5.titulo": "5. Vos droits",
+    "privacy.5.texto": "En tant qu'utilisateur, vous avez un contrôle absolu sur vos données. Vous pouvez exercer les droits suivants à tout moment :",
+    "privacy.5.1.texto": "Droit d'accès : Savoir quelles données personnelles nous détenons à votre sujet et comment nous les traitons.",
+    "privacy.5.2.texto": "Droit de rectification : Demander la correction de données inexactes ou incomplètes.",
+    "privacy.5.3.texto": "Droit à l'effacement (Droit à l'oubli) : Demander la suppression de vos données lorsqu'elles ne sont plus nécessaires aux fins pour lesquelles elles ont été collectées.",
+    "privacy.5.4.texto": "Droit de retirer son consentement : Vous pouvez changer d'avis et retirer à tout moment l'autorisation que vous nous avez préalablement accordée.",
+    "privacy.6.titulo": "6. Modifications de la politique de confidentialité",
+    "privacy.6.texto": "Taberna Tita Cosi se réserve le droit de modifier la présente politique afin de l'adapter aux évolutions législatives ou jurisprudentielles futures, ainsi qu'aux pratiques du secteur. Dans de tels cas, nous annoncerons les modifications introduites sur cette page avec un préavis raisonnable avant leur mise en œuvre."
+  },
+de: {
+    "privacy.titulo": "Datenschutzerklärung & Rechtliche Hinweise",
+    "privacy.texto.1": "Bei Taberna Tita Cosi nehmen wir den Schutz Ihrer personenbezogenen Daten sehr ernst. Wir möchten, dass Ihr Aufenthalt bei uns sowohl in unserem Lokal als auch in unserer digitalen Umgebung sicher und transparent ist.",
+    "privacy.texto.2": "Im Folgenden erklären wir Ihnen im Detail, wie wir Ihre Informationen sammeln, verwenden und schützen, wenn Sie mit unserer Website oder unseren Reservierungssystemen interagieren.",
+    "privacy.1.titulo": "1. Verantwortlicher für die Datenverarbeitung",
+    "privacy.1.texto": "Der für die Verarbeitung der auf dieser Website und über unsere Kommunikationskanäle erhobenen personenbezogenen Daten Verantwortliche ist:",
+    "privacy.1.1.texto": "Identität: Taberna Tita Cosi (RESTAURANTE COSI SL.)",
+    "privacy.1.2.texto": "Adresse: Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga.",
+    "privacy.1.3.texto": "Datenschutz-Kontakt: hola@tabernatitacosi.es",
+    "privacy.2.titulo": "2. Zweck der Datenverarbeitung",
+    "privacy.2.texto": "Die von Ihnen bereitgestellten personenbezogenen Daten werden ausschließlich zu den folgenden Zwecken verarbeitet:",
+    "privacy.2.1.texto": "Reservierungsmanagement: Um Ihre Tischreservierung in unserer Taverne zu bearbeiten, zu bestätigen und zu sichern.",
+    "privacy.2.2.texto": "Kundenservice: Um Ihre Fragen, Wünsche oder Vorfälle so schnell und effizient wie möglich zu lösen.",
+    "privacy.2.3.texto": "Höflichkeitskommunikation & Künstliche Intelligenz: Um Ihnen Benachrichtigungen im Zusammenhang mit Ihrer Reservierung zu senden (Bestätigungen, Erinnerungen oder Verspätungswarnungen). Diese Prozesse können automatisiert und über Tools von Drittanbietern wie Make und unseren virtuellen Assistenten auf WhatsApp integriert werden.",
+    "privacy.3.titulo": "3. Rechtsgrundlage",
+    "privacy.3.texto": "Die Rechtsgrundlage für die Verarbeitung Ihrer Daten ist Ihre ausdrückliche Einwilligung. Durch das Ankreuzen des Kontrollkästchens zur Annahme und das Ausfüllen unseres Kontaktformulars oder durch das Initiieren einer Reservierung über unseren WhatsApp-Kanal erteilen Sie uns Ihre ausdrückliche, freie und eindeutige Einwilligung, Ihre Daten gemäß den im vorherigen Abschnitt beschriebenen Zwecken zu verarbeiten.",
+    "privacy.4.titulo": "4. Datenspeicherung",
+    "privacy.4.texto": "Ihre personenbezogenen Daten werden so lange aufbewahrt, wie es zur Erfüllung der Zwecke, für die sie erhoben wurden, unbedingt erforderlich ist (z. B. bis Ihre Reservierung abgeschlossen und der Service beendet ist), oder bis Sie deren Löschung verlangen, unbeschadet der gesetzlichen Aufbewahrungsfristen, die durch geltende Vorschriften vorgeschrieben sind (steuerliche Angelegenheiten, Rechnungsstellung usw.).",
+    "privacy.5.titulo": "5. Ihre Rechte",
+    "privacy.5.texto": "Als Nutzer haben Sie die absolute Kontrolle über Ihre Daten. Sie können folgende Rechte jederzeit ausüben:",
+    "privacy.5.1.texto": "Recht auf Auskunft: Zu erfahren, welche personenbezogenen Daten wir über Sie gespeichert haben und wie wir sie verarbeiten.",
+    "privacy.5.2.texto": "Recht auf Berichtigung: Die Korrektur unrichtiger oder unvollständiger Daten zu verlangen.",
+    "privacy.5.3.texto": "Recht auf Löschung (Recht auf Vergessenwerden): Die Löschung Ihrer Daten zu verlangen, wenn sie für die Zwecke, für die sie erhoben wurden, nicht mehr erforderlich sind.",
+    "privacy.5.4.texto": "Recht auf Widerruf der Einwilligung: Sie können Ihre Meinung jederzeit ändern und die uns zuvor erteilte Erlaubnis widerrufen.",
+    "privacy.6.titulo": "6. Änderungen der Datenschutzerklärung",
+    "privacy.6.texto": "Taberna Tita Cosi behält sich das Recht vor, diese Richtlinie zu ändern, um sie an zukünftige gesetzliche oder rechtsprechende Entwicklungen sowie an Branchenpraktiken anzupassen. In solchen Fällen werden wir die vorgenommenen Änderungen auf dieser Seite mit angemessener Vorankündigung bekannt geben, bevor sie in die Praxis umgesetzt werden."
+  },
+} as const;
+
+export function getLangFromUrl(url: URL) {
+  const [, lang] = url.pathname.split("/");
+  if (lang in ui) return lang as keyof typeof ui;
+  return defaultLang;
+}
+
+export function useTranslations(lang: keyof typeof ui) {
+  return function t(key: keyof (typeof ui)[typeof defaultLang]) {
+    return (ui[lang] as Record<string, string>)[key] || ui[defaultLang][key];
+  };
+}

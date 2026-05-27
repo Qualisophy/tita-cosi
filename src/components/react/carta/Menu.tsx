@@ -42,10 +42,10 @@ export default function Menu({ currentLang }: MenuProps) {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
-      {/* 1. SECCIÓN DE FILTROS Y BÚSQUEDA (Sticky para móvil) */}
+      {/* 1. SECCIÓN DE FILTROS Y BÚSQUEDA */}
       <div className="mb-16 md:mb-20 sticky top-20 z-30 bg-titacosi-base/95 backdrop-blur-md pt-6 pb-8 border-b border-titacosi-surface">
         <div className="flex flex-col md:flex-row gap-8 items-end max-w-6xl mx-auto">
-          {/* Buscador: Compacto en escritorio */}
+          {/* Buscador */}
           <div className="w-full md:w-80 flex-shrink-0">
             <Input
               label={t('menu.buscador1')}
@@ -72,7 +72,7 @@ export default function Menu({ currentLang }: MenuProps) {
             />
           </div>
 
-          {/* Categorías: Tipo "Pills" horizontales con scroll invisible */}
+          {/* Categorías */}
           <div className="w-full md:grow overflow-x-auto no-scrollbar pb-2">
             <div className="flex gap-2 md:gap-3">
               {availableCategories.map((category) => (
@@ -93,7 +93,7 @@ export default function Menu({ currentLang }: MenuProps) {
         </div>
       </div>
 
-      {/* 2. LISTA DE PRODUCTOS (Grid elegante) */}
+      {/* 2. LISTA DE PRODUCTOS (Grid de Tarjetas) */}
       <div className="max-w-6xl mx-auto space-y-20">
         {Object.keys(groupedItems).length === 0 ? (
           <div className="text-center py-24 text-titacosi-primary/60 italic font-serif text-2xl border border-dashed border-titacosi-surface rounded-xl">
@@ -106,53 +106,70 @@ export default function Menu({ currentLang }: MenuProps) {
 
             return (
               <div key={category}>
-                {/* Título de la sección con línea líder */}
+                {/* Título de la sección */}
                 <h2 className="text-4xl font-serif font-black italic mb-12 flex items-center gap-4 text-titacosi-primary drop-shadow-sm">
                   <span className="w-12 h-px bg-titacosi-accent"></span>
                   {category}
                 </h2>
 
-                {/* Grid: 1 columna en móvil, 2 columnas en escritorio con separación amplia */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
+                {/* GRID RESPONSIVO: Mantenemos el grid, pero reducimos un pelín el gap horizontal */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
                   {itemsInCategory.map((item) => (
                     <div
                       key={item.id}
-                      className="flex flex-col group border-l-4 border-transparent hover:border-titacosi-accent/30 hover:bg-titacosi-surface/30 p-4 -ml-4 rounded-r-md transition-all"
+                      // CAMBIO: duration-300 por transition-transform y duration-500 en hover para la sombra, y hover:-translate-y-1
+                      className="bg-white rounded-2xl shadow-sm border border-titacosi-primary/5 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
                     >
-                      {/* Línea Principal: Plato y Precio con Puntos Líderes */}
-                      <div className="flex justify-between items-baseline mb-2 gap-4">
-                        <h3 className="text-xl font-serif font-extrabold text-titacosi-primary group-hover:text-titacosi-accent transition-colors leading-tight">
-                          {item.name}
-                        </h3>
-                        {/* Puntos líderes entre nombre y precio */}
-                        <div className="grow border-b border-dotted border-titacosi-primary/20 -translate-y-1 invisible md:visible"></div>
-                        <span className="text-xl font-sans font-black text-titacosi-accent whitespace-nowrap drop-shadow-sm">
-                          {item.doublePrice === "Por encargo" || item.doublePrice != null ? (
-                            `${item.doublePrice}`
-                          ) : (
-                            `${item.price.toFixed(2)} €`
-                          )}
-                        </span>
+                      {/* Imagen de la tarjeta */}
+                      <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden relative">
+                        <img
+                          src={(item as any).image || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop"}
+                          alt={item.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
                       </div>
 
-                      {/* Descripción */}
-                      <p className="text-titacosi-primary/80 text-base leading-relaxed mb-4 max-w-xl font-sans">
-                        {item.description}
-                      </p>
+                      {/* Contenido de la tarjeta */}
+                      {/* CAMBIO: Reducimos padding interno p-6 -> p-4 */}
+                      <div className="p-4 flex flex-col flex-grow text-center items-center">
+                        {/* CAMBIO: Título más pequeño text-xl -> text-lg. Menos margen inferior mb-3 -> mb-2 */}
+                        <h3 className="text-lg font-serif font-extrabold text-titacosi-primary mb-2 leading-tight">
+                          {item.name}
+                        </h3>
 
-                      {/* Tags (ej. Sin Gluten) - Estilo minimalista */}
-                      {item.tags && item.tags.length > 0 && (
-                        <div className="flex gap-2.5 mt-auto pt-2">
-                          {item.tags.map((tag: string) => (
-                            <span
-                              key={tag}
-                              className="text-xs uppercase tracking-widest font-black text-titacosi-accent/60 bg-titacosi-accent/5 px-2.5 py-1.5 rounded-sm"
-                            >
-                              {tag}
-                            </span>
-                          ))}
+                        {/* CAMBIO: Descripción más compacta text-sm -> text-xs. Menos margen mb-6 -> mb-4. Line-clamp-2 */}
+                        <p className="text-neutral-600 text-xs leading-relaxed mb-4 flex-grow line-clamp-2">
+                          {item.description}
+                        </p>
+
+                        <div className="mt-auto w-full flex flex-col items-center gap-3">
+                          {/* CAMBIO: Precio más pequeño text-2xl -> text-xl */}
+                          <span className="text-xl font-black text-titacosi-accent drop-shadow-sm">
+                            {item.doublePrice === "Por encargo" || item.doublePrice != null ? (
+                              `${item.doublePrice}`
+                            ) : (
+                              `${item.price.toFixed(2)} €`
+                            )}
+                          </span>
+
+                          {/* Tags */}
+                          {item.tags && item.tags.length > 0 && (
+                            // CAMBIO: Menos padding superior pt-4 -> pt-3. Gap más pequeño gap-2 -> gap-1.5
+                            <div className="flex flex-wrap justify-center gap-1.5 pt-3 border-t border-titacosi-primary/5 w-full">
+                              {item.tags.map((tag: string) => (
+                                <span
+                                  key={tag}
+                                  // CAMBIO: Texto tags minúsculo text-[10px] -> text-[9px]. Menos padding px-2 py-1 -> px-1.5 py-0.5
+                                  className="text-[9px] uppercase tracking-widest font-black text-titacosi-primary/60 bg-titacosi-surface px-1.5 py-0.5 rounded-md"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
                         </div>
-                      )}
+                      </div>
                     </div>
                   ))}
                 </div>
