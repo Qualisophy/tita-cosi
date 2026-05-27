@@ -39,12 +39,15 @@ export default function ContactForm({ translations }: ContactFormProps) {
     setStatus("loading");
 
     try {
-      const response = await fetch("http://localhost:3000/api/contacto", {
+      const apiBaseUrl =
+        import.meta.env.PUBLIC_API_URL ||
+        "https://tita-cosi-backend.onrender.com/api";
+
+      const response = await fetch(`${apiBaseUrl}/contacto`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, tipo_formulario: "contacto" }),
       });
-
       const result = await response.json();
 
       if (result.success) {
