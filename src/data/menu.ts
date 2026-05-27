@@ -693,7 +693,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
@@ -1681,7 +1681,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
@@ -2672,7 +2672,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
@@ -3663,7 +3663,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
