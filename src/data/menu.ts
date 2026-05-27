@@ -54,6 +54,65 @@ export const categories: Record<string, string[]> = {
 
 };
 
+// src/data/menu.ts
+
+export const categories2: Record<string, string[]> = {
+  es: [
+    "Picante",
+    "Ácido",
+    "Dulce",
+    "Salado"
+  ],
+
+  en: [
+    "Spicy",
+    "Sour",
+    "Sweet",
+    "Salty"
+  ],
+
+  fr: [
+    "Épicé",
+    "Acide",
+    "Sucré",
+    "Salé"
+  ],
+
+  de: [
+    "Scharf",
+    "Sauer",
+    "Süß",
+    "Salzig"
+  ]
+};
+
+
+
+export const categorias3: Record<string, string[]> = {
+  es: [
+    "Veganos",
+    "Sin gluten"
+  ],
+
+  en: [
+    "Vegan",
+    "Gluten-free"
+  ],
+
+  fr: [
+    "Végétalien",
+    "Sans gluten"
+  ],
+  
+  de: [
+    "Vegan",
+    "Glutenfrei"
+  ]
+};
+
+
+
+
 export const menuItems: Record<string, any[]> = {
   
   es: [
