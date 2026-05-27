@@ -1,8 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Menu from '../../components/react/carta/Menu';
+import HeroCarta from '../../components/react/carta/HeroCarta';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
+import banner2 from '../../assets/banner-2.webp';
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -14,17 +16,10 @@ const t = useTranslations(lang);
 
 <Layout title={t('carta.title')} lang={lang}>
   
-  {/* Hero Sencillo para la Carta */}
-  <section class="w-full bg-titacosi-surface py-20 md:py-32 flex items-center justify-center border-b border-titacosi-primary/10">
-    <div class="text-center px-4">
-      <p class="text-sm font-bold uppercase tracking-widest text-titacosi-accent mb-4">{t('carta.header1')}</p>
-      <h1 class="font-serif font-black italic text-5xl md:text-7xl text-titacosi-primary drop-shadow-sm">
-        {t('carta.header2')}
-      </h1>
-    </div>
-  </section>
+  {/* Hero Dinámico para la Carta (React + GSAP) */}
+  <HeroCarta currentLang={lang} backgroundImage={banner2} client:load />
 
-  {/* Componente React Interactivo */}
+  {/* Componente React Interactivo (Catálogo de Platos) */}
   <section class="min-h-screen bg-titacosi-base">
     <Menu currentLang={lang} client:load />
   </section>
