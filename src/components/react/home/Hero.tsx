@@ -36,7 +36,8 @@ export default function Hero({ currentLang, backgroundImage }: HeroProps) {
   return (
     <section
       ref={container}
-      className="relative w-full h-[90vh] md:h-screen flex items-center justify-center overflow-hidden bg-titacosi-primary"
+      // CAMBIO AQUÍ: Sustituimos h-[90vh] por h-[100dvh]
+      className="relative w-full h-[100dvh] md:h-screen flex items-center justify-center overflow-hidden bg-titacosi-primary"
     >
       {/* 1. IMAGEN DE FONDO LIGERAMENTE DESENFOCADA
           Reducimos el blur drásticamente para que se reconozca el fondo.
