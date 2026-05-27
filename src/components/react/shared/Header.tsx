@@ -7,16 +7,20 @@ import type { ImageMetadata } from "astro";
 interface HeaderProps {
   currentLang: keyof typeof ui;
   logo: ImageMetadata;
+  currentPath: string; // <-- AÑADIMOS ESTO
 }
 
-export default function Header({ currentLang, logo }: HeaderProps) {
+export default function Header({
+  currentLang,
+  logo,
+  currentPath,
+}: HeaderProps) {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const t = (key: keyof (typeof ui)["es"]) =>
     ui[currentLang][key] || ui[defaultLang][key];
 
-  // Bloquear el scroll cuando el menú móvil está abierto
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -29,19 +33,15 @@ export default function Header({ currentLang, logo }: HeaderProps) {
   }, [isMobileMenuOpen]);
 
   // --- SOLUCIÓN AL BUG ---
-  // Función para calcular la URL de destino al cambiar de idioma
+  // Ahora usamos currentPath que nos pasa Astro, por lo que el servidor y el cliente
+  // siempre calcularán exactamente la misma URL.
   const getRedirectPath = (newLangCode: string) => {
-    // Si estamos en el servidor de Astro, no podemos usar window, así que devolvemos la ruta base por seguridad
-    if (typeof window === 'undefined') return `/${newLangCode}`;
-
-    const currentPath = window.location.pathname;
-    
-    // Si la ruta es solo el idioma base (ej. "/es" o "/es/"), redirigimos a la raíz del nuevo idioma
-    if (currentPath === `/${currentLang}` || currentPath === `/${currentLang}/`) {
-        return `/${newLangCode}`;
+    if (
+      currentPath === `/${currentLang}` ||
+      currentPath === `/${currentLang}/`
+    ) {
+      return `/${newLangCode}`;
     }
-
-    // Para el resto de páginas (ej. "/es/carta/"), reemplazamos el idioma en la ruta
     return currentPath.replace(`/${currentLang}`, `/${newLangCode}`);
   };
 
@@ -131,8 +131,7 @@ export default function Header({ currentLang, logo }: HeaderProps) {
                           code === "de") && (
                           <a
                             key={code}
-                            // Usamos la nueva función para calcular el href
-                            href={getRedirectPath(code)} 
+                            href={getRedirectPath(code)}
                             className={`block px-4 py-2 text-sm hover:bg-titacosi-surface ${currentLang === code ? "font-bold text-titacosi-accent" : ""}`}
                             onClick={() => setIsLangOpen(false)}
                           >
@@ -185,7 +184,6 @@ export default function Header({ currentLang, logo }: HeaderProps) {
         }`}
       >
         <div className="flex justify-between items-center p-6 border-b border-titacosi-surface">
-          {/* Logo también en el menú móvil */}
           <img
             src={logo.src}
             alt="Tita Cosi Logo"
@@ -241,10 +239,12 @@ export default function Header({ currentLang, logo }: HeaderProps) {
           <div className="flex gap-4">
             {Object.entries(languages).map(
               ([code, label]) =>
-                (code === "es" || code === "en" || code === "fr" || code === "de") && (
+                (code === "es" ||
+                  code === "en" ||
+                  code === "fr" ||
+                  code === "de") && (
                   <a
                     key={code}
-                    // Usamos la misma función para el menú móvil
                     href={getRedirectPath(code)}
                     className={`text-sm ${currentLang === code ? "font-bold text-titacosi-accent underline" : "text-titacosi-primary"}`}
                   >
