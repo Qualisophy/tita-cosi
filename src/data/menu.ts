@@ -479,7 +479,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Arroces",
       tags: [],
-      image: "/carta/comidas/arroces/negro-carabineros.jpg",
+      image: "/carta/comidas/arroces/negro-carabineros.jpeg",
     },
     {
       id: 45,
@@ -569,7 +569,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/cervezas/la-alcazar.jpg",
+      image: "/carta/bebidas/cervezas/el-alcazar.jpg",
     },
     {
       id: 54,
