@@ -3,188 +3,87 @@ import Layout from '../../layouts/Layout.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
 import MapaUbicacion from '../../components/astro/MapaUbicacion.astro';
+import ContactForm from '../../components/react/contacto/ContactForm';
 
-// Esta es la función que Astro te está pidiendo a gritos
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const formTranslations = {
+  nameLabel: t('contacto.form.nombres.titulo'),
+  namePlaceholder: t('contacto.form.nombres.help-text'),
+  emailLabel: t('contacto.form.email.titulo'),
+  emailPlaceholder: t('contacto.form.email.help-text'),
+  phoneLabel: t('contacto.form.telefono.titulo'),
+  phonePlaceholder: t('contacto.form.telefono.help-text'),
+  messageLabel: t('contacto.form.mensaje.titulo'),
+  messagePlaceholder: t('contacto.form.mensaje.help-text'),
+  submitButton: t('contacto.form.button.titulo'),
+  successMessage: t('contacto.form.success'),
+  errorMessage: t('contacto.form.error'),
+};
 ---
-
-<head>
-    <meta charset="UTF-8">
-    <style>
-        .contact-form {
-            border-radius: 8px;
-            width: 700px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .full-width {
-            grid-column: span 2;
-        }
-
-        .form-group label {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1e293b;
-        }
-
-        .required {
-            color: #ef4444;
-            margin-left: 4px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            background-color: #ffffff;
-            width: 100%;
-            padding: 14px 16px;
-            font-size: 16px;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            color: #1f2937;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #9ca3af;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #1d2440;
-            box-shadow: 0 0 0 3px rgba(29, 36, 64, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: #1A1C29;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.1s;
-        }
-
-        .submit-btn:hover {
-            background-color: #222536;
-        }
-
-        .submit-btn:active {
-            transform: scale(0.99);
-        }
-
-        @media (max-width: 640px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            
-        }
-    </style>
-</head>
-
 
 <Layout title={t('contacto.titulo')} lang={lang}>
   <div class="w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8 flex flex-col items-center justify-center">
-      <h1 class="font-serif text-4xl text-titacosi-primary">{t('contacto.titulo')}</h1>
+      <h1 class="font-serif text-4xl text-primary">{t('contacto.titulo')}</h1>
     </div>
   </div>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 grid grid-cols-1 lg:grid-cols-12 gap-30">
-    <div class="lg:col-span-7 mx-11">
-      <form class="contact-form" action="#" method="POST">
-          <div class="form-grid">
-              
-              <div class="form-group">
-                  <label for="name">{t('contacto.form.nombres.titulo')}<span class="required">*</span></label>
-                  <input type="text" id="name" name="name" placeholder={t('contacto.form.nombres.help-text')} required>
-              </div>
 
-              <div class="form-group">
-                  <label for="email">{t('contacto.form.email.titulo')}<span class="required">*</span></label>
-                  <input type="email" id="email" name="email" placeholder={t('contacto.form.email.help-text')} required>
-              </div>
-
-              <div class="form-group full-width">
-                  <label for="message">{t('contacto.form.mensaje.titulo')}<span class="required">*</span></label>
-                  <textarea id="message" name="message" placeholder={t('contacto.form.mensaje.help-text')} required></textarea>
-              </div>
-
-          </div>
-
-          <button type="submit" class="submit-btn">{t('contacto.form.button.titulo')}</button>
-      </form>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <div class="lg:col-span-7 w-full">
+      <ContactForm client:load translations={formTranslations} />
     </div>  
 
-    <div class="lg:col-span-5 space-y-12">
-      <div class="space-y-6">
-        <div class="flex items-start space-x-4">
-          <span class="material-symbols-outlined text-brand-red mt-1">location_on</span>
-          <div>
-            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.direccion.titulo')}</h3>
-            <p class="font-body-md text-body-md text-primary whitespace-pre-line">
-              {t('contacto.direccion')}
-            </p>
-          </div>
-        </div>
-        
-        <div class="flex items-start space-x-4">
-          <span class="material-symbols-outlined text-brand-red mt-1">call</span>
-          <div>
-            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.telefono.titulo')}</h3>
-            <p class="font-body-md text-body-md text-primary">{t('contacto.telefono')}</p>
-          </div>
-        </div>
-        
-        <div class="flex items-start space-x-4">
-          <span class="material-symbols-outlined text-brand-red mt-1">mail</span>
-          <div>
-            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.email.titulo')}</h3>
-            <p class="font-body-md text-body-md text-primary">{t('contacto.email')}</p>
-          </div>
-        </div>
-        
-        <div class="flex items-start space-x-4">
-          <span class="material-symbols-outlined text-brand-red mt-1">schedule</span>
-          <div>
-            <h3 class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-1">{t('contacto.horario.titulo')}</h3>
-            <p class="font-body-md text-body-md text-primary whitespace-pre-line">
-              {t('contacto.horario')}
-            </p>
-          </div>
+    <div class="lg:col-span-5 bg-base border border-gray-200 p-8 sm:p-10 rounded-xl shadow-sm w-full space-y-8">
+      
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-primary text-[28px]">location_on</span>
+        <div>
+          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.direccion.titulo')}</h3>
+          <p class="text-[15px] text-gray-700 whitespace-pre-line leading-relaxed">
+            {t('contacto.direccion')}
+          </p>
         </div>
       </div>
+      
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-primary text-[28px]">call</span>
+        <div>
+          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.telefono.titulo')}</h3>
+          <p class="text-[15px] text-gray-700">{t('contacto.telefono')}</p>
+        </div>
+      </div>
+      
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-primary text-[28px]">mail</span>
+        <div>
+          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.email.titulo')}</h3>
+          <p class="text-[15px] text-gray-700">{t('contacto.email')}</p>
+        </div>
+      </div>
+      
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-primary text-[28px]">schedule</span>
+        <div>
+          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.horario.titulo')}</h3>
+          <p class="text-[15px] text-gray-700 whitespace-pre-line leading-relaxed">
+            {t('contacto.horario')}
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
+
   <MapaUbicacion 
       titulo={t('contacto.mapa.titulo')}
       direccion="Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga."
       mapaUrl="https://maps.google.com/maps?q=Tita+Cosi+Taberna,+Av.+del+Editor+%C3%81ngel+Caffarena,+13,+M%C3%A1laga&t=&z=16&ie=UTF8&iwloc=&output=embed"
-    />
+  />
 </Layout>

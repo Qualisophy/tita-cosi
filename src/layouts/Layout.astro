@@ -53,8 +53,12 @@ const { title, lang } = Astro.props;
   </head>
   <body class="bg-titacosi-base text-titacosi-primary font-sans antialiased selection:bg-titacosi-accent selection:text-titacosi-surface flex flex-col min-h-screen">
     
-    <Header currentLang={lang} logo={logoHeader} client:load />
-
+  <Header 
+  client:load 
+  currentLang={lang} 
+  logo={logoHeader} 
+  currentPath={Astro.url.pathname} 
+/>
     <main class="grow">
       <slot />
     </main>
