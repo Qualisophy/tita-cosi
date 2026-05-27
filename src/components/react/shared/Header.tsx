@@ -7,7 +7,7 @@ import type { ImageMetadata } from "astro";
 interface HeaderProps {
   currentLang: keyof typeof ui;
   logo: ImageMetadata;
-  currentPath: string; // <-- AÑADIMOS ESTO
+  currentPath: string;
 }
 
 export default function Header({
@@ -32,9 +32,6 @@ export default function Header({
     };
   }, [isMobileMenuOpen]);
 
-  // --- SOLUCIÓN AL BUG ---
-  // Ahora usamos currentPath que nos pasa Astro, por lo que el servidor y el cliente
-  // siempre calcularán exactamente la misma URL.
   const getRedirectPath = (newLangCode: string) => {
     if (
       currentPath === `/${currentLang}` ||
@@ -43,6 +40,23 @@ export default function Header({
       return `/${newLangCode}`;
     }
     return currentPath.replace(`/${currentLang}`, `/${newLangCode}`);
+  };
+
+  // --- LÓGICA DE ESTADO ACTIVO ---
+  const isActive = (targetPath: string) => {
+    // Normalizamos las rutas quitando la barra final para evitar desajustes (ej: /es y /es/)
+    const normalizedCurrent = currentPath.replace(/\/$/, "") || "/";
+    const normalizedTarget = targetPath.replace(/\/$/, "") || "/";
+    return normalizedCurrent === normalizedTarget;
+  };
+
+  const getNavClasses = (path: string) => {
+    const baseClasses =
+      "uppercase text-sm tracking-widest transition-colors duration-300";
+
+    return isActive(path)
+      ? `${baseClasses} text-titacosi-accent font-bold underline decoration-2 underline-offset-8`
+      : `${baseClasses} text-titacosi-primary/70 font-medium hover:text-titacosi-accent`;
   };
 
   return (
@@ -69,19 +83,19 @@ export default function Header({
             <nav className="hidden md:flex flex-none justify-center space-x-8">
               <a
                 href={`/${currentLang}`}
-                className="text-lg font-medium hover:text-titacosi-accent transition-colors"
+                className={getNavClasses(`/${currentLang}`)}
               >
                 {t("nav.inicio")}
               </a>
               <a
                 href={`/${currentLang}/carta`}
-                className="text-lg font-medium hover:text-titacosi-accent transition-colors"
+                className={getNavClasses(`/${currentLang}/carta`)}
               >
                 {t("nav.carta")}
               </a>
               <a
                 href={`/${currentLang}/contacto`}
-                className="text-lg font-medium hover:text-titacosi-accent transition-colors"
+                className={getNavClasses(`/${currentLang}/contacto`)}
               >
                 {t("nav.contacto")}
               </a>
@@ -214,21 +228,21 @@ export default function Header({
           <a
             href={`/${currentLang}`}
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-lg font-medium text-titacosi-primary hover:text-titacosi-accent"
+            className={getNavClasses(`/${currentLang}`)}
           >
             {t("nav.inicio")}
           </a>
           <a
             href={`/${currentLang}/carta`}
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-lg font-medium text-titacosi-primary hover:text-titacosi-accent"
+            className={getNavClasses(`/${currentLang}/carta`)}
           >
             {t("nav.carta")}
           </a>
           <a
             href={`/${currentLang}/contacto`}
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-lg font-medium text-titacosi-primary hover:text-titacosi-accent"
+            className={getNavClasses(`/${currentLang}/contacto`)}
           >
             {t("nav.contacto")}
           </a>
@@ -246,7 +260,7 @@ export default function Header({
                   <a
                     key={code}
                     href={getRedirectPath(code)}
-                    className={`text-sm ${currentLang === code ? "font-bold text-titacosi-accent underline" : "text-titacosi-primary"}`}
+                    className={`text-sm ${currentLang === code ? "font-bold text-titacosi-accent underline" : "text-titacosi-primary/70"}`}
                   >
                     {label}
                   </a>
