@@ -1,4 +1,4 @@
-import { homeEs, homeEn, homeFr, homeDe } from './locales/home';
+ import { homeEs, homeEn, homeFr, homeDe } from './locales/home';
 
 export const languages = {
   es: "ES",
@@ -61,6 +61,11 @@ export const ui = {
     "carta.header2": "Nuestra carta",
     "menu.buscador1": "¿Qué te apetece hoy?",
     "menu.buscador2": "Ej. Croquetas, Atún, Sin Gluten...",
+    "menu.sabores": "Sabores",
+    "menu.dietas": "Dietas",
+    "menu.filtro": "Filtro",
+    "menu.filtros_title": "Filtros",
+    "menu.cerrar": "Cerrar",
   },
   en: {
     "nav.inicio": "Home",
@@ -113,6 +118,11 @@ export const ui = {
     "carta.header2": "Our Menu",
     "menu.buscador1": "What do you feel like today?",
     "menu.buscador2": "Eg. Croquettes, Gluten Free...",
+    "menu.sabores": "Flavours",
+    "menu.dietas": "Dietary",
+    "menu.filtro": "Filter",
+    "menu.filtros_title": "Filters",
+    "menu.cerrar": "Close",
   },
   fr: {
     "nav.inicio": "Accueil",
@@ -166,6 +176,11 @@ export const ui = {
     "carta.header2": "Notre carte",
     "menu.buscador1": "Qu'est-ce qui vous ferait plaisir aujourd'hui ?",
     "menu.buscador2": "Ex. Croquettes, Sans Gluten...",
+    "menu.sabores": "Saveurs",
+    "menu.dietas": "Régimes",
+    "menu.filtro": "Filtre",
+    "menu.filtros_title": "Filtres",
+    "menu.cerrar": "Fermer",
   },
   de: {
     "nav.inicio": "Startseite",
@@ -219,5 +234,10 @@ export const ui = {
     "carta.header2": "Unsere Speisekarte",
     "menu.buscador1": "Worauf haben Sie heute Lust?",
     "menu.buscador2": "Z.B. Kroketten, Glutenfrei...",
+    "menu.sabores": "Geschmäcker",
+    "menu.dietas": "Ernährung",
+    "menu.filtro": "Filter",
+    "menu.filtros_title": "Filter",
+    "menu.cerrar": "Schließen",
   },
 } as const;
