@@ -1,4 +1,4 @@
- export const categories: Record<string, string[]> = {
+export const categories: Record<string, string[]> = {
   
   es: [
     "Todo",
@@ -54,65 +54,6 @@
 
 };
 
-// src/data/menu.ts
-
-export const categories2: Record<string, string[]> = {
-  es: [
-    "Picante",
-    "Ácido",
-    "Dulce",
-    "Salado"
-  ],
-
-  en: [
-    "Spicy",
-    "Sour",
-    "Sweet",
-    "Salty"
-  ],
-
-  fr: [
-    "Épicé",
-    "Acide",
-    "Sucré",
-    "Salé"
-  ],
-
-  de: [
-    "Scharf",
-    "Sauer",
-    "Süß",
-    "Salzig"
-  ]
-};
-
-
-
-export const categorias3: Record<string, string[]> = {
-  es: [
-    "Vegetarianos",
-    "Sin gluten"
-  ],
-
-  en: [
-    "Vegetarian",
-    "Gluten-free"
-  ],
-
-  fr: [
-    "Végétalien",
-    "Sans gluten"
-  ],
-  
-  de: [
-    "Vegetarisch",
-    "Glutenfrei"
-  ]
-};
-
-
-
-
 export const menuItems: Record<string, any[]> = {
   
   es: [
@@ -125,13 +66,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 17,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Salado", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/jamon-iberico.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 2,
@@ -139,13 +75,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Con ralladura de lima.",
       price: 6.5,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Salado", "Ácido", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/torreznos-lima.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 3,
@@ -191,13 +122,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "8.00€ - 14.00€",
       price: 0,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/comidas/empezamos/tartar-salchichon.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tartar-salchichon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 8,
@@ -206,13 +132,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Picante", "Sin Gluten", "Vegetariano"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
-=======
       tags: ["Picante"],
       image: "/carta/comidas/empezamos/papas-chipotle.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 9,
@@ -221,13 +142,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Muy Picante", "Sin Gluten", "Vegetariano"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
-=======
       tags: ["Muy Picante"],
       image: "/carta/comidas/empezamos/papas-bravas.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 10,
@@ -236,13 +152,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Picante", "Vegetariano"],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 11,
@@ -250,13 +161,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Con crema balsámica y merrins.",
       price: 8,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Dulce", "Ácido", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-melva.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 12,
@@ -264,13 +170,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Con crema balsámica y merrins.",
       price: 10,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Dulce", "Ácido", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 13,
@@ -278,120 +179,80 @@ export const menuItems: Record<string, any[]> = {
       description: "Lechuga, rúcula, tomate cherry, cebolla morada, langostinos, queso de cabra y salsa miel y mostaza.",
       price: 12,
       category: "Empezamos",
-<<<<<<< HEAD
-      tags: ["Dulce", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // CROQUETAS
     {
       id: 14,
       name: "Choco",
-      description: "Decoradas con base de salsa (trufa o japo).",
+      description: "Decoradas con base de salsa (trufa o japo). Opciones: Media (4 ud) o Ración (8 ud).",
       doublePrice: "6.00€ / 10.00€",
       price: 0,
       category: "Croquetas",
-<<<<<<< HEAD
-      tags: ["Salado"],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/choco.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 15,
       name: "Puchero",
-      description: "Decoradas con base de salsa (trufa o japo).",
+      description: "Decoradas con base de salsa (trufa o japo). Opciones: Media (4 ud) o Ración (8 ud).",
       doublePrice: "6.00€ / 10.00€",
       price: 0,
       category: "Croquetas",
-<<<<<<< HEAD
-      tags: ["Salado"],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/puchero.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 16,
       name: "Manzana caramelizada, queso azul y nueces",
-      description: "Decoradas con base de salsa (trufa o japo).",
+      description: "Decoradas con base de salsa (trufa o japo). Opciones: Media (4 ud) o Ración (8 ud).",
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquetas",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Dulce", "Salado", "Vegetariano"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/manzana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 17,
       name: "Tex Mex",
-      description: "Rebozado ligeramente picante. Decoradas con salsa.",
+      description: "Rebozado ligeramente picante. Decoradas con base de salsa (trufa o japo). Opciones: Media (4 ud) o Ración (8 ud).",
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquetas",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Picante"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/texmex.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 18,
       name: "Jamón ibérico de bellota",
-      description: "Panko sin gluten. Decoradas con base de salsa.",
+      description: "Panko sin gluten. Decoradas con base de salsa (trufa o japo). Opciones: Media (4 ud) o Ración (8 ud).",
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquetas",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Sin Gluten", "Salado"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
-=======
       tags: ["Gourmet", "Sin Gluten"],
       image: "/carta/comidas/croquetas/jamon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 19,
       name: "Berenjena con miel",
-      description: "Panko sin gluten. Decoradas con base de salsa.",
+      description: "Panko sin gluten. Decoradas con base de salsa (trufa o japo). Opciones: Media (4 ud) o Ración (8 ud).",
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquetas",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Sin Gluten", "Dulce", "Vegetariano"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
-=======
       tags: ["Gourmet", "Sin Gluten"],
       image: "/carta/comidas/croquetas/berenjena.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 20,
       name: "Vaca madurada",
-      description: "Decoradas con base de salsa.",
+      description: "Decoradas con base de salsa (trufa o japo). Opciones: Media (4 ud) o Ración (8 ud).",
       doublePrice: "7.00€ / 12.00€",
       price: 0,
       category: "Croquetas",
-<<<<<<< HEAD
-      tags: ["Nuevo", "Gourmet", "Salado"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
-=======
       tags: ["Nuevo", "Gourmet"],
       image: "/carta/comidas/croquetas/vaca.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // TOSTAS
@@ -401,13 +262,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base de alioli, rúcula, langostinos y gulas.",
       price: 9.5,
       category: "Tostas",
-<<<<<<< HEAD
-      tags: ["Salado"],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/salmon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 22,
@@ -415,13 +271,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base de alioli, rúcula, culís de frutos rojos y queso.",
       price: 9.5,
       category: "Tostas",
-<<<<<<< HEAD
-      tags: ["Dulce", "Salado"],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/presa.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 23,
@@ -429,13 +280,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Con salsa en su jugo y cebolla caramelizada.",
       price: 10,
       category: "Tostas",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/carrillada.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 24,
@@ -443,13 +289,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base de alioli, rúcula, pluma, pimiento y jamón serrano.",
       price: 12,
       category: "Tostas",
-<<<<<<< HEAD
-      tags: ["Salado"],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/serrana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 25,
@@ -457,13 +298,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base de alioli, rúcula, mix de setas y tomate cherry.",
       price: 8,
       category: "Tostas",
-<<<<<<< HEAD
-      tags: ["Vegetariano"],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/vegetariana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 26,
@@ -471,29 +307,19 @@ export const menuItems: Record<string, any[]> = {
       description: "Base de crema de queso trufado.",
       price: 13,
       category: "Tostas",
-<<<<<<< HEAD
-      tags: ["Salado"],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/atun-rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // BOCADOS
     {
       id: 27,
       name: "Mini burger",
-      description: "Ternera 80gr, cheddar, bacon, huevo y salsa bbq.",
+      description: "Ternera 80gr, cheddar, bacon, huevo de codorniz y salsa bbq.",
       price: 7.5,
       category: "Bocados",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/mini-burger.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 28,
@@ -501,13 +327,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Carrillada a la miel, guacamole y coulis de frutos rojos.",
       price: 6,
       category: "Bocados",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/taco-amor.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 29,
@@ -524,13 +345,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Ternera 200gr, bacon, cheddar, huevo y salsa bbq.",
       price: 14,
       category: "Bocados",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-americana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 31,
@@ -538,13 +354,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Ternera 200gr, cecina, queso de cabra y mayo trufa.",
       price: 14,
       category: "Bocados",
-<<<<<<< HEAD
-      tags: ["Salado"],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-cabrita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 32,
@@ -552,13 +363,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Ternera 200gr, alioli, pimiento, cheddar, jamón y huevo.",
       price: 15,
       category: "Bocados",
-<<<<<<< HEAD
-      tags: ["Salado"],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-espanolita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // ESPECIALIDADES
@@ -568,13 +374,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Con salsa de mayo trufa.",
       price: 14,
       category: "Especialidades",
-<<<<<<< HEAD
-      tags: ["Sin Gluten", "Salado"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-cecina.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 34,
@@ -582,13 +383,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Con alioli de perejil.",
       price: 14,
       category: "Especialidades",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 35,
@@ -596,13 +392,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Con alioli de perejil.",
       price: 16,
       category: "Especialidades",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 36,
@@ -630,13 +421,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Acompañada de patatas o verduras.",
       price: 17.5,
       category: "Carnes",
-<<<<<<< HEAD
-      tags: ["Dulce", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/carrillada-angus.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 39,
@@ -644,13 +430,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Acompañada de patatas o verduras.",
       price: 15,
       category: "Carnes",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/presa-iberica.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 40,
@@ -658,13 +439,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Acompañada de patatas o verduras.",
       price: 16,
       category: "Carnes",
-<<<<<<< HEAD
-      tags: ["Ácido", "Salado"],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
-=======
       tags: [],
       image: "/carta/comidas/carnes/pluma-iberica.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 41,
@@ -673,99 +449,64 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "Por encargo",
       price: 0,
       category: "Carnes",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
-    // ARROCES (Por defecto suelen ser sin gluten, pero consúltalo)
+    // ARROCES
     {
       id: 42,
       name: "Arroz a banda",
-      description: "Decorado con alioli. Mínimo 2 personas.",
+      description: "Decorado con alioli. Mínimo 2 personas (precio por persona).",
       price: 16,
       category: "Arroces",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/banda.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 43,
       name: "Arroz negro con bacalao",
-      description: "Con salsa merrins. Decorado con alioli.",
+      description: "Con salsa merrins. Decorado con alioli. Mínimo 2 personas (precio por persona).",
       price: 19,
       category: "Arroces",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-bacalao.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 44,
       name: "Arroz negro con carabineros",
-      description: "Decorado con alioli. Mínimo 2 personas.",
+      description: "Decorado con alioli. Mínimo 2 personas (precio por persona).",
       price: 24,
       category: "Arroces",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-carabineros.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 45,
       name: "Arroz de marisco con pulpo",
-      description: "Decorado con alioli. Mínimo 2 personas.",
+      description: "Decorado con alioli. Mínimo 2 personas (precio por persona).",
       price: 22,
       category: "Arroces",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-pulpo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 46,
       name: "Arroz de marisco con carabineros",
-      description: "Decorado con alioli. Mínimo 2 personas.",
+      description: "Decorado con alioli. Mínimo 2 personas (precio por persona).",
       price: 24,
       category: "Arroces",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-carabineros.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 47,
       name: "Arroz de carne",
-      description: "Por temporada. Decorado con alioli.",
+      description: "Por temporada. Decorado con alioli. Mínimo 2 personas (precio por persona).",
       price: 24,
       category: "Arroces",
-<<<<<<< HEAD
-      tags: ["Sin Gluten"],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/carne.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // POSTRES
@@ -775,13 +516,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Pregunta por nuestras tartas.",
       price: 6,
       category: "Postres",
-<<<<<<< HEAD
-      tags: ["Dulce", "Sin Gluten"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
-=======
       tags: ["Sin Gluten"],
       image: "/carta/comidas/postres/tartas.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 49,
@@ -789,17 +525,12 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 6,
       category: "Postres",
-<<<<<<< HEAD
-      tags: ["Dulce", "Sin Gluten", "Sin Lactosa"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
-=======
       tags: ["Sin Gluten", "Sin Lactosa"],
       image: "/carta/comidas/postres/tiramisu.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
+
     /// BEBIDAS ///
-    // He mantenido las de "Sin Gluten" y "Sin Alcohol" que tenías, e incluido "Dulce" a los Vermuts y Semidulces.
     
     // CERVEZAS
     {
@@ -875,13 +606,8 @@ export const menuItems: Record<string, any[]> = {
       description: "El clásico de toda la vida.",
       price: 4,
       category: "Bebidas",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 58,
@@ -889,13 +615,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Refrescante y con intenso sabor a frutas.",
       price: 4.5,
       category: "Bebidas",
-<<<<<<< HEAD
-      tags: ["Dulce", "Ácido"],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/naranja.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // ROSADO
@@ -906,13 +627,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.20€ / 12.00€",
       price: 0,
       category: "Bebidas",
-<<<<<<< HEAD
-      tags: ["Dulce", "Ácido"],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/rosado/frisse-rose.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // BLANCOS
@@ -923,13 +639,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Bebidas",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 61,
@@ -948,13 +659,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Bebidas",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 63,
@@ -967,7 +673,8 @@ export const menuItems: Record<string, any[]> = {
       image: "/carta/bebidas/blancos/diez-siglos.png",
     },
 
-    // TINTOS (Ribera & Rioja se mantienen igual, al ser clásicos)
+    // TINTOS
+    /* Ribera */
     {
       id: 64,
       name: "Finca Engalia",
@@ -986,7 +693,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.png",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -1007,6 +714,7 @@ export const menuItems: Record<string, any[]> = {
       tags: [],
       image: "/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
     },
+    /* Rioja */
     {
       id: 68,
       name: "Azabache",
@@ -1037,8 +745,7 @@ export const menuItems: Record<string, any[]> = {
       image: "/carta/bebidas/tintos/rioja/campillo.webp",
     },
 
-    // REFRESCOS (Aquí he preferido no saturarlos con "Dulce" porque es obvio, pero sí etiquetarlos como Sin Gluten para alergias cruzadas si lo deseas). 
-    // Lo dejo con la configuración original limpia por legibilidad.
+    // REFRESCOS
     {
       id: 71,
       name: "Agua",
@@ -1299,13 +1006,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Bebidas",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/baileys.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 100,
@@ -1313,13 +1015,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Bebidas",
-<<<<<<< HEAD
-      tags: ["Dulce"],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/disaronno.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 101,
@@ -1356,36 +1053,26 @@ export const menuItems: Record<string, any[]> = {
     // STARTERS
     {
       id: 1,
-      name: "Acorn-fed Iberian Ham",
+      name: "Acorn-fed Iberian ham",
       description: "",
       price: 17,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Salty", "Gluten-free"],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/jamon-iberico.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 2,
-      name: "Torreznos (Crispy Pork Belly)",
+      name: "Torreznos",
       description: "With lime zest.",
       price: 6.5,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Salty", "Sour", "Gluten-free"],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/torreznos-lima.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 3,
-      name: "Prawn Skewer",
-      description: "With Merrins sauce.",
+      name: "Prawn skewer",
+      description: "With merrins sauce.",
       price: 3.8,
       category: "Starters",
       tags: [],
@@ -1393,7 +1080,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 4,
-      name: "Crunchy Chicken Tenders",
+      name: "Crunchy chicken tears",
       description: "With Japanese mayo.",
       price: 9.5,
       category: "Starters",
@@ -1402,7 +1089,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 5,
-      name: "Homemade Nachos",
+      name: "Homemade totopos",
       description: "With meat, guacamole, and cheddar sauce.",
       price: 8.5,
       category: "Starters",
@@ -1411,8 +1098,8 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 6,
-      name: "Russian Potato Salad",
-      description: "With frigate tuna (melva) and prawns.",
+      name: "Russian salad",
+      description: "With frigate tuna and prawns.",
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Starters",
@@ -1421,212 +1108,142 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 7,
-      name: "Málaga Sausage Tartare",
-      description: "With avocado marinated in honey mustard sauce.",
+      name: "Málaga salchichón tartar",
+      description: "With avocado marinated in honey and mustard sauce.",
       doublePrice: "8.00€ - 14.00€",
       price: 0,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/comidas/empezamos/tartar-salchichon.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tartar-salchichon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 8,
-      name: "Wrinkly Potatoes with Chipotle Sauce",
+      name: "Papas arrugás with chipotle sauce",
       description: "",
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Spicy", "Gluten-free", "Vegetarian"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
-=======
       tags: ["Spicy"],
       image: "/carta/comidas/empezamos/papas-chipotle.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 9,
-      name: "Wrinkly Potatoes with Brava Sauce",
+      name: "Papas arrugás with brava sauce",
       description: "",
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Very Spicy", "Gluten-free", "Vegetarian"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
-=======
       tags: ["Very Spicy"],
       image: "/carta/comidas/empezamos/papas-bravas.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 10,
-      name: "Tita Cosi Potatoes",
-      description: "With kimchi sauce.",
+      name: "Tita Cosi potatoes",
+      description: "With kimche sauce.",
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Spicy", "Vegetarian"],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 11,
-      name: "Dressed Tomato & Frigate Tuna",
-      description: "With balsamic cream and Merrins sauce.",
+      name: "Seasoned tomato and frigate tuna",
+      description: "With balsamic cream and merrins.",
       price: 8,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Sweet", "Sour", "Gluten-free"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-melva.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 12,
-      name: "Dressed Tomato, Avocado & Frigate Tuna",
-      description: "With balsamic cream and Merrins sauce.",
+      name: "Seasoned tomato, avocado and frigate tuna",
+      description: "With balsamic cream and merrins.",
       price: 10,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Sweet", "Sour", "Gluten-free"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 13,
-      name: "Tita Cosi Salad",
+      name: "Tita Cosi salad",
       description: "Lettuce, arugula, cherry tomato, red onion, prawns, goat cheese, and honey mustard sauce.",
       price: 12,
       category: "Starters",
-<<<<<<< HEAD
-      tags: ["Sweet", "Gluten-free"],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // CROQUETTES
     {
       id: 14,
-      name: "Cuttlefish",
-      description: "Served on a sauce base (truffle or Japanese mayo).",
-      doublePrice: "6.00€ / 10.00€",
+      name: "Squid (Choco)",
+      description: "Decorated with a sauce base (truffle or japo). Options: Half (4 pcs) or Portion (8 pcs).",
+      doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Salty"],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/choco.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 15,
-      name: "Traditional Stew (Puchero)",
-      description: "Served on a sauce base (truffle or Japanese mayo).",
-      doublePrice: "6.00€ / 10.00€",
+      name: "Stew (Puchero)",
+      description: "Decorated with a sauce base (truffle or japo). Options: Half (4 pcs) or Portion (8 pcs).",
+      doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Salty"],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/puchero.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 16,
-      name: "Caramelized Apple, Blue Cheese & Walnuts",
-      description: "Served on a sauce base (truffle or Japanese mayo).",
-      doublePrice: "6.50€ / 11.00€",
+      name: "Caramelized apple, blue cheese and walnuts",
+      description: "Decorated with a sauce base (truffle or japo). Options: Half (4 pcs) or Portion (8 pcs).",
+      doublePrice: "6.50€ - 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Sweet", "Salty", "Vegetarian"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/manzana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 17,
       name: "Tex Mex",
-      description: "Slightly spicy batter. Served on a sauce base.",
-      doublePrice: "6.50€ / 11.00€",
+      description: "Mildly spicy batter. Decorated with a sauce base (truffle or japo). Options: Half (4 pcs) or Portion (8 pcs).",
+      doublePrice: "6.50€ - 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Spicy"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/texmex.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 18,
-      name: "Acorn-fed Iberian Ham",
-      description: "Gluten-free panko. Served on a sauce base.",
-      doublePrice: "6.50€ / 11.00€",
+      name: "Acorn-fed Iberian ham",
+      description: "Gluten-free panko. Decorated with a sauce base (truffle or japo). Options: Half (4 pcs) or Portion (8 pcs).",
+      doublePrice: "6.50€ - 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Gluten-free", "Salty"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
-=======
       tags: ["Gourmet", "Gluten Free"],
       image: "/carta/comidas/croquetas/jamon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 19,
-      name: "Eggplant with Honey",
-      description: "Gluten-free panko. Served on a sauce base.",
-      doublePrice: "6.50€ / 11.00€",
+      name: "Aubergine with honey",
+      description: "Gluten-free panko. Decorated with a sauce base (truffle or japo). Options: Half (4 pcs) or Portion (8 pcs).",
+      doublePrice: "6.50€ - 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Gluten-free", "Sweet", "Vegetarian"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
-=======
       tags: ["Gourmet", "Gluten Free"],
       image: "/carta/comidas/croquetas/berenjena.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 20,
-      name: "Aged Beef",
-      description: "Served on a sauce base.",
-      doublePrice: "7.00€ / 12.00€",
+      name: "Matured beef",
+      description: "Decorated with a sauce base (truffle or japo). Options: Half (4 pcs) or Portion (8 pcs).",
+      doublePrice: "7.00€ - 12.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["New", "Gourmet", "Salty"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
-=======
       tags: ["New", "Gourmet"],
       image: "/carta/comidas/croquetas/vaca.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // TOASTS
@@ -1636,55 +1253,35 @@ export const menuItems: Record<string, any[]> = {
       description: "Aioli base, arugula, prawns, and baby eels (gulas).",
       price: 9.5,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Salty"],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/salmon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 22,
-      name: "Iberian Pork Shoulder",
-      description: "Aioli base, arugula, red berry coulis, and cheese.",
+      name: "Iberian pork shoulder (Presa)",
+      description: "Aioli base, arugula, red berries coulis, and cheese.",
       price: 9.5,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Sweet", "Salty"],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/presa.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 23,
-      name: "Pork Cheek",
-      description: "With gravy and caramelized onion.",
+      name: "Braised pork cheeks (Carrillada)",
+      description: "With gravy sauce and caramelized onion.",
       price: 10,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/carrillada.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 24,
       name: "Serrana",
-      description: "Aioli base, arugula, Iberian pluma, bell pepper, and Serrano ham.",
+      description: "Aioli base, arugula, pork loin (pluma), pepper, and serrano ham.",
       price: 12,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Salty"],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/serrana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 25,
@@ -1692,57 +1289,37 @@ export const menuItems: Record<string, any[]> = {
       description: "Aioli base, arugula, mixed mushrooms, and cherry tomato.",
       price: 8,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Vegetarian"],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/vegetariana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 26,
       name: "Red Tuna",
-      description: "Truffle cheese cream base.",
+      description: "Truffled cream cheese base.",
       price: 13,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Salty"],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/atun-rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // BITES
     {
       id: 27,
-      name: "Mini Burger",
+      name: "Mini burger",
       description: "80g beef, cheddar, bacon, quail egg, and BBQ sauce.",
       price: 7.5,
       category: "Bites",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/mini-burger.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 28,
-      name: "Love Taco",
-      description: "Honey pork cheek, guacamole, and red berry coulis.",
+      name: "Love taco",
+      description: "Honeyed pork cheeks, guacamole, and red berries coulis.",
       price: 6,
       category: "Bites",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/taco-amor.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 29,
@@ -1759,90 +1336,60 @@ export const menuItems: Record<string, any[]> = {
       description: "200g beef, bacon, cheddar, egg, and BBQ sauce.",
       price: 14,
       category: "Bites",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-americana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 31,
-      name: "Goat Cheese Burger",
-      description: "200g beef, cecina (cured beef), goat cheese, and truffle mayo.",
+      name: "Goat Burger",
+      description: "200g beef, cured beef (cecina), goat cheese, and truffle mayo.",
       price: 14,
       category: "Bites",
-<<<<<<< HEAD
-      tags: ["Salty"],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-cabrita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 32,
       name: "Spanish Burger",
-      description: "200g beef, aioli, bell pepper, cheddar, ham, and egg.",
+      description: "200g beef, aioli, pepper, cheddar, ham, and egg.",
       price: 15,
       category: "Bites",
-<<<<<<< HEAD
-      tags: ["Salty"],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-espanolita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // SPECIALTIES
     {
       id: 33,
-      name: "Broken Eggs with Cecina",
+      name: "Broken eggs with cecina",
       description: "With truffle mayo sauce.",
       price: 14,
       category: "Specialties",
-<<<<<<< HEAD
-      tags: ["Gluten-free", "Salty"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-cecina.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 34,
-      name: "Broken Eggs with Prawns & Baby Eels",
+      name: "Broken eggs with prawns and baby eels",
       description: "With parsley aioli.",
       price: 14,
       category: "Specialties",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 35,
-      name: "Broken Eggs with Red King Prawns",
+      name: "Broken eggs with scarlet prawns",
       description: "With parsley aioli.",
       price: 16,
       category: "Specialties",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 36,
-      name: "Toasted Noodles with Prawns",
-      description: "With gravy aioli.",
+      name: "Toasted noodles (Fideos) with prawns",
+      description: "With rich seafood aioli.",
       price: 12,
       category: "Specialties",
       tags: [],
@@ -1850,8 +1397,8 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 37,
-      name: "Toasted Noodles with Red King Prawns",
-      description: "With gravy aioli.",
+      name: "Toasted noodles (Fideos) with scarlet prawns",
+      description: "With rich seafood aioli.",
       price: 16,
       category: "Specialties",
       tags: [],
@@ -1861,162 +1408,106 @@ export const menuItems: Record<string, any[]> = {
     // MEATS
     {
       id: 38,
-      name: "Angus Beef Cheek in Pedro Ximénez",
+      name: "Angus beef cheeks in Pedro Ximénez sauce",
       description: "Served with potatoes or vegetables.",
       price: 17.5,
       category: "Meats",
-<<<<<<< HEAD
-      tags: ["Sweet", "Gluten-free"],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/carrillada-angus.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 39,
-      name: "Acorn-fed Iberian Pork Shoulder",
+      name: "Acorn-fed Iberian pork shoulder (Presa)",
       description: "Served with potatoes or vegetables.",
       price: 15,
       category: "Meats",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/presa-iberica.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 40,
-      name: "Iberian Pluma Marinated in Miso Sauce",
+      name: "Iberian pork loin (Pluma) marinated in miso sauce",
       description: "Served with potatoes or vegetables.",
       price: 16,
       category: "Meats",
-<<<<<<< HEAD
-      tags: ["Sour", "Salty"],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
-=======
       tags: [],
       image: "/carta/comidas/carnes/pluma-iberica.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 41,
       name: "Suckling Pig",
       description: "Served with potatoes or vegetables.",
-      doublePrice: "Pre-order only",
       price: 0,
       category: "Meats",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
-=======
       tags: ["By order"],
       image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // RICE DISHES
     {
       id: 42,
-      name: "Arroz a Banda (Seafood Rice)",
-      description: "Garnished with aioli. Minimum 2 people.",
+      name: "Arroz a banda",
+      description: "Decorated with aioli. Minimum 2 people (price per person).",
       price: 16,
       category: "Rice Dishes",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/banda.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 43,
-      name: "Black Rice with Cod",
-      description: "With Merrins sauce. Garnished with aioli.",
+      name: "Black rice with cod",
+      description: "With merrins sauce. Decorated with aioli. Minimum 2 people (price per person).",
       price: 19,
       category: "Rice Dishes",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-bacalao.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 44,
-      name: "Black Rice with Red King Prawns",
-      description: "Garnished with aioli. Minimum 2 people.",
+      name: "Black rice with scarlet prawns",
+      description: "Decorated with aioli. Minimum 2 people (price per person).",
       price: 24,
       category: "Rice Dishes",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-carabineros.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 45,
-      name: "Seafood Rice with Octopus",
-      description: "Garnished with aioli. Minimum 2 people.",
+      name: "Seafood rice with octopus",
+      description: "Decorated with aioli. Minimum 2 people (price per person).",
       price: 22,
       category: "Rice Dishes",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-pulpo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 46,
-      name: "Seafood Rice with Red King Prawns",
-      description: "Garnished with aioli. Minimum 2 people.",
+      name: "Seafood rice with scarlet prawns",
+      description: "Decorated with aioli. Minimum 2 people (price per person).",
       price: 24,
       category: "Rice Dishes",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-carabineros.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 47,
-      name: "Meat Rice",
-      description: "Seasonal. Garnished with aioli.",
+      name: "Meat rice",
+      description: "Seasonal. Decorated with aioli. Minimum 2 people (price per person).",
       price: 24,
       category: "Rice Dishes",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/carne.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // DESSERTS
     {
       id: 48,
       name: "Cakes",
-      description: "Ask about our available cakes.",
+      description: "Ask about our cakes.",
       price: 6,
       category: "Desserts",
-<<<<<<< HEAD
-      tags: ["Sweet", "Gluten-free"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
-=======
       tags: ["Gluten Free"],
       image: "/carta/comidas/postres/tartas.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 49,
@@ -2024,22 +1515,16 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 6,
       category: "Desserts",
-<<<<<<< HEAD
-      tags: ["Sweet", "Gluten-free", "Lactose Free"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
-=======
       tags: ["Gluten Free", "Lactose Free"],
       image: "/carta/comidas/postres/tiramisu.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     /// DRINKS ///
-    
     // BEERS
     {
       id: 50,
       name: "Águila Dorada",
-      description: "Draft (30cl) or pint (56cl).",
+      description: "Small beer (30cl) or large beer (56cl).",
       doublePrice: "2.30€ / 3.30€",
       price: 0,
       category: "Drinks",
@@ -2049,7 +1534,7 @@ export const menuItems: Record<string, any[]> = {
     {
       id: 51,
       name: "La Rubia 18/70",
-      description: "Draft (30cl) or pint (56cl).",
+      description: "Small beer (30cl) or large beer (56cl).",
       doublePrice: "2.60€ / 3.60€",
       price: 0,
       category: "Drinks",
@@ -2058,7 +1543,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 52,
-      name: "Águila Unfiltered",
+      name: "Águila unfiltered",
       description: "",
       price: 3,
       category: "Drinks",
@@ -2094,50 +1579,35 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 56,
-      name: "Estrella Galicia (Small)",
+      name: "Quinto Estrella Galicia",
       description: "",
       price: 2,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Gluten-free"],
-      image: "/src/assets/carta/bebidas/cervezas/estrella-sin-gluten.png",
-=======
       tags: ["Gluten Free"],
       image: "/carta/bebidas/cervezas/estrella-sin-gluten.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
-    // VERMOUTHS
+    // VERMUTS
     {
       id: 57,
-      name: "Traditional Red Vermouth",
-      description: "The classic choice.",
+      name: "Traditional red vermouth",
+      description: "The all-time classic.",
       price: 4,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 58,
-      name: "Fruity Orange Vermouth",
+      name: "Fruity orange vermouth",
       description: "Refreshing with an intense fruit flavor.",
       price: 4.5,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Sweet", "Sour"],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/naranja.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
-    // ROSÉ
+    // ROSÉ WINE
     {
       id: 59,
       name: "Frissé Rosé Frizzante",
@@ -2145,16 +1615,11 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.20€ / 12.00€",
       price: 0,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Sweet", "Sour"],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/rosado/frisse-rose.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
-    // WHITES
+    // WHITE WINE
     {
       id: 60,
       name: "Barbadillo VI Cool",
@@ -2162,13 +1627,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 61,
@@ -2182,18 +1642,13 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 62,
-      name: "Embrumas Rueda Fruity Semi-Sweet",
+      name: "Embrumas Rueda Semi-sweet Fruity",
       description: "Glass or bottle.",
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 63,
@@ -2206,7 +1661,8 @@ export const menuItems: Record<string, any[]> = {
       image: "/carta/bebidas/blancos/diez-siglos.png",
     },
 
-    // REDS
+    // RED WINE
+    /* Ribera */
     {
       id: 64,
       name: "Finca Engalia",
@@ -2225,7 +1681,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.png",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -2246,6 +1702,7 @@ export const menuItems: Record<string, any[]> = {
       tags: [],
       image: "/carta/bebidas/tintos/ribera/carramimbre-crianza.png",
     },
+    /* Rioja */
     {
       id: 68,
       name: "Azabache",
@@ -2288,7 +1745,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 72,
-      name: "Sparkling Water",
+      name: "Sparkling water",
       description: "",
       price: 2.5,
       category: "Drinks",
@@ -2378,7 +1835,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 82,
-      name: "Fuze Tea Lemon",
+      name: "Lemon Fuze Tea",
       description: "",
       price: 2.5,
       category: "Drinks",
@@ -2387,7 +1844,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 83,
-      name: "Fuze Tea Passion Fruit",
+      name: "Passion Fruit Fuze Tea",
       description: "",
       price: 2.5,
       category: "Drinks",
@@ -2396,7 +1853,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 84,
-      name: "Aquarius Lemon",
+      name: "Lemon Aquarius",
       description: "",
       price: 2.5,
       category: "Drinks",
@@ -2405,7 +1862,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 85,
-      name: "Aquarius Orange",
+      name: "Orange Aquarius",
       description: "",
       price: 2.5,
       category: "Drinks",
@@ -2413,7 +1870,7 @@ export const menuItems: Record<string, any[]> = {
       image: "/carta/bebidas/refrescos/aquarius-naranja.png",
     },
 
-    // SPIRITS & LIQUORS
+    // (ALCOHOLIC) BEVERAGES
     {
       id: 86,
       name: "Larios",
@@ -2506,7 +1963,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 96,
-      name: "Ballantine's",
+      name: "Ballantines",
       description: "",
       price: 6,
       category: "Drinks",
@@ -2524,7 +1981,7 @@ export const menuItems: Record<string, any[]> = {
     },
     {
       id: 98,
-      name: "Absolut Vodka",
+      name: "Vodka Absolut",
       description: "",
       price: 6,
       category: "Drinks",
@@ -2537,13 +1994,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/baileys.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 100,
@@ -2551,17 +2003,12 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Drinks",
-<<<<<<< HEAD
-      tags: ["Sweet"],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/disaronno.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 101,
-      name: "Liquor Shot",
+      name: "Glass of liqueur",
       description: "",
       price: 4,
       category: "Drinks",
@@ -2598,13 +2045,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 17,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Salé", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/jamon-iberico.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 2,
@@ -2612,13 +2054,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec zeste de citron vert.",
       price: 6.5,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Salé", "Acide", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/torreznos-lima.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 3,
@@ -2674,13 +2111,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Épicé", "Sans Gluten", "Végétarien"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
-=======
       tags: ["Épicé"],
       image: "/carta/comidas/empezamos/papas-chipotle.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 9,
@@ -2689,13 +2121,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Très Épicé", "Sans Gluten", "Végétalien"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
-=======
       tags: ["Très Épicé"],
       image: "/carta/comidas/empezamos/papas-bravas.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 10,
@@ -2704,13 +2131,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Épicé", "Végétarien"],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 11,
@@ -2718,13 +2140,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec crème balsamique et merrins.",
       price: 8,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Sucré", "Acide", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-melva.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 12,
@@ -2732,13 +2149,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec crème balsamique et merrins.",
       price: 10,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Sucré", "Acide", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 13,
@@ -2746,13 +2158,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Laitue, roquette, tomates cerises, oignon rouge, crevettes, fromage de chèvre et sauce miel et moutarde.",
       price: 12,
       category: "Pour commencer",
-<<<<<<< HEAD
-      tags: ["Sucré", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // CROQUETTES
@@ -2763,13 +2170,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ / 10.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Salé"],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/choco.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 15,
@@ -2778,13 +2180,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ / 10.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Salé"],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/puchero.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 16,
@@ -2793,13 +2190,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Sucré", "Salé", "Végétarien"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/manzana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 17,
@@ -2808,13 +2200,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Épicé"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/texmex.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 18,
@@ -2823,13 +2210,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Sans Gluten", "Salé"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
-=======
       tags: ["Gourmet", "Sans Gluten"],
       image: "/carta/comidas/croquetas/jamon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 19,
@@ -2838,13 +2220,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Sans Gluten", "Sucré", "Végétarien"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
-=======
       tags: ["Gourmet", "Sans Gluten"],
       image: "/carta/comidas/croquetas/berenjena.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 20,
@@ -2853,13 +2230,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "7.00€ / 12.00€",
       price: 0,
       category: "Croquettes",
-<<<<<<< HEAD
-      tags: ["Nouveau", "Gourmet", "Salé"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
-=======
       tags: ["Nouveau", "Gourmet"],
       image: "/carta/comidas/croquetas/vaca.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // TOASTS
@@ -2869,13 +2241,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base d'aïoli, roquette, crevettes et civelles.",
       price: 9.5,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Salé"],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/salmon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 22,
@@ -2883,13 +2250,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base d'aïoli, roquette, coulis de fruits rouges et fromage.",
       price: 9.5,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Sucré", "Salé"],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/presa.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 23,
@@ -2897,13 +2259,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec sauce dans son jus et oignon caramélisé.",
       price: 10,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/carrillada.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 24,
@@ -2911,13 +2268,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base d'aïoli, roquette, pluma, poivron et jambon serrano.",
       price: 12,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Salé"],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/serrana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 25,
@@ -2925,13 +2277,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base d'aïoli, roquette, mélange de champignons et tomates cerises.",
       price: 8,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Végétarien"],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/vegetariana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 26,
@@ -2939,13 +2286,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Base de crème de fromage truffé.",
       price: 13,
       category: "Toasts",
-<<<<<<< HEAD
-      tags: ["Salé"],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/atun-rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // BOUCHÉES
@@ -2955,13 +2297,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Bœuf 80g, cheddar, bacon, œuf de caille et sauce bbq.",
       price: 7.5,
       category: "Bouchées",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/mini-burger.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 28,
@@ -2969,15 +2306,9 @@ export const menuItems: Record<string, any[]> = {
       description: "Joue de porc au miel, guacamole et coulis de fruits rouges.",
       price: 6,
       category: "Bouchées",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/taco-amor.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
-    // BOUCHEES (part 2)
     {
       id: 29,
       name: "Brioche",
@@ -2993,13 +2324,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Bœuf 200g, bacon, cheddar, œuf et sauce bbq.",
       price: 14,
       category: "Bouchées",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-americana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 31,
@@ -3007,13 +2333,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Bœuf 200g, cecina, fromage de chèvre et mayo truffe.",
       price: 14,
       category: "Bouchées",
-<<<<<<< HEAD
-      tags: ["Salé"],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-cabrita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 32,
@@ -3021,13 +2342,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Bœuf 200g, aïoli, poivron, cheddar, jambon et œuf.",
       price: 15,
       category: "Bouchées",
-<<<<<<< HEAD
-      tags: ["Salé"],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-espanolita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // SPÉCIALITÉS
@@ -3037,13 +2353,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec sauce mayo à la truffe.",
       price: 14,
       category: "Spécialités",
-<<<<<<< HEAD
-      tags: ["Sans Gluten", "Salé"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-cecina.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 34,
@@ -3051,13 +2362,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec aïoli au persil.",
       price: 14,
       category: "Spécialités",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 35,
@@ -3065,13 +2371,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec aïoli au persil.",
       price: 16,
       category: "Spécialités",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 36,
@@ -3099,13 +2400,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Accompagnée de pommes de terre ou légumes.",
       price: 17.5,
       category: "Viandes",
-<<<<<<< HEAD
-      tags: ["Sucré", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/carrillada-angus.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 39,
@@ -3113,13 +2409,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Accompagnée de pommes de terre ou légumes.",
       price: 15,
       category: "Viandes",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/presa-iberica.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 40,
@@ -3127,13 +2418,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Accompagnée de pommes de terre ou légumes.",
       price: 16,
       category: "Viandes",
-<<<<<<< HEAD
-      tags: ["Acide", "Salé"],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
-=======
       tags: [],
       image: "/carta/comidas/carnes/pluma-iberica.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 41,
@@ -3142,13 +2428,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "Por encargo",
       price: 0,
       category: "Viandes",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // RIZ
@@ -3158,13 +2439,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Décoré avec aïoli. Minimum 2 personnes (prix par personne).",
       price: 16,
       category: "Riz",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/banda.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 43,
@@ -3172,13 +2448,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Avec sauce merrins. Décoré avec aïoli. Minimum 2 personnes (prix par personne).",
       price: 19,
       category: "Riz",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-bacalao.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 44,
@@ -3186,13 +2457,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Décoré avec aïoli. Minimum 2 personnes (prix par personne).",
       price: 24,
       category: "Riz",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-carabineros.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 45,
@@ -3200,13 +2466,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Décoré avec aïoli. Minimum 2 personnes (prix par personne).",
       price: 22,
       category: "Riz",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-pulpo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 46,
@@ -3214,13 +2475,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Décoré avec aïoli. Minimum 2 personnes (prix par personne).",
       price: 24,
       category: "Riz",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-carabineros.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 47,
@@ -3228,13 +2484,8 @@ export const menuItems: Record<string, any[]> = {
       description: "De saison. Décoré avec aïoli. Minimum 2 personnes (prix par personne).",
       price: 24,
       category: "Riz",
-<<<<<<< HEAD
-      tags: ["Sans Gluten"],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/carne.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // DESSERTS
@@ -3244,13 +2495,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Renseignez-vous sur nos gâteaux.",
       price: 6,
       category: "Desserts",
-<<<<<<< HEAD
-      tags: ["Sucré", "Sans Gluten"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
-=======
       tags: ["Sans Gluten"],
       image: "/carta/comidas/postres/tartas.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 49,
@@ -3258,13 +2504,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 6,
       category: "Desserts",
-<<<<<<< HEAD
-      tags: ["Sucré", "Sans Gluten", "Sans Lactose"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
-=======
       tags: ["Sans Gluten", "Sans Lactose"],
       image: "/carta/comidas/postres/tiramisu.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
 
@@ -3344,13 +2585,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Le classique de toujours.",
       price: 4,
       category: "Boissons",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 58,
@@ -3358,13 +2594,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Rafraîchissant et avec une saveur intense de fruits.",
       price: 4.5,
       category: "Boissons",
-<<<<<<< HEAD
-      tags: ["Sucré", "Acide"],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/naranja.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // ROSÉ
@@ -3375,13 +2606,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.20€ / 12.00€",
       price: 0,
       category: "Boissons",
-<<<<<<< HEAD
-      tags: ["Sucré", "Acide"],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/rosado/frisse-rose.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // BLANCS
@@ -3392,13 +2618,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Boissons",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 61,
@@ -3417,13 +2638,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Boissons",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 63,
@@ -3456,7 +2672,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.png",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -3769,13 +2985,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Boissons",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/baileys.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 100,
@@ -3783,13 +2994,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Boissons",
-<<<<<<< HEAD
-      tags: ["Sucré"],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/disaronno.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 101,
@@ -3830,13 +3036,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 17,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Salzig", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/empezamos/jamon-iberico.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/jamon-iberico.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 2,
@@ -3844,13 +3045,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Limettenabrieb.",
       price: 6.5,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Salzig", "Sauer", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/empezamos/torreznos-lima.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/torreznos-lima.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 3,
@@ -3896,13 +3092,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "8.00€ - 14.00€",
       price: 0,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/comidas/empezamos/tartar-salchichon.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tartar-salchichon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 8,
@@ -3911,13 +3102,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Scharf", "Glutenfrei", "Vegetarisch"],
-      image: "/src/assets/carta/comidas/empezamos/papas-chipotle.jpg",
-=======
       tags: ["Scharf"],
       image: "/carta/comidas/empezamos/papas-chipotle.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 9,
@@ -3926,13 +3112,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Sehr scharf", "Glutenfrei", "Vegetarisch"],
-      image: "/src/assets/carta/comidas/empezamos/papas-bravas.jpeg",
-=======
       tags: ["Sehr scharf"],
       image: "/carta/comidas/empezamos/papas-bravas.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 10,
@@ -3941,13 +3122,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ - 10.00€",
       price: 0,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Scharf", "Vegetarisch"],
-      image: "/src/assets/carta/comidas/empezamos/papas-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/papas-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 11,
@@ -3955,13 +3131,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Balsamico-Creme und Merrins.",
       price: 8,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Süß", "Sauer", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-melva.png",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-melva.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 12,
@@ -3969,13 +3140,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Balsamico-Creme und Merrins.",
       price: 10,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Süß", "Sauer", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/empezamos/tomate-aguacate.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 13,
@@ -3983,13 +3149,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Blattsalat, Rucola, Kirschtomaten, rote Zwiebeln, Garnelen, Ziegenkäse und Honig-Senf-Sauce.",
       price: 12,
       category: "Zum Starten",
-<<<<<<< HEAD
-      tags: ["Süß", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
-=======
       tags: [],
       image: "/carta/comidas/empezamos/ensalada-tita-cosi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // KROKETTEN
@@ -4000,13 +3161,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ / 10.00€",
       price: 0,
       category: "Kroketten",
-<<<<<<< HEAD
-      tags: ["Salzig"],
-      image: "/src/assets/carta/comidas/croquetas/choco.jpg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/choco.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 15,
@@ -4015,13 +3171,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.00€ / 10.00€",
       price: 0,
       category: "Kroketten",
-<<<<<<< HEAD
-      tags: ["Salzig"],
-      image: "/src/assets/carta/comidas/croquetas/puchero.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/croquetas/puchero.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 16,
@@ -4030,13 +3181,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Kroketten",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Süß", "Salzig", "Vegetarisch"],
-      image: "/src/assets/carta/comidas/croquetas/manzana.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/manzana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 17,
@@ -4045,13 +3191,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Kroketten",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Scharf"],
-      image: "/src/assets/carta/comidas/croquetas/texmex.jpg",
-=======
       tags: ["Gourmet"],
       image: "/carta/comidas/croquetas/texmex.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 18,
@@ -4060,13 +3201,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Kroketten",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Glutenfrei", "Salzig"],
-      image: "/src/assets/carta/comidas/croquetas/jamon.jpeg",
-=======
       tags: ["Gourmet", "Glutenfrei"],
       image: "/carta/comidas/croquetas/jamon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 19,
@@ -4075,13 +3211,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "6.50€ / 11.00€",
       price: 0,
       category: "Kroketten",
-<<<<<<< HEAD
-      tags: ["Gourmet", "Glutenfrei", "Süß", "Vegetarisch"],
-      image: "/src/assets/carta/comidas/croquetas/berenjena.jpg",
-=======
       tags: ["Gourmet", "Glutenfrei"],
       image: "/carta/comidas/croquetas/berenjena.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 20,
@@ -4090,13 +3221,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "7.00€ / 12.00€",
       price: 0,
       category: "Kroketten",
-<<<<<<< HEAD
-      tags: ["Neu", "Gourmet", "Salzig"],
-      image: "/src/assets/carta/comidas/croquetas/vaca.jpg",
-=======
       tags: ["Neu", "Gourmet"],
       image: "/carta/comidas/croquetas/vaca.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // BELEGTE BROTE
@@ -4106,13 +3232,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Aïoli-Basis, Rucola, Garnelen und Glasaal-Imitat (Gulas).",
       price: 9.5,
       category: "Belegte Brote",
-<<<<<<< HEAD
-      tags: ["Salzig"],
-      image: "/src/assets/carta/comidas/tostas/salmon.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/salmon.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 22,
@@ -4120,13 +3241,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Aïoli-Basis, Rucola, Beeren-Coulis und Käse.",
       price: 9.5,
       category: "Belegte Brote",
-<<<<<<< HEAD
-      tags: ["Süß", "Salzig"],
-      image: "/src/assets/carta/comidas/tostas/presa.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/presa.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 23,
@@ -4134,13 +3250,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Sauce im eigenen Saft und karamellisierten Zwiebeln.",
       price: 10,
       category: "Belegte Brote",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/comidas/tostas/carrillada.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/carrillada.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 24,
@@ -4148,13 +3259,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Aïoli-Basis, Rucola, Pluma-Fleisch, Paprika und Serrano-Schinken.",
       price: 12,
       category: "Belegte Brote",
-<<<<<<< HEAD
-      tags: ["Salzig"],
-      image: "/src/assets/carta/comidas/tostas/serrana.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/serrana.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 25,
@@ -4162,13 +3268,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Aïoli-Basis, Rucola, Pilzmischung und Kirschtomaten.",
       price: 8,
       category: "Belegte Brote",
-<<<<<<< HEAD
-      tags: ["Vegetarisch"],
-      image: "/src/assets/carta/comidas/tostas/vegetariana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/vegetariana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 26,
@@ -4176,13 +3277,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Frischkäse-Trüffel-Basis.",
       price: 13,
       category: "Belegte Brote",
-<<<<<<< HEAD
-      tags: ["Salzig"],
-      image: "/src/assets/carta/comidas/tostas/atun-rojo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/tostas/atun-rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // HÄPPCHEN
@@ -4192,13 +3288,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Rindfleisch 80g, Cheddar, Bacon, Wachtelei und BBQ-Sauce.",
       price: 7.5,
       category: "Häppchen",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/comidas/bocados/mini-burger.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/mini-burger.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 28,
@@ -4206,15 +3297,9 @@ export const menuItems: Record<string, any[]> = {
       description: "Schweinebäckchen mit Honig, Guacamole und Beeren-Coulis.",
       price: 6,
       category: "Häppchen",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/comidas/bocados/taco-amor.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/taco-amor.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
-    // HÄPPCHEN (part 2)
     {
       id: 29,
       name: "Brioche",
@@ -4230,13 +3315,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Rindfleisch 200g, Bacon, Cheddar, Ei und BBQ-Sauce.",
       price: 14,
       category: "Häppchen",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/comidas/bocados/burger-americana.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-americana.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 31,
@@ -4244,13 +3324,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Rindfleisch 200g, Cecina-Schinken, Ziegenkäse und Trüffel-Mayonnaise.",
       price: 14,
       category: "Häppchen",
-<<<<<<< HEAD
-      tags: ["Salzig"],
-      image: "/src/assets/carta/comidas/bocados/burger-cabrita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-cabrita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 32,
@@ -4258,13 +3333,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Rindfleisch 200g, Aïoli, Paprika, Cheddar, Schinken und Ei.",
       price: 15,
       category: "Häppchen",
-<<<<<<< HEAD
-      tags: ["Salzig"],
-      image: "/src/assets/carta/comidas/bocados/burger-espanolita.jpg",
-=======
       tags: [],
       image: "/carta/comidas/bocados/burger-espanolita.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // SPEZIALITÄTEN
@@ -4274,13 +3344,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Trüffel-Mayonnaise-Sauce.",
       price: 14,
       category: "Spezialitäten",
-<<<<<<< HEAD
-      tags: ["Glutenfrei", "Salzig"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-cecina.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-cecina.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 34,
@@ -4288,13 +3353,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Petersilien-Aïoli.",
       price: 14,
       category: "Spezialitäten",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-langostinos.jpg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-langostinos.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 35,
@@ -4302,13 +3362,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Petersilien-Aïoli.",
       price: 16,
       category: "Spezialitäten",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/especialidades/huevos-carabineros.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/especialidades/huevos-carabineros.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 36,
@@ -4336,13 +3391,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Serviert mit Pommes frites oder Gemüse.",
       price: 17.5,
       category: "Fleisch",
-<<<<<<< HEAD
-      tags: ["Süß", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/carnes/carrillada-angus.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/carrillada-angus.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 39,
@@ -4350,13 +3400,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Serviert mit Pommes frites oder Gemüse.",
       price: 15,
       category: "Fleisch",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/carnes/presa-iberica.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/presa-iberica.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 40,
@@ -4364,13 +3409,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Serviert mit Pommes frites oder Gemüse.",
       price: 16,
       category: "Fleisch",
-<<<<<<< HEAD
-      tags: ["Sauer", "Salzig"],
-      image: "/src/assets/carta/comidas/carnes/pluma-iberica.png",
-=======
       tags: [],
       image: "/carta/comidas/carnes/pluma-iberica.png",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 41,
@@ -4379,13 +3419,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "Auf Bestellung",
       price: 0,
       category: "Fleisch",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/carnes/cochinillo-lechal.jpg",
-=======
       tags: [],
       image: "/carta/comidas/carnes/cochinillo-lechal.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // REISGERICHTE
@@ -4395,13 +3430,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Aïoli garniert. Mindestens 2 Personen (Preis pro Person).",
       price: 16,
       category: "Reisgerichte",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/arroces/banda.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/banda.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 43,
@@ -4409,13 +3439,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Merrins-Sauce. Mit Aïoli garniert. Mindestens 2 Personen (Preis pro Person).",
       price: 19,
       category: "Reisgerichte",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/arroces/negro-bacalao.jpeg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-bacalao.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 44,
@@ -4423,13 +3448,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Aïoli garniert. Mindestens 2 Personen (Preis pro Person).",
       price: 24,
       category: "Reisgerichte",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/arroces/negro-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/negro-carabineros.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 45,
@@ -4437,13 +3457,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Aïoli garniert. Mindestens 2 Personen (Preis pro Person).",
       price: 22,
       category: "Reisgerichte",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/arroces/marisco-pulpo.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-pulpo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 46,
@@ -4451,13 +3466,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Mit Aïoli garniert. Mindestens 2 Personen (Preis pro Person).",
       price: 24,
       category: "Reisgerichte",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/arroces/marisco-carabineros.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/marisco-carabineros.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 47,
@@ -4465,13 +3475,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Saisonal. Mit Aïoli garniert. Mindestens 2 Personen (Preis pro Person).",
       price: 24,
       category: "Reisgerichte",
-<<<<<<< HEAD
-      tags: ["Glutenfrei"],
-      image: "/src/assets/carta/comidas/arroces/carne.jpg",
-=======
       tags: [],
       image: "/carta/comidas/arroces/carne.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // NACHSPEISEN
@@ -4481,13 +3486,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Fragen Sie nach unseren aktuellen Kuchen.",
       price: 6,
       category: "Nachspeisen",
-<<<<<<< HEAD
-      tags: ["Süß", "Glutenfrei"],
-      image: "/src/assets/carta/comidas/postres/tartas.jpg",
-=======
       tags: ["Glutenfrei"],
       image: "/carta/comidas/postres/tartas.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 49,
@@ -4495,13 +3495,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 6,
       category: "Nachspeisen",
-<<<<<<< HEAD
-      tags: ["Süß", "Glutenfrei", "Laktosefrei"],
-      image: "/src/assets/carta/comidas/postres/tiramisu.jpg",
-=======
       tags: ["Glutenfrei", "Laktosefrei"],
       image: "/carta/comidas/postres/tiramisu.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
 
@@ -4581,13 +3576,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Der lebenslange Klassiker.",
       price: 4,
       category: "Getränke",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/bebidas/vermuts/rojo.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/rojo.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 58,
@@ -4595,13 +3585,8 @@ export const menuItems: Record<string, any[]> = {
       description: "Erfrischend und mit intensivem Fruchtgeschmack.",
       price: 4.5,
       category: "Getränke",
-<<<<<<< HEAD
-      tags: ["Süß", "Sauer"],
-      image: "/src/assets/carta/bebidas/vermuts/naranja.jpeg",
-=======
       tags: [],
       image: "/carta/bebidas/vermuts/naranja.jpeg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // ROSÉ
@@ -4612,13 +3597,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.20€ / 12.00€",
       price: 0,
       category: "Getränke",
-<<<<<<< HEAD
-      tags: ["Süß", "Sauer"],
-      image: "/src/assets/carta/bebidas/rosado/frisse-rose.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/rosado/frisse-rose.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
 
     // WEISSWEINE
@@ -4629,13 +3609,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Getränke",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/bebidas/blancos/barbadillo-vi.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/barbadillo-vi.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 61,
@@ -4654,13 +3629,8 @@ export const menuItems: Record<string, any[]> = {
       doublePrice: "3.80€ / 16.00€",
       price: 0,
       category: "Getränke",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/bebidas/blancos/embrumas-semidulce.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/blancos/embrumas-semidulce.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 63,
@@ -4693,7 +3663,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.png",
+      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
     },
     {
       id: 66,
@@ -5006,13 +3976,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Getränke",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/bebidas/bebidas/baileys.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/baileys.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 100,
@@ -5020,13 +3985,8 @@ export const menuItems: Record<string, any[]> = {
       description: "",
       price: 4,
       category: "Getränke",
-<<<<<<< HEAD
-      tags: ["Süß"],
-      image: "/src/assets/carta/bebidas/bebidas/disaronno.jpg",
-=======
       tags: [],
       image: "/carta/bebidas/bebidas/disaronno.jpg",
->>>>>>> 90f89945373b0249b98fc0e049aa000d117d7daf
     },
     {
       id: 101,
