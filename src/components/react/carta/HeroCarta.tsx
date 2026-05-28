@@ -1,19 +1,21 @@
-// src/components/react/home/Hero.tsx
+// src/components/react/home/HeroCarta.tsx
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import type { ImageMetadata } from "astro";
 import { ui, defaultLang } from "../../../i18n/ui";
-import Button from "../ui/Button";
 
 gsap.registerPlugin(useGSAP);
 
-interface HeroProps {
+interface HeroCartaProps {
   currentLang: keyof typeof ui;
   backgroundImage: ImageMetadata;
 }
 
-export default function Hero({ currentLang, backgroundImage }: HeroProps) {
+export default function HeroCarta({
+  currentLang,
+  backgroundImage,
+}: HeroCartaProps) {
   const container = useRef<HTMLDivElement>(null);
 
   const t = (key: keyof (typeof ui)["es"]) =>
@@ -36,53 +38,35 @@ export default function Hero({ currentLang, backgroundImage }: HeroProps) {
   return (
     <section
       ref={container}
-      // CAMBIO AQUÍ: Sustituimos h-[90vh] por h-[100dvh]
+      // Usamos full screen y dvh, igual que en la homepage
       className="relative w-full h-[100dvh] md:h-screen flex items-center justify-center overflow-hidden bg-titacosi-primary"
     >
-      {/* 1. IMAGEN DE FONDO LIGERAMENTE DESENFOCADA
-          Reducimos el blur drásticamente para que se reconozca el fondo.
-          Mantenemos un ligero scale-105 para ocultar los bordes difuminados.
-      */}
+      {/* 1. IMAGEN DE FONDO LIGERAMENTE DESENFOCADA (estilo homepage) */}
       <div
         className="absolute inset-0 bg-cover bg-center blur-[2px] scale-105"
         style={{ backgroundImage: `url(${backgroundImage.src})` }}
       />
 
-      {/* 2. OVERLAY OPACO DE MARCA
-          Color base de la marca al 75% de opacidad. Suficiente contraste para el texto,
-          pero deja ver la vida de la foto debajo.
-      */}
+      {/* 2. OVERLAY OPACO DE MARCA (estilo homepage) */}
       <div
         className="absolute inset-0 bg-titacosi-primary/75"
         aria-hidden="true"
       />
 
-      {/* CONTENIDO PRINCIPAL */}
+      {/* CONTENIDO PRINCIPAL (estructura homepage) */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex flex-col items-center mt-10">
+        {/* Título - grande, serif, italic, text-base, con gsap */}
         <h1 className="gsap-reveal font-serif font-black italic text-6xl md:text-8xl lg:text-9xl text-titacosi-base mb-6 leading-[0.95] tracking-tight">
-          {t("home.hero.title")}
+          {t("carta.header2")}
         </h1>
 
+        {/* Texto/Subtítulo - font-sans, texto medio, text-base/90, con gsap */}
         <p className="gsap-reveal text-xl md:text-2xl text-titacosi-base/90 mb-12 max-w-3xl font-sans leading-relaxed whitespace-pre-line">
-          {t("home.hero.text")}
+          {t("carta.header1")}
         </p>
 
-        <div className="gsap-reveal flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-          <Button
-            variant="accent"
-            onClick={() => (window.location.href = `/${currentLang}/reservas`)}
-            className="text-lg px-12 py-4"
-          >
-            {t("nav.reservar")}
-          </Button>
-          <Button
-            variant="outline-white"
-            onClick={() => (window.location.href = `/${currentLang}/carta`)}
-            className="text-lg px-12 py-4"
-          >
-            {t("nav.carta")}
-          </Button>
-        </div>
+        {/* wrapper para animar con gsap si en el futuro añades algo aquí */}
+        <div className="gsap-reveal"></div>
       </div>
     </section>
   );
