@@ -64,7 +64,7 @@ export default function ContactForm({ translations }: ContactFormProps) {
 
   if (status === "success") {
     return (
-      <div className="bg-white border border-gray-200 p-8 rounded-xl shadow-sm w-full h-full flex flex-col items-center justify-center min-h-[400px]">
+      <div className="bg-white border border-gray-200 p-8 rounded-xl shadow-sm w-full h-full flex flex-col items-center justify-center min-h-96">
         <span className="material-symbols-outlined text-accent text-6xl mb-4">
           check_circle
         </span>
@@ -116,7 +116,7 @@ export default function ContactForm({ translations }: ContactFormProps) {
             htmlFor="telefono"
             className="text-[15px] font-bold text-gray-800"
           >
-            {translations.phoneLabel}
+            {translations.phoneLabel} <span className="text-accent">*</span>
           </label>
           <input
             type="tel"

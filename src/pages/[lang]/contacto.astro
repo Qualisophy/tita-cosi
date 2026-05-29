@@ -13,17 +13,17 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const formTranslations = {
-  nameLabel: t('contacto.form.nombres.titulo'),
-  namePlaceholder: t('contacto.form.nombres.help-text'),
-  emailLabel: t('contacto.form.email.titulo'),
-  emailPlaceholder: t('contacto.form.email.help-text'),
-  phoneLabel: t('contacto.form.telefono.titulo'),
-  phonePlaceholder: t('contacto.form.telefono.help-text'),
-  messageLabel: t('contacto.form.mensaje.titulo'),
-  messagePlaceholder: t('contacto.form.mensaje.help-text'),
-  submitButton: t('contacto.form.button.titulo'),
-  successMessage: t('contacto.form.success'),
-  errorMessage: t('contacto.form.error'),
+  nameLabel: t('contacto.formulario.nombres.titulo'),
+  namePlaceholder: t('contacto.formulario.nombres.textoAyuda'),
+  emailLabel: t('contacto.formulario.email.titulo'),
+  emailPlaceholder: t('contacto.formulario.email.textoAyuda'),
+  phoneLabel: t('contacto.formulario.telefono.titulo'),
+  phonePlaceholder: t('contacto.formulario.telefono.textoAyuda'),
+  messageLabel: t('contacto.formulario.mensaje.titulo'),
+  messagePlaceholder: t('contacto.formulario.mensaje.textoAyuda'),
+  submitButton: t('contacto.formulario.boton.titulo'),
+  successMessage: t('contacto.formulario.success'),
+  errorMessage: t('contacto.formulario.error'),
 };
 ---
 
@@ -34,13 +34,13 @@ const formTranslations = {
     </div>
   </div>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
     
     <div class="lg:col-span-7 w-full">
       <ContactForm client:load translations={formTranslations} />
     </div>  
 
-    <div class="lg:col-span-5 bg-base border border-gray-200 p-8 sm:p-10 rounded-xl shadow-sm w-full space-y-8">
+    <div class="lg:col-span-5 bg-base border border-gray-200 p-8 sm:p-10 rounded-xl shadow-sm w-full space-y-8 flex flex-col">
       
       <div class="flex items-start gap-4">
         <span class="material-symbols-outlined text-primary text-[28px]">location_on</span>
