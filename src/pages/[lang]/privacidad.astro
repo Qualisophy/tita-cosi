@@ -11,49 +11,107 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t('privacy.titulo')} lang={lang}>
-  <div class="w-full">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8 flex flex-col items-center justify-center">
-      <h1 class="font-serif text-4xl text-titacosi-primary">{t('privacy.titulo')}</h1>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 flex flex-col">
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.texto.1')}</p>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.texto.2')}</p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12 min-h-[80vh]">
+    <div class="flex flex-col lg:flex-row gap-8">
+      
+      <aside class="lg:w-48 flex-shrink-0 font-sans">
+        <nav class="sticky top-32">
+          <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6">Navegación</p>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#intro" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">Introducción</a></li>
+            <li><a href="#responsable" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('privacy.1.titulo')}</a></li>
+            <li><a href="#finalidad" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('privacy.2.titulo')}</a></li>
+            <li><a href="#legitimacion" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('privacy.3.titulo')}</a></li>
+            <li><a href="#destinatarios" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('privacy.4.titulo')}</a></li>
+            <li><a href="#derechos" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('privacy.5.titulo')}</a></li>
+            <li><a href="#procedencia" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('privacy.6.titulo')}</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('privacy.1.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.1.texto')}</p>
-      <ul class="list-disc list-outside ml-9 space-y-4 leading-relaxed text-titacosi-primary text-justify">
-        <li>{t('privacy.1.1.texto')}</li>
-        <li>{t('privacy.1.2.texto')}</li>
-        <li>{t('privacy.1.3.texto')}</li>
-      </ul>
+      <main class="flex-1 max-w-4xl font-sans text-titacosi-primary">
+        <header class="mb-12 border-b border-titacosi-surface pb-6">
+          <h1 class="font-serif text-4xl md:text-5xl mb-4">{t('privacy.titulo')}</h1>
+          <p class="text-xs text-neutral-500">Última actualización: 28 de Mayo, 2026</p>
+        </header>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('privacy.2.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.2.texto')}</p>
-      <ul class="list-disc list-outside ml-9 space-y-4 leading-relaxed text-titacosi-primary text-justify">
-        <li>{t('privacy.2.1.texto')}</li>
-        <li>{t('privacy.2.2.texto')}</li>
-        <li>{t('privacy.2.3.texto')}</li>
-      </ul>
+        <section id="intro" class="mb-16 space-y-4 scroll-mt-32">
+          <p class="text-base leading-loose text-justify">{t('privacy.texto.1')}</p>
+          <p class="text-base leading-loose text-justify">{t('privacy.texto.2')}</p>
+        </section>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('privacy.3.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.3.texto')}</p>
+        <section id="responsable" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('privacy.1.titulo')}</h2>
+          <p class="text-base leading-loose mb-6 text-justify">{t('privacy.1.texto')}</p>
+          
+          <div class="bg-titacosi-surface p-6 rounded-lg border border-neutral-200">
+            <ul class="list-disc list-outside ml-5 space-y-3 text-base leading-loose text-justify">
+              <li>{t('privacy.1.1.texto')}</li>
+              <li>{t('privacy.1.2.texto')}</li>
+              <li>{t('privacy.1.3.texto')}</li>
+            </ul>
+          </div>
+        </section>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('privacy.4.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.4.texto')}</p>
+        <section id="finalidad" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('privacy.2.titulo')}</h2>
+          <p class="text-base leading-loose mb-6 text-justify">{t('privacy.2.texto')}</p>
+          
+          <div class="bg-titacosi-surface p-6 rounded-lg border border-neutral-200">
+            <ul class="list-disc list-outside ml-5 space-y-3 text-base leading-loose text-justify">
+              <li>{t('privacy.2.1.texto')}</li>
+              <li>{t('privacy.2.2.texto')}</li>
+              <li>{t('privacy.2.3.texto')}</li>
+            </ul>
+          </div>
+        </section>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('privacy.5.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.5.texto')}</p>
-      <ul class="list-disc list-outside ml-9 space-y-4 leading-relaxed text-titacosi-primary text-justify">
-        <li>{t('privacy.5.1.texto')}</li>
-        <li>{t('privacy.5.2.texto')}</li>
-        <li>{t('privacy.5.3.texto')}</li>
-        <li>{t('privacy.5.4.texto')}</li>
-      </ul>
+        <section id="legitimacion" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('privacy.3.titulo')}</h2>
+          <p class="text-base leading-loose text-justify">{t('privacy.3.texto')}</p>
+        </section>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('privacy.6.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('privacy.6.texto')}</p>
+        <section id="destinatarios" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('privacy.4.titulo')}</h2>
+          <p class="text-base leading-loose text-justify">{t('privacy.4.texto')}</p>
+        </section>
 
+        <section id="derechos" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('privacy.5.titulo')}</h2>
+          <p class="text-base leading-loose mb-6 text-justify">{t('privacy.5.texto')}</p>
+          
+          <div class="bg-titacosi-surface p-6 sm:p-8 rounded-lg border border-neutral-200">
+            <ul class="list-disc list-outside ml-5 space-y-3 text-base leading-loose text-justify">
+              <li>{t('privacy.5.1.texto')}</li>
+              <li>{t('privacy.5.2.texto')}</li>
+              <li>{t('privacy.5.3.texto')}</li>
+              <li>{t('privacy.5.4.texto')}</li>
+            </ul>
+
+            <div class="mt-8 pt-6 border-t border-neutral-300/60 text-center flex flex-col items-center justify-center">
+              <p class="text-sm text-neutral-600 mb-1">¿Tienes alguna duda?</p>
+              <p class="font-bold text-titacosi-primary mb-4">Contacta con nosotros:</p>
+              
+              <a 
+                href="mailto:hola@tabernatitacosi.es" 
+                class="inline-flex items-center gap-2 px-6 py-3 bg-titacosi-accent text-white font-bold rounded-lg hover:opacity-95 transition-opacity shadow-md text-base"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                hola@tabernatitacosi.es
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="procedencia" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('privacy.6.titulo')}</h2>
+          <p class="text-base leading-loose text-justify">{t('privacy.6.texto')}</p>
+        </section>
+
+      </main>
     </div>
   </div>
 </Layout>
