@@ -216,6 +216,8 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       });
 
       const data = await response.json();
+
+      // Si la API devuelve éxito falso (400), forzamos el error con el mensaje de rechazo
       if (!response.ok || data.success === false) {
         throw new Error(data.message || "Error al procesar la reserva");
       }
@@ -226,6 +228,7 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       setFechaSeleccionada(formattedDate);
       setModoVista("dia");
     } catch (error: any) {
+      // Atrapamos el error y lo mostramos en la cabecera del modal
       setModalError(error.message);
     } finally {
       setIsSubmitting(false);
