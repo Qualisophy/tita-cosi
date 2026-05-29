@@ -11,7 +11,8 @@ export default function AdminLogin({ lang }: AdminLoginProps) {
   const [loginError, setLoginError] = useState<string | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-  const API_URL = import.meta.env.PUBLIC_API_URL || "http://localhost:3000/api";
+  // [SOLUCIÓN RED]: Forzamos 127.0.0.1 como fallback para evitar conflictos DNS con IPv6 local
+  const API_URL = import.meta.env.PUBLIC_API_URL || "http://127.0.0.1:3000/api";
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,7 +35,13 @@ export default function AdminLogin({ lang }: AdminLoginProps) {
       // Si es correcto, redirigimos limpiamente a la ruta del CRM
       window.location.href = `/${lang}/admin`;
     } catch (error: any) {
-      setLoginError(error.message);
+      // Manejo de errores de red o CORS a nivel de cliente
+      const errorMessage =
+        error.message === "Failed to fetch"
+          ? "Error de conexión con el servidor"
+          : error.message;
+
+      setLoginError(errorMessage);
       setIsLoggingIn(false);
     }
   };
