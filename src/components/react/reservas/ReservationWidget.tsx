@@ -1,12 +1,14 @@
 // src/components/react/reservas/ReservationWidget.tsx
 import React, { useState } from "react";
 import { DayPicker } from "react-day-picker";
-import { es } from "date-fns/locale";
+import { es, enUS, fr, de } from "date-fns/locale";
 import { format } from "date-fns";
 import "react-day-picker/dist/style.css";
 
+import { useTranslations } from '../../../i18n/locales/reservas';
+
 interface ReservationWidgetProps {
-  lang: string;
+  lang: "es" | "en" | "fr" | "de";
 }
 
 type Zone = "Sala" | "Terraza";
@@ -18,22 +20,26 @@ interface Table {
 }
 
 const TABLES: Table[] = [
-  { id: "S1", name: "Mesa 1", capacity: 2, zone: "Sala" },
-  { id: "S2", name: "Mesa 2", capacity: 2, zone: "Sala" },
-  { id: "S3", name: "Mesa 3", capacity: 2, zone: "Sala" },
-  { id: "S4", name: "Mesa 4", capacity: 4, zone: "Sala" },
-  { id: "S5", name: "Mesa 5", capacity: 4, zone: "Sala" },
-  { id: "S6", name: "Mesa 6", capacity: 4, zone: "Sala" },
-  { id: "S7", name: "Mesa 7 (Imperial)", capacity: 8, zone: "Sala" },
-  { id: "T1", name: "Mesa T1", capacity: 2, zone: "Terraza" },
-  { id: "T2", name: "Mesa T2", capacity: 2, zone: "Terraza" },
-  { id: "T3", name: "Mesa T3", capacity: 4, zone: "Terraza" },
-  { id: "T4", name: "Mesa T4", capacity: 4, zone: "Terraza" },
-  { id: "T5", name: "Mesa T5", capacity: 4, zone: "Terraza" },
-  { id: "T6", name: "Mesa T6", capacity: 6, zone: "Terraza" },
+  { id: "S1", name: "1", capacity: 2, zone: "Sala" },
+  { id: "S2", name: "2", capacity: 2, zone: "Sala" },
+  { id: "S3", name: "3", capacity: 2, zone: "Sala" },
+  { id: "S4", name: "4", capacity: 4, zone: "Sala" },
+  { id: "S5", name: "5", capacity: 4, zone: "Sala" },
+  { id: "S6", name: "6", capacity: 4, zone: "Sala" },
+  { id: "S7", name: "7", capacity: 8, zone: "Sala" },
+  { id: "T1", name: "T1", capacity: 2, zone: "Terraza" },
+  { id: "T2", name: "T2", capacity: 2, zone: "Terraza" },
+  { id: "T3", name: "T3", capacity: 4, zone: "Terraza" },
+  { id: "T4", name: "T4", capacity: 4, zone: "Terraza" },
+  { id: "T5", name: "T5", capacity: 4, zone: "Terraza" },
+  { id: "T6", name: "T6", capacity: 6, zone: "Terraza" },
 ];
 
 export default function ReservationWidget({ lang }: ReservationWidgetProps) {
+  const t = useTranslations(lang);
+  const locales = { es, en: enUS, fr, de };
+  const currentLocale = locales[lang] || es;
+
   const [selectedDay, setSelectedDay] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("14:30");
   const [guests, setGuests] = useState<number>(2);
@@ -109,14 +115,14 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
 
       if (!response.ok) {
         throw new Error(
-          data.message || "Error al procesar tu reserva. Inténtalo de nuevo.",
+          data.message || t("reservas.error.1"),
         );
       }
 
       // ¡Reserva exitosa!
       setIsSuccess(true);
     } catch (error: any) {
-      console.error("Error enviando reserva:", error);
+      console.error(t("reservas.error.2"), error);
       setErrorMsg(error.message);
     } finally {
       setIsSubmitting(false);
@@ -131,17 +137,16 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
           check_circle
         </span>
         <h2 className="font-serif text-3xl md:text-4xl text-titacosi-primary mb-4">
-          ¡Reserva Confirmada!
+          {t("reserva.confirmacion")}
         </h2>
         <p className="font-sans text-lg text-gray-600 mb-8">
-          Hemos recibido tu solicitud y tu mesa está reservada. ¡Te esperamos en
-          Tita Cosi!
+          {t("reserva.confirmacion.extensa")}
         </p>
         <button
           onClick={() => window.location.reload()}
           className="bg-titacosi-accent text-white rounded-xl py-3 px-8 font-sans text-sm uppercase font-bold hover:bg-opacity-90 transition-all"
         >
-          Hacer otra reserva
+          {t("reserva.hacer.otra")}
         </button>
       </div>
     );
@@ -151,12 +156,10 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     <div className="mb-16">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h1 className="font-serif text-4xl md:text-5xl text-titacosi-primary mb-6">
-          Reserva tu mesa en Tita Cosi
+          {t("reserva.titulo")}
         </h1>
         <p className="font-sans text-lg text-gray-600">
-          Disfruta de la auténtica esencia malagueña en un entorno diseñado para
-          el confort y la buena gastronomía. Selecciona fecha, hora y tu mesa
-          favorita.
+          {t("reserva.texto")}
         </p>
       </div>
 
@@ -196,14 +199,14 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 mode="single"
                 selected={selectedDay}
                 onSelect={setSelectedDay}
-                locale={es}
+                locale={currentLocale}
                 disabled={[{ before: new Date() }]}
               />
             </div>
 
             <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col">
               <h3 className="font-serif text-xl text-titacosi-primary mb-6">
-                Horarios
+                {t("reserva.horario")}
               </h3>
               <div className="grid grid-cols-2 gap-3 grow content-start">
                 {availableTimes.map((time) => (
@@ -227,10 +230,10 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
           <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
             <div className="flex justify-between items-end mb-6">
               <h3 className="font-serif text-xl text-titacosi-primary">
-                Elige tu Mesa
+                {t("reserva.mesa.titulo")}
               </h3>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-500">Comensales:</span>
+                <span className="text-sm text-gray-500">{t("reserva.mesa.comensales")}</span>
                 <select
                   value={guests}
                   onChange={(e) => {
@@ -241,7 +244,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                     <option key={num} value={num}>
-                      {num} {num === 1 ? "persona" : "personas"}
+                      {num} {num === 1 ? t("reserva.mesa.comensales.singular") : t("reserva.mesa.comensales.plural")}
                     </option>
                   ))}
                 </select>
@@ -253,7 +256,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 <span className="material-symbols-outlined text-[18px]">
                   living
                 </span>{" "}
-                Sala Interior
+                {t("reserva.mesa.ubicacion.1")}
               </h4>
               <div className="flex flex-wrap gap-3">
                 {salaTables.length > 0 ? (
@@ -271,16 +274,17 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                       <span
                         className={`font-sans text-sm font-bold ${selectedTable === table.id ? "text-titacosi-accent" : "text-titacosi-primary"}`}
                       >
-                        {table.name}
+                        {t("reserva.mesa.nombre")} {table.name}
+                        {table.id === "S7" && ` (${t("reserva.mesa.tipo.imperial")})`}
                       </span>
                       <span className="text-xs text-gray-500">
-                        Hasta {table.capacity} pax
+                        {t("reserva.mesa.hasta")} {table.capacity} {t("reserva.mesa.pax")}
                       </span>
                     </button>
                   ))
                 ) : (
                   <p className="text-sm text-gray-400 italic">
-                    No hay mesas disponibles en sala para {guests} personas.
+                    {t("reservas.mesa.interior.sin.espacio")} {guests} {t("reserva.mesa.comensales.plural")}.
                   </p>
                 )}
               </div>
@@ -291,7 +295,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 <span className="material-symbols-outlined text-[18px]">
                   deck
                 </span>{" "}
-                Terraza
+                {t("reserva.mesa.ubicacion.2")}
               </h4>
               <div className="flex flex-wrap gap-3">
                 {terrazaTables.length > 0 ? (
@@ -309,16 +313,16 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                       <span
                         className={`font-sans text-sm font-bold ${selectedTable === table.id ? "text-titacosi-accent" : "text-titacosi-primary"}`}
                       >
-                        {table.name}
+                        {t("reserva.mesa.nombre")} {table.name}
                       </span>
                       <span className="text-xs text-gray-500">
-                        Hasta {table.capacity} pax
+                        {t("reserva.mesa.hasta")} {table.capacity} {t("reserva.mesa.pax")}
                       </span>
                     </button>
                   ))
                 ) : (
                   <p className="text-sm text-gray-400 italic">
-                    No hay mesas disponibles en terraza para {guests} personas.
+                    {t("reservas.mesa.terraza.sin.espacio")} {guests} {t("reserva.mesa.comensales.plural")}.
                   </p>
                 )}
               </div>
@@ -333,7 +337,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
             className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col gap-5 sticky top-28"
           >
             <h3 className="font-serif text-xl text-titacosi-primary mb-2">
-              Tus Datos
+              {t("reservas.datos.titulo")}
             </h3>
 
             {/* Aviso de error si la mesa ya está ocupada o hay fallos de red */}
@@ -352,7 +356,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                   className="font-sans text-xs uppercase font-bold text-gray-500 mb-1 block"
                   htmlFor="nombre"
                 >
-                  Nombre
+                  {t("reservas.datos.nombre")}
                 </label>
                 {/* Atributos name y required añadidos */}
                 <input
@@ -360,7 +364,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                   name="nombre"
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                   id="nombre"
-                  placeholder="Ej. Alba"
+                  placeholder={t("reservas.datos.nombre.placeholder")}
                   type="text"
                 />
               </div>
@@ -369,14 +373,14 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                   className="font-sans text-xs uppercase font-bold text-gray-500 mb-1 block"
                   htmlFor="apellidos"
                 >
-                  Apellidos
+                  {t("reservas.datos.apellidos")}
                 </label>
                 <input
                   required
                   name="apellidos"
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                   id="apellidos"
-                  placeholder="Ej. Martín"
+                  placeholder={t("reservas.datos.apellidos.placeholder")}
                   type="text"
                 />
               </div>
@@ -387,7 +391,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 className="font-sans text-xs uppercase font-bold text-gray-500 mb-1 flex items-center gap-1"
                 htmlFor="telefono"
               >
-                Teléfono{" "}
+                {t("reservas.datos.telefono")}{" "}
                 <span className="material-symbols-outlined text-[14px] text-green-500">
                   chat
                 </span>
@@ -397,7 +401,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 name="telefono"
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                 id="telefono"
-                placeholder="+34 600 000 000"
+                placeholder={t("reservas.datos.telefono.placeholder")}
                 type="tel"
               />
             </div>
@@ -407,14 +411,14 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 className="font-sans text-xs uppercase font-bold text-gray-500 mb-1 block"
                 htmlFor="email"
               >
-                Email
+                {t("reservas.datos.email")}
               </label>
               <input
                 required
                 name="email"
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all"
                 id="email"
-                placeholder="correo@ejemplo.com"
+                placeholder={t("reservas.datos.email.placeholder")}
                 type="email"
               />
             </div>
@@ -424,13 +428,13 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 className="font-sans text-xs uppercase font-bold text-gray-500 mb-1 block"
                 htmlFor="peticiones"
               >
-                Alergias o Peticiones
+                {t("reservas.datos.alergias")}
               </label>
               <textarea
                 name="peticiones"
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all resize-none"
                 id="peticiones"
-                placeholder="Celiaquía, trona para bebé..."
+                placeholder={t("reservas.datos.alergias.placeholder")}
                 rows={3}
               ></textarea>
             </div>
@@ -447,12 +451,12 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                   className="font-sans text-xs text-gray-500 cursor-pointer"
                   htmlFor="privacy"
                 >
-                  He leído y acepto la{" "}
+                  {t("reservas.datos.privacidad.texto")}{" "}
                   <a
                     className="underline hover:text-titacosi-primary"
                     href={`/${lang}/privacidad`}
                   >
-                    Política de Privacidad
+                    {t("reservas.datos.privacidad.pagina")}
                   </a>
                   .
                 </label>
@@ -466,16 +470,16 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               >
                 {isSubmitting ? (
                   <>
-                    Procesando...{" "}
+                    {t("reservas.btn.procesando")}{" "}
                     <span className="material-symbols-outlined text-[18px] animate-spin">
                       sync
                     </span>
                   </>
                 ) : !selectedTable ? (
-                  "Selecciona una Mesa"
+                  t("reservas.btn.seleciona.mesa")
                 ) : (
                   <>
-                    Confirmar Reserva{" "}
+                    {t("reservas.btn.confirmar")}{" "}
                     <span className="material-symbols-outlined text-[18px]">
                       arrow_forward
                     </span>
