@@ -1,4 +1,4 @@
-import { homeEs, homeEn, homeFr, homeDe } from "./locales/home";
+ import { homeEs, homeEn, homeFr, homeDe } from './locales/home';
 
 export const languages = {
   es: "ES",
@@ -54,12 +54,6 @@ export const ui = {
     "contacto.form.mensaje.titulo": "Mensaje",
     "contacto.form.mensaje.help-text": "Cuéntanos cómo podemos ayudarte...",
     "contacto.form.button.titulo": "Enviar Mensaje",
-    "contacto.form.telefono.titulo": "Teléfono",
-    "contacto.form.telefono.help-text": "+34 600 000 000",
-    "contacto.form.success":
-      "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo lo antes posible.",
-    "contacto.form.error":
-      "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
     ...homeEs,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Nuestra Carta",
@@ -67,6 +61,11 @@ export const ui = {
     "carta.header2": "Nuestra carta",
     "menu.buscador1": "¿Qué te apetece hoy?",
     "menu.buscador2": "Ej. Croquetas, Atún, Sin Gluten...",
+    "menu.sabores": "Sabores",
+    "menu.dietas": "Dietas",
+    "menu.filtro": "Filtro",
+    "menu.filtros_title": "Filtros",
+    "menu.cerrar": "Cerrar",
   },
   en: {
     "nav.inicio": "Home",
@@ -112,12 +111,6 @@ export const ui = {
     "contacto.form.mensaje.titulo": "Message",
     "contacto.form.mensaje.help-text": "Tell us how we can help you...",
     "contacto.form.button.titulo": "Send Message",
-    "contacto.form.telefono.titulo": "Phone",
-    "contacto.form.telefono.help-text": "+34 600 000 000",
-    "contacto.form.success":
-      "Message sent successfully! We will contact you as soon as possible.",
-    "contacto.form.error":
-      "There was an error sending the message. Please try again later.",
     ...homeEn,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Our Menu",
@@ -125,6 +118,11 @@ export const ui = {
     "carta.header2": "Our Menu",
     "menu.buscador1": "What do you feel like today?",
     "menu.buscador2": "Eg. Croquettes, Gluten Free...",
+    "menu.sabores": "Flavours",
+    "menu.dietas": "Dietary",
+    "menu.filtro": "Filter",
+    "menu.filtros_title": "Filters",
+    "menu.cerrar": "Close",
   },
   fr: {
     "nav.inicio": "Accueil",
@@ -171,12 +169,6 @@ export const ui = {
     "contacto.form.mensaje.help-text":
       "Dites-nous comment nous pouvons vous aider...",
     "contacto.form.button.titulo": "Envoyer le message",
-    "contacto.form.telefono.titulo": "Téléphone",
-    "contacto.form.telefono.help-text": "+34 600 000 000",
-    "contacto.form.success":
-      "Message envoyé avec succès ! Nous vous contacterons dès que possible.",
-    "contacto.form.error":
-      "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer plus tard.",
     ...homeFr,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Notre Carte",
@@ -184,6 +176,11 @@ export const ui = {
     "carta.header2": "Notre carte",
     "menu.buscador1": "Qu'est-ce qui vous ferait plaisir aujourd'hui ?",
     "menu.buscador2": "Ex. Croquettes, Sans Gluten...",
+    "menu.sabores": "Saveurs",
+    "menu.dietas": "Régimes",
+    "menu.filtro": "Filtre",
+    "menu.filtros_title": "Filtres",
+    "menu.cerrar": "Fermer",
   },
   de: {
     "nav.inicio": "Startseite",
@@ -230,12 +227,6 @@ export const ui = {
     "contacto.form.mensaje.help-text":
       "Teilen Sie uns mit, wie wir Ihnen helfen können...",
     "contacto.form.button.titulo": "Nachricht senden",
-    "contacto.form.telefono.titulo": "Telefon",
-    "contacto.form.telefono.help-text": "+34 600 000 000",
-    "contacto.form.success":
-      "Nachricht erfolgreich gesendet! Wir werden uns so schnell wie möglich bei Ihnen melden.",
-    "contacto.form.error":
-      "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal.",
     ...homeDe,
     /* Nuevas claves de la carta (Rama tcw-55) */
     "carta.title": "Unsere Speisekarte",
@@ -243,5 +234,10 @@ export const ui = {
     "carta.header2": "Unsere Speisekarte",
     "menu.buscador1": "Worauf haben Sie heute Lust?",
     "menu.buscador2": "Z.B. Kroketten, Glutenfrei...",
+    "menu.sabores": "Geschmäcker",
+    "menu.dietas": "Ernährung",
+    "menu.filtro": "Filter",
+    "menu.filtros_title": "Filter",
+    "menu.cerrar": "Schließen",
   },
 } as const;
