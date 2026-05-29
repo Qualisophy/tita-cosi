@@ -748,7 +748,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
@@ -1739,7 +1739,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
@@ -2209,7 +2209,7 @@ export const menuItems: Record<string, any[]> = {
       price: 10,
       category: "Pour commencer",
       tags: ["Sucré", "Acide", "Sans gluten"],
-      image: "/carta/comidas/emotes/tomate-aguacate.jpg",
+      image: "/carta/comidas/empezamos/tomate-aguacate.jpg",
     },
     {
       id: 13,
@@ -2517,7 +2517,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Riz",
       tags: ["Sans gluten", "Salé"],
-      image: "/carta/comidas/arroces/negro-carabineros.jpg",
+      image: "/carta/comidas/arroces/negro-carabineros.jpeg",
     },
     {
       id: 45,
@@ -2607,7 +2607,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/cervezas/la-alcazar.jpg",
+      image: "/carta/bebidas/cervezas/el-alcazar.jpg",
     },
     {
       id: 54,
@@ -2731,7 +2731,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
@@ -3509,7 +3509,7 @@ export const menuItems: Record<string, any[]> = {
       price: 24,
       category: "Reisgerichte",
       tags: ["Glutenfrei", "Salzig"],
-      image: "/carta/comidas/arroces/negro-carabineros.jpg",
+      image: "/carta/comidas/arroces/negro-carabineros.jpeg",
     },
     {
       id: 45,
@@ -3599,7 +3599,7 @@ export const menuItems: Record<string, any[]> = {
       price: 3,
       category: "Getränke",
       tags: [],
-      image: "/carta/bebidas/cervezas/la-alcazar.jpg",
+      image: "/carta/bebidas/cervezas/el-alcazar.jpg",
     },
     {
       id: 54,
@@ -3723,7 +3723,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Getränke",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
