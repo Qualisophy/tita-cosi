@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import { getLangFromUrl, useTranslations, languages } from '../../i18n/locales/cookies';
 
-// Esta es la función que Astro te está pidiendo a gritos
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }
@@ -12,80 +11,119 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t('cookies.titulo')} lang={lang}>
-  <div class="w-full">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8 flex flex-col items-center justify-center">
-      <h1 class="font-serif text-4xl text-titacosi-primary">{t('cookies.titulo')}</h1>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 flex flex-col">
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.texto.1')}</p>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.texto.2')}</p>
+  {/* Añadido pt-24 para que el banner fijo superior no tape el contenido */}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12 min-h-[80vh]">
+    <div class="flex flex-col lg:flex-row gap-8">
+      
+      <aside class="lg:w-48 flex-shrink-0 font-sans">
+        <nav class="sticky top-32">
+          <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6">Navegación</p>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#intro" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">Introducción</a></li>
+            <li><a href="#definicion" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('cookies.1.titulo')}</a></li>
+            <li><a href="#uso" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('cookies.2.titulo')}</a></li>
+            <li><a href="#tipos" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('cookies.3.titulo')}</a></li>
+            <li><a href="#gestion" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('cookies.4.titulo')}</a></li>
+            <li><a href="#actualizaciones" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('cookies.5.titulo')}</a></li>
+            <li><a href="#contacto" class="text-titacosi-primary hover:text-titacosi-accent transition-colors">{t('cookies.6.titulo')}</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('cookies.1.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.1.texto')}</p>
+      <main class="flex-1 max-w-4xl font-sans text-titacosi-primary">
+        <header class="mb-12 border-b border-titacosi-surface pb-6">
+          <h1 class="font-serif text-4xl md:text-5xl mb-4">{t('cookies.titulo')}</h1>
+          <p class="text-xs text-neutral-500">Última actualización: 28 de Mayo, 2026</p>
+        </header>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('cookies.2.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.2.texto')}</p>
-      <ul class="list-disc list-outside ml-9 space-y-4 leading-relaxed text-titacosi-primary text-justify">
-        <li>{t('cookies.2.1.texto')}</li>
-        <li>{t('cookies.2.2.texto')}</li>
-        <li>{t('cookies.2.3.texto')}</li>
-        <li>{t('cookies.2.4.texto')}</li>
-      </ul>           
+        <section id="intro" class="mb-16 space-y-4 scroll-mt-32">
+          <p class="text-base leading-loose text-justify">{t('cookies.texto.1')}</p>
+          <p class="text-base leading-loose text-justify">{t('cookies.texto.2')}</p>
+        </section>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('cookies.3.titulo')}</h2>
+        <section id="definicion" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('cookies.1.titulo')}</h2>
+          <p class="text-base leading-loose text-justify">{t('cookies.1.texto')}</p>
+        </section>
 
-      <div class="overflow-x-auto my-8 rounded-xl border border-neutral-200 shadow-sm">
-        <table class="w-full text-left border-collapse bg-white">
-          <thead>
-            <tr class="bg-neutral-50 border-b border-neutral-200">
-              <th class="px-6 py-4 text-sm font-bold text-titacosi-primary uppercase tracking-wider">{t('cookies.3.tipo.titulo')}</th>
-              <th class="px-6 py-4 text-sm font-bold text-titacosi-primary uppercase tracking-wider">{t('cookies.3.proveedor.titulo')}</th>
-              <th class="px-6 py-4 text-sm font-bold text-titacosi-primary uppercase tracking-wider">{t('cookies.3.finalidad.titulo')}</th>
-              <th class="px-6 py-4 text-sm font-bold text-titacosi-primary uppercase tracking-wider">{t('cookies.3.duracion.titulo')}</th>
-            </tr>
-          </thead>
+        <section id="uso" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('cookies.2.titulo')}</h2>
+          <p class="text-base leading-loose mb-6 text-justify">{t('cookies.2.texto')}</p>
           
-          <tbody class="divide-y divide-neutral-200 text-neutral-700">
-            <tr class="hover:bg-neutral-50 transition-colors">
-              <td class="px-6 py-4 text-sm font-medium">{t('cookies.3.tipo.1')}</td>
-              <td class="px-6 py-4 text-sm">{t('cookies.3.proveedor.1')}</td>
-              <td class="px-6 py-4 text-sm leading-relaxed">{t('cookies.3.finalidad.1')}</td>
-              <td class="px-6 py-4 text-sm whitespace-nowrap">{t('cookies.3.duracion.1')}</td>
-            </tr>
-            
-            <tr class="hover:bg-neutral-50 transition-colors">
-              <td class="px-6 py-4 text-sm font-medium">{t('cookies.3.tipo.2')}</td>
-              <td class="px-6 py-4 text-sm">{t('cookies.3.proveedor.2')}</td>
-              <td class="px-6 py-4 text-sm leading-relaxed">{t('cookies.3.finalidad.2')}</td>
-              <td class="px-6 py-4 text-sm whitespace-nowrap">{t('cookies.3.duracion.2')}</td>
-            </tr>
+          <div class="bg-titacosi-surface p-6 rounded-lg border border-neutral-200">
+            <ul class="list-disc list-outside ml-5 space-y-3 text-base leading-loose text-justify">
+              <li>{t('cookies.2.1.texto')}</li>
+              <li>{t('cookies.2.2.texto')}</li>
+              <li>{t('cookies.2.3.texto')}</li>
+              <li>{t('cookies.2.4.texto')}</li>
+            </ul>
+          </div>
+        </section>
 
-            <tr class="hover:bg-neutral-50 transition-colors">
-              <td class="px-6 py-4 text-sm font-medium">{t('cookies.3.tipo.3')}</td>
-              <td class="px-6 py-4 text-sm">{t('cookies.3.proveedor.3')}</td>
-              <td class="px-6 py-4 text-sm leading-relaxed">{t('cookies.3.finalidad.3')}</td>
-              <td class="px-6 py-4 text-sm whitespace-nowrap">{t('cookies.3.duracion.3')}</td>
-            </tr>            
-          </tbody>
-        </table>
-      </div>
+        <section id="tipos" class="mb-16 scroll-mt-32">
+          <h2 class="text-2xl font-serif mb-6 pb-2 border-b border-titacosi-surface">{t('cookies.3.titulo')}</h2>
+          <div class="overflow-x-auto rounded-xl border border-titacosi-surface shadow-sm bg-white">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-titacosi-surface border-b border-neutral-300">
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">{t('cookies.3.tipo.titulo')}</th>
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">{t('cookies.3.proveedor.titulo')}</th>
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">{t('cookies.3.finalidad.titulo')}</th>
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">{t('cookies.3.duracion.titulo')}</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-neutral-200 text-neutral-700">
+                <tr class="hover:bg-titacosi-base/50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-titacosi-primary">{t('cookies.3.tipo.1')}</td>
+                  <td class="px-6 py-4">{t('cookies.3.proveedor.1')}</td>
+                  <td class="px-6 py-4 text-base leading-loose text-justify">{t('cookies.3.finalidad.1')}</td>
+                  <td class="px-6 py-4 whitespace-nowrap">{t('cookies.3.duracion.1')}</td>
+                </tr>
+                <tr class="hover:bg-titacosi-base/50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-titacosi-primary">{t('cookies.3.tipo.2')}</td>
+                  <td class="px-6 py-4">{t('cookies.3.proveedor.2')}</td>
+                  <td class="px-6 py-4 text-base leading-loose text-justify">{t('cookies.3.finalidad.2')}</td>
+                  <td class="px-6 py-4 whitespace-nowrap">{t('cookies.3.duracion.2')}</td>
+                </tr>
+                <tr class="hover:bg-titacosi-base/50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-titacosi-primary">{t('cookies.3.tipo.3')}</td>
+                  <td class="px-6 py-4">{t('cookies.3.proveedor.3')}</td>
+                  <td class="px-6 py-4 text-base leading-loose text-justify">{t('cookies.3.finalidad.3')}</td>
+                  <td class="px-6 py-4 whitespace-nowrap">{t('cookies.3.duracion.3')}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('cookies.4.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.4.texto.1')}</p>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.4.texto.2')}</p>
-      <ul class="list-disc list-outside ml-9 space-y-4 leading-relaxed text-titacosi-primary text-justify">
-        <li>{t('cookies.4.1.texto')}</li>
-        <li>{t('cookies.4.2.texto')}</li>
-        <li>{t('cookies.4.3.texto')}</li>
-        <li>{t('cookies.4.4.texto')}</li>
-      </ul>
-      <i class="font-serif mb-4 mt-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.4.texto.3')}</i>
+        <section id="gestion" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('cookies.4.titulo')}</h2>
+          <p class="text-base leading-loose mb-4 text-justify">{t('cookies.4.texto.1')}</p>
+          <p class="text-base leading-loose mb-6 text-justify">{t('cookies.4.texto.2')}</p>
+          
+          <div class="bg-titacosi-surface p-6 rounded-lg border border-neutral-200 mb-6">
+            <ul class="list-disc list-outside ml-5 space-y-3 text-base leading-loose text-justify">
+              <li>{t('cookies.4.1.texto')}</li>
+              <li>{t('cookies.4.2.texto')}</li>
+              <li>{t('cookies.4.3.texto')}</li>
+              <li>{t('cookies.4.4.texto')}</li>
+            </ul>
+          </div>
+          
+          <p class="text-base leading-loose italic text-neutral-600 text-justify">{t('cookies.4.texto.3')}</p>
+        </section>
 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('cookies.5.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.5.texto')}</p>
- 
-      <h2 class="font-serif text-2xl mt-10 mb-4 text-titacosi-primary">{t('cookies.6.titulo')}</h2>
-      <p class="font-serif mb-4 leading-relaxed text-titacosi-primary text-justify">{t('cookies.6.texto')}</p>
+        <section id="actualizaciones" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('cookies.5.titulo')}</h2>
+          <p class="text-base leading-loose text-justify">{t('cookies.5.texto')}</p>
+        </section>
+
+        <section id="contacto" class="mb-16 scroll-mt-32 bg-white rounded-lg p-8 border border-titacosi-surface">
+          <h2 class="text-2xl font-serif mb-4 pb-2 border-b border-titacosi-surface/60">{t('cookies.6.titulo')}</h2>
+          <p class="text-base leading-loose text-justify">{t('cookies.6.texto')}</p>
+        </section>
+
+      </main>
     </div>
   </div>
 </Layout>
