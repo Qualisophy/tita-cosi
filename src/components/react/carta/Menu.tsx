@@ -1,38 +1,71 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import Input from "../ui/Input";
-import ScrollSlider from "../ui/ScrollSlider"; 
+// import ScrollSlider from "../ui/ScrollSlider"; 
 import { categories, menuItems, categories2, categories3 } from "../../../data/menu";
 import { ui, defaultLang } from "../../../i18n/ui";
+
+// 1. Interfaz más permisiva para evitar errores con los datos del backend
+export interface MenuItemType {
+  id?: string | number;
+  name: string;
+  category: string;
+  description?: string;
+  price?: number | string; 
+  doublePrice?: string | number | null;
+  image?: string;
+  tags?: string[];
+}
 
 interface MenuProps {
   currentLang: keyof typeof ui;
 }
 
 export default function Menu({ currentLang }: MenuProps) {
-  const availableCategories = useMemo(() => categories[currentLang] || categories.es, [currentLang]);
-  const availableItems = useMemo(() => menuItems[currentLang] || menuItems.es, [currentLang]);
-  const availableSabores = useMemo(() => categories2[currentLang] || [], [currentLang]);
-  const availableDietas = useMemo(() => categories3[currentLang] || [], [currentLang]);
+    const availableCategories = useMemo<string[]>(() => {
+    const data = categories as Record<string, string[]>;
+    return data[currentLang] || data.es || [];
+  }, [currentLang]);
 
-  const [activeCategory, setActiveCategory] = useState(availableCategories[0]);
+  const availableItems = useMemo<MenuItemType[]>(() => {
+    const data = menuItems as Record<string, MenuItemType[]>;
+    return data[currentLang] || data.es || [];
+  }, [currentLang]);
+
+  const availableSabores = useMemo<string[]>(() => {
+    const data = categories2 as Record<string, string[]>;
+    return data[currentLang] || [];
+  }, [currentLang]);
+
+  const availableDietas = useMemo<string[]>(() => {
+    const data = categories3 as Record<string, string[]>;
+    return data[currentLang] || [];
+  }, [currentLang]);
+
+  const [activeCategory, setActiveCategory] = useState<string>(availableCategories[0] || "");
   const [activeSabor, setActiveSabor] = useState<string | null>(null);
   const [activeDieta, setActiveDieta] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isFiltersModalOpen, setIsFiltersModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isFiltersModalOpen, setIsFiltersModalOpen] = useState<boolean>(false);
   
-  const [showFilters, setShowFilters] = useState(true);
-  const lastScrollY = useRef(0);
+  const [showFilters, setShowFilters] = useState<boolean>(true);
+  const lastScrollY = useRef<number>(0);
   const modalCloseRef = useRef<HTMLButtonElement | null>(null);
   const filtersModalCloseRef = useRef<HTMLButtonElement | null>(null);
   const menuContainerRef = useRef<HTMLDivElement>(null);
 
-  // Tipado flexible para evitar errores de compilación con las llaves de traducción
-  const t = (key: any) =>
-    (ui[currentLang] as any)?.[key] || (ui[defaultLang] as any)?.[key] || key;
+
+  const t = (key: string): string => {
+    const dataUI = ui as Record<string, Record<string, string>>;
+    const langDictionary = dataUI[currentLang];
+    const defaultDictionary = dataUI[defaultLang];
+    return langDictionary?.[key] || defaultDictionary?.[key] || key;
+  };
 
   useEffect(() => {
-    setActiveCategory(availableCategories[0]);
+    if (availableCategories.length > 0) {
+      setActiveCategory(availableCategories[0]);
+    }
     setActiveSabor(null);                      
     setActiveDieta(null);                      
   }, [currentLang, availableCategories]);
@@ -78,23 +111,40 @@ export default function Menu({ currentLang }: MenuProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   const filteredItems = useMemo(() => {
-    return availableItems.filter((item: any) => {
+    const searchLower = searchQuery.toLowerCase();
+    const saborLower = activeSabor?.toLowerCase();
+    const dietaLower = activeDieta?.toLowerCase();
+
+    return availableItems.filter((item) => {
       const matchesCategory = activeCategory === availableCategories[0] || item.category === activeCategory;
-      const searchTerm = searchQuery.toLowerCase();
-      const matchesSearch = (item.name && item.name.toLowerCase().includes(searchTerm)) || (item.description && item.description.toLowerCase().includes(searchTerm));
-      const matchesSabor = !activeSabor || (Array.isArray(item.tags) && item.tags.some((tag: string) => tag.toLowerCase().includes(activeSabor.toLowerCase()) || activeSabor.toLowerCase().includes(tag.toLowerCase())));
-      const matchesDieta = !activeDieta || (Array.isArray(item.tags) && item.tags.some((tag: string) => tag.toLowerCase().includes(activeDieta.toLowerCase()) || activeDieta.toLowerCase().includes(tag.toLowerCase())));
+      
+      const itemName = item.name || "";
+      const itemDesc = item.description || "";
+      const matchesSearch = itemName.toLowerCase().includes(searchLower) || itemDesc.toLowerCase().includes(searchLower);
+      
+      const itemTags = item.tags || [];
+      const matchesSabor = !saborLower || itemTags.some((tag: string) => {
+        const tagLower = tag.toLowerCase();
+        return tagLower.includes(saborLower) || saborLower.includes(tagLower);
+      });
+      
+      const matchesDieta = !dietaLower || itemTags.some((tag: string) => {
+        const tagLower = tag.toLowerCase();
+        return tagLower.includes(dietaLower) || dietaLower.includes(tagLower);
+      });
 
       return matchesCategory && matchesSearch && matchesSabor && matchesDieta;
     });
   }, [activeCategory, searchQuery, activeSabor, activeDieta, availableItems, availableCategories]);
 
   const groupedItems = useMemo(() => {
-    const groups: Record<string, any[]> = {};
-    filteredItems.forEach((item: any) => {
-      if (!groups[item.category]) groups[item.category] = [];
-      groups[item.category].push(item);
+    const groups: Record<string, MenuItemType[]> = {};
+    filteredItems.forEach((item) => {
+      const cat = item.category || "Otros"; // Protección anti-nulos
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(item);
     });
     return groups;
   }, [filteredItems]);
@@ -108,10 +158,8 @@ export default function Menu({ currentLang }: MenuProps) {
           showFilters ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
-        {/* Fila de Controles */}
         <div className="flex flex-col items-start gap-5 sm:gap-8 w-full px-4 md:px-0 pb-4 md:pb-8">
           
-          {/* Botón de Filtros*/}
           <div className="shrink-0">
             <button
               onClick={() => setIsFiltersModalOpen(true)}
@@ -124,7 +172,6 @@ export default function Menu({ currentLang }: MenuProps) {
             </button>
           </div>
 
-          {/* Buscador */}
           <div className="w-full max-w-xl [&_fieldset]:border-none [&_fieldset]:p-0 [&_fieldset]:m-0 [&_fieldset]:shadow-none">
             <div className="h-12 w-full flex items-center">
               <Input
@@ -132,7 +179,7 @@ export default function Menu({ currentLang }: MenuProps) {
                 type="search"
                 placeholder={t('menu.buscador2')}
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
                 className="w-full h-full shadow-none border-transparent! focus:border-transparent! focus:ring-0!"
                 icon={
                   <svg className="w-5 h-5 text-titacosi-primary/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,7 +198,6 @@ export default function Menu({ currentLang }: MenuProps) {
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-start md:justify-center overflow-hidden">
           <div className="h-[100dvh] md:h-auto w-full md:w-full md:max-w-2xl bg-titacosi-base rounded-3xl shadow-2xl max-h-[100dvh] md:max-h-[90vh] overflow-y-auto overflow-x-hidden modal-slide-left md:modal-slide-top modal-discrete-scroll -webkit-overflow-scrolling-touch">
             
-            {/* Header del Modal */}
             <div className="sticky top-0 bg-titacosi-base border-b border-titacosi-surface/30 px-6 py-4 md:py-5 flex items-center justify-between">
               <h2 className="text-xl md:text-2xl font-serif font-bold text-titacosi-primary">Filtros</h2>
               <button
@@ -166,10 +212,8 @@ export default function Menu({ currentLang }: MenuProps) {
               </button>
             </div>
 
-            {/* Contenido del Modal */}
             <div className="p-6 md:p-8 space-y-8">
               
-              {/* Categorías */}
               <div>
                 <h3 className="text-lg font-bold text-titacosi-primary mb-4 flex items-center gap-2">
                   <span className="w-1 h-6 bg-titacosi-accent rounded-full"></span>
@@ -178,7 +222,7 @@ export default function Menu({ currentLang }: MenuProps) {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {availableCategories.map((cat) => (
                     <button
-                      key={cat}
+                      key={`cat-${cat}`}
                       onClick={() => setActiveCategory(cat)}
                       className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200 ${
                         activeCategory === cat
@@ -192,7 +236,6 @@ export default function Menu({ currentLang }: MenuProps) {
                 </div>
               </div>
 
-              {/* Sabores */}
               {availableSabores.length > 0 && (
                 <div>
                   <h3 className="text-lg font-bold text-titacosi-primary mb-4 flex items-center gap-2">
@@ -202,7 +245,7 @@ export default function Menu({ currentLang }: MenuProps) {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {availableSabores.map((sabor) => (
                       <button
-                        key={sabor}
+                        key={`sabor-${sabor}`}
                         onClick={() => setActiveSabor(activeSabor === sabor ? null : sabor)}
                         className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200 ${
                           activeSabor === sabor
@@ -217,7 +260,6 @@ export default function Menu({ currentLang }: MenuProps) {
                 </div>
               )}
 
-              {/* Dietas */}
               {availableDietas.length > 0 && (
                 <div>
                   <h3 className="text-lg font-bold text-titacosi-primary mb-4 flex items-center gap-2">
@@ -227,7 +269,7 @@ export default function Menu({ currentLang }: MenuProps) {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {availableDietas.map((dieta) => (
                       <button
-                        key={dieta}
+                        key={`dieta-${dieta}`}
                         onClick={() => setActiveDieta(activeDieta === dieta ? null : dieta)}
                         className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200 ${
                           activeDieta === dieta
@@ -242,7 +284,6 @@ export default function Menu({ currentLang }: MenuProps) {
                 </div>
               )}
 
-              {/* Botón de Cerrar */}
               <button
                 onClick={() => setIsFiltersModalOpen(false)}
                 className="w-full mt-6 px-6 py-3 bg-titacosi-accent hover:bg-titacosi-accent/90 text-white font-bold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
@@ -268,16 +309,16 @@ export default function Menu({ currentLang }: MenuProps) {
             if (!itemsInCategory || itemsInCategory.length === 0) return null;
 
             return (
-              <div key={category}>
+              <div key={`section-${category}`}>
                 <h2 className="text-4xl font-serif font-black italic mb-12 flex items-center gap-4 text-titacosi-primary drop-shadow-sm">
                   <span className="w-12 h-px bg-titacosi-accent"></span>
                   {category}
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
-                  {itemsInCategory.map((item: any) => (
+                  {itemsInCategory.map((item, index) => (
                     <div
-                      key={item.id}
+                      key={`item-${item.id || index}`}
                       className="bg-white rounded-2xl shadow-sm border border-titacosi-primary/5 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
                     >
                       <div className="w-full aspect-4/3 bg-neutral-100 overflow-hidden relative">
@@ -311,9 +352,9 @@ export default function Menu({ currentLang }: MenuProps) {
 
                           {item.tags && item.tags.length > 0 && (
                             <div className="flex flex-wrap justify-center gap-1.5 pt-3 border-t border-titacosi-primary/5 w-full">
-                              {item.tags.map((tag: string) => (
+                              {item.tags.map((tag, i) => (
                                 <span
-                                  key={tag}
+                                  key={`tag-${i}`}
                                   className="text-[9px] uppercase tracking-widest font-black text-titacosi-primary/60 bg-titacosi-surface px-1.5 py-0.5 rounded-md"
                                 >
                                   {tag}
