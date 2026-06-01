@@ -748,7 +748,7 @@ export const menuItems: Record<string, any[]> = {
       price: 0,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/tintos/ribera/tarino.jpg",
+      image: "/carta/bebidas/tintos/ribera/tarino.png",
     },
     {
       id: 66,
