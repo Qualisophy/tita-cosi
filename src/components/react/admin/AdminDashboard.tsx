@@ -60,15 +60,12 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
 
   const extraerFechaLocal = (fechaString: string) => {
     if (!fechaString) return "";
-    // Si ya viene con formato YYYY-MM-DD sin T ni Z, la devolvemos
     if (/^\d{4}-\d{2}-\d{2}$/.test(fechaString)) return fechaString;
 
     const d = new Date(fechaString);
-    // Usamos métodos locales (getDate, getMonth) y NO los métodos UTC
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   };
 
-  // Nuevo estado para alternar entre "Vista de Día" y "Todas las Reservas"
   const [modoVista, setModoVista] = useState<"dia" | "todas">("dia");
 
   const [columnaOrden, setColumnaOrden] = useState<keyof Reserva>("hora");
@@ -94,7 +91,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       });
       if (response.ok) {
         const data = await response.json();
-        // Adaptado en caso de que devuelva {success, data} o el array directo
         setReservas(data.data || data);
         setIsCheckingAuth(false);
       } else {
@@ -135,10 +131,8 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     }
   };
 
-  // Novedad: Edición rápida de estado directo desde la tabla
   const cambiarEstadoRapido = async (reserva: Reserva, nuevoEstado: string) => {
     try {
-      // IMPORTANTE: Limpiamos la fecha para que MySQL no de error 500
       const payload = {
         ...reserva,
         estado: nuevoEstado,
@@ -173,6 +167,11 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     setIsModalOpen(true);
   };
 
+  const timeToMinutes = (timeStr: string) => {
+    const [h, m] = timeStr.split(":").map(Number);
+    return h * 60 + m;
+  };
+
   const handleCreateReserva = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -183,10 +182,35 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     const apellidos = formData.get("apellidos") as string;
     const mesaId = formData.get("mesa_id") as string;
     const rawDate = formData.get("fecha") as string;
+    const horaStr = formData.get("hora") as string;
 
     const formattedDate = rawDate.includes("/")
       ? rawDate.split("/").reverse().join("-")
       : rawDate;
+
+    // Validación de solapamiento de 90 minutos
+    const duracionReserva = 90;
+    const nuevaReservaInicio = timeToMinutes(horaStr);
+    const nuevaReservaFin = nuevaReservaInicio + duracionReserva;
+
+    const colision = reservas.find((r) => {
+      if (reservaEditando && r.id === reservaEditando.id) return false;
+      if (r.estado.toLowerCase() === "cancelada") return false;
+      
+      if (r.mesa_id === mesaId && extraerFechaLocal(r.fecha) === formattedDate) {
+        const reservaExistenteInicio = timeToMinutes(r.hora);
+        const reservaExistenteFin = reservaExistenteInicio + duracionReserva;
+        return (nuevaReservaInicio < reservaExistenteFin) && (nuevaReservaFin > reservaExistenteInicio);
+      }
+      return false;
+    });
+
+    if (colision) {
+      setModalError(`La mesa ${mesaId} ya está reservada a las ${colision.hora}h (bloqueada 90 min). Por favor, selecciona otra hora o mesa.`);
+      setIsSubmitting(false);
+      return; 
+    }
+
     const tableObj = TABLES.find((t) => t.id === mesaId);
 
     const payload = {
@@ -194,7 +218,7 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       email_cliente: formData.get("email"),
       telefono_cliente: formData.get("telefono"),
       fecha: formattedDate,
-      hora: formData.get("hora"),
+      hora: horaStr,
       comensales: Number(formData.get("comensales")),
       mesa_id: mesaId,
       zona: tableObj?.zone || "Sala",
@@ -217,7 +241,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
 
       const data = await response.json();
 
-      // Si la API devuelve éxito falso (400), forzamos el error con el mensaje de rechazo
       if (!response.ok || data.success === false) {
         throw new Error(data.message || "Error al procesar la reserva");
       }
@@ -228,7 +251,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       setFechaSeleccionada(formattedDate);
       setModoVista("dia");
     } catch (error: any) {
-      // Atrapamos el error y lo mostramos en la cabecera del modal
       setModalError(error.message);
     } finally {
       setIsSubmitting(false);
@@ -288,12 +310,10 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     "Diciembre",
   ];
 
-  // Filtro modificado para soportar listado completo
   const reservasFiltradas = useMemo(() => {
     let filtradas = reservas;
 
     if (modoVista === "dia") {
-      // Usamos el helper en lugar de hacer split("T")[0]
       filtradas = reservas.filter(
         (r) => extraerFechaLocal(r.fecha) === fechaSeleccionada,
       );
@@ -329,7 +349,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     );
   }
 
-  // Cálculos de KPI basados en las reservas filtradas en vista actual
   const reservasPendientes = reservasFiltradas.filter(
     (r) => r.estado.toLowerCase() === "pendiente",
   ).length;
@@ -428,9 +447,7 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
           </button>
         </div>
 
-        {/* ESTRUCTURA MODIFICADA: Tarjetas y Calendario en la parte superior para liberar ancho a la tabla */}
         <div className="flex flex-col xl:flex-row gap-6 mb-8">
-          {/* SECCIÓN KPIS (2/3 ancho en desktop) */}
           <div className="w-full xl:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
             <div className="bg-[#f4f3f1] p-5 md:p-6 rounded-2xl border border-gray-200/50 shadow-sm flex flex-col justify-between">
               <p className="font-bold text-[11px] md:text-xs text-gray-500 uppercase tracking-widest mb-2">
@@ -497,7 +514,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
             </div>
           </div>
 
-          {/* SECCIÓN CALENDARIO (1/3 ancho en desktop) */}
           <div className="w-full xl:w-1/3 bg-white rounded-2xl border border-gray-200 shadow-sm p-5 md:p-6 flex flex-col">
             <div className="flex items-center justify-between mb-4">
               <h2 className="font-serif text-xl font-bold text-titacosi-primary capitalize">
@@ -544,7 +560,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                 const diaNumero = i + 1;
                 const fechaCelda = `${mesActualCalendario.getFullYear()}-${String(mesActualCalendario.getMonth() + 1).padStart(2, "0")}-${String(diaNumero).padStart(2, "0")}`;
 
-                // Lógica de Lunes
                 const esLunes =
                   new Date(
                     mesActualCalendario.getFullYear(),
@@ -602,7 +617,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
           </div>
         </div>
 
-        {/* TABLA DE RESERVAS (Ahora 100% width) */}
         <div className="w-full bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden">
           <div className="p-5 md:p-6 border-b border-gray-100 flex flex-wrap gap-4 items-center justify-between bg-white">
             <h2 className="font-serif text-xl md:text-2xl font-bold text-titacosi-primary">
@@ -688,7 +702,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                       .substring(0, 2)
                       .toUpperCase();
 
-                    // Colores del selector según estado
                     let estadoColor =
                       "bg-amber-100 text-amber-800 border-amber-200";
                     if (reserva.estado.toLowerCase() === "confirmada")
@@ -729,7 +742,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                           {reserva.comensales}
                         </td>
                         <td className="px-6 py-4">
-                          {/* SELECTOR DE ESTADO INTERACTIVO */}
                           <select
                             value={reserva.estado}
                             onChange={(e) =>
@@ -755,7 +767,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                           </p>
                         </td>
                         <td className="px-6 py-4 text-right">
-                          {/* ACCIONES SIEMPRE VISIBLES */}
                           <div className="flex justify-end gap-2">
                             <button
                               onClick={() => prepararEdicion(reserva)}
@@ -787,7 +798,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
         </div>
       </main>
 
-      {/* MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
           <div
@@ -900,7 +910,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                       }
                       onChange={(e) => {
                         const date = new Date(e.target.value);
-                        // Usar UTCDay para que la zona horaria del navegador no desplace el día seleccionado del input type date
                         if (date.getUTCDay() === 1) {
                           alert("Los lunes la taberna permanece cerrada.");
                           e.target.value = "";

@@ -1,5 +1,4 @@
-// src/components/react/reservas/ReservationWidget.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DayPicker } from "react-day-picker";
 import { es, enUS, fr, de } from "date-fns/locale";
 import { format } from "date-fns";
@@ -40,12 +39,25 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
   const locales = { es, en: enUS, fr, de };
   const currentLocale = locales[lang] || es;
 
+  const [reservas, setReservas] = useState<any[]>([]);
+
+  const timeToMinutes = (timeStr: string) => {
+    const [h, m] = timeStr.split(":").map(Number);
+    return h * 60 + m;
+  };
+
+  const extraerFechaLocal = (fechaString: string) => {
+    if (!fechaString) return "";
+    if (/^\d{4}-\d{2}-\d{2}$/.test(fechaString)) return fechaString;
+    const d = new Date(fechaString);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  };
+
   const [selectedDay, setSelectedDay] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("14:30");
   const [guests, setGuests] = useState<number>(2);
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
 
-  // Estados para la experiencia de usuario (UX) al enviar el formulario
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -61,15 +73,50 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     "22:00",
   ];
 
-  const validTables = TABLES.filter((table) => table.capacity >= guests);
+  useEffect(() => {
+    const fetchReservas = async () => {
+      try {
+        const API_URL = import.meta.env.PUBLIC_API_URL || "http://localhost:3000/api";
+        const response = await fetch(`${API_URL}/reservas`);
+        if (response.ok) {
+          const data = await response.json();
+          setReservas(data.data || data);
+        }
+      } catch (error) {
+        console.error("Error al cargar reservas:", error);
+      }
+    };
+    if (selectedDay) fetchReservas();
+  }, [selectedDay]);
+
+  const validTables = TABLES.filter((table) => {
+    if (table.capacity < guests) return false;
+    if (!selectedDay) return true;
+    
+    const targetDateStr = format(selectedDay, "yyyy-MM-dd");
+    const duracionReserva = 90;
+    const nuevoInicio = timeToMinutes(selectedTime);
+    const nuevoFin = nuevoInicio + duracionReserva;
+
+    const colision = reservas.some((r) => {
+      if (r.estado?.toLowerCase() === "cancelada") return false;
+      if (r.mesa_id === table.id && extraerFechaLocal(r.fecha) === targetDateStr) {
+        const existenteInicio = timeToMinutes(r.hora);
+        const existenteFin = existenteInicio + duracionReserva;
+        return (nuevoInicio < existenteFin) && (nuevoFin > existenteInicio);
+      }
+      return false;
+    });
+
+    return !colision;
+  });
+
   const salaTables = validTables.filter((t) => t.zone === "Sala");
   const terrazaTables = validTables.filter((t) => t.zone === "Terraza");
 
-  // Calculamos la fecha de ayer para bloquear los días pasados
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
 
-  // Función que se ejecuta al enviar el formulario
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!selectedDay || !selectedTable) return;
@@ -77,20 +124,38 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     setIsSubmitting(true);
     setErrorMsg(null);
 
-    // Capturamos los datos de los inputs gracias a su atributo "name"
+    const targetDateStr = format(selectedDay, "yyyy-MM-dd");
+    const duracionReserva = 90;
+    const nuevoInicio = timeToMinutes(selectedTime);
+    const nuevoFin = nuevoInicio + duracionReserva;
+
+    const colisionFinal = reservas.find((r) => {
+      if (r.estado?.toLowerCase() === "cancelada") return false;
+      if (r.mesa_id === selectedTable && extraerFechaLocal(r.fecha) === targetDateStr) {
+        const existenteInicio = timeToMinutes(r.hora);
+        const existenteFin = existenteInicio + duracionReserva;
+        return (nuevoInicio < existenteFin) && (nuevoFin > existenteInicio);
+      }
+      return false;
+    });
+
+    if (colisionFinal) {
+      setIsSubmitting(false);
+      setErrorMsg(`Lo sentimos, la mesa acaba de ser ocupada a las ${colisionFinal.hora}h. Elige otra hora.`);
+      return;
+    }
+
     const formData = new FormData(e.currentTarget);
     const nombre = formData.get("nombre") as string;
     const apellidos = formData.get("apellidos") as string;
 
-    // Sacamos la zona buscando la mesa elegida
     const tableObj = TABLES.find((t) => t.id === selectedTable);
 
-    // Estructuramos los datos exactamente como los pide tu backend
     const payload = {
       nombre_cliente: `${nombre} ${apellidos}`.trim(),
       email_cliente: formData.get("email"),
       telefono_cliente: formData.get("telefono"),
-      fecha: format(selectedDay, "yyyy-MM-dd"), // Transformamos a formato base de datos
+      fecha: targetDateStr,
       hora: selectedTime,
       comensales: guests,
       mesa_id: selectedTable,
@@ -99,7 +164,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     };
 
     try {
-      // Pillamos la variable de entorno de Astro (Vercel o Local)
       const API_URL =
         import.meta.env.PUBLIC_API_URL || "http://localhost:3000/api";
 
@@ -119,7 +183,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
         );
       }
 
-      // ¡Reserva exitosa!
       setIsSuccess(true);
     } catch (error: any) {
       console.error(t("reservas.error.2"), error);
@@ -129,7 +192,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     }
   };
 
-  // Si todo ha ido bien, ocultamos el widget y mostramos este mensaje
   if (isSuccess) {
     return (
       <div className="mb-16 text-center max-w-2xl mx-auto bg-white border border-green-100 rounded-3xl p-12 shadow-sm">
@@ -331,7 +393,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
         </div>
 
         <div className="lg:col-span-5">
-          {/* Conectamos el evento onSubmit */}
           <form
             onSubmit={handleSubmit}
             className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col gap-5 sticky top-28"
@@ -340,7 +401,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               {t("reservas.datos.titulo")}
             </h3>
 
-            {/* Aviso de error si la mesa ya está ocupada o hay fallos de red */}
             {errorMsg && (
               <div className="bg-red-50 border border-red-200 text-red-600 text-sm p-3 rounded-lg flex items-start gap-2">
                 <span className="material-symbols-outlined text-[18px]">
@@ -358,7 +418,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 >
                   {t("reservas.datos.nombre")}
                 </label>
-                {/* Atributos name y required añadidos */}
                 <input
                   required
                   name="nombre"
@@ -465,7 +524,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               <button
                 className="w-full bg-titacosi-accent text-white rounded-xl py-4 px-6 font-sans text-sm uppercase font-bold text-center hover:bg-opacity-90 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
-                // Desactivar el botón si la API está trabajando o si falta por elegir mesa/día
                 disabled={isSubmitting || !selectedTable || !selectedDay}
               >
                 {isSubmitting ? (
