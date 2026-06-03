@@ -116,8 +116,7 @@ export default function ContactForm({ translations }: ContactFormProps) {
             htmlFor="telefono"
             className="text-[15px] font-bold text-gray-800"
           >
-            {translations.phoneLabel}{" "}
-            <span className="text-accent">Teléfono </span>
+            {translations.phoneLabel} <span className="text-accent">* </span>
           </label>
           <input
             type="tel"
