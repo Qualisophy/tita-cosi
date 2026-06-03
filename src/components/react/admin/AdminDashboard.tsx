@@ -50,8 +50,15 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
   const [modalError, setModalError] = useState<string | null>(null);
   const [reservaEditando, setReservaEditando] = useState<Reserva | null>(null);
 
+  // Formateamos las fechas correctamente en zona horaria local (España)
   const hoy = new Date();
-  const fechaHoyString = hoy.toISOString().split("T")[0];
+  const fechaHoyString = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, "0")}-${String(hoy.getDate()).padStart(2, "0")}`;
+
+  // Calcular límite máximo de reserva (1 mes)
+  const maxDateObj = new Date(hoy);
+  maxDateObj.setMonth(maxDateObj.getMonth() + 1);
+  const maxDateString = `${maxDateObj.getFullYear()}-${String(maxDateObj.getMonth() + 1).padStart(2, "0")}-${String(maxDateObj.getDate()).padStart(2, "0")}`;
+
   const [fechaSeleccionada, setFechaSeleccionada] =
     useState<string>(fechaHoyString);
   const [mesActualCalendario, setMesActualCalendario] = useState(
@@ -60,17 +67,13 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
 
   const extraerFechaLocal = (fechaString: string) => {
     if (!fechaString) return "";
-    // Si ya viene con formato YYYY-MM-DD sin T ni Z, la devolvemos
     if (/^\d{4}-\d{2}-\d{2}$/.test(fechaString)) return fechaString;
 
     const d = new Date(fechaString);
-    // Usamos métodos locales (getDate, getMonth) y NO los métodos UTC
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   };
 
-  // Nuevo estado para alternar entre "Vista de Día" y "Todas las Reservas"
   const [modoVista, setModoVista] = useState<"dia" | "todas">("dia");
-
   const [columnaOrden, setColumnaOrden] = useState<keyof Reserva>("hora");
   const [ordenAscendente, setOrdenAscendente] = useState(true);
 
@@ -94,7 +97,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       });
       if (response.ok) {
         const data = await response.json();
-        // Adaptado en caso de que devuelva {success, data} o el array directo
         setReservas(data.data || data);
         setIsCheckingAuth(false);
       } else {
@@ -135,10 +137,8 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     }
   };
 
-  // Novedad: Edición rápida de estado directo desde la tabla
   const cambiarEstadoRapido = async (reserva: Reserva, nuevoEstado: string) => {
     try {
-      // IMPORTANTE: Limpiamos la fecha para que MySQL no de error 500
       const payload = {
         ...reserva,
         estado: nuevoEstado,
@@ -183,6 +183,26 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     const apellidos = formData.get("apellidos") as string;
     const mesaId = formData.get("mesa_id") as string;
     const rawDate = formData.get("fecha") as string;
+    const estadoReserva = (formData.get("estado") as string) || "Pendiente";
+    const horaString = formData.get("hora") as string;
+
+    // Validación preventiva en cliente de horarios de apertura (ahorra peticiones fallidas a la DB)
+    if (estadoReserva !== "Cancelada") {
+      const [hh, mm] = horaString.split(":").map(Number);
+      const minutosTotales = hh * 60 + mm;
+      const dentroDeComida =
+        minutosTotales >= 13 * 60 && minutosTotales <= 16 * 60;
+      const dentroDeCena =
+        minutosTotales >= 20 * 60 && minutosTotales <= 23 * 60 + 30;
+
+      if (!dentroDeComida && !dentroDeCena) {
+        setModalError(
+          "Horario inválido. Nuestro horario es de 13:00-16:00 y 20:00-23:30.",
+        );
+        setIsSubmitting(false);
+        return;
+      }
+    }
 
     const formattedDate = rawDate.includes("/")
       ? rawDate.split("/").reverse().join("-")
@@ -194,11 +214,11 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       email_cliente: formData.get("email"),
       telefono_cliente: formData.get("telefono"),
       fecha: formattedDate,
-      hora: formData.get("hora"),
+      hora: horaString,
       comensales: Number(formData.get("comensales")),
       mesa_id: mesaId,
       zona: tableObj?.zone || "Sala",
-      estado: formData.get("estado") || "Pendiente",
+      estado: estadoReserva,
       notas: formData.get("peticiones"),
     };
 
@@ -217,7 +237,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
 
       const data = await response.json();
 
-      // Si la API devuelve éxito falso (400), forzamos el error con el mensaje de rechazo
       if (!response.ok || data.success === false) {
         throw new Error(data.message || "Error al procesar la reserva");
       }
@@ -228,7 +247,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
       setFechaSeleccionada(formattedDate);
       setModoVista("dia");
     } catch (error: any) {
-      // Atrapamos el error y lo mostramos en la cabecera del modal
       setModalError(error.message);
     } finally {
       setIsSubmitting(false);
@@ -288,12 +306,10 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     "Diciembre",
   ];
 
-  // Filtro modificado para soportar listado completo
   const reservasFiltradas = useMemo(() => {
     let filtradas = reservas;
 
     if (modoVista === "dia") {
-      // Usamos el helper en lugar de hacer split("T")[0]
       filtradas = reservas.filter(
         (r) => extraerFechaLocal(r.fecha) === fechaSeleccionada,
       );
@@ -329,7 +345,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     );
   }
 
-  // Cálculos de KPI basados en las reservas filtradas en vista actual
   const reservasPendientes = reservasFiltradas.filter(
     (r) => r.estado.toLowerCase() === "pendiente",
   ).length;
@@ -428,9 +443,7 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
           </button>
         </div>
 
-        {/* ESTRUCTURA MODIFICADA: Tarjetas y Calendario en la parte superior para liberar ancho a la tabla */}
         <div className="flex flex-col xl:flex-row gap-6 mb-8">
-          {/* SECCIÓN KPIS (2/3 ancho en desktop) */}
           <div className="w-full xl:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
             <div className="bg-[#f4f3f1] p-5 md:p-6 rounded-2xl border border-gray-200/50 shadow-sm flex flex-col justify-between">
               <p className="font-bold text-[11px] md:text-xs text-gray-500 uppercase tracking-widest mb-2">
@@ -497,7 +510,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
             </div>
           </div>
 
-          {/* SECCIÓN CALENDARIO (1/3 ancho en desktop) */}
           <div className="w-full xl:w-1/3 bg-white rounded-2xl border border-gray-200 shadow-sm p-5 md:p-6 flex flex-col">
             <div className="flex items-center justify-between mb-4">
               <h2 className="font-serif text-xl font-bold text-titacosi-primary capitalize">
@@ -544,14 +556,12 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                 const diaNumero = i + 1;
                 const fechaCelda = `${mesActualCalendario.getFullYear()}-${String(mesActualCalendario.getMonth() + 1).padStart(2, "0")}-${String(diaNumero).padStart(2, "0")}`;
 
-                // Lógica de Lunes
                 const esLunes =
                   new Date(
                     mesActualCalendario.getFullYear(),
                     mesActualCalendario.getMonth(),
                     diaNumero,
                   ).getDay() === 1;
-
                 const esHoy = fechaCelda === fechaHoyString;
                 const estaSeleccionado =
                   fechaCelda === fechaSeleccionada && modoVista === "dia";
@@ -602,7 +612,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
           </div>
         </div>
 
-        {/* TABLA DE RESERVAS (Ahora 100% width) */}
         <div className="w-full bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden">
           <div className="p-5 md:p-6 border-b border-gray-100 flex flex-wrap gap-4 items-center justify-between bg-white">
             <h2 className="font-serif text-xl md:text-2xl font-bold text-titacosi-primary">
@@ -687,8 +696,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                       .join("")
                       .substring(0, 2)
                       .toUpperCase();
-
-                    // Colores del selector según estado
                     let estadoColor =
                       "bg-amber-100 text-amber-800 border-amber-200";
                     if (reserva.estado.toLowerCase() === "confirmada")
@@ -729,7 +736,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                           {reserva.comensales}
                         </td>
                         <td className="px-6 py-4">
-                          {/* SELECTOR DE ESTADO INTERACTIVO */}
                           <select
                             value={reserva.estado}
                             onChange={(e) =>
@@ -755,7 +761,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                           </p>
                         </td>
                         <td className="px-6 py-4 text-right">
-                          {/* ACCIONES SIEMPRE VISIBLES */}
                           <div className="flex justify-end gap-2">
                             <button
                               onClick={() => prepararEdicion(reserva)}
@@ -787,7 +792,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
         </div>
       </main>
 
-      {/* MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
           <div
@@ -893,14 +897,17 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                     <input
                       required
                       name="fecha"
+                      // Permite editar reservas pasadas si se está editando, para no bloquear el guardado.
+                      // Pero para nuevas, solo de hoy en adelante.
+                      min={reservaEditando ? undefined : fechaHoyString}
+                      max={maxDateString}
                       defaultValue={
                         reservaEditando?.fecha
-                          ? reservaEditando.fecha.split("T")[0]
+                          ? extraerFechaLocal(reservaEditando.fecha)
                           : fechaSeleccionada
                       }
                       onChange={(e) => {
                         const date = new Date(e.target.value);
-                        // Usar UTCDay para que la zona horaria del navegador no desplace el día seleccionado del input type date
                         if (date.getUTCDay() === 1) {
                           alert("Los lunes la taberna permanece cerrada.");
                           e.target.value = "";
@@ -913,6 +920,9 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                   <div className="col-span-1">
                     <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                       Hora
+                      <span className="text-[9px] text-gray-400 font-normal ml-1">
+                        (13h-16h / 20h-23:30h)
+                      </span>
                     </label>
                     <input
                       required
@@ -989,11 +999,15 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                 </div>
 
                 <div>
-                  <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
+                  <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block flex justify-between">
                     Notas / Peticiones
+                    <span className="font-normal text-gray-400">
+                      Max. 500 caract.
+                    </span>
                   </label>
                   <textarea
                     name="peticiones"
+                    maxLength={500}
                     defaultValue={reservaEditando?.notas || ""}
                     className="w-full bg-[#f4f3f1] border-transparent focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent rounded-xl px-4 py-3 outline-none transition-all text-sm resize-none"
                     placeholder="Alergias, trona, confirmada por teléfono..."

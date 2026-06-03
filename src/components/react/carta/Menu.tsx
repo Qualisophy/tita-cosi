@@ -92,18 +92,25 @@ export default function Menu({ currentLang }: MenuProps) {
     return groups;
   }, [filteredItems]);
 
+  const getIconForPreference = (name: string) => {
+    const lower = name.toLowerCase();
+    if (lower.includes("vegan") || lower.includes("vegetariano")) return "eco";
+    if (lower.includes("gluten") || lower.includes("celiaco")) return "no_meals";
+    if (lower.includes("picante")) return "local_fire_department";
+    if (lower.includes("mar")) return "set_meal";
+    return "label";
+  };
+
   return (
     <div ref={menuContainerRef} className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
       
-      {/* SECCIÓN DE FILTROS: Modificado a duration-500 para mayor suavidad */}
       <div 
-        className={`mb-12 md:mb-20 sticky top-20 z-30 bg-titacosi-base/95 backdrop-blur-md pt-4 md:pt-6 pb-6 md:pb-8 border-b border-titacosi-surface/30 space-y-4 md:space-y-6 -mx-4 md:mx-0 transition-all duration-900 ease-in-out ${
+        className={`mb-12 md:mb-20 sticky top-20 z-30 bg-titacosi-base/95 backdrop-blur-md pt-4 md:pt-6 pb-4 md:pb-6 border-b border-titacosi-surface/30 transition-all duration-1800 delay-550 ease-in-out ${
           showFilters ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
         
-        {/* Buscador */}
-        <div className="w-full max-w-md mx-auto px-4 md:px-0 [&_fieldset]:border-none [&_fieldset]:p-0 [&_fieldset]:m-0 [&_fieldset]:shadow-none">
+        <div className="w-full max-w-2xl mx-auto px-4 md:px-0 mb-6 md:mb-8 [&_fieldset]:border-none [&_fieldset]:p-0 [&_fieldset]:m-0 [&_fieldset]:shadow-none">
           <Input
             label={t('menu.buscador1')}
             type="search"
@@ -119,71 +126,114 @@ export default function Menu({ currentLang }: MenuProps) {
           />
         </div>
 
-        {/* Filas de Botones: Añadidos selectores profundos [&_*] para forzar la ocultación en hijos de ScrollSlider */}
-        <div className="flex flex-col gap-3 md:gap-5 [&_*::-webkit-scrollbar]:hidden [&_*]:[-ms-overflow-style:none] [&_*]:[scrollbar-width:none]">
+        {/* Clases restauradas para forzar la ocultación del scrollbar nativo */}
+        <div className="flex flex-col gap-4 md:gap-6 max-w-5xl mx-auto [&_*::-webkit-scrollbar]:hidden [&_*]:[-ms-overflow-style:none] [&_*]:[scrollbar-width:none]">
           
-          <div className="w-full pb-1">
-            <ScrollSlider>
-              {availableCategories.map((cat, index) => (
-                <button 
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`whitespace-nowrap px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${
-                    activeCategory === cat 
-                      ? "bg-titacosi-accent text-white shadow-md scale-105" 
-                      : "bg-titacosi-surface/80 text-titacosi-primary hover:bg-titacosi-accent/10"
-                  } ${index === 0 ? "ml-4 md:ml-6" : ""} ${index === availableCategories.length - 1 ? "mr-4 md:mr-6" : ""}`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </ScrollSlider>
-          </div>
+          <div className="flex flex-col md:flex-row md:items-center w-full relative">
+            <span className="hidden md:block text-[11px] font-normal tracking-[0.15em] text-titacosi-primary uppercase w-36 text-left pr-4 shrink-0">
+              Categorías:
+            </span>
 
-          {availableSabores.length > 0 && (
-            <div className="w-full pb-1">
+            {/* OVERLAY SUTIL UI: Sombra difuminada + Mini chevron animado (Estándar iOS/Android) */}
+            <div className="md:hidden absolute right-0 top-0 bottom-1 w-14 bg-gradient-to-l from-titacosi-base via-titacosi-base/80 to-transparent z-20 flex items-center justify-end pointer-events-none">
+              <span className="material-symbols-outlined text-titacosi-primary/40 text-lg animate-[pulse_1.5s_ease-in-out_infinite]">chevron_right</span>
+            </div>
+
+            <div className="w-full flex-1 overflow-hidden pb-1 [&_button.absolute]:!hidden md:[&_button.absolute]:!flex">
               <ScrollSlider>
-                {availableSabores.map((sabor, index) => (
-                  <button
-                    key={sabor}
-                    onClick={() => setActiveSabor(activeSabor === sabor ? null : sabor)}
-                    className={`whitespace-nowrap px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${
-                      activeSabor === sabor
-                        ? "bg-titacosi-accent text-white shadow-md scale-105"
-                        : "bg-titacosi-surface/80 text-titacosi-primary hover:bg-titacosi-accent/10"
-                    } ${index === 0 ? "ml-4 md:ml-6" : ""} ${index === availableSabores.length - 1 ? "mr-4 md:mr-6" : ""}`}
+                {availableCategories.map((cat, index) => (
+                  <button 
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-normal transition-colors border ${
+                      activeCategory === cat 
+                        ? "bg-titacosi-primary text-white border-titacosi-primary" 
+                        : "bg-titacosi-surface/50 text-titacosi-primary border-transparent hover:bg-titacosi-surface"
+                    } ${index === 0 ? "ml-4 md:ml-0" : ""} ${index === availableCategories.length - 1 ? "mr-4 md:mr-0" : ""}`}
                   >
-                    {sabor}
+                    {cat}
                   </button>
                 ))}
               </ScrollSlider>
             </div>
+          </div>
+
+          {(availableSabores.length > 0 || availableDietas.length > 0) && (
+            <div className="md:hidden flex items-center gap-4 px-4 mt-3 mb-1">
+              <div className="flex-1 h-px bg-titacosi-surface/70"></div>
+              <span className="text-[10px] font-normal tracking-[0.2em] text-titacosi-primary/60 uppercase">Preferencias</span>
+              <div className="flex-1 h-px bg-titacosi-surface/70"></div>
+            </div>
+          )}
+
+          {availableSabores.length > 0 && (
+            <div className="flex flex-col md:flex-row md:items-center w-full relative">
+              <span className="hidden md:block text-[11px] font-normal tracking-[0.15em] text-titacosi-primary uppercase w-36 text-left pr-4 shrink-0">
+                Sabores:
+              </span>
+
+              {/* OVERLAY SUTIL UI */}
+              <div className="md:hidden absolute right-0 top-0 bottom-1 w-14 bg-gradient-to-l from-titacosi-base via-titacosi-base/80 to-transparent z-20 flex items-center justify-end pointer-events-none">
+                <span className="material-symbols-outlined text-titacosi-primary/40 text-lg animate-[pulse_1.5s_ease-in-out_infinite]">chevron_right</span>
+              </div>
+
+              <div className="w-full flex-1 overflow-hidden pb-1 [&_button.absolute]:!hidden md:[&_button.absolute]:!flex">
+                <ScrollSlider>
+                  {availableSabores.map((sabor, index) => (
+                    <button
+                      key={sabor}
+                      onClick={() => setActiveSabor(activeSabor === sabor ? null : sabor)}
+                      className={`flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-xl text-sm font-normal transition-colors border ${
+                        activeSabor === sabor
+                          ? "bg-titacosi-primary text-white border-titacosi-primary"
+                          : "bg-titacosi-surface/30 text-titacosi-primary border-titacosi-surface hover:bg-titacosi-surface/80"
+                      } ${index === 0 ? "ml-4 md:ml-0" : ""} ${index === availableSabores.length - 1 ? "mr-4 md:mr-0" : ""}`}
+                    >
+                      {sabor}
+                    </button>
+                  ))}
+                </ScrollSlider>
+              </div>
+            </div>
           )}
 
           {availableDietas.length > 0 && (
-            <div className="w-full pb-1">
-              <ScrollSlider>
-                {availableDietas.map((dieta, index) => (
-                  <button
-                    key={dieta}
-                    onClick={() => setActiveDieta(activeDieta === dieta ? null : dieta)}
-                    className={`whitespace-nowrap px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${
-                      activeDieta === dieta
-                        ? "bg-titacosi-accent text-white shadow-md scale-105"
-                        : "bg-titacosi-surface/80 text-titacosi-primary hover:bg-titacosi-accent/10"
-                    } ${index === 0 ? "ml-4 md:ml-6" : ""} ${index === availableDietas.length - 1 ? "mr-4 md:mr-6" : ""}`}
-                  >
-                    {dieta}
-                  </button>
-                ))}
-              </ScrollSlider>
+            <div className="flex flex-col md:flex-row md:items-center w-full relative">
+              <span className="hidden md:block text-[11px] font-normal tracking-[0.15em] text-titacosi-primary uppercase w-36 text-left pr-4 shrink-0">
+                Preferencias:
+              </span>
+
+              {/* OVERLAY SUTIL UI */}
+              <div className="md:hidden absolute right-0 top-0 bottom-1 w-14 bg-gradient-to-l from-titacosi-base via-titacosi-base/80 to-transparent z-20 flex items-center justify-end pointer-events-none">
+                <span className="material-symbols-outlined text-titacosi-primary/40 text-lg animate-[pulse_1.5s_ease-in-out_infinite]">chevron_right</span>
+              </div>
+
+              <div className="w-full flex-1 overflow-hidden pb-1 [&_button.absolute]:!hidden md:[&_button.absolute]:!flex">
+                <ScrollSlider>
+                  {availableDietas.map((dieta, index) => (
+                    <button
+                      key={dieta}
+                      onClick={() => setActiveDieta(activeDieta === dieta ? null : dieta)}
+                      className={`flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-xl text-sm font-normal transition-colors border ${
+                        activeDieta === dieta
+                          ? "bg-titacosi-primary text-white border-titacosi-primary"
+                          : "bg-titacosi-surface/30 text-titacosi-primary border-titacosi-surface hover:bg-titacosi-surface/80"
+                      } ${index === 0 ? "ml-4 md:ml-0" : ""} ${index === availableDietas.length - 1 ? "mr-4 md:mr-0" : ""}`}
+                    >
+                      <span className="material-symbols-outlined text-[16px]">
+                        {getIconForPreference(dieta)}
+                      </span>
+                      {dieta}
+                    </button>
+                  ))}
+                </ScrollSlider>
+              </div>
             </div>
           )}
 
         </div>
       </div>
 
-      {/* RENDERIZADO DE LAS TARJETAS DE PLATOS */}
       <div className="max-w-6xl mx-auto space-y-20">
         {Object.keys(groupedItems).length === 0 ? (
           <div className="text-center py-24 text-titacosi-primary/60 italic font-serif text-2xl border border-dashed border-titacosi-surface rounded-xl">
