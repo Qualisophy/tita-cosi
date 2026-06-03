@@ -5,7 +5,7 @@ import { es, enUS, fr, de } from "date-fns/locale";
 import { format } from "date-fns";
 import "react-day-picker/dist/style.css";
 
-import { useTranslations } from '../../../i18n/locales/reservas';
+import { useTranslations } from "../../../i18n/locales/reservas";
 
 interface ReservationWidgetProps {
   lang: "es" | "en" | "fr" | "de";
@@ -42,55 +42,61 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
 
   const [selectedDay, setSelectedDay] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("14:30");
+  const [timeError, setTimeError] = useState<string | null>(null);
   const [guests, setGuests] = useState<number>(2);
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
 
-  // Estados para la experiencia de usuario (UX) al enviar el formulario
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  const availableTimes = [
-    "13:30",
-    "14:00",
-    "14:30",
-    "15:00",
-    "20:30",
-    "21:00",
-    "21:30",
-    "22:00",
-  ];
 
   const validTables = TABLES.filter((table) => table.capacity >= guests);
   const salaTables = validTables.filter((t) => t.zone === "Sala");
   const terrazaTables = validTables.filter((t) => t.zone === "Terraza");
 
-  // Calculamos la fecha de ayer para bloquear los días pasados
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
+  // Validación de rango de horas en cliente (previene errores 400 del backend)
+  const validarHorario = (horaSeleccionada: string) => {
+    if (!horaSeleccionada) return false;
+    const [hh, mm] = horaSeleccionada.split(":").map(Number);
+    const minutosTotales = hh * 60 + mm;
 
-  // Función que se ejecuta al enviar el formulario
+    const turnoComida = minutosTotales >= 13 * 60 && minutosTotales <= 16 * 60;
+    const turnoCena =
+      minutosTotales >= 20 * 60 && minutosTotales <= 23 * 60 + 30;
+
+    if (!turnoComida && !turnoCena) {
+      setTimeError(t("reserva.horario.error"));
+      return false;
+    }
+
+    setTimeError(null);
+    return true;
+  };
+
+  const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newTime = e.target.value;
+    setSelectedTime(newTime);
+    validarHorario(newTime);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!selectedDay || !selectedTable) return;
+    if (!validarHorario(selectedTime)) return; // Bloqueo de seguridad adicional
 
     setIsSubmitting(true);
     setErrorMsg(null);
 
-    // Capturamos los datos de los inputs gracias a su atributo "name"
     const formData = new FormData(e.currentTarget);
     const nombre = formData.get("nombre") as string;
     const apellidos = formData.get("apellidos") as string;
-
-    // Sacamos la zona buscando la mesa elegida
     const tableObj = TABLES.find((t) => t.id === selectedTable);
 
-    // Estructuramos los datos exactamente como los pide tu backend
     const payload = {
       nombre_cliente: `${nombre} ${apellidos}`.trim(),
       email_cliente: formData.get("email"),
       telefono_cliente: formData.get("telefono"),
-      fecha: format(selectedDay, "yyyy-MM-dd"), // Transformamos a formato base de datos
+      fecha: format(selectedDay, "yyyy-MM-dd"),
       hora: selectedTime,
       comensales: guests,
       mesa_id: selectedTable,
@@ -99,27 +105,21 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     };
 
     try {
-      // Pillamos la variable de entorno de Astro (Vercel o Local)
       const API_URL =
         import.meta.env.PUBLIC_API_URL || "http://localhost:3000/api";
 
       const response = await fetch(`${API_URL}/reservas`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data.message || t("reservas.error.1"),
-        );
+        throw new Error(data.message || t("reservas.error.1"));
       }
 
-      // ¡Reserva exitosa!
       setIsSuccess(true);
     } catch (error: any) {
       console.error(t("reservas.error.2"), error);
@@ -129,7 +129,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     }
   };
 
-  // Si todo ha ido bien, ocultamos el widget y mostramos este mensaje
   if (isSuccess) {
     return (
       <div className="mb-16 text-center max-w-2xl mx-auto bg-white border border-green-100 rounded-3xl p-12 shadow-sm">
@@ -158,9 +157,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
         <h1 className="font-serif text-4xl md:text-5xl text-titacosi-primary mb-6">
           {t("reserva.titulo")}
         </h1>
-        <p className="font-sans text-lg text-gray-600">
-          {t("reserva.texto")}
-        </p>
+        <p className="font-sans text-lg text-gray-600">{t("reserva.texto")}</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -173,26 +170,11 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                   --rdp-background-color: #f5eae9; 
                   --rdp-outline: 2px solid #8C3B3B;
                 }
-                
-                .custom-calendar-wrapper .rdp-chevron {
-                  fill: #8C3B3B !important;
-                }
-
-                .custom-calendar-wrapper .rdp-today:not(.rdp-outside) {
-                  color: #8C3B3B !important;
-                  font-weight: 700;
-                }
-
+                .custom-calendar-wrapper .rdp-chevron { fill: #8C3B3B !important; }
+                .custom-calendar-wrapper .rdp-today:not(.rdp-outside) { color: #8C3B3B !important; font-weight: 700; }
                 .custom-calendar-wrapper .rdp-selected .rdp-day_button,
-                .custom-calendar-wrapper .rdp-selected {
-                  background-color: #8C3B3B !important;
-                  border-color: #8C3B3B !important;
-                  color: white !important;
-                }
-
-                .custom-calendar-wrapper .rdp-selected:hover .rdp-day_button {
-                  background-color: #702f2f !important;
-                }
+                .custom-calendar-wrapper .rdp-selected { background-color: #8C3B3B !important; border-color: #8C3B3B !important; color: white !important; }
+                .custom-calendar-wrapper .rdp-selected:hover .rdp-day_button { background-color: #702f2f !important; }
               `}</style>
 
               <DayPicker
@@ -200,7 +182,8 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 selected={selectedDay}
                 onSelect={setSelectedDay}
                 locale={currentLocale}
-                disabled={[{ before: new Date() }]}
+                // Añadido { dayOfWeek: [1] } para desactivar reservas los Lunes
+                disabled={[{ before: new Date() }, { dayOfWeek: [1] }]}
               />
             </div>
 
@@ -208,21 +191,32 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               <h3 className="font-serif text-xl text-titacosi-primary mb-6">
                 {t("reserva.horario")}
               </h3>
-              <div className="grid grid-cols-2 gap-3 grow content-start">
-                {availableTimes.map((time) => (
-                  <button
-                    key={time}
-                    type="button"
-                    onClick={() => setSelectedTime(time)}
-                    className={`py-2 px-4 rounded-xl font-sans text-sm transition-all duration-200 border ${
-                      selectedTime === time
-                        ? "bg-titacosi-primary border-titacosi-primary text-white shadow-md font-medium"
-                        : "border-gray-200 text-gray-600 hover:border-titacosi-accent hover:text-titacosi-accent"
-                    }`}
-                  >
-                    {time}
-                  </button>
-                ))}
+
+              <div className="flex flex-col gap-2 grow content-start justify-center">
+                <input
+                  type="time"
+                  required
+                  value={selectedTime}
+                  onChange={handleTimeChange}
+                  className={`w-full text-center font-sans text-3xl p-4 rounded-xl border-2 transition-all outline-none ${
+                    timeError
+                      ? "border-red-400 bg-red-50 text-red-600 focus:ring-red-400"
+                      : "border-gray-200 bg-gray-50 focus:border-titacosi-accent focus:bg-white text-titacosi-primary"
+                  }`}
+                />
+
+                {timeError ? (
+                  <span className="text-xs text-red-500 font-bold flex items-center justify-center gap-1 mt-2 text-center">
+                    <span className="material-symbols-outlined text-[16px]">
+                      error
+                    </span>
+                    {timeError}
+                  </span>
+                ) : (
+                  <span className="text-xs text-gray-400 text-center mt-2 font-medium">
+                    {t("reserva.horario.hint")}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -233,7 +227,9 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 {t("reserva.mesa.titulo")}
               </h3>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-500">{t("reserva.mesa.comensales")}</span>
+                <span className="text-sm text-gray-500">
+                  {t("reserva.mesa.comensales")}
+                </span>
                 <select
                   value={guests}
                   onChange={(e) => {
@@ -244,7 +240,10 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                     <option key={num} value={num}>
-                      {num} {num === 1 ? t("reserva.mesa.comensales.singular") : t("reserva.mesa.comensales.plural")}
+                      {num}{" "}
+                      {num === 1
+                        ? t("reserva.mesa.comensales.singular")
+                        : t("reserva.mesa.comensales.plural")}
                     </option>
                   ))}
                 </select>
@@ -275,16 +274,19 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                         className={`font-sans text-sm font-bold ${selectedTable === table.id ? "text-titacosi-accent" : "text-titacosi-primary"}`}
                       >
                         {t("reserva.mesa.nombre")} {table.name}
-                        {table.id === "S7" && ` (${t("reserva.mesa.tipo.imperial")})`}
+                        {table.id === "S7" &&
+                          ` (${t("reserva.mesa.tipo.imperial")})`}
                       </span>
                       <span className="text-xs text-gray-500">
-                        {t("reserva.mesa.hasta")} {table.capacity} {t("reserva.mesa.pax")}
+                        {t("reserva.mesa.hasta")} {table.capacity}{" "}
+                        {t("reserva.mesa.pax")}
                       </span>
                     </button>
                   ))
                 ) : (
                   <p className="text-sm text-gray-400 italic">
-                    {t("reservas.mesa.interior.sin.espacio")} {guests} {t("reserva.mesa.comensales.plural")}.
+                    {t("reservas.mesa.interior.sin.espacio")} {guests}{" "}
+                    {t("reserva.mesa.comensales.plural")}.
                   </p>
                 )}
               </div>
@@ -316,13 +318,15 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                         {t("reserva.mesa.nombre")} {table.name}
                       </span>
                       <span className="text-xs text-gray-500">
-                        {t("reserva.mesa.hasta")} {table.capacity} {t("reserva.mesa.pax")}
+                        {t("reserva.mesa.hasta")} {table.capacity}{" "}
+                        {t("reserva.mesa.pax")}
                       </span>
                     </button>
                   ))
                 ) : (
                   <p className="text-sm text-gray-400 italic">
-                    {t("reservas.mesa.terraza.sin.espacio")} {guests} {t("reserva.mesa.comensales.plural")}.
+                    {t("reservas.mesa.terraza.sin.espacio")} {guests}{" "}
+                    {t("reserva.mesa.comensales.plural")}.
                   </p>
                 )}
               </div>
@@ -331,7 +335,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
         </div>
 
         <div className="lg:col-span-5">
-          {/* Conectamos el evento onSubmit */}
           <form
             onSubmit={handleSubmit}
             className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col gap-5 sticky top-28"
@@ -340,7 +343,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               {t("reservas.datos.titulo")}
             </h3>
 
-            {/* Aviso de error si la mesa ya está ocupada o hay fallos de red */}
             {errorMsg && (
               <div className="bg-red-50 border border-red-200 text-red-600 text-sm p-3 rounded-lg flex items-start gap-2">
                 <span className="material-symbols-outlined text-[18px]">
@@ -358,7 +360,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 >
                   {t("reservas.datos.nombre")}
                 </label>
-                {/* Atributos name y required añadidos */}
                 <input
                   required
                   name="nombre"
@@ -465,8 +466,9 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               <button
                 className="w-full bg-titacosi-accent text-white rounded-xl py-4 px-6 font-sans text-sm uppercase font-bold text-center hover:bg-opacity-90 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
-                // Desactivar el botón si la API está trabajando o si falta por elegir mesa/día
-                disabled={isSubmitting || !selectedTable || !selectedDay}
+                disabled={
+                  isSubmitting || !selectedTable || !selectedDay || !!timeError
+                }
               >
                 {isSubmitting ? (
                   <>
