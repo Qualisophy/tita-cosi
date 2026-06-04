@@ -35,8 +35,9 @@ export default function AdminModal({
         className="absolute inset-0 bg-titacosi-primary/60 backdrop-blur-sm transition-opacity"
         onClick={() => setIsModalOpen(false)}
       ></div>
-      <div className="relative w-full max-w-2xl bg-white sm:rounded-3xl shadow-2xl z-10 max-h-[90vh] flex flex-col rounded-t-3xl sm:rounded-b-3xl">
-        <div className="flex justify-between items-center p-6 border-b border-gray-100 sticky top-0 bg-white z-20 rounded-t-3xl">
+
+      <div className="relative w-full sm:max-w-2xl bg-white sm:rounded-3xl shadow-2xl z-10 h-[100dvh] sm:h-auto sm:max-h-[90vh] flex flex-col">
+        <div className="flex justify-between items-center p-6 border-b border-gray-100 shrink-0">
           <h2 className="font-serif text-2xl md:text-3xl text-titacosi-primary font-bold">
             {reservaEditando ? "Editar Reserva" : "Nueva Reserva"}
           </h2>
@@ -48,9 +49,9 @@ export default function AdminModal({
           </button>
         </div>
 
-        <div className="p-6 overflow-y-auto custom-scrollbar">
+        <div className="p-6 overflow-y-auto custom-scrollbar flex-1 flex flex-col">
           {modalError && (
-            <div className="bg-red-50 border border-red-200 text-red-600 text-sm p-3 rounded-lg mb-6 flex items-start gap-2">
+            <div className="bg-red-50 border border-red-200 text-red-600 text-sm p-3 rounded-lg mb-6 flex items-start gap-2 shrink-0">
               <span className="material-symbols-outlined text-[18px]">
                 error
               </span>
@@ -58,9 +59,12 @@ export default function AdminModal({
             </div>
           )}
 
-          <form onSubmit={handleCreateReserva} className="space-y-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <div>
+          <form
+            onSubmit={handleCreateReserva}
+            className="space-y-5 flex flex-col flex-1"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 shrink-0">
+              <div className="flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Nombre
                 </label>
@@ -75,7 +79,7 @@ export default function AdminModal({
                   type="text"
                 />
               </div>
-              <div>
+              <div className="flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Apellidos
                 </label>
@@ -95,8 +99,8 @@ export default function AdminModal({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 shrink-0">
+              <div className="flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Teléfono
                 </label>
@@ -113,7 +117,7 @@ export default function AdminModal({
                   title="Introduce un teléfono válido (mínimo 9 dígitos). Se admiten espacios y el prefijo '+'."
                 />
               </div>
-              <div>
+              <div className="flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Email
                 </label>
@@ -130,8 +134,9 @@ export default function AdminModal({
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 sm:gap-5">
-              <div className="col-span-3 sm:col-span-1">
+            {/* FIX: Contenedores con 'flex flex-col justify-end' para alinear los inputs bottom-line */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-5 shrink-0">
+              <div className="col-span-3 sm:col-span-1 flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Fecha
                 </label>
@@ -156,10 +161,10 @@ export default function AdminModal({
                   type="date"
                 />
               </div>
-              <div className="col-span-1">
+              <div className="col-span-1 flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Hora{" "}
-                  <span className="text-[9px] text-gray-400 font-normal ml-1">
+                  <span className="text-[9px] text-gray-400 font-normal block xl:inline">
                     (13h-16h / 20h-23:30h)
                   </span>
                 </label>
@@ -171,7 +176,7 @@ export default function AdminModal({
                   type="time"
                 />
               </div>
-              <div className="col-span-2 sm:col-span-1">
+              <div className="col-span-2 sm:col-span-1 flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Comensales
                 </label>
@@ -187,8 +192,8 @@ export default function AdminModal({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 shrink-0">
+              <div className="flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                   Asignar Mesa Exacta
                 </label>
@@ -217,7 +222,7 @@ export default function AdminModal({
               </div>
 
               {reservaEditando ? (
-                <div>
+                <div className="flex flex-col justify-end">
                   <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
                     Estado
                   </label>
@@ -237,8 +242,8 @@ export default function AdminModal({
               )}
             </div>
 
-            <div>
-              <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block flex justify-between">
+            <div className="shrink-0 mb-4">
+              <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 flex justify-between">
                 Notas / Peticiones{" "}
                 <span className="font-normal text-gray-400">
                   Max. 500 caract.
@@ -254,7 +259,9 @@ export default function AdminModal({
               ></textarea>
             </div>
 
-            <div className="flex flex-col-reverse sm:flex-row gap-3 sm:gap-4 pt-6 border-t border-gray-100 sticky bottom-0 bg-white pb-2">
+            <div className="flex-1"></div>
+
+            <div className="flex flex-col-reverse sm:flex-row gap-3 sm:gap-4 pt-6 border-t border-gray-100 shrink-0">
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}

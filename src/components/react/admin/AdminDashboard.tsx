@@ -22,7 +22,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
   const [modalError, setModalError] = useState<string | null>(null);
   const [reservaEditando, setReservaEditando] = useState<Reserva | null>(null);
 
-  // NUEVOS ESTADOS PARA BORRADO
   const [reservaAEliminar, setReservaAEliminar] = useState<Reserva | null>(
     null,
   );
@@ -87,7 +86,6 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
     }
   };
 
-  // NUEVA LÓGICA DE ELIMINACIÓN
   const handleConfirmarEliminacion = async () => {
     if (!reservaAEliminar) return;
     setIsDeleting(true);
@@ -337,6 +335,8 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
               )}
             </p>
           </div>
+
+          {/* Botón Nueva Reserva modificado (w-full en móvil) */}
           <button
             onClick={() => {
               setReservaEditando(null);
