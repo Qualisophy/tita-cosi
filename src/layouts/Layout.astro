@@ -15,12 +15,8 @@ interface Props {
 
 const { title, lang } = Astro.props;
 
-// Construcción de URL canónica para SEO. 
-// Evita penalizaciones si Google entra a /es, indicándole que la original es /
-const currentPath = Astro.url.pathname;
-const isSpanishHome = currentPath === '/' || currentPath === '/es' || currentPath === '/es/';
-const canonicalPath = isSpanishHome ? '/' : currentPath;
-const canonicalURL = new URL(canonicalPath, Astro.site || Astro.url.origin);
+// Construcción de URL canónica dinámica (indexará /es en lugar de /)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
 ---
 
 <!doctype html>
@@ -31,7 +27,6 @@ const canonicalURL = new URL(canonicalPath, Astro.site || Astro.url.origin);
     <link rel="icon" type="image/ico+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     
-    {/* Enlace Canónico para SEO */}
     <link rel="canonical" href={canonicalURL.href} />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +38,6 @@ const canonicalURL = new URL(canonicalPath, Astro.site || Astro.url.origin);
     <title>{title} | Tita Cosi</title>
 
     <style is:global>
-      /* Aseguramos la renderización correcta de los iconos en toda la app */
       .material-symbols-outlined {
         font-family: 'Material Symbols Outlined';
         font-weight: normal;
@@ -61,8 +55,10 @@ const canonicalURL = new URL(canonicalPath, Astro.site || Astro.url.origin);
       }
     </style>
 
+    <!-- Start cookieyes banner --> 
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0543345d60a4116d3d5d11a57e497d7b/script.js"></script> 
-    </head>
+    <!-- End cookieyes banner -->
+  </head>
   <body class="bg-titacosi-base text-titacosi-primary font-sans antialiased selection:bg-titacosi-accent selection:text-titacosi-surface flex flex-col min-h-screen">
     
   <Header 

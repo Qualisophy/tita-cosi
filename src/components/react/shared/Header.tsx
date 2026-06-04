@@ -32,28 +32,19 @@ export default function Header({
     };
   }, [isMobileMenuOpen]);
 
-  // Si estamos en español, la ruta de inicio es `/`, si es otro idioma es `/[lang]`
-  const homePath = currentLang === "es" ? "/" : `/${currentLang}`;
-
   const getRedirectPath = (newLangCode: string) => {
-    const isHome =
-      currentPath === "/" ||
+    if (
       currentPath === `/${currentLang}` ||
-      currentPath === `/${currentLang}/`;
-    if (isHome) {
-      return newLangCode === "es" ? "/" : `/${newLangCode}`;
+      currentPath === `/${currentLang}/`
+    ) {
+      return `/${newLangCode}`;
     }
     return currentPath.replace(`/${currentLang}`, `/${newLangCode}`);
   };
 
   const isActive = (targetPath: string) => {
-    let normalizedCurrent = currentPath.replace(/\/$/, "") || "/";
-    let normalizedTarget = targetPath.replace(/\/$/, "") || "/";
-
-    // Tratamos /es y / como la misma ruta a efectos de "activo" en el menú
-    if (normalizedCurrent === "/es") normalizedCurrent = "/";
-    if (normalizedTarget === "/es") normalizedTarget = "/";
-
+    const normalizedCurrent = currentPath.replace(/\/$/, "") || "/";
+    const normalizedTarget = targetPath.replace(/\/$/, "") || "/";
     return normalizedCurrent === normalizedTarget;
   };
 
@@ -76,7 +67,7 @@ export default function Header({
               className={`flex items-center ${isMobileMenuOpen ? "invisible" : "visible"}`}
             >
               <a
-                href={homePath}
+                href={`/${currentLang}`}
                 className="block transition-opacity hover:opacity-80"
               >
                 <img
@@ -88,11 +79,14 @@ export default function Header({
               </a>
             </div>
 
-            {/* ELEMENTOS DERECHA - Desktop */}
+            {/* ELEMENTOS DERECHA - Desktop (Navegación + Botón + Idioma) */}
             <div className="hidden md:flex items-center gap-8">
               {/* Navegación */}
               <nav className="flex space-x-8 items-center mt-1">
-                <a href={homePath} className={getNavClasses(homePath)}>
+                <a
+                  href={`/${currentLang}`}
+                  className={getNavClasses(`/${currentLang}`)}
+                >
                   {t("nav.inicio")}
                 </a>
                 <a
@@ -190,7 +184,7 @@ export default function Header({
         </div>
       </header>
 
-      {/* SIDEBAR MÓVIL */}
+      {/* SIDEBAR MÓVIL (Mantenido intacto) */}
       <div
         className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 md:hidden ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -232,9 +226,9 @@ export default function Header({
 
         <div className="flex flex-col p-6 space-y-6 overflow-y-auto">
           <a
-            href={homePath}
+            href={`/${currentLang}`}
             onClick={() => setIsMobileMenuOpen(false)}
-            className={getNavClasses(homePath)}
+            className={getNavClasses(`/${currentLang}`)}
           >
             {t("nav.inicio")}
           </a>
