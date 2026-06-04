@@ -64,7 +64,8 @@ export default function Header({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 w-full">
             {/* LOGO - Izquierda */}
-            <div className="flex items-center">
+            {/* Añadimos ${isMobileMenuOpen ? "hidden" : "block"} para ocultarlo al abrir el menú */}
+            <div className={`flex items-center ${isMobileMenuOpen ? "hidden" : "block"}`}>
               <a
                 href={`/${currentLang}`}
                 className="block transition-opacity hover:opacity-80"
