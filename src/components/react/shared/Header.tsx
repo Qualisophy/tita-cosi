@@ -32,23 +32,31 @@ export default function Header({
     };
   }, [isMobileMenuOpen]);
 
+  // Si estamos en español, la ruta de inicio es `/`, si es otro idioma es `/[lang]`
+  const homePath = currentLang === "es" ? "/" : `/${currentLang}`;
+
   const getRedirectPath = (newLangCode: string) => {
-    if (
+    const isHome =
+      currentPath === "/" ||
       currentPath === `/${currentLang}` ||
-      currentPath === `/${currentLang}/`
-    ) {
-      return `/${newLangCode}`;
+      currentPath === `/${currentLang}/`;
+    if (isHome) {
+      return newLangCode === "es" ? "/" : `/${newLangCode}`;
     }
     return currentPath.replace(`/${currentLang}`, `/${newLangCode}`);
   };
 
   const isActive = (targetPath: string) => {
-    const normalizedCurrent = currentPath.replace(/\/$/, "") || "/";
-    const normalizedTarget = targetPath.replace(/\/$/, "") || "/";
+    let normalizedCurrent = currentPath.replace(/\/$/, "") || "/";
+    let normalizedTarget = targetPath.replace(/\/$/, "") || "/";
+
+    // Tratamos /es y / como la misma ruta a efectos de "activo" en el menú
+    if (normalizedCurrent === "/es") normalizedCurrent = "/";
+    if (normalizedTarget === "/es") normalizedTarget = "/";
+
     return normalizedCurrent === normalizedTarget;
   };
 
-  // Ajuste para igualar la línea de la imagen usando border-bottom en lugar de underline
   const getNavClasses = (path: string) => {
     const baseClasses =
       "uppercase text-[13px] tracking-[0.15em] transition-colors duration-300 pb-1";
@@ -64,9 +72,11 @@ export default function Header({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 w-full">
             {/* LOGO - Izquierda */}
-            <div className={`flex items-center ${isMobileMenuOpen ? "invisible" : "visible"}`}>
+            <div
+              className={`flex items-center ${isMobileMenuOpen ? "invisible" : "visible"}`}
+            >
               <a
-                href={`/${currentLang}`}
+                href={homePath}
                 className="block transition-opacity hover:opacity-80"
               >
                 <img
@@ -78,14 +88,11 @@ export default function Header({
               </a>
             </div>
 
-            {/* ELEMENTOS DERECHA - Desktop (Navegación + Botón + Idioma) */}
+            {/* ELEMENTOS DERECHA - Desktop */}
             <div className="hidden md:flex items-center gap-8">
               {/* Navegación */}
               <nav className="flex space-x-8 items-center mt-1">
-                <a
-                  href={`/${currentLang}`}
-                  className={getNavClasses(`/${currentLang}`)}
-                >
+                <a href={homePath} className={getNavClasses(homePath)}>
                   {t("nav.inicio")}
                 </a>
                 <a
@@ -156,7 +163,9 @@ export default function Header({
             </div>
 
             {/* BOTÓN HAMBURGUESA - Móvil */}
-            <div className={`flex justify-end md:hidden ${isMobileMenuOpen ? "invisible" : "visible"}`}>
+            <div
+              className={`flex justify-end md:hidden ${isMobileMenuOpen ? "invisible" : "visible"}`}
+            >
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="text-titacosi-primary hover:text-titacosi-accent transition-colors p-2"
@@ -181,7 +190,7 @@ export default function Header({
         </div>
       </header>
 
-      {/* SIDEBAR MÓVIL (Mantenido intacto) */}
+      {/* SIDEBAR MÓVIL */}
       <div
         className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 md:hidden ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -223,9 +232,9 @@ export default function Header({
 
         <div className="flex flex-col p-6 space-y-6 overflow-y-auto">
           <a
-            href={`/${currentLang}`}
+            href={homePath}
             onClick={() => setIsMobileMenuOpen(false)}
-            className={getNavClasses(`/${currentLang}`)}
+            className={getNavClasses(homePath)}
           >
             {t("nav.inicio")}
           </a>
