@@ -64,8 +64,7 @@ export default function Header({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 w-full">
             {/* LOGO - Izquierda */}
-            {/* Añadimos ${isMobileMenuOpen ? "hidden" : "block"} para ocultarlo al abrir el menú */}
-            <div className={`flex items-center ${isMobileMenuOpen ? "hidden" : "block"}`}>
+            <div className={`flex items-center ${isMobileMenuOpen ? "invisible" : "visible"}`}>
               <a
                 href={`/${currentLang}`}
                 className="block transition-opacity hover:opacity-80"
@@ -157,7 +156,7 @@ export default function Header({
             </div>
 
             {/* BOTÓN HAMBURGUESA - Móvil */}
-            <div className="flex justify-end md:hidden">
+            <div className={`flex justify-end md:hidden ${isMobileMenuOpen ? "invisible" : "visible"}`}>
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="text-titacosi-primary hover:text-titacosi-accent transition-colors p-2"
