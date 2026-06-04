@@ -1,5 +1,5 @@
 // src/components/react/admin/AdminModal.tsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import type { Reserva } from "./admin.types";
 import { TABLES } from "./admin.types";
 import { extraerFechaLocal } from "./admin.utils";
@@ -27,6 +27,40 @@ export default function AdminModal({
   fechaHoyString,
   maxDateString,
 }: AdminModalProps) {
+  // NUEVO: Estado local para controlar dinámicamente los comensales y filtrar las mesas
+  const [localComensales, setLocalComensales] = useState<number>(
+    reservaEditando ? reservaEditando.comensales : 2,
+  );
+  const [localMesaId, setLocalMesaId] = useState<string>(
+    reservaEditando ? reservaEditando.mesa_id : "",
+  );
+
+  // Efecto para sincronizar el estado local cuando cambia la reserva a editar
+  useEffect(() => {
+    if (reservaEditando) {
+      setLocalComensales(reservaEditando.comensales);
+      setLocalMesaId(reservaEditando.mesa_id);
+    } else {
+      setLocalComensales(2);
+      setLocalMesaId("");
+    }
+  }, [reservaEditando, isModalOpen]);
+
+  // Manejador para el cambio de comensales. Resetea la mesa si la nueva cantidad excede su capacidad.
+  const handleComensalesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const num = Number(e.target.value);
+    setLocalComensales(num);
+    const mesaActual = TABLES.find((t) => t.id === localMesaId);
+    if (mesaActual && num > mesaActual.capacity) {
+      setLocalMesaId(""); // Resetea si ya no cabe
+    }
+  };
+
+  // Filtrado reactivo de mesas válidas
+  const mesasValidas = TABLES.filter((t) => t.capacity >= localComensales);
+  const salaTables = mesasValidas.filter((t) => t.zone === "Sala");
+  const terrazaTables = mesasValidas.filter((t) => t.zone === "Terraza");
+
   if (!isModalOpen) return null;
 
   return (
@@ -42,6 +76,7 @@ export default function AdminModal({
             {reservaEditando ? "Editar Reserva" : "Nueva Reserva"}
           </h2>
           <button
+            type="button"
             className="p-2 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors text-gray-500"
             onClick={() => setIsModalOpen(false)}
           >
@@ -134,7 +169,6 @@ export default function AdminModal({
               </div>
             </div>
 
-            {/* FIX: Contenedores con 'flex flex-col justify-end' para alinear los inputs bottom-line */}
             <div className="grid grid-cols-3 gap-3 sm:gap-5 shrink-0">
               <div className="col-span-3 sm:col-span-1 flex flex-col justify-end">
                 <label className="font-bold text-[11px] uppercase text-gray-500 mb-1.5 block">
@@ -183,7 +217,8 @@ export default function AdminModal({
                 <input
                   required
                   name="comensales"
-                  defaultValue={reservaEditando?.comensales || 2}
+                  value={localComensales}
+                  onChange={handleComensalesChange}
                   className="w-full bg-[#f4f3f1] border-transparent focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent rounded-xl px-4 py-3 outline-none transition-all text-sm"
                   min="1"
                   max="20"
@@ -200,25 +235,31 @@ export default function AdminModal({
                 <select
                   required
                   name="mesa_id"
-                  defaultValue={reservaEditando?.mesa_id || ""}
+                  value={localMesaId}
+                  onChange={(e) => setLocalMesaId(e.target.value)}
                   className="w-full bg-[#f4f3f1] border-transparent focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent rounded-xl px-4 py-3 outline-none transition-all text-sm cursor-pointer"
                 >
                   <option value="">-- Seleccionar mesa --</option>
                   <optgroup label="Sala Interior">
-                    {TABLES.filter((t) => t.zone === "Sala").map((t) => (
+                    {salaTables.map((t) => (
                       <option key={t.id} value={t.id}>
                         {t.name} (Max {t.capacity} pax)
                       </option>
                     ))}
                   </optgroup>
                   <optgroup label="Terraza Exterior">
-                    {TABLES.filter((t) => t.zone === "Terraza").map((t) => (
+                    {terrazaTables.map((t) => (
                       <option key={t.id} value={t.id}>
                         {t.name} (Max {t.capacity} pax)
                       </option>
                     ))}
                   </optgroup>
                 </select>
+                {mesasValidas.length === 0 && (
+                  <span className="text-xs text-red-500 mt-1">
+                    No hay mesas disponibles para {localComensales} comensales.
+                  </span>
+                )}
               </div>
 
               {reservaEditando ? (
@@ -271,7 +312,7 @@ export default function AdminModal({
               </button>
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || mesasValidas.length === 0}
                 className="w-full sm:flex-1 py-3.5 sm:py-4 bg-titacosi-accent text-white rounded-xl font-bold text-sm shadow-md hover:bg-titacosi-primary active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isSubmitting ? (
