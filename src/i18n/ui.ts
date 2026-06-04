@@ -70,6 +70,9 @@ export const ui = {
     "menu.filtro": "Filtro",
     "menu.filtros_title": "Filtros",
     "menu.cerrar": "Cerrar",
+    "footer.contact.address": "Av. del Editor Ángel Caffarena, 13, Málaga",
+    "footer.contact.phone": "+34 667 94 02 60",
+    "footer.contact.email": "hola@tabernatitacosi.es",
   },
   en: {
     "nav.inicio": "Home",
@@ -131,6 +134,9 @@ export const ui = {
     "menu.filtro": "Filter",
     "menu.filtros_title": "Filters",
     "menu.cerrar": "Close",
+    "footer.contact.address": "Av. del Editor Ángel Caffarena, 13, Málaga",
+    "footer.contact.phone": "+34 667 94 02 60",
+    "footer.contact.email": "hello@tabernatitacosi.es",
   },
   fr: {
     "nav.inicio": "Accueil",
@@ -192,6 +198,9 @@ export const ui = {
     "menu.filtro": "Filtre",
     "menu.filtros_title": "Filtres",
     "menu.cerrar": "Fermer",
+    "footer.contact.address": "Av. del Editor Ángel Caffarena, 13, Málaga",
+    "footer.contact.phone": "+34 667 94 02 60",
+    "footer.contact.email": "hola@tabernatitacosi.es",
   },
   de: {
     "nav.inicio": "Startseite",
@@ -253,5 +262,8 @@ export const ui = {
     "menu.filtro": "Filter",
     "menu.filtros_title": "Filter",
     "menu.cerrar": "Schließen",
+    "footer.contact.address": "Av. del Editor Ángel Caffarena, 13, Málaga",
+    "footer.contact.phone": "+34 667 94 02 60",
+    "footer.contact.email": "hola@tabernatitacosi.es",
   },
 } as const;
