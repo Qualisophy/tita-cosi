@@ -42,30 +42,29 @@ export default function Header({
     return currentPath.replace(`/${currentLang}`, `/${newLangCode}`);
   };
 
-  // --- LÓGICA DE ESTADO ACTIVO ---
   const isActive = (targetPath: string) => {
-    // Normalizamos las rutas quitando la barra final para evitar desajustes (ej: /es y /es/)
     const normalizedCurrent = currentPath.replace(/\/$/, "") || "/";
     const normalizedTarget = targetPath.replace(/\/$/, "") || "/";
     return normalizedCurrent === normalizedTarget;
   };
 
+  // Ajuste para igualar la línea de la imagen usando border-bottom en lugar de underline
   const getNavClasses = (path: string) => {
     const baseClasses =
-      "uppercase text-sm tracking-widest transition-colors duration-300";
+      "uppercase text-[13px] tracking-[0.15em] transition-colors duration-300 pb-1";
 
     return isActive(path)
-      ? `${baseClasses} text-titacosi-accent font-bold underline decoration-2 underline-offset-8`
-      : `${baseClasses} text-titacosi-primary/70 font-medium hover:text-titacosi-accent`;
+      ? `${baseClasses} text-titacosi-accent font-bold border-b-2 border-titacosi-accent`
+      : `${baseClasses} text-titacosi-primary/60 font-medium hover:text-titacosi-accent`;
   };
 
   return (
     <>
-      <header className="fixed w-full top-0 z-40 bg-titacosi-base/90 backdrop-blur-md border-b border-titacosi-surface">
+      <header className="fixed w-full top-0 z-40 bg-titacosi-base shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 w-full">
             {/* LOGO - Izquierda */}
-            <div className="flex-1 flex items-center">
+            <div className="flex items-center">
               <a
                 href={`/${currentLang}`}
                 className="block transition-opacity hover:opacity-80"
@@ -79,49 +78,50 @@ export default function Header({
               </a>
             </div>
 
-            {/* NAVEGACIÓN DESKTOP - Centro */}
-            <nav className="hidden md:flex flex-none justify-center space-x-8">
-              <a
-                href={`/${currentLang}`}
-                className={getNavClasses(`/${currentLang}`)}
-              >
-                {t("nav.inicio")}
-              </a>
-              <a
-                href={`/${currentLang}/carta`}
-                className={getNavClasses(`/${currentLang}/carta`)}
-              >
-                {t("nav.carta")}
-              </a>
-              <a
-                href={`/${currentLang}/contacto`}
-                className={getNavClasses(`/${currentLang}/contacto`)}
-              >
-                {t("nav.contacto")}
-              </a>
-            </nav>
+            {/* ELEMENTOS DERECHA - Desktop (Navegación + Botón + Idioma) */}
+            <div className="hidden md:flex items-center gap-8">
+              {/* Navegación */}
+              <nav className="flex space-x-8 items-center mt-1">
+                <a
+                  href={`/${currentLang}`}
+                  className={getNavClasses(`/${currentLang}`)}
+                >
+                  {t("nav.inicio")}
+                </a>
+                <a
+                  href={`/${currentLang}/carta`}
+                  className={getNavClasses(`/${currentLang}/carta`)}
+                >
+                  {t("nav.carta")}
+                </a>
+                <a
+                  href={`/${currentLang}/contacto`}
+                  className={getNavClasses(`/${currentLang}/contacto`)}
+                >
+                  {t("nav.contacto")}
+                </a>
+              </nav>
 
-            {/* ACCIONES DESKTOP - Derecha */}
-            <div className="flex-1 hidden md:flex justify-end items-center gap-6">
+              {/* Botón CTA */}
               <Button
                 variant="accent"
                 onClick={() =>
                   (window.location.href = `/${currentLang}/reservas`)
                 }
-                className="text-base !px-6 !py-2.5 shadow-sm"
+                className="text-sm font-medium !px-6 !py-2.5 rounded-md shadow-none hover:bg-titacosi-accent/90 transition-colors"
               >
                 {t("nav.reservar")}
               </Button>
 
-              {/* Selector de Idioma DESKTOP */}
+              {/* Selector de Idioma */}
               <div className="relative">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
-                  className="flex items-center text-base font-medium hover:text-titacosi-accent transition-colors"
+                  className="flex items-center text-[13px] tracking-wider text-titacosi-primary/70 hover:text-titacosi-accent transition-colors"
                 >
-                  {languages[currentLang]}
+                  {currentLang.toUpperCase()}
                   <svg
-                    className="w-4 h-4 ml-1"
+                    className="w-4 h-4 ml-1 opacity-70"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -136,17 +136,14 @@ export default function Header({
                 </button>
 
                 {isLangOpen && (
-                  <div className="absolute right-0 mt-2 w-24 bg-white border border-titacosi-surface rounded shadow-lg py-1">
+                  <div className="absolute right-0 mt-2 w-24 bg-white border border-titacosi-surface rounded-md shadow-lg py-1">
                     {Object.entries(languages).map(
                       ([code, label]) =>
-                        (code === "es" ||
-                          code === "en" ||
-                          code === "fr" ||
-                          code === "de") && (
+                        ["es", "en", "fr", "de"].includes(code) && (
                           <a
                             key={code}
                             href={getRedirectPath(code)}
-                            className={`block px-4 py-2 text-sm hover:bg-titacosi-surface ${currentLang === code ? "font-bold text-titacosi-accent" : ""}`}
+                            className={`block px-4 py-2 text-sm hover:bg-titacosi-surface ${currentLang === code ? "font-bold text-titacosi-accent" : "text-titacosi-primary"}`}
                             onClick={() => setIsLangOpen(false)}
                           >
                             {label}
@@ -159,7 +156,7 @@ export default function Header({
             </div>
 
             {/* BOTÓN HAMBURGUESA - Móvil */}
-            <div className="flex-1 flex justify-end md:hidden">
+            <div className="flex justify-end md:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="text-titacosi-primary hover:text-titacosi-accent transition-colors p-2"
@@ -184,7 +181,7 @@ export default function Header({
         </div>
       </header>
 
-      {/* SIDEBAR MÓVIL */}
+      {/* SIDEBAR MÓVIL (Mantenido intacto) */}
       <div
         className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 md:hidden ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -253,10 +250,7 @@ export default function Header({
           <div className="flex gap-4">
             {Object.entries(languages).map(
               ([code, label]) =>
-                (code === "es" ||
-                  code === "en" ||
-                  code === "fr" ||
-                  code === "de") && (
+                ["es", "en", "fr", "de"].includes(code) && (
                   <a
                     key={code}
                     href={getRedirectPath(code)}
