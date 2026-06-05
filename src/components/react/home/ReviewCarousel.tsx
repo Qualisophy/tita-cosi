@@ -1,10 +1,15 @@
+// src/components/react/home/ReviewCarousel.tsx
 import React, { useState, useEffect, useRef } from "react";
 import type { KeyboardEvent, TouchEvent } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { customerReviews } from "../../../data/review";
 import type { Review } from "../../../data/review";
 import { useTranslations } from "../../../i18n/utils";
 import type { ui } from "../../../i18n/ui";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ReviewCarouselProps {
   currentLang: keyof typeof ui;
@@ -22,8 +27,42 @@ export default function ReviewCarousel({
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const totalSlides = customerReviews.length;
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.to(".anim-title", {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      gsap.to(".anim-carousel", {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        delay: 0.2
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   useEffect(() => {
     if (!isPaused) {
@@ -35,8 +74,7 @@ export default function ReviewCarousel({
   }, [currentIndex, isPaused, autoplaySpeed]);
 
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  const prevSlide = () =>
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowRight") nextSlide();
@@ -73,18 +111,19 @@ export default function ReviewCarousel({
 
   return (
     <section
-      className="w-full max-w-5xl mx-auto px-4 py-16"
+      ref={sectionRef}
+      className="w-full max-w-5xl mx-auto px-4 py-16 overflow-hidden"
       aria-labelledby="reviews-title"
     >
       <h2
         id="reviews-title"
-        className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10"
+        className="anim-title opacity-0 translate-y-10 text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10"
       >
         {t("home.resenas.titulo" as any)}
       </h2>
 
       <div
-        className="relative bg-white border border-gray-100 rounded-2xl shadow-sm p-6 md:p-12 outline-none focus-visible:ring-2 focus-visible:ring-amber-800 touch-pan-y select-none"
+        className="anim-carousel opacity-0 translate-y-10 relative bg-white border border-gray-100 rounded-2xl shadow-sm px-4 pt-8 pb-14 md:p-12 outline-none focus-visible:ring-2 focus-visible:ring-amber-800 touch-pan-y select-none"
         tabIndex={0}
         role="region"
         aria-roledescription="carousel"
@@ -97,13 +136,14 @@ export default function ReviewCarousel({
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="overflow-hidden relative min-h-100 md:min-h-75 flex items-center">
+        {/* Altura mínima ajustada para evitar desbordes en móvil */}
+        <div className="overflow-hidden relative min-h-[480px] sm:min-h-[400px] md:min-h-[300px] flex items-center">
           {customerReviews.map((review: Review, index: number) => {
             const isActive = index === currentIndex;
             return (
               <div
                 key={review.id}
-                className={`w-full transition-opacity duration-500 ease-in-out absolute inset-0 flex flex-col md:flex-row items-center gap-8 ${
+                className={`w-full transition-opacity duration-500 ease-in-out absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 ${
                   isActive
                     ? "opacity-100 z-10"
                     : "opacity-0 z-0 pointer-events-none"
@@ -111,13 +151,13 @@ export default function ReviewCarousel({
                 aria-hidden={!isActive}
               >
                 {review.images && review.images.length > 0 && (
-                  <div className="w-full md:w-1/3 flex justify-center gap-2">
+                  <div className="w-full md:w-1/3 flex justify-center gap-3">
                     {review.images.slice(0, 2).map((img: string, i: number) => (
                       <img
                         key={i}
                         src={img}
                         alt={`Plato reseñado por ${review.name}`}
-                        className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-xl shadow-md border border-gray-100"
+                        className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 object-cover rounded-xl shadow-md border border-gray-100"
                         loading="lazy"
                       />
                     ))}
@@ -127,7 +167,7 @@ export default function ReviewCarousel({
                 <div
                   className={`flex flex-col items-center md:items-start text-center md:text-left ${review.images?.length ? "w-full md:w-2/3" : "w-full"}`}
                 >
-                  <div className="flex space-x-1 mb-3">
+                  <div className="flex justify-center md:justify-start space-x-1 mb-4">
                     {[...Array(review.rating)].map((_: unknown, i: number) => (
                       <svg
                         key={i}
@@ -138,17 +178,19 @@ export default function ReviewCarousel({
                       </svg>
                     ))}
                   </div>
-                  {/* Modificación clave para usar el i18n */}
-                  <p className="text-gray-700 text-lg italic mb-6 leading-relaxed">
+                  <p className="text-gray-700 text-[15px] sm:text-base md:text-lg italic mb-6 leading-relaxed px-2 md:px-0">
                     "{t(review.textKey as any)}"
                   </p>
                   <div className="flex flex-col items-center md:items-start">
                     <span className="font-semibold text-gray-900">
                       {review.name}
                     </span>
-                    <span className="text-xs uppercase tracking-wider bg-gray-100 text-gray-600 px-3 py-1 rounded-full mt-2 font-medium">
-                      {getTagTranslation(review.tag)}
-                    </span>
+                    {/* El tag solo aparece si existe, respetando la estructura original */}
+                    {review.tag && (
+                       <span className="text-xs uppercase tracking-wider bg-gray-100 text-gray-600 px-3 py-1 rounded-full mt-2 font-medium">
+                         {getTagTranslation(review.tag)}
+                       </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -160,45 +202,25 @@ export default function ReviewCarousel({
           onClick={prevSlide}
           className="hidden md:block absolute -left-6 top-1/2 -translate-y-1/2 bg-white shadow-md hover:bg-gray-50 text-gray-800 p-3 rounded-full z-20"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <button
           onClick={nextSlide}
           className="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 bg-white shadow-md hover:bg-gray-50 text-gray-800 p-3 rounded-full z-20"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
-        <div className="flex justify-center space-x-2 mt-8 absolute bottom-4 left-1/2 -translate-x-1/2">
+        <div className="flex justify-center space-x-2 absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20">
           {customerReviews.map((_: unknown, index: number) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 bg-amber-800" : "w-2.5 bg-gray-300"}`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 bg-[#8C3B3B]" : "w-2.5 bg-gray-300"}`}
               aria-label={`Ir a reseña ${index + 1}`}
             />
           ))}
