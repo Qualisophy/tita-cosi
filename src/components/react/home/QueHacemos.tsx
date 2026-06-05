@@ -24,12 +24,13 @@ export default function QueHacemos({ currentLang }: QueHacemosProps) {
       gsap.from(".anim-title", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%", 
+          start: "top 70%", 
           toggleActions: "play none none none"
         },
         y: 40,
         opacity: 0,
-        duration: 1,
+        duration: 1.2,
+        delay: 0.8,
         ease: "power3.out"
       });
 

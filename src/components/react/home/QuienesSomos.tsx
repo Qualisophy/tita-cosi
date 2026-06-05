@@ -23,12 +23,13 @@ export default function QuienesSomos({ currentLang }: QuienesSomosProps) {
       gsap.from(".anim-item", {
         scrollTrigger: {
           trigger: sectionRef.current, 
-          start: "top 80%", 
+          start: "top 70%", 
           toggleActions: "play none none none" 
         },
         y: 40,
         opacity: 0,
-        duration: 0.8,
+        duration: 1.2,
+        delay: 0.8,
         stagger: 0.2,
         ease: "power2.out"
       });

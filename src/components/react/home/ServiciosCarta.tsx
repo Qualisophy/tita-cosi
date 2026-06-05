@@ -33,6 +33,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
         y: 40,
         opacity: 0,
         duration: 1,
+        delay: 0.8,
         stagger: 0.2, // Entran uno detrás de otro suavemente
         ease: "power3.out"
       });

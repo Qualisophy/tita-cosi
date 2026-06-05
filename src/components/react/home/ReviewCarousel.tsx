@@ -43,21 +43,21 @@ export default function ReviewCarousel({
         },
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 2,
         ease: "power3.out"
       });
 
       gsap.to(".anim-carousel", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 60%",
           toggleActions: "play none none none"
         },
         y: 0,
         opacity: 1,
-        duration: 1.2,
+        duration: 2,
         ease: "power3.out",
-        delay: 0.2
+        delay: 0.8
       });
     }, sectionRef);
 
