@@ -112,7 +112,8 @@ export default function ReviewCarousel({
   return (
     <section
       ref={sectionRef}
-      className="w-full max-w-5xl mx-auto px-4 py-16 overflow-hidden"
+      // CAMBIO AQUÍ: Se eliminó overflow-hidden y se añadió md:px-12
+      className="w-full max-w-5xl mx-auto px-4 md:px-12 py-16"
       aria-labelledby="reviews-title"
     >
       <h2
