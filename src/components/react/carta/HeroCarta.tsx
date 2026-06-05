@@ -56,7 +56,7 @@ export default function HeroCarta({
       {/* CONTENIDO PRINCIPAL (estructura homepage) */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex flex-col items-center mt-10">
         {/* Título - grande, serif, italic, text-base, con gsap */}
-        <h1 className="gsap-reveal font-serif font-black italic text-6xl md:text-8xl lg:text-9xl text-titacosi-base mb-6 leading-[0.95] tracking-tight">
+       <h1 className="gsap-reveal font-['Anton'] text-6xl md:text-8xl lg:text-9xl text-titacosi-base mb-6 leading-[0.95] tracking-tight">
           {t("carta.header2")}
         </h1>
 
