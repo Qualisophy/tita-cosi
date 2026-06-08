@@ -671,7 +671,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Bebidas",
       tags: ["Dulce", "Ácido"],
-      image: "/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpg",
     },
 
     // ROSADO
@@ -797,7 +797,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.jpg",
     },
 
     // REFRESCOS
@@ -1662,7 +1662,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Drinks",
       tags: ["Sweet", "Sour"],
-      image: "/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpg",
     },
 
     // ROSÉ
@@ -1788,7 +1788,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.jpg",
     },
 
     // SOFT DRINKS
@@ -2654,7 +2654,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Boissons",
       tags: ["Sucré", "Acide"],
-      image: "/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpg",
     },
 
     // ROSÉ
@@ -2780,7 +2780,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.jpg",
     },
 
     // BOISSONS FRAÎCHES
@@ -3646,7 +3646,7 @@ export const menuItems: Record<string, any[]> = {
       price: 4.5,
       category: "Getränke",
       tags: ["Süß", "Sauer"],
-      image: "/carta/bebidas/vermuts/naranja.jpeg",
+      image: "/carta/bebidas/vermuts/naranja.jpg",
     },
 
     // ROSÉ
@@ -3772,7 +3772,7 @@ export const menuItems: Record<string, any[]> = {
       price: 22,
       category: "Getränke",
       tags: [],
-      image: "/carta/bebidas/tintos/rioja/campillo.webp",
+      image: "/carta/bebidas/tintos/rioja/campillo.jpg",
     },
 
     // ERFRISCHUNGSGETRÄNKE
