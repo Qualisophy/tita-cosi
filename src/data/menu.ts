@@ -826,7 +826,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpg",
     },
     {
       id: 74,
@@ -862,7 +862,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpg",
     },
     {
       id: 78,
@@ -871,7 +871,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.jpg",
     },
     {
       id: 79,
@@ -925,7 +925,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Bebidas",
       tags: [],
-      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.png",
     },
     {
       id: 85,
@@ -1817,7 +1817,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpg",
     },
     {
       id: 74,
@@ -1853,7 +1853,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpg",
     },
     {
       id: 78,
@@ -1862,7 +1862,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.jpg",
     },
     {
       id: 79,
@@ -1916,7 +1916,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Drinks",
       tags: [],
-      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.png",
     },
     {
       id: 85,
@@ -2809,7 +2809,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpg",
     },
     {
       id: 74,
@@ -2845,7 +2845,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpg",
     },
     {
       id: 78,
@@ -2854,7 +2854,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.jpg",
     },
     {
       id: 79,
@@ -2908,7 +2908,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Boissons",
       tags: [],
-      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.png",
     },
     {
       id: 85,
@@ -3801,7 +3801,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: ["Süß"],
-      image: "/carta/bebidas/refrescos/coca-cola.jpeg",
+      image: "/carta/bebidas/refrescos/coca-cola.jpg",
     },
     {
       id: 74,
@@ -3837,7 +3837,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: ["Süß", "Sauer"],
-      image: "/carta/bebidas/refrescos/fanta-limon.jpeg",
+      image: "/carta/bebidas/refrescos/fanta-limon.jpg",
     },
     {
       id: 78,
@@ -3846,7 +3846,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: ["Süß", "Sauer"],
-      image: "/carta/bebidas/refrescos/sprite.webp",
+      image: "/carta/bebidas/refrescos/sprite.jpg",
     },
     {
       id: 79,
@@ -3900,7 +3900,7 @@ export const menuItems: Record<string, any[]> = {
       price: 2.5,
       category: "Getränke",
       tags: ["Süß", "Sauer"],
-      image: "/carta/bebidas/refrescos/aquarius-limon.webp",
+      image: "/carta/bebidas/refrescos/aquarius-limon.png",
     },
     {
       id: 85,
