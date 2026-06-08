@@ -27,13 +27,13 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
       gsap.from(".anim-header", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 90%",
           toggleActions: "play none none none"
         },
         y: 40,
         opacity: 0,
         duration: 1,
-        delay: 0.8,
+        delay: 0.4,
         stagger: 0.2, // Entran uno detrás de otro suavemente
         ease: "power3.out"
       });
