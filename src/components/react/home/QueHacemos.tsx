@@ -24,7 +24,7 @@ export default function QueHacemos({ currentLang }: QueHacemosProps) {
       gsap.from(".anim-title", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 90%", 
+          start: "top 80%", 
           toggleActions: "play none none none"
         },
         y: 40,

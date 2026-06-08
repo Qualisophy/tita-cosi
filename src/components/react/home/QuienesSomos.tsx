@@ -23,7 +23,7 @@ export default function QuienesSomos({ currentLang }: QuienesSomosProps) {
       gsap.from(".anim-item", {
         scrollTrigger: {
           trigger: sectionRef.current, 
-          start: "top 95%", 
+          start: "top 80%", 
           toggleActions: "play none none none" 
         },
         y: 40,

@@ -27,7 +27,7 @@ export default function ServiciosCarta({ currentLang, image1, image2, image3 }: 
       gsap.from(".anim-header", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 90%",
+          start: "top 80%",
           toggleActions: "play none none none"
         },
         y: 40,

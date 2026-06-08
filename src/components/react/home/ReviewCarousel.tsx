@@ -50,14 +50,14 @@ export default function ReviewCarousel({
       gsap.to(".anim-carousel", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 60%",
+          start: "top 80%",
           toggleActions: "play none none none"
         },
         y: 0,
         opacity: 1,
         duration: 2,
         ease: "power3.out",
-        delay: 0.8
+        delay: 0.4
       });
     }, sectionRef);
 
