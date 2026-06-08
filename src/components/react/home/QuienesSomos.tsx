@@ -28,7 +28,8 @@ export default function QuienesSomos({ currentLang }: QuienesSomosProps) {
         },
         y: 40,
         opacity: 0,
-        duration: 0.8,
+        duration: 1,
+        delay: 0.4,
         stagger: 0.2,
         ease: "power2.out"
       });
