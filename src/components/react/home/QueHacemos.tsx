@@ -83,8 +83,19 @@ export default function QueHacemos({ currentLang }: QueHacemosProps) {
               {/* --- PUNTO 1 --- */}
               <div className="anim-item flex flex-col sm:flex-row gap-6 items-start text-left">
                 <div className="shrink-0 w-16 h-16 bg-titacosi-accent/10 text-titacosi-accent rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M3 15.5h11M5 15.5 a0 0 0 0 1 7 0 M7.5 14 h2.5 M9 14v1 M3 18.5h11"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M16 6h4l-.45 2.7a1.8 1.8 0 0 1-3.1 0L16 6zM18 18V13M16.5 18.5h3"
+                    />
                   </svg>
                 </div>
                 <div>
