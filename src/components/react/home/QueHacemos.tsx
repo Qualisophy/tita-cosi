@@ -83,6 +83,7 @@ export default function QueHacemos({ currentLang }: QueHacemosProps) {
               {/* --- PUNTO 1 --- */}
               <div className="anim-item flex flex-col sm:flex-row gap-6 items-start text-left">
                 <div className="shrink-0 w-16 h-16 bg-titacosi-accent/10 text-titacosi-accent rounded-full flex items-center justify-center">
+                  {/* Icono anterior (plato y copa), guardado por si quieres recuperarlo:
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       strokeLinecap="round"
@@ -94,9 +95,15 @@ export default function QueHacemos({ currentLang }: QueHacemosProps) {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="1.5"
-                      d="M16 6h4l-.45 2.7a1.8 1.8 0 0 1-3.1 0L16 6zM18 18V13M16.5 18.5h3"
+                      d="M17 3.2h3.8l-.45 10.2a1.5 1.5 0 0 1-2.9 0L17 3.2zM18.8 18V14M17 18.5h3.6"
                     />
                   </svg>
+                  */}
+                  <span 
+                    className="material-symbols-outlined !text-[32px]" 
+                    style={{ fontVariationSettings: "'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48" }}
+                    aria-hidden="true">workspace_premium
+                  </span>
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-3">{t("home.que_hacemos.item1.title")}</h3>
