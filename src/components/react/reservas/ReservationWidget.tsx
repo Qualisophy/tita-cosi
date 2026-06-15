@@ -393,8 +393,8 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 htmlFor="telefono"
               >
                 {t("reservas.datos.telefono")}{" "}
-                <span className="material-symbols-outlined text-[14px] text-green-500">
-                  chat
+                <span className="material-symbols-outlined text-[14px] text-titacosi-accent">
+                  comment
                 </span>
               </label>
               <input
