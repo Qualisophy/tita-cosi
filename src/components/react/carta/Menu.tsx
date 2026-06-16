@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import Input from "../ui/Input";
-import ScrollSlider from "../ui/ScrollSlider"; 
 import { categories, menuItems, categories2, categories3 } from "../../../data/menu";
 import { ui, defaultLang } from "../../../i18n/ui";
 
@@ -13,26 +12,51 @@ export default function Menu({ currentLang }: MenuProps) {
   const availableItems = useMemo(() => menuItems[currentLang] || menuItems.es, [currentLang]);
   const availableSabores = useMemo(() => categories2[currentLang] || [], [currentLang]);
   const availableDietas = useMemo(() => categories3[currentLang] || [], [currentLang]);
+  const allCategory = availableCategories[0];
+  const filterColumns = 1 + (availableSabores.length > 0 ? 1 : 0) + (availableDietas.length > 0 ? 1 : 0);
 
-  const [activeCategory, setActiveCategory] = useState(availableCategories[0]);
+  const [activeCategory, setActiveCategory] = useState("");
   const [activeSabor, setActiveSabor] = useState<string | null>(null);
   const [activeDieta, setActiveDieta] = useState<string | null>(null);
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
-  const [showFilters, setShowFilters] = useState(true);
-  const lastScrollY = useRef(0);
+
   const modalCloseRef = useRef<HTMLButtonElement | null>(null);
-  const menuContainerRef = useRef<HTMLDivElement>(null);
+  const categoryDropdownRef = useRef<HTMLDivElement | null>(null);
 
   const t = (key: keyof (typeof ui)["es"]) =>
     ui[currentLang][key] || ui[defaultLang][key];
 
   useEffect(() => {
-    setActiveCategory(availableCategories[0]);
+    setActiveCategory("");
     setActiveSabor(null);                      
     setActiveDieta(null);                      
-  }, [currentLang, availableCategories]);
+    setIsCategoryOpen(false);
+  }, [currentLang]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!categoryDropdownRef.current) return;
+      if (!categoryDropdownRef.current.contains(event.target as Node)) {
+        setIsCategoryOpen(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsCategoryOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? "hidden" : "unset";
@@ -49,31 +73,9 @@ export default function Menu({ currentLang }: MenuProps) {
     return () => document.removeEventListener("keydown", onKey);
   }, [isModalOpen]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      const startThreshold = menuContainerRef.current 
-        ? menuContainerRef.current.offsetTop - 80 
-        : 300;
-
-      if (currentScrollY > startThreshold && currentScrollY > lastScrollY.current) {
-        setShowFilters(false);
-      } 
-      else if (currentScrollY < lastScrollY.current || currentScrollY <= startThreshold) {
-        setShowFilters(true);
-      }
-      
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const filteredItems = useMemo(() => {
     return availableItems.filter((item) => {
-      const matchesCategory = activeCategory === availableCategories[0] || item.category === activeCategory;
+      const matchesCategory = !activeCategory || activeCategory === allCategory || item.category === activeCategory;
       const searchTerm = searchQuery.toLowerCase();
       const matchesSearch = (item.name && item.name.toLowerCase().includes(searchTerm)) || (item.description && item.description.toLowerCase().includes(searchTerm));
       const matchesSabor = !activeSabor || (Array.isArray(item.tags) && item.tags.some((tag: string) => tag.toLowerCase().includes(activeSabor.toLowerCase()) || activeSabor.toLowerCase().includes(tag.toLowerCase())));
@@ -81,7 +83,7 @@ export default function Menu({ currentLang }: MenuProps) {
 
       return matchesCategory && matchesSearch && matchesSabor && matchesDieta;
     });
-  }, [activeCategory, searchQuery, activeSabor, activeDieta, availableItems, availableCategories]);
+  }, [activeCategory, searchQuery, activeSabor, activeDieta, availableItems, allCategory]);
 
   const groupedItems = useMemo(() => {
     const groups: Record<string, typeof availableItems> = {};
@@ -92,25 +94,14 @@ export default function Menu({ currentLang }: MenuProps) {
     return groups;
   }, [filteredItems]);
 
-  const getIconForPreference = (name: string) => {
-    const lower = name.toLowerCase();
-    if (lower.includes("vegan") || lower.includes("vegetariano")) return "eco";
-    if (lower.includes("gluten") || lower.includes("celiaco")) return "no_meals";
-    if (lower.includes("picante")) return "local_fire_department";
-    if (lower.includes("mar")) return "set_meal";
-    return "label";
-  };
-
   return (
-    <div ref={menuContainerRef} className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
+    <div className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
       
       <div 
-        className={`mb-12 md:mb-20 sticky top-20 z-30 bg-titacosi-base/95 backdrop-blur-md pt-4 md:pt-6 pb-4 md:pb-6 border-b border-titacosi-surface/30 transition-all duration-1800 delay-550 ease-in-out ${
-          showFilters ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
-        }`}
+          className="mb-8 md:mb-20 sticky top-20 z-30 bg-titacosi-base/95 backdrop-blur-md pt-2.5 md:pt-6 pb-2.5 md:pb-6 border-b border-titacosi-surface/30"
       >
         
-        <div className="w-full max-w-2xl mx-auto px-4 md:px-0 mb-6 md:mb-8 [&_fieldset]:border-none [&_fieldset]:p-0 [&_fieldset]:m-0 [&_fieldset]:shadow-none">
+        <div className="w-full max-w-2xl mx-auto px-4 md:px-0 mb-4 md:mb-8 [&_fieldset]:border-none [&_fieldset]:p-0 [&_fieldset]:m-0 [&_fieldset]:shadow-none">
           <Input
             label={t('menu.buscador1')}
             type="search"
@@ -126,111 +117,78 @@ export default function Menu({ currentLang }: MenuProps) {
           />
         </div>
 
-        {/* Clases restauradas para forzar la ocultación del scrollbar nativo */}
-        <div className="flex flex-col gap-4 md:gap-6 max-w-5xl mx-auto [&_*::-webkit-scrollbar]:hidden [&_*]:[-ms-overflow-style:none] [&_*]:[scrollbar-width:none]">
-          
-          <div className="flex flex-col md:flex-row md:items-center w-full relative">
-            <span className="hidden md:block text-[11px] font-normal tracking-[0.15em] text-titacosi-primary uppercase w-36 text-left pr-4 shrink-0">
-              Categorías:
-            </span>
+        <div className="max-w-5xl mx-auto px-1 md:px-0">
+          <div className="grid w-full max-w-4xl mx-auto items-center gap-2 md:gap-3 pb-1" style={{ gridTemplateColumns: `repeat(${filterColumns}, minmax(0, 1fr))` }}>
+            <div ref={categoryDropdownRef} className="relative w-full min-w-0">
+              <button
+                type="button"
+                onClick={() => setIsCategoryOpen((prev) => !prev)}
+                className="cursor-pointer h-9 md:h-11 w-full min-w-0 rounded-md border border-titacosi-accent bg-titacosi-accent px-2.5 md:px-3 pr-8 md:pr-9 text-left text-xs md:text-sm font-medium text-white shadow-sm transition-colors duration-300 hover:bg-titacosi-accent/90 focus:outline-none focus:ring-2 focus:ring-titacosi-accent focus:ring-offset-2"
+                aria-haspopup="listbox"
+                aria-expanded={isCategoryOpen}
+                aria-label="Categorías"
+              >
+                <span className="block truncate">{activeCategory || "Categorías"}</span>
+              </button>
+              <span className={`material-symbols-outlined pointer-events-none absolute right-1.5 md:right-2 top-1/2 -translate-y-1/2 text-[18px] text-white/80 transition-transform duration-200 ${isCategoryOpen ? "rotate-180" : ""}`}>expand_more</span>
 
-            {/* OVERLAY SUTIL UI: Sombra difuminada + Mini chevron animado (Estándar iOS/Android) */}
-            <div className="md:hidden absolute right-0 top-0 bottom-1 w-14 bg-gradient-to-l from-titacosi-base via-titacosi-base/80 to-transparent z-20 flex items-center justify-end pointer-events-none">
-              <span className="material-symbols-outlined text-titacosi-primary/40 text-lg animate-[pulse_1.5s_ease-in-out_infinite]">chevron_right</span>
+              {isCategoryOpen && (
+                <div className="absolute left-0 mt-1 z-40 w-[calc(100vw-2rem)] max-w-[28rem] md:w-[26rem] rounded-md border border-titacosi-accent bg-titacosi-accent p-2 shadow-xl">
+                  <div className="grid grid-cols-2 gap-1 max-h-60 overflow-y-auto">
+                    {availableCategories.map((cat) => (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => {
+                          setActiveCategory(cat);
+                          setIsCategoryOpen(false);
+                        }}
+                        className={`w-full rounded-md px-2 py-1.5 text-left text-xs md:text-sm leading-tight transition-colors ${activeCategory === cat ? "bg-white text-titacosi-accent" : "bg-titacosi-accent text-white hover:bg-titacosi-accent/85"}`}
+                      >
+                        <span className="block whitespace-normal break-words">{cat}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
-            <div className="w-full flex-1 overflow-hidden pb-1 [&_button.absolute]:!hidden md:[&_button.absolute]:!flex">
-              <ScrollSlider>
-                {availableCategories.map((cat, index) => (
-                  <button 
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-normal transition-colors border ${
-                      activeCategory === cat 
-                        ? "bg-titacosi-primary text-white border-titacosi-primary" 
-                        : "bg-titacosi-surface/50 text-titacosi-primary border-transparent hover:bg-titacosi-surface"
-                    } ${index === 0 ? "ml-4 md:ml-0" : ""} ${index === availableCategories.length - 1 ? "mr-4 md:mr-0" : ""}`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </ScrollSlider>
-            </div>
+            {availableSabores.length > 0 && (
+              <div className="relative w-full min-w-0">
+                <label htmlFor="sabor-filter" className="sr-only">Sabores</label>
+                <select
+                  id="sabor-filter"
+                  value={activeSabor ?? ""}
+                  onChange={(e) => setActiveSabor(e.target.value || null)}
+                  className="appearance-none cursor-pointer h-9 md:h-11 w-full min-w-0 rounded-md border border-titacosi-accent bg-titacosi-accent px-2.5 md:px-3 pr-8 md:pr-9 text-xs md:text-sm font-medium text-white shadow-sm transition-colors duration-300 hover:bg-titacosi-accent/90 focus:outline-none focus:ring-2 focus:ring-titacosi-accent focus:ring-offset-2"
+                >
+                  <option value="" disabled hidden>Sabores</option>
+                  {availableSabores.map((sabor) => (
+                    <option key={sabor} value={sabor}>{sabor}</option>
+                  ))}
+                </select>
+                <span className="material-symbols-outlined pointer-events-none absolute right-1.5 md:right-2 top-1/2 -translate-y-1/2 text-[18px] text-white/80">expand_more</span>
+              </div>
+            )}
+
+            {availableDietas.length > 0 && (
+              <div className="relative w-full min-w-0">
+                <label htmlFor="dieta-filter" className="sr-only">Preferencias</label>
+                <select
+                  id="dieta-filter"
+                  value={activeDieta ?? ""}
+                  onChange={(e) => setActiveDieta(e.target.value || null)}
+                  className="appearance-none cursor-pointer h-9 md:h-11 w-full min-w-0 rounded-md border border-titacosi-accent bg-titacosi-accent px-2.5 md:px-3 pr-8 md:pr-9 text-xs md:text-sm font-medium text-white shadow-sm transition-colors duration-300 hover:bg-titacosi-accent/90 focus:outline-none focus:ring-2 focus:ring-titacosi-accent focus:ring-offset-2"
+                >
+                  <option value="" disabled hidden>Preferencias</option>
+                  {availableDietas.map((dieta) => (
+                    <option key={dieta} value={dieta}>{dieta}</option>
+                  ))}
+                </select>
+                <span className="material-symbols-outlined pointer-events-none absolute right-1.5 md:right-2 top-1/2 -translate-y-1/2 text-[18px] text-white/80">expand_more</span>
+              </div>
+            )}
           </div>
-
-          {(availableSabores.length > 0 || availableDietas.length > 0) && (
-            <div className="md:hidden flex items-center gap-4 px-4 mt-3 mb-1">
-              <div className="flex-1 h-px bg-titacosi-surface/70"></div>
-              <span className="text-[10px] font-normal tracking-[0.2em] text-titacosi-primary/60 uppercase">Preferencias</span>
-              <div className="flex-1 h-px bg-titacosi-surface/70"></div>
-            </div>
-          )}
-
-          {availableSabores.length > 0 && (
-            <div className="flex flex-col md:flex-row md:items-center w-full relative">
-              <span className="hidden md:block text-[11px] font-normal tracking-[0.15em] text-titacosi-primary uppercase w-36 text-left pr-4 shrink-0">
-                Sabores:
-              </span>
-
-              {/* OVERLAY SUTIL UI */}
-              <div className="md:hidden absolute right-0 top-0 bottom-1 w-14 bg-gradient-to-l from-titacosi-base via-titacosi-base/80 to-transparent z-20 flex items-center justify-end pointer-events-none">
-                <span className="material-symbols-outlined text-titacosi-primary/40 text-lg animate-[pulse_1.5s_ease-in-out_infinite]">chevron_right</span>
-              </div>
-
-              <div className="w-full flex-1 overflow-hidden pb-1 [&_button.absolute]:!hidden md:[&_button.absolute]:!flex">
-                <ScrollSlider>
-                  {availableSabores.map((sabor, index) => (
-                    <button
-                      key={sabor}
-                      onClick={() => setActiveSabor(activeSabor === sabor ? null : sabor)}
-                      className={`flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-xl text-sm font-normal transition-colors border ${
-                        activeSabor === sabor
-                          ? "bg-titacosi-primary text-white border-titacosi-primary"
-                          : "bg-titacosi-surface/30 text-titacosi-primary border-titacosi-surface hover:bg-titacosi-surface/80"
-                      } ${index === 0 ? "ml-4 md:ml-0" : ""} ${index === availableSabores.length - 1 ? "mr-4 md:mr-0" : ""}`}
-                    >
-                      {sabor}
-                    </button>
-                  ))}
-                </ScrollSlider>
-              </div>
-            </div>
-          )}
-
-          {availableDietas.length > 0 && (
-            <div className="flex flex-col md:flex-row md:items-center w-full relative">
-              <span className="hidden md:block text-[11px] font-normal tracking-[0.15em] text-titacosi-primary uppercase w-36 text-left pr-4 shrink-0">
-                Preferencias:
-              </span>
-
-              {/* OVERLAY SUTIL UI */}
-              <div className="md:hidden absolute right-0 top-0 bottom-1 w-14 bg-gradient-to-l from-titacosi-base via-titacosi-base/80 to-transparent z-20 flex items-center justify-end pointer-events-none">
-                <span className="material-symbols-outlined text-titacosi-primary/40 text-lg animate-[pulse_1.5s_ease-in-out_infinite]">chevron_right</span>
-              </div>
-
-              <div className="w-full flex-1 overflow-hidden pb-1 [&_button.absolute]:!hidden md:[&_button.absolute]:!flex">
-                <ScrollSlider>
-                  {availableDietas.map((dieta, index) => (
-                    <button
-                      key={dieta}
-                      onClick={() => setActiveDieta(activeDieta === dieta ? null : dieta)}
-                      className={`flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-xl text-sm font-normal transition-colors border ${
-                        activeDieta === dieta
-                          ? "bg-titacosi-primary text-white border-titacosi-primary"
-                          : "bg-titacosi-surface/30 text-titacosi-primary border-titacosi-surface hover:bg-titacosi-surface/80"
-                      } ${index === 0 ? "ml-4 md:ml-0" : ""} ${index === availableDietas.length - 1 ? "mr-4 md:mr-0" : ""}`}
-                    >
-                      <span className="material-symbols-outlined text-[16px]">
-                        {getIconForPreference(dieta)}
-                      </span>
-                      {dieta}
-                    </button>
-                  ))}
-                </ScrollSlider>
-              </div>
-            </div>
-          )}
-
         </div>
       </div>
 
