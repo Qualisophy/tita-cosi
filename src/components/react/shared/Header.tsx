@@ -202,6 +202,7 @@ export default function Header({
             src={logo.src}
             alt="Tita Cosi Logo"
             className="h-8 w-auto object-contain"
+            loading="eager"
           />
           <button
             onClick={() => setIsMobileMenuOpen(false)}
