@@ -67,7 +67,9 @@ const { title, lang } = Astro.props;
       <slot />
     </main>
 
-    <Footer lang={lang} />
+    <div id="site-footer" class="relative z-30">
+      <Footer lang={lang} />
+    </div>
 
     <script>
       import Lenis from 'lenis';
@@ -76,5 +78,55 @@ const { title, lang } = Astro.props;
         autoRaf: true,
       });
     </script>
+
+    {/* SCRIPT PARA DETECTAR FOOTER Y EMPUJAR EL BOTÓN DE COOKIEYES */}
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const checkFooterCollision = () => {
+          const footer = document.getElementById("site-footer");
+          const cookieBtn = document.querySelector(".cky-btn-revisit-wrapper");
+          const enrollBtn = document.getElementById("floating-enroll-btn");
+          
+          if (footer && cookieBtn) {
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // 32px es la altura base, igual que el chat
+            let newBottom = 32; 
+            const overlap = windowHeight - footerRect.top;
+            
+            if (overlap > 0) {
+              newBottom = overlap + 32;
+            }
+
+            // Si el botón de inscripción está presente en pantallas móviles, subimos el de cookies encima
+            if (enrollBtn && window.innerWidth < 1024) {
+               const enrollBtnHeight = enrollBtn.offsetHeight || 48;
+               newBottom += (enrollBtnHeight + 12);
+            }
+            
+            cookieBtn.style.setProperty("bottom", `${newBottom}px`, "important");
+            cookieBtn.style.setProperty("left", "16px", "important"); // Lo forzamos a la izquierda por JS
+            cookieBtn.style.setProperty("z-index", "999", "important");
+          }
+        };
+
+        // Como CookieYes carga asíncronamente, vigilamos hasta que aparezca el botón
+        const waitForCookieBtn = setInterval(() => {
+          const cookieBtn = document.querySelector(".cky-btn-revisit-wrapper");
+          if (cookieBtn) {
+            // El botón ya existe, calculamos posición inicial y añadimos los listeners
+            checkFooterCollision();
+            window.addEventListener("scroll", checkFooterCollision, { passive: true });
+            window.addEventListener("resize", checkFooterCollision, { passive: true });
+            clearInterval(waitForCookieBtn); // Paramos el vigilante
+          }
+        }, 300);
+
+        // Por seguridad, si a los 10 segundos no ha cargado, paramos el intervalo
+        setTimeout(() => clearInterval(waitForCookieBtn), 10000);
+      });
+    </script>
+
   </body>
 </html>
