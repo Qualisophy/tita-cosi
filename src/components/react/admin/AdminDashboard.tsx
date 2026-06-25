@@ -304,6 +304,7 @@ export default function AdminDashboard({ lang }: AdminDashboardProps) {
                 className="w-full h-full object-cover"
                 alt="Perfil Admin"
                 src="https://ui-avatars.com/api/?name=Admin+Tita&background=8C3B3B&color=fff"
+                loading="eager"
               />
             </div>
           </div>

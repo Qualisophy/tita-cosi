@@ -84,9 +84,27 @@ export default function QueHacemos({ currentLang }: QueHacemosProps) {
               {/* --- PUNTO 1 --- */}
               <div className="anim-item flex flex-col sm:flex-row gap-6 items-start text-left">
                 <div className="shrink-0 w-16 h-16 bg-titacosi-accent/10 text-titacosi-accent rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  {/* Icono anterior (plato y copa), guardado por si quieres recuperarlo:
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M3 15.5h11M5 15.5 a0 0 0 0 1 7 0 M7.5 14 h2.5 M9 14v1 M3 18.5h11"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M17 3.2h3.8l-.45 10.2a1.5 1.5 0 0 1-2.9 0L17 3.2zM18.8 18V14M17 18.5h3.6"
+                    />
                   </svg>
+                  */}
+                  <span 
+                    className="material-symbols-outlined !text-[32px]" 
+                    style={{ fontVariationSettings: "'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48" }}
+                    aria-hidden="true">workspace_premium
+                  </span>
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-3">{t("home.que_hacemos.item1.title")}</h3>
