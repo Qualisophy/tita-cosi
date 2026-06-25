@@ -4,6 +4,7 @@ import '../styles/global.css';
 
 import Header from '../components/react/shared/Header';
 import Footer from '../components/astro/Footer.astro';
+import WhatsAppButton from '../components/astro/WhatsAppButton.astro'; // NUEVO IMPORT
 import { ui } from '../i18n/ui';
 
 import logoHeader from '../assets/logo-header.png';
@@ -33,7 +34,6 @@ const { title, lang } = Astro.props;
     <title>{title} | Tita Cosi</title>
 
     <style is:global>
-      /* Aseguramos la renderización correcta de los iconos en toda la app */
       .material-symbols-outlined {
         font-family: 'Material Symbols Outlined';
         font-weight: normal;
@@ -51,21 +51,22 @@ const { title, lang } = Astro.props;
       }
     </style>
 
-    <!-- Start cookieyes banner --> 
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0543345d60a4116d3d5d11a57e497d7b/script.js"></script> 
-    <!-- End cookieyes banner -->
-  </head>
+    </head>
   <body class="bg-titacosi-base text-titacosi-primary font-sans antialiased selection:bg-titacosi-accent selection:text-titacosi-surface flex flex-col min-h-screen">
     
-  <Header 
-  client:load 
-  currentLang={lang} 
-  logo={logoHeader} 
-  currentPath={Astro.url.pathname} 
-/>
+    <Header 
+      client:load 
+      currentLang={lang} 
+      logo={logoHeader} 
+      currentPath={Astro.url.pathname} 
+    />
+    
     <main class="grow">
       <slot />
     </main>
+
+    <WhatsAppButton />
 
     <div id="site-footer" class="relative z-30">
       <Footer lang={lang} />
@@ -79,19 +80,20 @@ const { title, lang } = Astro.props;
       });
     </script>
 
-    {/* SCRIPT PARA DETECTAR FOOTER Y EMPUJAR EL BOTÓN DE COOKIEYES */}
+    {/* SCRIPT MODIFICADO PARA REBOTAR AMBOS BOTONES */}
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
         const checkFooterCollision = () => {
           const footer = document.getElementById("site-footer");
           const cookieBtn = document.querySelector(".cky-btn-revisit-wrapper");
+          const whatsappBtn = document.getElementById("whatsapp-floating-btn"); // AÑADIDO
           const enrollBtn = document.getElementById("floating-enroll-btn");
           
-          if (footer && cookieBtn) {
+          if (footer) {
             const footerRect = footer.getBoundingClientRect();
             const windowHeight = window.innerHeight;
             
-            // 32px es la altura base, igual que el chat
+            // 32px (bottom-8) es la altura base de Tailwind que pusimos en el componente
             let newBottom = 32; 
             const overlap = windowHeight - footerRect.top;
             
@@ -99,32 +101,39 @@ const { title, lang } = Astro.props;
               newBottom = overlap + 32;
             }
 
-            // Si el botón de inscripción está presente en pantallas móviles, subimos el de cookies encima
+            // Si hay botón de reservas móvil interfiriendo
             if (enrollBtn && window.innerWidth < 1024) {
                const enrollBtnHeight = enrollBtn.offsetHeight || 48;
                newBottom += (enrollBtnHeight + 12);
             }
             
-            cookieBtn.style.setProperty("bottom", `${newBottom}px`, "important");
-            cookieBtn.style.setProperty("left", "16px", "important"); // Lo forzamos a la izquierda por JS
-            cookieBtn.style.setProperty("z-index", "999", "important");
+            // Aplicar rebote al botón de cookies
+            if (cookieBtn) {
+              cookieBtn.style.setProperty("bottom", `${newBottom}px`, "important");
+              cookieBtn.style.setProperty("left", "16px", "important");
+              cookieBtn.style.setProperty("z-index", "999", "important");
+            }
+
+            // Aplicar rebote al botón de WhatsApp
+            if (whatsappBtn) {
+              whatsappBtn.style.setProperty("bottom", `${newBottom}px`, "important");
+            }
           }
         };
 
-        // Como CookieYes carga asíncronamente, vigilamos hasta que aparezca el botón
-        const waitForCookieBtn = setInterval(() => {
+        const waitForElements = setInterval(() => {
           const cookieBtn = document.querySelector(".cky-btn-revisit-wrapper");
-          if (cookieBtn) {
-            // El botón ya existe, calculamos posición inicial y añadimos los listeners
+          const whatsappBtn = document.getElementById("whatsapp-floating-btn");
+          
+          if (cookieBtn || whatsappBtn) {
             checkFooterCollision();
             window.addEventListener("scroll", checkFooterCollision, { passive: true });
             window.addEventListener("resize", checkFooterCollision, { passive: true });
-            clearInterval(waitForCookieBtn); // Paramos el vigilante
+            if (cookieBtn) clearInterval(waitForElements); 
           }
         }, 300);
 
-        // Por seguridad, si a los 10 segundos no ha cargado, paramos el intervalo
-        setTimeout(() => clearInterval(waitForCookieBtn), 10000);
+        setTimeout(() => clearInterval(waitForElements), 10000);
       });
     </script>
 
