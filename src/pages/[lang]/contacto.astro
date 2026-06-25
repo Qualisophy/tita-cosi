@@ -1,4 +1,5 @@
 ---
+// src/pages/[lang]/contacto.astro
 import Layout from '../../layouts/Layout.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
@@ -40,42 +41,69 @@ const formTranslations = {
       <ContactForm client:load translations={formTranslations} />
     </div>  
 
-    <div class="lg:col-span-5 bg-base border border-gray-200 p-8 sm:p-10 rounded-xl shadow-sm w-full space-y-8">
+    <div class="lg:col-span-5 bg-base border border-gray-200 p-8 sm:p-10 rounded-xl shadow-sm w-full flex flex-col">
       
-      <div class="flex items-start gap-4">
-        <span class="material-symbols-outlined text-primary text-[28px] text-titacosi-accent">location_on</span>
-        <div>
-          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.direccion.titulo')}</h3>
-          <p class="text-[15px] text-gray-700 whitespace-pre-line leading-relaxed">
-            {t('contacto.direccion')}
-          </p>
-        </div>
+      <div class="mb-4">
+        <h2 class="font-serif text-2xl text-primary mb-2">Información de contacto</h2>
+        <p class="text-[14px] text-gray-600 leading-relaxed mb-2">
+          ¿Tienes alguna duda, petición especial o prefieres hablar directamente con nosotros? Estamos a tu completa disposición.
+        </p>
+        <div class="w-full h-px bg-gray-200"></div>
       </div>
-      
-      <div class="flex items-start gap-4">
-        <span class="material-symbols-outlined text-primary text-[28px] text-titacosi-accent">call</span>
-        <div>
-          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.telefono.titulo')}</h3>
-          <p class="text-[15px] text-gray-700">{t('contacto.telefono')}</p>
+
+      <div class="flex flex-col space-y-6">
+        
+        <!-- Dirección -->
+        <a 
+          href="https://maps.google.com/?q=Av.+del+Editor+Ángel+Caffarena,+13,+Málaga" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="group flex items-start gap-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          <span class="material-symbols-outlined text-primary text-[28px] group-hover:text-titacosi-accent transition-colors duration-300">location_on</span>
+          <div>
+            <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase group-hover:text-titacosi-accent transition-colors duration-300">{t('contacto.direccion.titulo')}</h3>
+            <p class="text-[14px] text-gray-700 whitespace-pre-line leading-relaxed group-hover:text-titacosi-accent transition-colors duration-300">
+              {t('contacto.direccion')}
+            </p>
+          </div>
+        </a>
+        
+        <!-- Teléfono -->
+        <a 
+          href="tel:+34667940260" 
+          class="group flex items-start gap-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          <span class="material-symbols-outlined text-primary text-[28px] group-hover:text-titacosi-accent transition-colors duration-300">call</span>
+          <div>
+            <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase group-hover:text-titacosi-accent transition-colors duration-300">{t('contacto.telefono.titulo')}</h3>
+            <p class="text-[14px] text-gray-700 group-hover:text-titacosi-accent transition-colors duration-300">{t('contacto.telefono')}</p>
+          </div>
+        </a>
+        
+        <!-- Email -->
+        <a 
+          href="mailto:hola@tabernatitacosi.es" 
+          class="group flex items-start gap-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          <span class="material-symbols-outlined text-primary text-[28px] group-hover:text-titacosi-accent transition-colors duration-300">mail</span>
+          <div>
+            <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase group-hover:text-titacosi-accent transition-colors duration-300">{t('contacto.email.titulo')}</h3>
+            <p class="text-[14px] text-gray-700 group-hover:text-titacosi-accent transition-colors duration-300">{t('contacto.email')}</p>
+          </div>
+        </a>
+        
+        <!-- Horario -->
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-[28px]">schedule</span>
+          <div>
+            <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.horario.titulo')}</h3>
+            <p class="text-[14px] text-gray-700 whitespace-pre-line leading-relaxed">
+              {t('contacto.horario')}
+            </p>
+          </div>
         </div>
-      </div>
-      
-      <div class="flex items-start gap-4">
-        <span class="material-symbols-outlined text-primary text-[28px] text-titacosi-accent">mail</span>
-        <div>
-          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.email.titulo')}</h3>
-          <p class="text-[15px] text-gray-700">{t('contacto.email')}</p>
-        </div>
-      </div>
-      
-      <div class="flex items-start gap-4">
-        <span class="material-symbols-outlined text-primary text-[28px] text-titacosi-accent">schedule</span>
-        <div>
-          <h3 class="font-bold text-[13px] text-gray-900 tracking-wider mb-1 uppercase">{t('contacto.horario.titulo')}</h3>
-          <p class="text-[15px] text-gray-700 whitespace-pre-line leading-relaxed">
-            {t('contacto.horario')}
-          </p>
-        </div>
+
       </div>
 
     </div>
@@ -83,7 +111,7 @@ const formTranslations = {
 
   <MapaUbicacion 
       titulo={t('contacto.mapa.titulo')}
-      direccion="Av. del Editor Ángel Caffarena, 13, Teatinos, 29010 Málaga."
+      direccion="Av. del Editor Ángel Caffarena, 13, Málaga"
       mapaUrl="https://maps.google.com/maps?q=Tita+Cosi+Taberna,+Av.+del+Editor+%C3%81ngel+Caffarena,+13,+M%C3%A1laga&t=&z=16&ie=UTF8&iwloc=&output=embed"
   />
 </Layout>

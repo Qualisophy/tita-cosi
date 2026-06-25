@@ -30,6 +30,7 @@ export default function QueHacemos({ currentLang }: QueHacemosProps) {
         y: 40,
         opacity: 0,
         duration: 1,
+        delay: 0.4,
         ease: "power3.out"
       });
 

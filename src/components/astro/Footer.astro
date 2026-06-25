@@ -24,17 +24,44 @@ const currentYear = new Date().getFullYear();
         <p class="text-sm leading-relaxed text-gray-400">
           {t('footer.desc')}
         </p>
-        <div class="pt-4 space-y-3 text-sm">
-          <p class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-[28px] text-titacosi-accent">location_on</span> Av. del Editor Ángel Caffarena, 13, Málaga
-          </p>
-          <p class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-[28px] text-titacosi-accent">call</span> +34 667 94 02 60
-          </p>
-          <p class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-[28px] text-titacosi-accent">mail</span> hola@tabernatitacosi.es
-          </p>
-        </div>
+        
+        <!-- Enlaces de Contacto Interactivos (TCW-98) -->
+        <ul class="pt-4 flex flex-col gap-2 text-sm">
+          <!-- Dirección -->
+          <li>
+            <a 
+              href="https://maps.google.com/?q=Av.+del+Editor+Ángel+Caffarena,+13,+Málaga" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="group flex items-start gap-2 py-2 sm:py-1 min-h-[44px] sm:min-h-0 text-gray-400 hover:text-white transition-colors duration-200 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titacosi-accent"
+            >
+              <span class="mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity duration-200">📍</span>
+              <span>{t('footer.contact.address')}</span>
+            </a>
+          </li>
+          
+          <!-- Teléfono -->
+          <li>
+            <a 
+              href="tel:+34667940260"
+              class="group flex items-center gap-2 py-2 sm:py-1 min-h-[44px] sm:min-h-0 text-gray-400 hover:text-white transition-colors duration-200 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titacosi-accent"
+            >
+              <span class="opacity-80 group-hover:opacity-100 transition-opacity duration-200">📞</span>
+              <span>{t('footer.contact.phone')}</span>
+            </a>
+          </li>
+          
+          <!-- Email -->
+          <li>
+            <a 
+              href="mailto:hola@tabernatitacosi.es"
+              class="group flex items-center gap-2 py-2 sm:py-1 min-h-[44px] sm:min-h-0 text-gray-400 hover:text-white transition-colors duration-200 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titacosi-accent"
+            >
+              <span class="opacity-80 group-hover:opacity-100 transition-opacity duration-200">✉️</span>
+              <span>{t('footer.contact.email')}</span>
+            </a>
+          </li>
+        </ul>
       </div>
 
       <!-- Columna 2: Horarios -->
@@ -77,10 +104,10 @@ const currentYear = new Date().getFullYear();
         &copy; {currentYear} Taberna Tita Cosi. {t('footer.derechos')}
       </p>
       
-<!-- Redes Sociales -->
+      <!-- Redes Sociales -->
       <div class="flex space-x-6">
         <!-- Instagram -->
-        <a href="https://www.instagram.com/titacositaberna/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+        <a href="https://www.instagram.com/titacositaberna/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -95,4 +122,6 @@ const currentYear = new Date().getFullYear();
           </svg>
         </a>
       </div>
+    </div>
+  </div>
 </footer>

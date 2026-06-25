@@ -19,6 +19,7 @@ interface Table {
   zone: Zone;
 }
 
+// NUEVO: Sincronizado exactamente con admin.types.ts
 const TABLES: Table[] = [
   { id: "S1", name: "1", capacity: 2, zone: "Sala" },
   { id: "S2", name: "2", capacity: 2, zone: "Sala" },
@@ -54,7 +55,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
   const salaTables = validTables.filter((t) => t.zone === "Sala");
   const terrazaTables = validTables.filter((t) => t.zone === "Terraza");
 
-  // Validación de rango de horas en cliente (previene errores 400 del backend)
   const validarHorario = (horaSeleccionada: string) => {
     if (!horaSeleccionada) return false;
     const [hh, mm] = horaSeleccionada.split(":").map(Number);
@@ -82,7 +82,14 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!selectedDay || !selectedTable) return;
-    if (!validarHorario(selectedTime)) return; // Bloqueo de seguridad adicional
+    if (!validarHorario(selectedTime)) return;
+
+    // Validación extra en cliente antes de enviar al backend
+    const mesaSeleccionadaFull = TABLES.find((t) => t.id === selectedTable);
+    if (!mesaSeleccionadaFull || guests > mesaSeleccionadaFull.capacity) {
+      setErrorMsg(t("reservas.error.1"));
+      return;
+    }
 
     setIsSubmitting(true);
     setErrorMsg(null);
@@ -90,7 +97,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
     const formData = new FormData(e.currentTarget);
     const nombre = formData.get("nombre") as string;
     const apellidos = formData.get("apellidos") as string;
-    const tableObj = TABLES.find((t) => t.id === selectedTable);
 
     const payload = {
       nombre_cliente: `${nombre} ${apellidos}`.trim(),
@@ -100,7 +106,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
       hora: selectedTime,
       comensales: guests,
       mesa_id: selectedTable,
-      zona: tableObj?.zone,
+      zona: mesaSeleccionadaFull.zone,
       notas: formData.get("peticiones"),
     };
 
@@ -182,7 +188,6 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 selected={selectedDay}
                 onSelect={setSelectedDay}
                 locale={currentLocale}
-                // Añadido { dayOfWeek: [1] } para desactivar reservas los Lunes
                 disabled={[{ before: new Date() }, { dayOfWeek: [1] }]}
               />
             </div>
@@ -404,6 +409,10 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 id="telefono"
                 placeholder={t("reservas.datos.telefono.placeholder")}
                 type="tel"
+                minLength={9}
+                maxLength={20}
+                pattern="[\+0-9\s\-]{9,20}"
+                title="Introduce un teléfono válido (mínimo 9 dígitos)."
               />
             </div>
 
@@ -421,6 +430,8 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
                 id="email"
                 placeholder={t("reservas.datos.email.placeholder")}
                 type="email"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]{3,}\.[a-zA-Z]{2,}$"
+                title="Debe incluir un '@' y un dominio válido (ej. usuario@correo.com)"
               />
             </div>
 
@@ -433,6 +444,7 @@ export default function ReservationWidget({ lang }: ReservationWidgetProps) {
               </label>
               <textarea
                 name="peticiones"
+                maxLength={500}
                 className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 font-sans text-sm focus:bg-white focus:border-titacosi-accent focus:ring-1 focus:ring-titacosi-accent outline-none transition-all resize-none"
                 id="peticiones"
                 placeholder={t("reservas.datos.alergias.placeholder")}
