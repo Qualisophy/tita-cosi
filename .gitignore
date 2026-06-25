@@ -3,3 +3,6 @@ node_modules
 .env
 
 
+
+# Astro internos / Language Server
+.astro/

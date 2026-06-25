@@ -25,6 +25,7 @@ const StatusDropdown = ({
   cambiarEstadoRapido: (reserva: Reserva, nuevoEstado: string) => void;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openUpwards, setOpenUpwards] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Cerrar el desplegable si el usuario hace clic fuera de él
@@ -41,6 +42,23 @@ const StatusDropdown = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const toggleDropdown = () => {
+    if (!isOpen && dropdownRef.current) {
+      const rect = dropdownRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      // Altura aproximada del menú desplegable (3 elementos = ~140px)
+      const dropdownHeight = 150;
+
+      // Si el espacio debajo es menor a la altura del menú, ábrelo hacia arriba
+      if (spaceBelow < dropdownHeight) {
+        setOpenUpwards(true);
+      } else {
+        setOpenUpwards(false);
+      }
+    }
+    setIsOpen(!isOpen);
+  };
+
   const estados = ["Pendiente", "Confirmada", "Cancelada"];
 
   let estadoColor =
@@ -55,7 +73,7 @@ const StatusDropdown = ({
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleDropdown}
         className={`border inline-flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide outline-none transition-colors w-full md:w-auto min-w-[130px] ${estadoColor}`}
       >
         {reserva.estado}
@@ -68,7 +86,13 @@ const StatusDropdown = ({
       </button>
 
       {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-36 rounded-xl shadow-xl bg-white ring-1 ring-black/5 z-50 overflow-hidden transform opacity-100 scale-100 transition-all">
+        <div
+          className={`absolute right-0 w-36 rounded-xl shadow-xl bg-white ring-1 ring-black/5 z-[9999] overflow-hidden transform opacity-100 scale-100 transition-all ${
+            openUpwards
+              ? "bottom-full mb-2 origin-bottom-right"
+              : "top-full mt-2 origin-top-right"
+          }`}
+        >
           <div className="py-1 flex flex-col" role="menu">
             {estados.map((est) => (
               <button
@@ -148,8 +172,7 @@ export default function AdminTable({
         </div>
       </div>
 
-      {/* Hemos quitado overflow-hidden para que el nuevo desplegable no se corte por debajo */}
-      <div className="overflow-x-visible md:overflow-x-auto custom-scrollbar flex-1 pb-4 md:pb-0">
+      <div className="overflow-x-auto md:overflow-visible custom-scrollbar flex-1 pb-4 md:pb-0">
         <table className="w-full text-left block md:table md:min-w-[900px]">
           <thead className="hidden md:table-header-group">
             <tr className="bg-gray-50/50 text-gray-500 text-[10px] md:text-xs uppercase tracking-wider">
