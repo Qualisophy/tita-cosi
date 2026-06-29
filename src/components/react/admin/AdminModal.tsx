@@ -279,7 +279,7 @@ export default function AdminModal({
                   </select>
                 </div>
               ) : (
-                <input type="hidden" name="estado" value="Pendiente" />
+                <input type="hidden" name="estado" value="Confirmada" />
               )}
             </div>
 
